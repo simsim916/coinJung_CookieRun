@@ -11,12 +11,15 @@
         }
         body>div{
             border-bottom: 1px solid rgb(225, 225, 225);
+            box-sizing: border-box;
         }
         header{
             height: 60px;
             width: 90%;
             margin: auto;
             display: flex;
+            align-items: center;
+            position: relative;
         }
         header>div{
             display: flex;
@@ -25,7 +28,7 @@
             font-weight: 500;
             margin-left: 10px;
         }
-        header>div>div{
+        header>div:nth-of-type(1)>div{
             width: 30px;
             height: 20px;
             background-image: url(./img/index_logo.png);
@@ -37,9 +40,60 @@
         }
         header>ul{
             list-style: none;
+            padding: 0;
         }
         header>ul>li{
             float: left;
+            padding-left: 30px;
+            font-size: 15px;
+        }
+        header>ul>li>ul{
+            position: absolute;
+            background-color: red;
+            list-style: none;
+            padding: 0;
+            top: 61px;
+            left: 0;
+            width: 100%;
+            z-index: 1;
+            border-bottom: 1px solid rgb(225, 225, 225);
+        }
+        header>ul>li>ul>li{
+            /* background-color: rgb(255, 255, 255); */
+            width: 150px;
+            padding: 15px 0;
+            z-index: 1;
+            font-size: 0.8em;
+            border-right: 1px solid rgb(225, 225, 225);
+        }
+        header>ul>li>ul>li>div{
+        width: calc(100% - 150px);
+        position: absolute;
+        background-color: blue;
+        height: 100%;
+        right: 0;
+        top: 0;
+        }
+        header>div:nth-last-child(1){
+            display: flex;
+            font-size: 10px;
+            position: absolute;
+            right: 0px;
+        }
+        header>div:nth-last-child(1)>span{
+            font-size: 18px;
+        }
+        header>div:nth-last-child(1)>div{
+            box-sizing: border-box;
+            border: 1px solid rgb(194, 194, 194);
+            padding: 7px;
+            border-radius: 5px;
+            color: blue;
+            margin-left: 15px;
+        }
+        header>div:nth-last-child(1)>div:nth-last-child(1){
+            color: black;
+            margin-left: 5px;
         }
         *{
             margin: 0;
@@ -160,6 +214,9 @@
         footer>div>div:nth-child(1)>div>ul>li{
             padding-left: 25px;
         }
+        footer>div>div:nth-child(1)>div>ul>li>ul{
+            position: absolute;
+        }
         footer>div>div:nth-child(1)>p>span+span::before{
             content: "|";
             color: rgb(139, 139, 139);
@@ -207,13 +264,28 @@
                 <span>wanted</span>
             </div>
             <ul>
-                <li>채용</li>
+                <li>채용
+                    <ul>
+                        <li>직군전체
+                            <div></div>
+                        </li>
+                        <li>개발</li>
+                        <li>개발</li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </li>
                 <li>커리어</li>
                 <li>소셜</li>
                 <li>이력서</li>
                 <li>프리랜서</li>
                 <li>더보기</li>
             </ul>
+            <div>
+                <span><i class="fa-solid fa-magnifying-glass"></i></span>
+                <div>회원가입/로그인</div>
+                <div>기업 서비스</div>
+            </div>
         </header>
     </div>
         <section id="recommand">
