@@ -4,98 +4,112 @@
     font-family: Pretendard;
 }
 
+/* --------------------------------------------------------------------*/
+
+header, main {
+    width: 80%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    position: relative;
+}
+
 .container {
     height: 60px;
     border-bottom: 1px solid black;
 }
 
-header, main {
-    width: 80%;
-    height: 100%;
-    /* background-color: pink; */
-    margin: auto;
-    display: flex;
-    position: relative;
-    /* margin: 10px 0px; */
-}
 .logo{
     width: 112px;   
-    /* position: relative; */
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    transform: translate(20%,5%);
+    margin-left: 10%;
 }
 
 .logo_image{
     width: 40px;
-    /* position: absolute; */
-
-}
-
-header span{
-    font-size: 1.6rem;
-    transform: translate(0,-20%);
+    /* img에 직접 걸어주면, 가로의 비율이 깨지는 느낌이 있다. */
 }
 
 .logo img{
     height: 32px;
+    /* logo_image 클래스에 주면, img는 영향을 받지 않는다
+    따라서, .logo_image{}의 width와 logo img{}의 height를 따로 써줄 수 밖에 없었는데, 더 좋은 방법이 왠지 있을 것 같다. */
 }
 
+.logo>div>span{
+    font-size: 1.6rem;
+}
+
+/* --------------------------------------------------------------------*/
 nav>ul{
     display: flex;
     line-height: 60px;
     align-items: center;
-    margin: 0px 70px;
+    margin-left: 70px;
 }
 
 nav>ul>li {
+    /* overflow: hidden; */
     list-style: none;
-    margin-left: 44px;
+    margin-left: 44px; /* 만약, 채용을 div에 안넣고, <li>채용</li>였다면, 채용은 위 70px뿐 아니라 44px까지 적용받아 총 왼쪽 마진이 114px이 되었을 것이다.*/
     align-items: center;
-    overflow: hidden;
 }
 
-#hiring {
-    display: flex;
+nav>ul>li>i {
+    margin-right: 3px;
 }
 
-#hiring>i{
+/* #hiring>i{
     margin-right: 5px;
-}
+} */
 
-nav>ul>li>div>ul{
+/* nav>ul>li>div>ul{
     float: left;
 
-}
-.btn {
+} */
+
+/* --------------------------------------------------------------------*/
+
+#btn {
     width: 262px;
     height: 40px;
+    position: absolute;
+    right: 0;
+    /* top: calc((100% - 40px)/2); */
     display: flex;
-    justify-content: space-between;
-    /* position: absolute; */
-    /* margin-right: 0; */
+    /* justify-content: space-between; */
+    align-items: center;
+    background-color: aqua;
 }
 
-.btn_search{
+#btn>div:not(:first-of-type) {
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 0.8rem;
+    padding: 5px 0px;
+}
+
+#search{
     width: 40px;
     height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
-    transform: translateY(40%ss);
 }
 
-.btn:not(.btn_search){
-    border: 1px solid black;
-}
-
-.btn_login {
+#login {
     width: 113px;
-    text-wrap: nowrap;
+    margin : 0px 10px;
 }
 
-.btn_company {
+#company {
     width: 89px;
 }
+
+/* --------------------------------------------------------------------*/
 .menu{
     width: 100%;
     position: absolute;
