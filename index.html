@@ -47,48 +47,27 @@
             padding-left: 30px;
             font-size: 15px;
         }
-        header>ul>li>ul{
+        header>ul>li>div{
+            background-color: red;
+            width: 160px;
+            height: 300px;
+            position: absolute;
+            top: 60px;
+            left: 0;
+        }
+        header>ul>li>div>ul{
             position: absolute;
             list-style: none;
             padding: 0;
-            top: 61px;
             left: 0;
-            width: 100%;
+            width: 160px;
             height: 300px;
+            padding-top: 15px;
             z-index: 1;
             color: rgb(91, 91, 91);
-            overflow: auto;
+            overflow: hidden;
+            overflow-y: auto;
             z-index: 3;
-        }
-        header>ul>li>ul>li{
-            /* display: none; */
-            width: 154px;
-            padding: 10px 10px ;
-            font-size: 0.8em;
-            border-right: 1px solid rgb(225, 225, 225);
-            background-color: white;
-        }
-        header>ul>li>ul>li:nth-child(1){
-            padding-top: 25px;
-        }
-        header>ul>li>ul>li>div{
-        width: calc(100% - 175px);
-        position: absolute;
-        height: 100%;
-        right: 0;
-        top: 0;
-        display: grid;
-        grid-template: repeat(9, 1fr) / repeat(3, 1fr);
-        align-items: center;
-        padding-top: 15px;
-        display: none;
-        background-color: white;
-        }
-        header>ul>li>ul>li:hover>div{
-            display: grid;
-        }
-        header>ul>li>ul>li>div>div{
-            padding-left: 20px;
         }
         header>div:nth-last-child(1){
             display: flex;
@@ -142,6 +121,7 @@
             background-repeat: no-repeat ;
             border-radius: 10px;
             margin-bottom: 10px;
+            background-color: black;
         }
         #recommand>div>div:hover>.item_box_img{
             background-size: auto 105%;
@@ -280,47 +260,19 @@
             </div>
             <ul>
                 <li>채용
-                    <ul>
-                        <li>직군전체
-                            <div>
-                                <div>개발</div>
-                                <div>개발</div>
-                                <div>개발</div>
-                                <div>개발</div>
-                                <div>개발</div>
-                                <div>개발</div>
-                                <div>개발</div>
-                            </div>
-                        </li>
-                        <li>개발
-                            <div>
-                                <div>개발2</div>
-                                <div>개발2</div>
-                                <div>개발2</div>
-                                <div>개발2</div>
-                                <div>개발2</div>
-                                <div>개발2</div>
-                                <div>개발2</div>
-                            </div>
-                        </li>
-                        <li>개발                            
-                            <div>
-                                <div>개발3</div>
-                                <div>개발3</div>
-                                <div>개발3</div>
-                                <div>개발3</div>
-                                <div>개발3</div>
-                                <div>개발3</div>
-                                <div>개발3</div>
-                            </div>
-                        </li>
-                        <li>개발</li>
-                        <li>개발</li>
-                        <li>개발</li>
-                        <li>개발</li>
-                        <li>개발</li>
-                        <li>개발</li>
-                    </ul>
+                    <div>
+                        <ul>
+                            <li>직군전체</li>
+                            <li>개발</li>
+                            <li>개발</li>
+                            <li>개발</li>
+                            <li>개발</li>
+                            <li>개발</li>
+                            <li>개발</li>
+                            <li>개발</li>
+                            <li>개발</li>
+                        </ul>
+                    </div>
                 </li>
                 <li>커리어</li>
                 <li>소셜</li>
