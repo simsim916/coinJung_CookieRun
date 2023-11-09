@@ -168,7 +168,7 @@ ul>li>a{
 
 .when, .work_place{
     display: inline-block;
-    font: 16px;
+    font: 16px; /* */
     font-weight: 600;
     color: #333;
 }
