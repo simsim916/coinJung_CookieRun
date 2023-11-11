@@ -1,0 +1,220 @@
+*{
+    font-family: Pretendard;
+}
+body {
+    padding: 0;
+    border: 0;
+    margin: auto;
+    width: 1200px;
+    height: 100%;
+}
+.detail{
+    position: relative;
+    display: block;
+    width: 100%;
+    min-height: 720px;
+    background-color: #fff;
+    
+}
+.paper {
+    margin: 0;
+    position: relative;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    /* margin: ; */
+    align-items: center;
+    /* justify-content: center; */
+}
+.logo {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #f1f1f2;
+    background-size: contain;
+    background-position: 50%;
+    margin-right: 10px;
+    background-repeat: no-repeat;
+    background-image: url(https://static.wanted.co.kr/images/wdes/0_4.6b5ff4d2.png);
+}
+ul{
+    list-style: none;
+}
+.witi {
+    display: block;
+    width: 860px;
+    height: 37.14px;
+}
+
+.follow {
+    position: absolute;
+    padding: 10px;
+    line-height: 37px;
+    text-align: center;
+    border-radius: 17px;
+    width: 78.91px;
+    height: 40px;
+    right: 10%;  
+    background-color: #36f;
+    color: white;
+    font-size: 15px;
+    font-weight: 600; 
+}
+
+main {
+    display: grid;
+    grid-template: 1fr 2fr 2fr / 5fr 2fr;
+    }
+.position {
+    display: flex;
+    flex-wrap: wrap;    
+}
+
+.chaeyong {
+    flex-basis: 100%;
+
+}
+.dmdekqfbf {
+    text-align: center;
+    padding: 4px;
+    margin: 12px;
+    display: inline-block;
+    border-radius: 5px;
+    font-size: 11px;
+    color: #36f;
+    background-color: rgba(51,102,255,.08);
+    flex-basis: 40%;
+
+}
+
+.jiwon, .backend {
+    margin: 0 10px 20px;
+    padding: 20px; 
+    position: relative;
+    display: block;
+    border: solid 1px #e1e2e3;
+    border-radius: 3px;
+    flex-basis: 40%;
+}
+
+.jiwon {    
+    margin-left: 0;
+}
+
+span {
+    font-size: 18px;
+    line-height: 1.4;
+    font-weight: 600;
+    color: #333;
+}
+.bosang {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    margin-top: 3px;
+    color: #86939e;;
+}
+h3 {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1;
+    color: #333;
+    margin-bottom: 20px;
+}
+h5 {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+    color: #666;
+    margin-top: 15px;
+}
+
+.wmfckw {
+    position: absolute;
+    border: solid 1px #e1e2e3;
+    width: 34px;
+    height: 34px;
+    right: 10%;
+    top: calc(50% - 17px);
+    border-radius: 17px;
+    background-color: #fff;
+}
+
+.newshead {
+    grid-area: 3 / 1 / 4 / 2;
+}
+
+.img_class{
+    position: relative;
+    margin-left: -10px;
+    margin-bottom: 20px;
+    height: 124px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.img1, .img2 {
+    display: inline-block;
+    border-style: none;
+    width: 122px;
+    height: 123px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: 100% 100%;
+}
+.img1{
+    background-image: url(https://static.wanted.co.kr/images/company/19844/aasi9eb8ucgcj4oj__1080_790.jpg);
+}
+.img2{
+    background-image: url(https://static.wanted.co.kr/images/company/19844/fibzusrgoqa6bos0__1080_790.jpg);
+}
+
+.tag {
+    grid-area: 1 / 2 /-1 /3;
+    margin-left: 20px;
+    margin-right: -10px;
+}
+.tag>ul {
+    padding: 0;
+    margin: 0;
+}
+.tag>ul>li {
+    display: inline-block;
+    height: 60px;
+}
+.tag>ul>li>a {
+    background-color: #f3f5f8;
+    font-size: 14px;
+    padding: 12px 16px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    line-height: 1;
+    color: #333;
+    border-radius: 20px;
+    margin-right: 6px;
+    margin-bottom: 10px;
+    
+}
+.sogae_pre {
+    height: 56px;
+    text-wrap: wrap;
+    white-space: pre-line;
+    overflow: hidden;
+}
+.sogae_pre:hover {
+    overflow: unset;
+    display: block;
+}
+.firstNewsBox, 
+.secondNewsBox,
+.thirthNewsBox,
+.fourthNewsBox {
+    position: relative;
+    float: left;
+    width: calc(50% - 20px);
+    padding: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #e1e2e3;
+    border-radius: 3px;
+    box-sizing: border-box;
+}

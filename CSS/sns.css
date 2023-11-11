@@ -1,0 +1,407 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    
+}
+
+body{
+    position: relative;
+    height: 100vh;
+    width: 1200px;
+
+    margin: auto;
+}
+
+.detail{
+    width: 700px;
+}
+
+
+
+.pictures{
+    position: relative;
+    width: 700px;
+    height: 490px;
+    white-space: nowrap;
+    background-image: url(../img/wanted.jpg);
+
+    margin-top: 10px;
+}
+
+#slide01:checked ~ .pictures{
+    background-position-x: 0px;
+    transition: all 0.5s;
+}
+
+#slide02:checked ~ .pictures{
+    background-position-x: 752px;
+    transition: all 0.5s;
+}
+
+#slide03:checked ~ .pictures{
+    background-position-x: calc(752px*2);
+    transition: all 0.5s;
+}
+
+#slide04:checked ~ .pictures{
+    background-position-x: calc(752px*3);
+    transition: all 0.5s;
+}
+
+#slide05:checked ~ .pictures{
+    background-position-x: calc(752px*4);
+    transition: all 0.5s;
+}
+
+#slide06:checked ~ .pictures{
+    background-position-x: calc(752px*5);
+    transition: all 0.5s;
+}
+
+#slide07:checked ~ .pictures{
+    background-position-x: calc(752px*6);
+    transition: all 0.5s;
+}
+
+#slide08:checked ~ .pictures{
+    background-position-x: calc(752px*7);
+    transition: all 0.5s;
+}
+
+#slide09:checked ~ .pictures{
+    background-position-x: calc(752px*8);
+    transition: all 0.5s;
+}
+
+#slide10:checked ~ .pictures{
+    background-position-x: calc(752px*9);
+    transition: all 0.5s;
+}
+
+
+/* [class *= "btn"]{
+    position: absolute;
+} */
+
+/* .left_btn{
+    top: calc((100% - 30px)/2);
+    left: 30px;
+
+    width: 30px;
+    height: 30px;
+
+    background-image: url(./wanted/free-icon-left-arrow-271220.png);
+    background-size: cover;
+    background-position: center;
+
+    cursor: pointer;
+
+    padding: 10px
+
+}
+.right_btn{
+    top: calc((100% - 30px)/2);
+    right: 30px;
+
+    width: 30px;
+    height: 30px;
+
+    background-image: url(./wanted/free-icon-right-arrow-271228.png);
+    background-size: cover;
+    background-position: center;
+
+    cursor: pointer;
+
+    padding: 10px
+} */
+
+
+.job_header{
+    margin: 40px 0px 30px 0px;
+}
+h2{
+    margin-bottom: 10px;
+}
+
+li{
+    display: inline-block;
+    height: 40px;
+
+    margin-top: 30px
+}
+ul>li>a{
+    text-decoration: none;
+    color: black;
+    font-size: small;
+    
+    background-color: beige;
+    padding: 5px;
+
+    border-radius: 30px;
+}
+
+.job_description{
+    margin-bottom: 50px;
+}
+
+.job_work_place{
+    margin-top: 50px;
+}
+
+.deadline{
+    height: 24.84px;
+    margin-bottom: 20px;
+}
+.place{
+    height: 24.84px;
+    margin-bottom: 20px;
+}
+
+.lastday, .what_place{
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    color: #999;
+    width: 100px;
+}
+
+.when, .work_place{
+    display: inline-block;
+    font: 16px; /* */
+    font-weight: 600;
+    color: #333;
+}
+
+.job_info{
+    position: relative;
+    width: 692px;
+    height: 92px;
+    margin-top: 80px;
+    padding:20px;
+    box-sizing: border-box;
+
+    border: 1px solid;
+}
+.logo{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-image: url(../img/wanted_logo.png);
+    background-position: 100% 100%;
+    background-size: cover;
+    
+    background-color: #918b8b;
+}
+.job_info>h5{
+    display: inline-block;
+    vertical-align: top;
+}
+.job_info>h6{
+    display: inline-block;
+}
+
+/************************************detail 끝**********************************************/
+
+/************************************aside 시작**********************************************/
+
+.aside{
+    position: absolute;
+    width: 360px;
+
+    right: 10%;
+    top:0;
+
+    margin-top: 10px;
+}
+
+.aside_header{
+    position: fixed;
+
+    width: 340px;
+    height: 431.64px;
+
+}
+.recommender{
+    position: relative;
+
+    width: 340px;
+    height: 327px;
+    padding: 20px;
+
+    box-sizing: border-box;
+}
+
+.recommender::after{
+    content: '';
+    position: absolute;
+
+    width: 340px;
+    height: 327px;
+    padding: 20px;
+    box-sizing: border-box;
+
+
+    border: 1px solid;
+    border-radius: 5px;
+
+    opacity: .3;
+
+    right:0;
+    top:0;
+}
+
+.aside_footder{
+    width: 340px;
+    height: 92px;
+    margin-top: 12px;
+    padding: 24px 30px 24px 20px;
+}
+.reward>ul>li>h4{
+    margin-bottom: 8px;
+    color: darkgray;
+}
+
+.reward>ul>li{
+    padding-right: 70px;
+    font-weight: bold;
+}
+
+.bookmark, .apply{
+    width: 298px;
+    height: 48px;
+
+    color: blue;
+
+
+    border: solid 1px blue;
+    border-radius: 10px;
+
+    text-align: center;
+    line-height: 48px;
+}
+
+.bookmark{
+    margin-top: 30px;
+    margin-bottom: 5px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+    
+    
+}
+
+.bookmark:hover{
+    background-color: rgb(210, 210, 233);
+    
+}
+
+.apply{
+    position: relative;
+    background-color: blue;
+    border-radius: 10px;
+
+    font-weight: bold;
+
+    opacity: .7;
+
+    cursor: pointer;
+
+    z-index: 1;
+}
+.apply::before{
+    content:'지원하기';
+    color: white;
+
+    position: absolute;
+    left:0;
+
+    width: 298px;
+    height: 48px;
+}
+
+.heart{
+    position: absolute;
+
+    align-items: center;
+    justify-content: center;
+
+    left: 20px;
+    bottom: 20px;
+
+    width: 55.44px;
+    height: 32px;
+
+    border: 1px solid;
+    border-radius: 10px;
+    opacity: .2;
+
+}
+.heart>a{
+    display: block;
+
+    width: 55.44px;
+    height: 32px;
+
+    background-color: aqua;
+
+}
+
+.heart::before{
+    content: '♥';
+    position: absolute;
+
+    align-items: center;
+
+    width: 30px;
+
+}
+
+.banner{
+    position: relative;
+    width: 340px;
+    height: 92px;
+    box-sizing: border-box;
+    padding: 24px 30px 24px 15px;
+
+    margin-top: 12px;
+
+    background-color: rgb(210, 219, 236);
+
+    border-radius: 5px;
+
+    cursor: pointer;
+}
+
+.banner:first-child{
+    display: inline-block;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: bold;
+}
+
+.banner>span+span{
+    display: inline-block;
+    font-size: 12px;
+    color: #36f;
+    line-height: 16px;
+}
+
+.banner::before{
+    content: '';
+    position: absolute;
+
+    width: 68px;
+    height: 68px;
+
+
+    background-image: url(../img/banner_logo.webp);
+    background-size: cover;
+    background-position: 100% 100%;
+
+    top: 50%;
+    right: 0%;
+    transform: translate(-10%, -50%);
+
+}
