@@ -1,35 +1,4 @@
-@media screen and (max-width: 990px) {
-    nav>ul>li{
-        display: none;
-    } ;
-/* 여기서부터 미디어 쿼리의 2개 이상의 실행문이 왜 무응답인지 모르겠음 */
-    #btn{
-        display: none;
-    } ;
 
-    #mobileBtn {
-        display:flex;
-        width: 166px;
-        height: 39px;
-        justify-content: space-between;
-        background-color: blue;
-        align-items: center;
-        position:absolute;
-        right: 0;
-        top: calc((100% - 39px)/2);
-        /* display: none; */
-    } ;
-    
-    #login_mobile{
-        border: 1px solid rgba(0,0,0,0.3);
-        color: blue;
-        border-radius: 5px;
-        text-align: center;
-        font-size: 0.8rem;
-        padding: 5px;
-        text-wrap: nowrap;
-    }
-}
 
 /*--------------------------------------------------------------------*/
 
@@ -252,4 +221,37 @@ nav>ul>li>i {
     top: 354px; /* 426px에서 margin-top을 뺀 값 */
     left: 10%;
     border-radius: 10px;
+}
+
+@media screen and (max-width: 990px) {
+    nav>ul>li{
+        display: none;
+    } ;
+/* 여기서부터 미디어 쿼리의 2개 이상의 실행문이 왜 무응답인지 모르겠음 */
+    #btn{
+        display: none;
+    } ;
+
+    #mobileBtn {
+        display:flex;
+        width: 166px;
+        height: 39px;
+        justify-content: space-between;
+        background-color: blue;
+        align-items: center;
+        position:absolute;
+        right: 0;
+        top: calc((100% - 39px)/2);
+        /* display: none; */
+    } ;
+    
+    #login_mobile{
+        border: 1px solid rgba(0,0,0,0.3);
+        color: blue;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 0.8rem;
+        padding: 5px;
+        text-wrap: nowrap;
+    }
 }
