@@ -12,11 +12,9 @@ header{
     width: 100vw;
 }
 main{
-    background-color:antiquewhite;
+    height: 2000px;
 }
 footer{
-    position: absolute;
-    bottom: 0;
     width: 100vw;
 }
 .box_size{
@@ -81,6 +79,75 @@ nav>ul>li{
     height: 100%;
     line-height: 54px;
 }
+/* ---------------- HEADER ---------------- */
+main>div{
+    height: calc(1024px / 2);
+    position: relative;
+}
+.ad_img1{
+    background-image: url(	https://kkangkkanggoods.shop.blogpay.co.kr/img/layout/kkangkkanggoods/16931204861967730.png);
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    position: absolute;
+    border-radius: 20px;
+    margin-top: 30px;
+}
+.ad_img1:hover~.ad_img2,
+.ad_img1:hover~.ad_img3,
+.ad_img1:hover~.ad_img4{
+    transform: translateY( calc(100% - 100px));
+}
+.ad_img2{
+    height: 100%;
+    position: absolute;
+    background-image: url(https://images.chosun.com/resizer/iADKFP-5DlkfeQiL_5GL7qsCPUk=/1920x1080/smart/cloudfront-ap-northeast-1.images.arcpublishing.com/chosun/YAJAF36M7VC7RDGKMRXQQISP3I.jpg);
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    margin-top: 30px;
+    top: 100px;
+    transition: 1s;
+}
+.ad_img2:hover~.ad_img3,
+.ad_img2:hover~.ad_img4{
+    transform: translateY( calc(100% - 100px));
+}
+.ad_img3{
+    background-image: url(https://i.namu.wiki/i/87pvpxfwzM6BAINqIzxGeCHernmwkuZoeDm7z88RcsmrlOaEdmHmz0DHbyBeC8QJ0TkIvJv5gF8cxn5sakK3gw.webp);
+    height: 100%;
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    margin-top: 30px;
+    top: 200px;
+    transition: 1s;
+}
+.ad_img3:hover~.ad_img4{
+    transform: translateY( calc(100% - 100px));
+}
+.ad_img4{
+    background-image: url(https://kkangkkanggoods.shop.blogpay.co.kr/img/layout/kkangkkanggoods/16964030068833370.png);
+    height: 100%;
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    margin-top: 30px;
+    top: 300px;
+    transition: 1s;
+}
+
+
+
+
+
+
+
+
+
+/* ---------------- FOOTER ---------------- */
 .footer_top{
     border-top: 1px solid rgba(0,0,0,0.1);
     box-sizing: border-box;
