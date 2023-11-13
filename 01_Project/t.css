@@ -1,0 +1,59 @@
+* {
+    margin: 0;padding: 0;
+}
+.main_img {
+    background-image: url(https://static.wanted.co.kr/images/banners/themes/261_1326fe6f.jpg);
+    background-repeat: no-repeat;background-position: center;background-color: rgb(204, 202, 202);
+    height: 400px;
+    background-size: cover;
+}
+main {
+    position: relative;
+    width: 90%;
+    max-width: 1060px;
+    margin: auto;
+    padding: 50px;
+}
+h1 {
+    font-size: 36px;
+}
+h2 p {
+    color: darkgray;
+    font-size: 22px;
+    line-height: 3em;
+    margin-bottom: 120px;
+}
+.intro p {
+    line-height: 2em;
+}
+.intro {
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
+    justify-content: center;
+    position: relative;
+}
+.intro_block {
+    position: relative;
+    width: calc((1060px - 60px) / 4);
+    margin: auto;
+}
+.intro_block_img {
+    background: url(https://image.wanted.co.kr/optimize?src=https%3A%2F%2Fstatic.wanted.co.kr%2Fimages%2Fcompany%2F102%2Flhnzt8yqwqslevr1__1080_790.png&w=400&q=75) center/cover no-repeat;
+    height: 280px; position: relative;
+}
+.text {
+    color: darkgray;
+}
+.intro_block>a {
+    position: absolute;
+    color: white;
+    font-size: 30px;
+    top: 20px;
+    right: 30px;
+    z-index: 5;
+}
+h3{
+    width: 95%;
+    margin: auto;
+}

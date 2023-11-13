@@ -135,8 +135,10 @@ h5 {
     height: 34px;
     right: 10%;
     top: calc(50% - 17px);
-    border-radius: 17px;
+    border-radius: calc(34px / 2);
     background-color: #fff;
+    text-align: center;
+    line-height: 34px;
 }
 
 .newshead {
@@ -199,8 +201,10 @@ h5 {
     text-wrap: wrap;
     white-space: pre-line;
     overflow: hidden;
+    white-space:pre-wrap;
 }
-.sogae_pre:hover {
+#test:hover>.sogae_pre {
+    height: 700px;
     overflow: unset;
     display: block;
 }
