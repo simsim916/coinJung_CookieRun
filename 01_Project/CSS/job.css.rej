@@ -1,0 +1,11 @@
+diff a/CSS/job.css b/CSS/job.css	(rejected hunks)
+@@ -1,6 +1,9 @@
+ *{
+     font-family: Pretendard;
+ }
++a{
++    text-decoration: none;
++}
+ body {
+     padding: 0;
+     border: 0;

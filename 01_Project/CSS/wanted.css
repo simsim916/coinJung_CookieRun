@@ -1,0 +1,257 @@
+
+
+/*--------------------------------------------------------------------*/
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Pretendard;
+    scr
+}
+
+/* --------------------------------------------------------------------*/
+html{
+    overflow: auto;
+}
+
+header, main {
+    width: 80%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    position: relative;
+}
+
+.container {
+    height: 60px;
+    border-bottom: 1px solid lightgray;
+}
+
+.logo{
+    width: 112px;   
+    display: flex;
+    align-items: center;
+    margin-left: 10%;
+}
+
+.logo_image{
+    width: 40px;
+    /* img에 직접 걸어주면, 가로의 비율이 깨지는 느낌이 있다. */
+}
+
+.logo img{
+    height: 32px;
+    /* logo_image 클래스에 주면, img는 영향을 받지 않는다
+    따라서, .logo_image{}의 width와 logo img{}의 height를 따로 써줄 수 밖에 없었는데, 더 좋은 방법이 왠지 있을 것 같다. */
+}
+
+.logo>div>span{
+    font-size: 1.6rem;
+}
+
+/* --------------------------------------------------------------------*/
+nav>ul{
+    display: flex;
+    line-height: 60px;
+    align-items: center;
+    margin-left: 70px;
+}
+
+nav>ul>li {
+    list-style: none;
+    margin-left: 44px; /* 만약, 채용을 div에 안넣고, <li>채용</li>였다면, 채용은 위 70px뿐 아니라 44px까지 적용받아 총 왼쪽 마진이 114px이 되었을 것이다.*/
+    align-items: center;
+}
+
+nav>ul>li>i {
+    margin-right: 3px;
+}
+
+/* --------------------------------------------------------------------*/
+
+#btn {
+    width: 262px;
+    height: 39px;
+    position: absolute;
+    right: 0;
+    top: calc((100% - 39px)/2);
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    /* display: none; */
+}
+
+#btn>div:not(:first-of-type) {
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 0.8rem;
+    padding: 5px 0px;
+}
+
+#search{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+
+    align-items: center;
+    position: relative;
+}
+
+#login {
+    width: 113px;
+    margin : 0px 10px;
+    color: blue;
+}
+
+#company {
+    width: 89px;
+}
+
+#mobileBtn{
+    display: none;
+}
+
+/* --------------------------------------------------------------------*/
+.menu{
+    width: 100%;
+    position: absolute;
+    margin-top: 40px;
+    margin-bottom: 72px;
+    /* background-color: antiquewhite; */
+}
+
+.menu>ul{
+    height: 118px;
+    width: 80%;
+    margin: auto;
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /* background-color: aquamarine; */
+}
+
+.menu>ul>li{
+    align-items: center;
+}
+
+.menu>ul>li>div>div:first-of-type{
+    background-color: red;
+    width: 56px;
+    height: 56px;
+    /* background-image: url(../img/image\ sprite_main.png); */
+    background-position-y: 10%;
+    margin: auto;
+    margin-bottom: 8px;
+}
+
+.menu>ul>li>div>div:nth-of-type(2){
+    font-size: 0.93rem;
+    text-align: center;
+}
+
+.menu span{
+    font-size: smaller;
+    align-items: center;
+}
+
+/* --------------------------------------------------------- */
+
+#recommand {
+    margin-top: 230px;
+    height: 124px;
+    width: 80%;
+    position: relative;
+    left: 10%;
+    background-color: #F8F8F8;
+    border-radius: 5px;
+    display: flex;
+    /* justify-content: space-between; */
+}
+
+#recommand>div:nth-of-type(1){
+    width: 260px;
+    height: 48px;
+    /* font-weight: bold; */
+    font-size: 1.05rem;
+    letter-spacing: 1px;
+    text-wrap: nowrap;
+    text-align: justify;
+    position: absolute;
+    left : calc((100% - 260px)/2);
+    top: calc((100% - 48px)/2);
+    /* background-color: darkkhaki; */
+    /* vertical-align: bottom; */
+}
+
+#recommand>div:nth-of-type(2){
+    background-color: white;
+    border-radius: 5px;
+    font-size: 0.93rem;
+    width: 158px;
+    height: 48px;
+    color: blue;
+    line-height: 48px;
+    text-align: center;
+    align-items: center;
+    position: absolute;
+    right: 180px;
+    top: calc((100% - 48px)/2);
+}
+#recommand::after {
+    width: 200px;
+    height: 150px;
+    content: "";
+    background: url(../img/robotThinking.webp) 0/100% 100%;
+    position: absolute;
+    bottom : 0;
+    left : 180px;
+}
+/*  */
+/* -------------------------------------------------------- */
+
+#ads{
+    margin: 72px 0px;
+    width: 80%;
+    height: 212px;
+    background: url(../img/ads1.webp) 0/cover;
+    position: absolute;
+    top: 354px; /* 426px에서 margin-top을 뺀 값 */
+    left: 10%;
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 990px) {
+    nav>ul>li{
+        display: none;
+    } ;
+/* 여기서부터 미디어 쿼리의 2개 이상의 실행문이 왜 무응답인지 모르겠음 */
+    #btn{
+        display: none;
+    } ;
+
+    #mobileBtn {
+        display:flex;
+        width: 166px;
+        height: 39px;
+        justify-content: space-between;
+        background-color: blue;
+        align-items: center;
+        position:absolute;
+        right: 0;
+        top: calc((100% - 39px)/2);
+        /* display: none; */
+    } ;
+    
+    #login_mobile{
+        border: 1px solid rgba(0,0,0,0.3);
+        color: blue;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 0.8rem;
+        padding: 5px;
+        text-wrap: nowrap;
+    }
+}
