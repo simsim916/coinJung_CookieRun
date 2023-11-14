@@ -102,25 +102,30 @@ main a{
     line-height: 1;
     text-align: center;
 }
+.total{
+    padding: 3px 7px;
+    display: inline-block;
+}
 .list_range{
     padding: 15px 0 30px;
     font-size: 0.7rem;
     color: #9A9A9A;
 }
+
 .black_font {
     font-style: normal;
     color: black;
 }
+
 .list_range_top {
     float: right;
 }
-/* .list_type {
-    display: block;
-}
-.list_type>ul {
+
+.list_type li {
     list-style: none;
     display: inline-block;
-} */
+    padding: 3px 7px;
+}
 
 
 
