@@ -1,75 +1,90 @@
-
-*{
+* {
     padding: 0;
     margin: 0;
     font-family: 'Roboto', sans-serif;
 }
-a{
+
+a {
     color: inherit;
     text-decoration: none;
 }
-header{
+
+header {
     width: 100vw;
 }
-main{
-    background-color:antiquewhite;
+
+main {
+    background-color: antiquewhite;
 }
-footer{
+
+footer {
     position: absolute;
     bottom: 0;
     width: 100vw;
 }
-.box_size{
+
+.box_size {
     width: 1024px;
     margin: auto;
 }
-.top_bar{
+
+.top_bar {
     background-color: #F8F8F8;
-    color: #919BAF; 
+    color: #919BAF;
     height: 36px;
 }
-.top_bar>div{
+
+.top_bar>div {
     height: 100%;
     margin: auto;
     position: relative;
 }
-.top_bar_link{
+
+.top_bar_link {
     display: flex;
     position: absolute;
     right: 0;
 }
-.top_bar_link>div{
+
+.top_bar_link>div {
     font-size: 0.7rem;
     padding: calc((36px - 0.7rem)/2) 15px;
 }
-.head{
+
+.head {
     height: 125px;
     align-items: center;
     position: relative;
     display: flex;
 }
-#logo{
+
+#logo {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
 }
-#logo>img{
+
+#logo>img {
     height: 80px;
     width: 189px;
 }
-.head_right{
+
+.head_right {
     position: absolute;
     right: 0;
 }
-.head i{
+
+.head i {
     padding: 0 15px;
 }
-.navi{
-    border-bottom: 1px solid rgba(0,0,0,0.1);
-    border-top: 1px solid rgba(0,0,0,0.1);
+
+.navi {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
 }
-nav>ul{
+
+nav>ul {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -77,16 +92,80 @@ nav>ul{
     height: 54px;
     font-size: 0.9rem;
 }
-nav>ul>li{
+
+nav>ul>li {
     height: 100%;
     line-height: 54px;
 }
+
 /* ---------------- HEADER ---------------- */
+.main1 {
+    display: flex;
+}
+
+main>.box_size {
+    width: 95%;
+    display: flex;
+}
+
+.ad_img {
+    width: 50%;
+    /* position: absolute; */
+
+    left: 10%;
+    padding: 30px;
+}
+
+.ad_img>img {
+    width: 100%;
+}
+
+.title {
+    width: 50%;
+    padding: 24px;
+    line-height: 3rem;
+
+}
+
+.title h1 {
+    font-size: 23px;
+    font-weight: 600;
+    opacity: 0.7;
+}
+
+.title p {
+    font-size: 20px;
+
+}
+
+.title>ul>li,
+.title>.option_select,
+.title>.total {
+    list-style: none;
+    font-size: 13px;
+    opacity: 0.7;
+    font: bolder;
+    line-height: 40px;
+}
+
+.page1>ul>li {
+    flex-direction: column;
+    list-style: none;
+    display: inline;
+    margin: 10px;
+    font-size: 15px;
+
+}
+
+div>.page1 {
+    list-style: none;
+    /* display: ; */
+    /* border: ; */
 
 
+}
 
-
-
+.page2>img {}
 
 
 
@@ -94,19 +173,21 @@ nav>ul>li{
 
 
 /* ---------------- FOOTER ---------------- */
-.footer_top{
-    border-top: 1px solid rgba(0,0,0,0.1);
+.footer_top {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
-    color: #6f6f6f; 
+    color: #6f6f6f;
     font-size: 0.8rem;
     height: 110px;
 }
-.footer_top>div{
+
+.footer_top>div {
     position: relative;
     height: 100%;
     text-indent: 10px;
 }
-.footer_top ul{
+
+.footer_top ul {
     list-style: none;
     display: flex;
     position: absolute;
@@ -116,37 +197,45 @@ nav>ul>li{
     font-size: 0.9rem;
     font-weight: 500;
 }
-.footer_top ul>li{
+
+.footer_top ul>li {
     padding-left: 20px;
 }
-.footer_top>div>p:nth-of-type(1){
+
+.footer_top>div>p:nth-of-type(1) {
     padding-top: 25px;
 }
-.footer_top>div>p:nth-of-type(1)>span:nth-child(2):before{
+
+.footer_top>div>p:nth-of-type(1)>span:nth-child(2):before {
     content: "|";
     margin: 10px;
 }
-.footer_top>div>p:nth-of-type(2){
+
+.footer_top>div>p:nth-of-type(2) {
     margin: 10px 0;
 }
-.footer_top>div>p:nth-of-type(2)>span:nth-child(2):before{
+
+.footer_top>div>p:nth-of-type(2)>span:nth-child(2):before {
     content: "|";
     margin: 10px;
 }
-.footer_bottom{
-    border-top: 1px solid rgba(0,0,0,0.1);
+
+.footer_bottom {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
     background-color: #F8F8F8;
-    color: #919BAF; 
+    color: #919BAF;
     line-height: 40px;
     text-indent: 10px;
 }
-.footer_bottom>div{
+
+.footer_bottom>div {
     display: flex;
     position: relative;
     font-size: 0.7rem;
 }
-.footer_bottom ul{
+
+.footer_bottom ul {
     list-style: none;
     display: flex;
     position: absolute;
