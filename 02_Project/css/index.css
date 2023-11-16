@@ -84,19 +84,31 @@ main>div{
     height: calc(1024px / 2);
     position: relative;
 }
+main>div>div{
+    height: 1024px;
+}
 .ad_img1{
-    background-image: url(	https://kkangkkanggoods.shop.blogpay.co.kr/img/layout/kkangkkanggoods/16931204861967730.png);
+    background-image: url(https://kkangkkanggoods.shop.blogpay.co.kr/img/layout/kkangkkanggoods/16931204861967730.png);
     background-size: cover;
     background-position: center;
     height: 100%;
-    position: absolute;
+    width: 100%;
     border-radius: 20px;
     margin-top: 30px;
+    position: absolute;
+    top: 0;
 }
 .ad_img1:hover~.ad_img2,
 .ad_img1:hover~.ad_img3,
 .ad_img1:hover~.ad_img4{
-    transform: translateY( calc(100% - 100px));
+    transform: translateY(calc(100% - 100px));
+}
+.ad_img>.ad_img1_list{
+    display: none;
+    height: 30%;
+}
+.ad_img:hover>.ad_img1_list{
+    display: block;
 }
 .ad_img2{
     height: 100%;
@@ -111,7 +123,7 @@ main>div{
 }
 .ad_img2:hover~.ad_img3,
 .ad_img2:hover~.ad_img4{
-    transform: translateY( calc(100% - 100px));
+    transform: translateY(calc(100% - 100px));
 }
 .ad_img3{
     background-image: url(https://i.namu.wiki/i/87pvpxfwzM6BAINqIzxGeCHernmwkuZoeDm7z88RcsmrlOaEdmHmz0DHbyBeC8QJ0TkIvJv5gF8cxn5sakK3gw.webp);
@@ -125,7 +137,7 @@ main>div{
     transition: 1s;
 }
 .ad_img3:hover~.ad_img4{
-    transform: translateY( calc(100% - 100px));
+    transform: translateY(calc(100% - 100px));
 }
 .ad_img4{
     background-image: url(https://kkangkkanggoods.shop.blogpay.co.kr/img/layout/kkangkkanggoods/16964030068833370.png);
@@ -138,7 +150,134 @@ main>div{
     top: 300px;
     transition: 1s;
 }
-
+.ad_list>div:nth-of-type(2){
+    width: 100%; height: 100%;
+}
+.ad_list h2{
+    position: absolute;
+    z-index: 5;
+    left: 50%; transform: translateX(-50%);
+    top: calc(100% + 20px);
+    font-size: 2rem;
+    font-weight: 500;
+}
+.ad_list h3{
+    position: absolute;
+    font-weight: 400;
+    left: calc(48%);
+    transform: translateY(350%);
+}
+.ad_list ul{
+    list-style: none;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+    position: relative;
+}
+.ad_list li{
+    width: 22%;
+    height: 70%;
+    padding-top: 120px;
+}
+.ad_list li .ad_list_img{
+    border: 1px solid #6f6f6f;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+}
+.ad_list li:nth-of-type(1) .ad_list_img{
+    background-image: url(https://malrang.kr/web/product/big/20200618/30d910d5ca8af4791b8f4a5e43144de8.jpg);
+}
+.ad_list li p:nth-of-type(1){
+    font-weight: 600;
+    padding: 0 10px;
+    font-size: 1.1rem;
+    margin-top: 8px;
+}
+.ad_list li p:nth-of-type(2){
+    font-size: 0.9rem;
+    margin-top: 2px;
+    color: #6f6f6f;
+    text-indent: 5px;
+}
+.ad_list li p:nth-of-type(3){
+    font-weight: 400;
+    font-size: 1.2rem;
+    text-align: right;
+    color: #c90808;
+    text-indent: 5px;
+}
+.list_slide{
+    position: absolute;
+    transition: 1s;
+    background-size: cover;
+    background-position: center;
+}
+.list_slide:nth-child(5){
+    left: calc(30% + 10% * 0);
+}
+.list_slide:nth-child(5)>div{
+    background-image: url(https://kkangkkanggoods.blogpay.io/img/g/kkangkkanggoods/16890768945548.jpg);
+}
+.list_slide:nth-child(5):hover{
+    transform: translateX(-15%);
+}
+.list_slide:nth-child(5):hover~.list_slide:nth-child(6),
+.list_slide:nth-child(5):hover~.list_slide:nth-child(7),
+.list_slide:nth-child(5):hover~.list_slide:nth-child(8),
+.list_slide:nth-child(5):hover~.list_slide:nth-child(9){
+    transform: translateX(35%);
+}
+.list_slide:nth-child(6){
+    left: calc(30% + 10% * 1);
+}
+.list_slide:nth-child(6)>div{
+    background-image: url(https://m.ittanstore.com/web/product/big/202106/3677abb903b5a1c852bc44d37eaf4aef.jpg);
+}
+.list_slide:nth-child(6):hover{
+    transform: translateX(-15%);
+}
+.list_slide:nth-child(6):hover~.list_slide:nth-child(7),
+.list_slide:nth-child(6):hover~.list_slide:nth-child(8),
+.list_slide:nth-child(6):hover~.list_slide:nth-child(9){
+    transform: translateX(35%);
+}
+.list_slide:nth-child(7){
+    left: calc(30% + 10% * 2);
+}
+.list_slide:nth-child(7)>div{
+    background-image: url(https://d2gfz7wkiigkmv.cloudfront.net/pickin/2/1/2/CZEwobBRT0i0ONNaDqEOjg);
+}
+.list_slide:nth-child(7):hover{
+    transform: translateX(-15%);
+}
+.list_slide:nth-child(7):hover~.list_slide:nth-child(8),
+.list_slide:nth-child(7):hover~.list_slide:nth-child(9){
+    transform: translateX(35%);
+}
+.list_slide:nth-child(8){
+    left: calc(30% + 10% * 3);
+}
+.list_slide:nth-child(8)>div{
+    background-image: url(https://m.ittanstore.com/web/product/big/202306/2f0505c5319aa551a6400c09d6c9508c.jpg);
+}
+.list_slide:nth-child(8):hover{
+    transform: translateX(-15%);
+}
+.list_slide:nth-child(8):hover~.list_slide:nth-child(9){
+    transform: translateX(35%);
+}
+.list_slide:nth-child(9){
+    left: calc(30% + 10% * 4);
+}
+.list_slide:nth-child(9)>div{
+    background-image: url(https://d2gfz7wkiigkmv.cloudfront.net/pickin/2/1/2/l8lGaKVTR5y5xzrAxwu6vA);
+}
 
 
 
