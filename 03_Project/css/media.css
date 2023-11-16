@@ -1,0 +1,16 @@
+main{
+    /* background-color: rgb(112, 255, 248); */
+    width: 1024px;
+    margin: auto;;
+}
+h3{
+    font-size: 30px;
+}
+
+.main_media_container{
+    background-color: aqua;
+    height: 800px;
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+    gap: 30px;
+}
