@@ -1,0 +1,65 @@
+@import url('https://webfontworld.github.io/cookierun/CookieRun.css');
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'CookieRun';
+}
+.whole{
+    left: 350px;
+    width : 1280px;
+    background-color: aquamarine;
+    margin: auto;
+}
+.item{
+    width: 1020px;
+    height: 886px;
+    background-color: antiquewhite;
+    border: 1px solid rgba(0,0,0,0.3);
+    box-sizing: border-box;
+    margin: auto;
+    position: relative;
+}
+
+.item_img{
+    width: 510px;
+    height: 510px;
+    position: absolute;
+    background-color: lightblue;
+}
+.item_list{
+    width: 510px;
+    height:70px;
+    position: absolute;
+    top: 510px;
+    background-color: lightseagreen;
+}
+.item_buy{
+    width: 510px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    background-color: lightcoral;
+}
+.item_buy_point{
+    width: 430px;
+    height:300px;
+    border: 1px solid rgba(0,0,0,0.3);
+    box-sizing: border-box;
+    background-color: lightsalmon;
+    margin: auto;
+    transform: translateY(117px)
+}
+.review{
+    width: 1020px;
+    height: 288px;
+    background-color: lightgrey;
+    margin: auto;
+}
+.best{
+    width: 1020px;
+    height:353px;
+    background-color: lightgoldenrodyellow;
+    margin: auto;
+}
+
