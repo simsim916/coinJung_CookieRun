@@ -92,6 +92,7 @@ main a{
 }
 
 .list_home{
+    padding: 3px 7px;
     margin-top: 20px;
     font-size: 0.8rem;
 }
@@ -126,6 +127,9 @@ main a{
     display: inline-block;
     padding: 3px 7px;
 }
+/* .list_type li::after { 문석님한테물어보기
+    content: "|";
+} */
 
 
 
