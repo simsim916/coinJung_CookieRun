@@ -18,6 +18,10 @@ a{
     grid-template: repeat(3, 1fr) / repeat(3, 1fr);
     gap: 30px;
 }
+.main_media_box{
+    width: 100%;
+}
+
 .main_media_img{
     width: 100%;
     height: 100%;
@@ -30,13 +34,17 @@ a{
     height: 80%;
     display: block;
 }
+/* .main_media_img iframe:hover{
+    overflow: hidden;
+    width: 110%;
+    
+} */
 .main_media_sub{
     background-color: black;
-    color: antiquewhite;
     width: 100%;
     height: 20%;
     text-align: center;
-    line-height: 45px;
+    line-height: 55px;
     overflow: hidden;
 }
 .main_media_sub>a{
