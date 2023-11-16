@@ -7,10 +7,42 @@ h3{
     font-size: 30px;
 }
 
+a{
+    text-decoration: none;  
+}
+
 .main_media_container{
-    background-color: aqua;
-    height: 800px;
+    /* background-color: aqua; */
+    height: 900px;
     display: grid;
     grid-template: repeat(3, 1fr) / repeat(3, 1fr);
     gap: 30px;
+}
+.main_media_img{
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgb(184, 178, 178);
+    padding: 2px;
+}
+
+.main_media_img iframe{
+    width: 100%;
+    height: 80%;
+    display: block;
+}
+.main_media_sub{
+    background-color: black;
+    color: antiquewhite;
+    width: 100%;
+    height: 20%;
+    text-align: center;
+    line-height: 45px;
+    overflow: hidden;
+}
+.main_media_sub>a{
+    color: antiquewhite;
+}
+.main_media_sub:hover {
+    font-size: 20px;
+    opacity: 0.5;
 }
