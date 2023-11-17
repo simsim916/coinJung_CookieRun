@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    font-family: 'CookieRun';
+}
+main{
+    position: relative;
+
+    width: 1024px;
+    margin: auto;
+}
+h3{
+    font-size: 30px;
+    margin: 15px 0;
+    margin-top: 40px;
+}
+
+.back_list{
+    position: absolute;
+    right: 0;
+
+    margin-bottom: 5px;
+}
+.back_list::before{
+    content: '';
+}
