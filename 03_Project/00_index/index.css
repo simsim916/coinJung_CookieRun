@@ -121,6 +121,7 @@ nav ul li ul li{
     background-color: white;
     z-index: 1;
     position: relative;
+    margin-bottom: 40px;
 }
 .header_bottom div{
     width: 1024px;
