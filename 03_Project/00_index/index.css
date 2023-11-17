@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+    font-family: 'CookieRun';
+}
+main{
+    width: 1024px;
+    margin: auto;;
+}
+h3{
+    font-size: 30px;
+    margin: 15px 0;
+    margin-top: 40px;
+}
+a{
+    text-decoration: none; color: inherit;
+}
+body{height: 3000px;}
+#nav_bg{
+    height: 300px; width: 100%;
+    z-index: 2;
+    position: fixed;
+    top: 75px;
+
+}
+header{
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 375px;
+    overflow: hidden;
+}
+.header_top{
+    width: 1024px;
+    margin: auto;
+    position: relative;
+}
+h1{
+    text-indent: -9999px;
+}
+.header_logo{
+    width: 130px;
+    display: flex;
+    position: absolute;
+    align-items: center;
+    height: 75px;
+}
+.header_top img{
+    width: 100%;
+}
+nav{
+    background-color: #2b2b3750;
+    height: 75px;
+    width: 100vw;
+    position: fixed;
+    z-index: 2;
+    /* left: 50%;transform: translateX(-50%); */
+}
+nav>div>ul{
+    height: 75px;
+    align-items: center;
+    list-style: none;
+    display: flex;
+    color: aliceblue;
+    font-size: 22px;
+    margin-left: 150px;
+    padding: 0;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+}
+nav ul li ul{
+    list-style: none;
+    padding: 0;
+    position: absolute;
+    color: whitesmoke;
+    margin: 0;
+    font-size: 1rem;
+    top: 100%;
+    /* display: none; */
+}
+nav ul li ul li{
+    line-height: 3rem;
+    z-index: 5;
+}
+.sub_li{
+    visibility : hidden;
+}
+.header_cookie{
+    height: 300px;
+    position: absolute;
+    left: calc((100vw - 1024px)/2 + 700px);
+    top: 150px;
+    transform: rotateY(180deg);
+}
+.header_cookie>img{
+    height: 100%;
+}
+.header_title{
+    position: absolute;
+    top: 270px;
+    left: calc((100vw - 1024px)/2 + 100px);
+    color: white;
+    display: flex;
+    font-size: 2rem;
+    width: 400px;
+    text-shadow:2px 2px 2px #000;
+}
+.header_title>div{
+    width: 60px;height: 60px;
+    display: flex; justify-content: center; align-items: center;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+.header_title>span{
+    line-height: 60px;
+    margin-left: 20px;
+    font-size: 3rem;
+
+}
+.header_bottom{
+    height: 80px;
+    border-bottom: 1px solid #E3E3E3;
+    background-color: white;
+    z-index: 1;
+    position: relative;
+}
+.header_bottom div{
+    width: 1024px;
+    margin: auto;
+    height: 100%;
+}
+.header_bottom ul{
+    display: flex;
+    list-style: none;
+    height: 100%;
+    font-size: 22px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+/* ======================header====================== */
