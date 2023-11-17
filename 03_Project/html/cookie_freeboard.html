@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/cookie_freeboard.css">
+    <!-- <script defer src="../javascript/cookie-freeboard.js"></script> -->
 </head>
 <body>
-    <main>
+    <main id="main">
         <div class="notice_option">
             <h3>자유 게시판</h3>
             <div class="notice_option_right">
@@ -25,109 +26,125 @@
           <a href="#">좋아요</a>
         </div>
 
-        <div class="list_detail">
-          <div class="list_notice">
-            <div class="notice_header">
-              <span class="notice"></span>
-            </div>
-            <div class="notice_subject">알려진 이슈를 알려드립니다.</div>
-            <div class="notice_date">2023.11.16</div>
 
-            <div class="notice_header">
-              <span class="notice"></span>
-            </div>
-            <div class="notice_subject">알려진 이슈를 알려드립니다.</div>
-            <div class="notice_date">2023.11.16</div>
+        <a href="#" class="list_notice">
+          <div class="notice_header">
+            <span class="notice"></span>
           </div>
-
-
-
-          <div class="list_freeboard">
-            <a href="#" class="freeboard_subject">스토브 인증기 왜이럼?</a>
-            <a href="#" class="userInfo">그래도이쁨</a>
-            <a href="#" class="heart">0</a>
-            <a href="#" class="read">57</a>
-            <a href="#" class="freeboard_date">1시간 전</a> 
-
-            <a href="#" class="freeboard_subject">스토브 인증기 왜이럼?</a>
-            <a href="#" class="userInfo">그래도이쁨</a>
-            <a href="#" class="heart">0</a>
-            <a href="#" class="read">57</a>
-            <a href="#" class="freeboard_date">1시간 전</a> 
-
-            <a href="#" class="freeboard_subject">스토브 인증기 왜이럼?</a>
-            <a href="#" class="userInfo">그래도이쁨</a>
-            <a href="#" class="heart">0</a>
-            <a href="#" class="read">57</a>
-            <a href="#" class="freeboard_date">1시간 전</a> 
-
-            <a href="#" class="freeboard_subject">스토브 인증기 왜이럼?</a>
-            <a href="#" class="userInfo">그래도이쁨</a>
-            <a href="#" class="heart">0</a>
-            <a href="#" class="read">57</a>
-            <a href="#" class="freeboard_date">1시간 전</a> 
-
-            <a href="#" class="freeboard_subject">스토브 인증기 왜이럼?</a>
-            <a href="#" class="userInfo">그래도이쁨</a>
-            <a href="#" class="heart">0</a>
-            <a href="#" class="read">57</a>
-            <a href="#" class="freeboard_date">1시간 전</a> 
-
-            <a href="#" class="freeboard_subject">스토브 인증기 왜이럼?</a>
-            <a href="#" class="userInfo">그래도이쁨</a>
-            <a href="#" class="heart">0</a>
-            <a href="#" class="read">57</a>
-            <a href="#" class="freeboard_date">1시간 전</a> 
-
-            <a href="#" class="freeboard_subject">스토브 인증기 왜이럼?</a>
-            <a href="#" class="userInfo">그래도이쁨</a>
-            <a href="#" class="heart">0</a>
-            <a href="#" class="read">57</a>
-            <a href="#" class="freeboard_date">1시간 전</a> 
-
-            <a href="#" class="freeboard_subject">스토브 인증기 왜이럼?</a>
-            <a href="#" class="userInfo">그래도이쁨</a>
-            <a href="#" class="heart">0</a>
-            <a href="#" class="read">57</a>
-            <a href="#" class="freeboard_date">1시간 전</a> 
-
-            <a href="#" class="freeboard_subject">스토브 인증기 왜이럼?</a>
-            <a href="#" class="userInfo">그래도이쁨</a>
-            <a href="#" class="heart">0</a>
-            <a href="#" class="read">57</a>
-            <a href="#" class="freeboard_date">1시간 전</a> 
-
-            <a href="#" class="freeboard_subject">스토브 인증기 왜이럼?</a>
-            <a href="#" class="userInfo">그래도이쁨</a>
-            <a href="#" class="heart">0</a>
-            <a href="#" class="read">57</a>
-            <a href="#" class="freeboard_date">1시간 전</a> 
-
-            <a href="#" class="freeboard_subject">스토브 인증기 왜이럼?</a>
-            <a href="#" class="userInfo">그래도이쁨</a>
-            <a href="#" class="heart">0</a>
-            <a href="#" class="read">57</a>
-            <a href="#" class="freeboard_date">1시간 전</a> 
-            
-            <a href="#" class="freeboard_subject">스토브 인증기 왜이럼?</a>
-            <a href="#" class="userInfo">그래도이쁨</a>
-            <a href="#" class="heart">0</a>
-            <a href="#" class="read">57</a>
-            <a href="#" class="freeboard_date">1시간 전</a> 
-
-            <a href="#" class="freeboard_subject">스토브 인증기 왜이럼?</a>
-            <a href="#" class="userInfo">그래도이쁨</a>
-            <a href="#" class="heart">0</a>
-            <a href="#" class="read">57</a>
-            <a href="#" class="freeboard_date">1시간 전</a> 
-
-            <a href="#" class="freeboard_subject">스토브 인증기 왜이럼?</a>
-            <a href="#" class="userInfo">그래도이쁨</a>
-            <a href="#" class="heart">0</a>
-            <a href="#" class="read">57</a>
-            <a href="#" class="freeboard_date">1시간 전</a> 
+          <div class="notice_subject">알려진 이슈를 알려드립니다.</div>
+          <div class="notice_date">2023.11.16</div>
+        </a>
+        <a href="#" class="list_notice">
+          <div class="notice_header">
+            <span class="notice"></span>
           </div>
+          <div class="notice_subject">알려진 이슈를 알려드립니다.</div>
+          <div class="notice_date">2023.11.16</div>
+        </a>
 
+
+        <a href="#" class="list_freeboard">
+          <div href="#" class="freeboard_subject">스토브 인증기 왜이럼?</div>
+          <div href="#" class="userInfo">그래도이쁨</div>
+          <div href="#" class="heart">0</div>
+          <div href="#" class="read">57</div>
+          <div href="#" class="freeboard_date">1시간 전</div> 
+        </a>
+        <a href="#" class="list_freeboard">
+          <div href="#" class="freeboard_subject">스토브 인증기 왜이럼?</div>
+          <div href="#" class="userInfo">그래도이쁨</div>
+          <div href="#" class="heart">0</div>
+          <div href="#" class="read">57</div>
+          <div href="#" class="freeboard_date">1시간 전</div> 
+        </a>
+        <a href="#" class="list_freeboard">
+          <div href="#" class="freeboard_subject">스토브 인증기 왜이럼?</div>
+          <div href="#" class="userInfo">그래도이쁨</div>
+          <div href="#" class="heart">0</div>
+          <div href="#" class="read">57</div>
+          <div href="#" class="freeboard_date">1시간 전</div> 
+        </a>
+        <a href="#" class="list_freeboard">
+          <div href="#" class="freeboard_subject">스토브 인증기 왜이럼?</div>
+          <div href="#" class="userInfo">그래도이쁨</div>
+          <div href="#" class="heart">0</div>
+          <div href="#" class="read">57</div>
+          <div href="#" class="freeboard_date">1시간 전</div> 
+        </a>
+        <a href="#" class="list_freeboard">
+          <div href="#" class="freeboard_subject">스토브 인증기 왜이럼?</div>
+          <div href="#" class="userInfo">그래도이쁨</div>
+          <div href="#" class="heart">0</div>
+          <div href="#" class="read">57</div>
+          <div href="#" class="freeboard_date">1시간 전</div> 
+        </a>
+        <a href="#" class="list_freeboard">
+          <div href="#" class="freeboard_subject">스토브 인증기 왜이럼?</div>
+          <div href="#" class="userInfo">그래도이쁨</div>
+          <div href="#" class="heart">0</div>
+          <div href="#" class="read">57</div>
+          <div href="#" class="freeboard_date">1시간 전</div> 
+        </a>
+        <a href="#" class="list_freeboard">
+          <div href="#" class="freeboard_subject">스토브 인증기 왜이럼?</div>
+          <div href="#" class="userInfo">그래도이쁨</div>
+          <div href="#" class="heart">0</div>
+          <div href="#" class="read">57</div>
+          <div href="#" class="freeboard_date">1시간 전</div> 
+        </a>
+        <a href="#" class="list_freeboard">
+          <div href="#" class="freeboard_subject">스토브 인증기 왜이럼?</div>
+          <div href="#" class="userInfo">그래도이쁨</div>
+          <div href="#" class="heart">0</div>
+          <div href="#" class="read">57</div>
+          <div href="#" class="freeboard_date">1시간 전</div> 
+        </a>
+        <a href="#" class="list_freeboard">
+          <div href="#" class="freeboard_subject">스토브 인증기 왜이럼?</div>
+          <div href="#" class="userInfo">그래도이쁨</div>
+          <div href="#" class="heart">0</div>
+          <div href="#" class="read">57</div>
+          <div href="#" class="freeboard_date">1시간 전</div> 
+        </a>
+        <a href="#" class="list_freeboard">
+          <div href="#" class="freeboard_subject">스토브 인증기 왜이럼?</div>
+          <div href="#" class="userInfo">그래도이쁨</div>
+          <div href="#" class="heart">0</div>
+          <div href="#" class="read">57</div>
+          <div href="#" class="freeboard_date">1시간 전</div> 
+        </a>
+        <a href="#" class="list_freeboard">
+          <div href="#" class="freeboard_subject">스토브 인증기 왜이럼?</div>
+          <div href="#" class="userInfo">그래도이쁨</div>
+          <div href="#" class="heart">0</div>
+          <div href="#" class="read">57</div>
+          <div href="#" class="freeboard_date">1시간 전</div> 
+        </a>
+        <a href="#" class="list_freeboard">
+          <div href="#" class="freeboard_subject">스토브 인증기 왜이럼?</div>
+          <div href="#" class="userInfo">그래도이쁨</div>
+          <div href="#" class="heart">0</div>
+          <div href="#" class="read">57</div>
+          <div href="#" class="freeboard_date">1시간 전</div> 
+        </a>
+        <a href="#" class="list_freeboard">
+          <div href="#" class="freeboard_subject">스토브 인증기 왜이럼?</div>
+          <div href="#" class="userInfo">그래도이쁨</div>
+          <div href="#" class="heart">0</div>
+          <div href="#" class="read">57</div>
+          <div href="#" class="freeboard_date">1시간 전</div> 
+        </a>
+        <a href="#" class="list_freeboard">
+          <div href="#" class="freeboard_subject">스토브 인증기 왜이럼?</div>
+          <div href="#" class="userInfo">그래도이쁨</div>
+          <div href="#" class="heart">0</div>
+          <div href="#" class="read">57</div>
+          <div href="#" class="freeboard_date">1시간 전</div> 
+        </a>
+
+
+        <div class="footer">
+          <div class="page"></div>
         </div>
     </main>
 
