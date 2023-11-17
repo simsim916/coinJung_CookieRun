@@ -3,7 +3,11 @@
 let nav = document.querySelector("nav");
 
 console.log(nav);
-nav.style.backgroundColor="##2b2b37ff";
-// if (parseInt(window.scrollY)) {
-//     nav[0].style.backgroundColor="#000000";
-// }
+console.log(parseInt(window.scrollY));
+window.addEventListener('scroll',()=>{
+    if (parseInt(window.scrollY)) {
+        nav.style.backgroundColor="#2b2b37ff";
+    } else {
+        nav.style.backgroundColor="#2b2b3750";
+    }
+})
