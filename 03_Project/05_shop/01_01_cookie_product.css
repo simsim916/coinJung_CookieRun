@@ -72,7 +72,7 @@
     margin: auto;
     position: absolute;
     left: calc((100% - 430px)/2);
-    background-color: lightcyan;
+    /* background-color: lightcyan; */
 }
 .item_rightbox_info{
     width: 430px;
@@ -103,7 +103,7 @@
 }
 .item_rightbox_point_price_w{
     font-size: 0.8rem;
-    background-color: darkturquoise;
+    /* background-color: darkturquoise; */
     height: calc(100% - 113px);
     /* text-transform: translate(0, 50%); */
 }
@@ -138,10 +138,11 @@
     height:42px;
     width: 430px;
     margin-top: 30px;
-    background-color: aquamarine;
+    background-color: #192346;
     line-height: 42px;
     padding: 0px 16px;
     box-sizing: border-box;
+    color: white;
 }
 .item_rightbox_point_card{
     font-size: 0.9rem;
@@ -189,4 +190,45 @@
     border-top: 1px solid rgba(0,0,0,0.3);
     border-bottom: 1px solid rgba(0,0,0,0.3);
 }
+.item_rightbox_point_decision_btn{
+    display:grid;
+    height: 104px; width: 100%;
+    grid-template: repeat(2,1fr) / repeat(3,1fr);
+    gap: 5px;
+    text-align: center;
+    margin: 16px 0px;
+}
 
+.item_rightbox_point_decision_check{
+    display: flex;
+    position: relative;
+    margin: 16px 0px;
+    /* text-align: center; */
+    align-items: center;
+}
+.item_rightbox_point_decision_check>div:nth-of-type(1){
+    text-align: left;
+}
+.item_rightbox_point_decision_check>div:nth-of-type(2){
+    text-align: right;
+    position: absolute;
+    right: 0;
+}
+.item_rightbox_point_decision_check>div:nth-of-type(2)>span:nth-of-type(2){
+    font-size: 1.4rem;
+    color:#F79A49;
+}
+.item_rightbox_point_decision_btn>div {
+    height: 50px;
+    width: 100%;
+    line-height: 50px;
+    border-radius: 10px;
+}
+.btn_1{
+    grid-column: 1 / -1 ;
+    background-color: #00DE5A;
+}
+
+.btn_2, .btn_3, .btn_4 {
+    border: 1px solid rgba(0,0,0,0.2);
+}
