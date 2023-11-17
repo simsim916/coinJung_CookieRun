@@ -134,6 +134,8 @@ main{
     width: 1024px;
     height: 500px;
     margin: auto;
+
+
 }
 .notice_option{
     height: 100px;
@@ -173,16 +175,23 @@ main{
 
     display: grid;
 
-    grid-template: repeat(2, 70px) / .5fr 5fr 1fr;
+    grid-template: 70px / .5fr 5fr 1fr;
 
-    background-color: rgb(255, 252, 222);
+    background-color: #F9F9F9;
+    border-top: 1px solid #e0d4d4;
+    border-bottom: 1px solid #e0d4d4;
+
+    text-decoration: none;
+    color: black;
 }
 
 .list_freeboard{
 
     display: grid;
 
-    grid-template: repeat(14, 70px) / 5fr 1fr .5fr .5fr 1fr;
+    grid-template: 70px / 5fr 1fr .5fr .5fr 1fr;
+    
+    text-decoration: none;
 }
 
 
@@ -194,6 +203,8 @@ main{
 
     justify-content: center;
     align-items: center;
+
+
 }
 
 .notice::after{
@@ -208,12 +219,15 @@ main{
     border: 1px solid;
     border-radius: 20px;
 }
+
 .notice_header{
     display: flex;
     justify-content: center;
     align-items: center;
 
     padding: 10px 0px 10px 10px;
+
+    border-top: 1px solid #e0d4d4;
 }
 
 .notice_subject{
@@ -222,6 +236,8 @@ main{
     align-items: center;
 
     padding: 3px 10px 7px 30px;
+
+    border-top: 1px solid #e0d4d4;
 }
 
 .notice_date{
@@ -230,9 +246,9 @@ main{
     align-items: center;
 
     padding: 10px 0px 10px 10px;
+
+    border-top: 1px solid #e0d4d4;
 }
-
-
 
 /*==============================*/
 
@@ -245,7 +261,9 @@ main{
     text-decoration: none;
     color: black;
 
-    padding: 3px 10px 7px 30px
+    padding: 3px 10px 7px 30px;
+
+    border-bottom: 1px solid #e0d4d4;
 }
 .userInfo, .heart, .read, .freeboard_date{
     display: flex;
@@ -256,5 +274,34 @@ main{
     text-decoration: none;
     color: black;
 
-    padding: 3px 10px 7px 30px
+    padding: 3px 10px 7px 30px;
+
+    border-bottom: 1px solid #e0d4d4;
+}
+
+.list_notice:hover{
+    background-color: #F9F9F9;
+}
+.list_freeboard:hover{
+    background-color: #F9F9F9;
+}
+
+.footer{
+    width: 750px;
+    height: 70px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+
+}
+
+.page{
+    width: 750px;
+    height: 70px;
+
+    background-color: aqua;
+    
 }
