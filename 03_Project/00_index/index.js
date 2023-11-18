@@ -6,15 +6,26 @@ let navBg = document.querySelector("#nav_bg");
 let headerCookie = document.querySelector("#header_cookie");
 let header = document.querySelector("header");
 const headerImg = [
-    '../img/bg1.webp',
-    '../img/bg2.webp',
-    '../img/bg3.png',
-    '../img/bg4.webp',
-    '../img/bg5.webp',
-    '../img/bg6.webp',
-    '../img/bg7.png',
-    '../img/bg8.png',
-    '../img/bg9.png',
+    'https://www.devsisters.com/_next/image?url=%2Fimage%2Fhome%2Fourgames-kingdom-bg.png&w=3840&q=75',
+    'https://www.devsisters.com/_next/image?url=%2Fimage%2Fgames%2Fgames-cookierun-about-bg-1.png&w=1920&q=75',
+    'https://www.cookierun-kingdom.com/static/keyVisualBackground-719081def4e815414aceaa9537015f67.png',
+    'https://www.devsisters.com/_next/image?url=https%3A%2F%2Fdevsweb-devhome-prod-files.s3.ap-northeast-1.amazonaws.com%2Fdata%2Fstory%2F16%2F6400371de87f6.png&w=1920&q=75',
+    'https://www.devsisters.com/_next/image?url=https%3A%2F%2Fdevsweb-devhome-prod-files.s3.ap-northeast-1.amazonaws.com%2Fdata%2Fnews%2F555%2F652626cc7a560.jpg&w=750&q=75',
+    'https://www.devsisters.com/_next/image?url=https%3A%2F%2Fdevsweb-devhome-prod-files.s3.ap-northeast-1.amazonaws.com%2Fdata%2Fnews%2F558%2F653b51736fb6b.png&w=750&q=75',
+    'https://www.devsisters.com/_next/image?url=https%3A%2F%2Fdevsweb-devhome-prod-files.s3.ap-northeast-1.amazonaws.com%2Fdata%2Fnews%2F557%2F6539c7485230d.jpg&w=750&q=75',
+    'https://www.devsisters.com/_next/image?url=%2Fimage%2Fhome%2Fourgames-ovenbreak-bg.png&w=3840&q=75',
+    'https://www.devsisters.com/_next/image?url=%2Fimage%2Fhome%2Fourgames-braverse-bg.png&w=3840&q=75'
+]
+const headerImgPosition = [
+    'center -150px',
+    'center -160px;',
+    'center -250px',
+    'center -250px',
+    'center -250px',
+    'center 0px',
+    'center -180px',
+    'center -100px',
+    'center -150px',
 ]
 const cookie = [
     "https://i.pinimg.com/originals/5e/a7/82/5ea782dee1243d13f4fcdedf96cb4c4d.gif",
@@ -30,7 +41,8 @@ const cookie = [
 
 let random = Math.floor(Math.random()*headerImg.length);
 let random2 = Math.floor(Math.random()*headerImg.length);
-header.style.backgroundImage=`linear-gradient( #2b2b3720, #2b2b3720), url(${headerImg[random]})`;
+header.style.backgroundPosition=`${headerImgPosition[random]}`;
+header.style.backgroundImage=`url(${headerImg[random]})`;
 headerCookie.setAttribute('src',`${cookie[random2]}`);
 console.log(random2);
 
@@ -42,12 +54,12 @@ window.addEventListener('scroll',()=>{
     }
 });
 nav.addEventListener('mouseenter',()=>{
-    navBg.style.visibility="initial";
+    navBg.style.backgroundColor="#2e2e37ff";
     nav.style.backgroundColor="#2b2b37ff";
     for (let a of subLi) a.style.visibility="initial";
 });
 navBg.addEventListener('mouseout',()=>{
-    navBg.style.visibility="hidden";
+    navBg.style.backgroundColor="initial";
     for (let a of subLi) a.style.visibility="hidden";
     if (parseInt(window.scrollY)) {
         nav.style.backgroundColor="#2b2b37ff";
