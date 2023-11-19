@@ -19,9 +19,11 @@ a{
     z-index: 2;
     position: fixed;
     top: 75px;
-
+    visibility: hidden;
+    background-color: #2e2e37ff;
 }
 header{
+    background-position: bottom ;
     background-repeat: no-repeat;
     background-size: cover;
     height: 375px;
