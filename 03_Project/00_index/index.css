@@ -14,15 +14,16 @@ h3{
 a{
     text-decoration: none; color: inherit;
 }
-body{height: 3000px;}
 #nav_bg{
     height: 300px; width: 100%;
     z-index: 2;
     position: fixed;
     top: 75px;
-
+    visibility: hidden;
+    background-color: #2e2e37ff;
 }
 header{
+    background-position: bottom ;
     background-repeat: no-repeat;
     background-size: cover;
     height: 375px;
@@ -107,7 +108,7 @@ nav ul li ul li{
 .header_title>div{
     width: 60px;height: 60px;
     display: flex; justify-content: center; align-items: center;
-    border: 1px solid white;
+    border: 3px solid white;
     border-radius: 50%;
 }
 .header_title>span{
@@ -118,10 +119,11 @@ nav ul li ul li{
 }
 .header_bottom{
     height: 80px;
-    border-bottom: 1px solid #E3E3E3;
+    border-bottom: 2px solid #E3E3E3;
     background-color: white;
     z-index: 1;
     position: relative;
+    margin-bottom: 40px;
 }
 .header_bottom div{
     width: 1024px;

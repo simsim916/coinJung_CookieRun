@@ -11,10 +11,12 @@ h3{
     margin: 15px 0;
     margin-top: 40px;
 }
+
 a{
     text-decoration: none; color: inherit;
 }
-body{height: 3000px;}
+
+
 header{
     background-image: linear-gradient( #2b2b3720, #2b2b3720) ,url(https://www.devsisters.com/_next/image?url=%2Fimage%2Fhome%2Fourgames-kingdom-bg.png&w=3840&q=75);
     background-position: bottom ;
@@ -167,7 +169,13 @@ main{
     margin-bottom: 5px;
 
     text-decoration: none;
+}
 
+.list_sort>a{
+    display: inline-block;
+
+    width: 70px;
+    height: 30px;
 }
 
 .list_notice{
@@ -264,6 +272,10 @@ main{
 
     border-bottom: 1px solid #e0d4d4;
 }
+.freeboard_subject:hover{
+    text-decoration: underline;
+}
+
 .userInfo, .heart, .read, .freeboard_date{
     display: flex;
     justify-content: center;
@@ -288,12 +300,6 @@ main{
 .footer{
     height: 70px;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.footer{
     display: flex;
     flex-direction: column;
     align-items: flex-end;
