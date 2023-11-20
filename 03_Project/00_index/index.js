@@ -30,7 +30,7 @@ const cookie = [
 
 let random = Math.floor(Math.random()*headerImg.length);
 let random2 = Math.floor(Math.random()*headerImg.length);
-header.style.backgroundImage=`linear-gradient( #2b2b3720, #2b2b3720), url(${headerImg[random]})`;
+header.style.backgroundImage=`url(${headerImg[random]})`;
 headerCookie.setAttribute('src',`${cookie[random2]}`);
 
 window.addEventListener('scroll',()=>{
