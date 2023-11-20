@@ -21,7 +21,7 @@ main{
     position: relative;
 }
 
-.cookie_img{
+.main_info_pic img{
     position: absolute;
     top: 15%;
     left: 25%;

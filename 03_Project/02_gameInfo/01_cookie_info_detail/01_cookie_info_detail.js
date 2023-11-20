@@ -3,7 +3,7 @@
 let cookieAR = [
     {
         name: '모짜렐라맛 쿠키',
-        img: 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/54e1ec2f-823d-4945-f54c-c2c31236ed00/format=webp',
+        img: "https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/54e1ec2f-823d-4945-f54c-c2c31236ed00/format=webp",
         type: '에픽',
         bgimg: 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/437c8f58-6fc6-4b96-9bf0-681ed20aa300/public',
         skill: {
@@ -57,3 +57,20 @@ let cookieAR = [
         }
     }
 ]
+let typeImg = {
+    에픽 : '',
+    레전더리 : '',
+}
+
+
+let mainInfoContainer = document.getElementsByClassName('main_info_container');
+let mainInfoPic = mainInfoContainer[0].getElementsByClassName('main_info_pic');
+let gridBox1 = mainInfoContainer[0].getElementsByClassName('grid_box1');
+
+
+console.log(gridBox1[0]);
+mainInfoPic[0].children[0].src=`${cookieAR[0].img}`;
+// switch(cookieAR[0].type){
+//     case '에픽' :
+
+// }
