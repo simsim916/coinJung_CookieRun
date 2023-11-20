@@ -16,7 +16,7 @@ a{
     height: 1400px;
     width: 100%;
     display: grid;
-    grid-template: repeat(5, 430px) / repeat(2, calc((100% - 30px)/2));
+    grid-template: repeat(5, 330px) / repeat(2, calc((100% - 30px)/2));
     gap: 30px;
 }
 .main_media_box{
