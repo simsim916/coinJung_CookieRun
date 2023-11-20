@@ -25,13 +25,14 @@ h3 {
     display: flex;
     position: absolute;
     right: 0;
+    bottom: 0;
 }
 
 .main_head>div>p {
-    padding: 10px;
-    font-size: 13px;
+    font-size: 15px;
     font-weight: bolder;
     opacity: 0.7;
+    width: 100px;
 }
 
 .main_option>ul {
