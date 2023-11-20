@@ -110,9 +110,14 @@ let itemBox = document.getElementsByClassName('item');
         let img = itemBox[i].getElementsByTagName('img');
         let itemPrice = itemBox[i].getElementsByClassName('item_price');
         let itemTitle = itemBox[i].getElementsByClassName('item_title');
+        let itemIntro = itemBox[i].getElementsByClassName('item_intro');
+        // let itemTotal = itemBox[i].getElementsByClassName('img')
         img[0].src=productAR[i].img[0];
-        itemPrice[0].innerText = `${productAR[i].price} 원`
-        itemTitle[0].innerText = `${productAR[i].title}`
+        itemPrice[0].innerText = `${productAR[i].price} 원`;
+        itemTitle[0].innerText = `${productAR[i].title}`;
+        itemIntro[0].innerText = `${productAR[i].intro}`;
+        // itemTotal[0].innerText = `상품 (총${productAR[i].img}개)`
+        
     }
 }
 // 옵션 박스 열기 / 닫기
@@ -129,15 +134,50 @@ let itemBox = document.getElementsByClassName('item');
 // 옵션 박스 옵션 선택 색 변경
 {
     optionBox[0].addEventListener('click',(event)=>{
-        let eventOJ = event.target.closest('li');
-        console.log(event.target)
-
-        if(optionBox[0].contains(eventOJ)){
-            if(event.target.style.backgroundColor == "orange"){
-                event.target.style.backgroundColor="rgb(250, 248, 248)"
+        let eventLi = event.target;
+        if (eventLi.tagName == 'LI'){
+            if (eventLi.style.backgroundColor == "orange"){
+                eventLi.style.backgroundColor = "rgb(250, 248, 248)";
             } else {
-                event.target.style.backgroundColor="orange"
+                eventLi.style.backgroundColor = "orange";
             }
         }
     })
+}
+// {
+//     optionBox[0].addEventListener('click',(event)=>{
+//         let eventOJ = event.target.closest('li');
+
+//         if(optionBox[0].contains(eventOJ)){
+//             if(event.target.style.backgroundColor == "orange"){
+//                 event.target.style.backgroundColor="rgb(250, 248, 248)"
+//             } else {
+//                 event.target.style.backgroundColor="orange"
+//             }
+//         }
+//     })
+// }
+
+let lastBold = listOption[0].children[0].children[0];
+//순서 박스 옵션 선택 시 글자 진하게 변경
+{
+    listOption[0].addEventListener('click', (event) => {
+        let listOption = event.target;
+        lastBold.style.fontWeight = 'lighter';
+        if (listOption.tagName == 'LI'){
+            if (listOption.style.fontWeight == "bold") {
+                listOption.style.fontWeight = 'lighter';
+            } else {
+                listOption.style.fontWeight = "bold";
+                listOption.style.opacity = "initial";
+            }
+        }
+        lastBold = listOption;
+    })
+    
+}
+
+{
+    itemBox[0] = length;
+    mainItem.innerText = `상품(총 ${}개)`;
 }
