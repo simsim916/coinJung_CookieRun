@@ -22,15 +22,21 @@ a{
     box-sizing: border-box;
     margin: auto;
     position: relative;
+    display: flex;
 }
-
+.item_leftbox{
+    width: 50%; height: 100%;
+    position: relative;
+}
 .item_img{
-    width: 508px;
-    height: 508px;
-    position: absolute;
-    background: url(https://shop-phinf.pstatic.net/20230712_149/1689141723147orsKB_JPEG/3343809127994028_1734275766.jpg?type=m510) center/cover;
+    width: 100%;
+    margin: auto;
 }
-.item_imglist{
+.item_img img{
+    width: 95%;
+    position: absolute; top: 15px; left:50%; transform: translateX(-50%);
+}
+.item_imgBtn{
     width: 510px;
     height:70px;
     position: absolute;
@@ -39,23 +45,11 @@ a{
     justify-content: center;
     align-items: center;
 }
-.item_imglist_another{
+.item_imgBtn img{
     width: 40px;
     height: 40px;
     background-color: red;
-    margin: 0px 2px;
-}
-.n1{
-    background: url(https://shop-phinf.pstatic.net/20230712_149/1689141723147orsKB_JPEG/3343809127994028_1734275766.jpg?type=o1000) center/cover;
-}
-.n2{
-    background: url(https://shop-phinf.pstatic.net/20230712_127/1689141731171yd5hn_JPEG/2472532521839555_309567386.jpg?type=o1000) center/cover;
-}
-.n3{
-    background: url(https://shop-phinf.pstatic.net/20230712_38/1689141735784FQWCz_JPEG/4922708694771776_396083406.jpg?type=f40);
-}
-.n4{
-    background: url(https://shop-phinf.pstatic.net/20230712_86/1689141740472nE1ue_JPEG/2472541823698659_1014661318.jpg?type=o1000) center/cover;
+    margin: 0px 5px;
 }
 .item_rightbox{
     width: 510px;
