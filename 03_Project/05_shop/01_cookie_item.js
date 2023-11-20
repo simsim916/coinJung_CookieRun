@@ -13,6 +13,7 @@ let productAR = [
         ],
         views: 0,
         sell : 0,
+        stock: 10
     },
     {
         update: '2023-11-20',
@@ -26,6 +27,7 @@ let productAR = [
         ],
         views: 0,
         sell : 0,
+        stock: 10
     },
     {
         update: '2023-11-20',
@@ -39,6 +41,7 @@ let productAR = [
         ],
         views: 0,
         sell : 0,
+        stock: 10
     },
     {
         update: '2023-11-20',
@@ -52,6 +55,7 @@ let productAR = [
         ],
         views: 0,
         sell : 0,
+        stock: 10
     },
     {
         update: '2023-11-20',
@@ -65,6 +69,7 @@ let productAR = [
         ],
         views: 0,
         sell : 0,
+        stock: 10
     },
     {
         update: '2023-11-20',
@@ -78,8 +83,61 @@ let productAR = [
         ],
         views: 0,
         sell : 0,
+        stock: 10
     },
 
 
 ];
 
+/*
+
+    <img
+            src="https://shop-phinf.pstatic.net/20231114_202/1699953403443Iz8WI_JPEG/52025790832298130_1281338351.jpg?type=f296_296"
+            alt="">
+    <p class="item_price">5,000원</p>
+    <p class="item_title">[쿠키런스토어]쿠키런 스키릇팩 피규어</p>
+    <p class="item_intro">** 1차 수량 품절로, 재입고 예정입니다. 재입고 예정일 : 11/17(금) ~ 20(월)</p>
+
+*/ 
+let optionBar = document.getElementsByClassName('main_option');
+let optionBox = document.getElementsByClassName('option_box');
+let itemBox = document.getElementsByClassName('item');
+
+// 아이템 리스트 자동으로 만들기
+{
+
+    for (let i = 0 ; i < productAR.length ; i++) {
+        let img = itemBox[i].getElementsByTagName('img');
+        let itemPrice = itemBox[i].getElementsByClassName('item_price');
+        let itemTitle = itemBox[i].getElementsByClassName('item_title');
+        img[0].src=productAR[i].img[0];
+        itemPrice[0].innerText = `${productAR[i].price} 원`
+        itemTitle[0].innerText = `${productAR[i].title}`
+    }
+}
+// 옵션 박스 열기 / 닫기
+{
+    let optionClose = optionBox[0].getElementsByClassName('option_close');
+    optionBar[0].addEventListener('click',(event)=>{
+        if(event.target != optionClose[0]) {
+        optionBox[0].style.visibility="initial";
+        } else {
+            optionBox[0].style.visibility="hidden";
+        }
+    })
+}
+// 옵션 박스 옵션 선택 색 변경
+{
+    optionBox[0].addEventListener('click',(event)=>{
+        let eventOJ = event.target.closest('li');
+        console.log(event.target)
+
+        if(optionBox[0].contains(eventOJ)){
+            if(event.target.style.backgroundColor == "orange"){
+                event.target.style.backgroundColor="rgb(250, 248, 248)"
+            } else {
+                event.target.style.backgroundColor="orange"
+            }
+        }
+    })
+}
