@@ -5,6 +5,7 @@ let cookieAR = [
         name: '모짜렐라맛 쿠키',
         img: "https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/54e1ec2f-823d-4945-f54c-c2c31236ed00/format=webp",
         type: '에픽',
+        info: '말랑말랑한 치즈 조각에 앉아, 공중에 가득 떠 있는 황금창을 통해 골드치즈 왕국 곳곳을 지켜보는 쿠키가 있으니.바로 관제실의 주인 모짜렐라맛 쿠키다! 왕국의 골칫거리를 해결하라는 골드치즈 쿠키의 명을 받들어 여러 문제를 처리해 왔다는데? 수로 속에 빠진 치즈볼새의 반지를 찾는 일부터, 황금도시로 침입한 몬스터 추적까지! 그 어떤 사건사고도 금창 조작 한 번으로 간단히 해결해 낸다.',
         bgimg: 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/437c8f58-6fc6-4b96-9bf0-681ed20aa300/public',
         skill: {
             skillName: '몰캉몰캉 모짜렐라',
@@ -14,8 +15,9 @@ let cookieAR = [
     },
     {
         name: '올리브맛 쿠키',
-        img: 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/88e3d14e-88db-4777-ed92-684191321700/public',
+        img: 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/1bbb1f94-16ce-4ca6-0b53-508cc6b01c00/format=avif',
         type: '에픽',
+        info: '구불거리는 협곡, 빽빽한 나무로 들어찬 밀림, 치즈 가루가 먼지처럼 날리는 사막까지! 아직 세상에 드러나지 않은 장소를 찾아다니는 고고학자 올리브맛 쿠키! 지중해의 햇빛을 듬뿍 받은, 그 중에서도 반질거리고 동그랗게 여문 올리브만 넣어서인지 누구보다 똑부러진다. 놀라운 역사와 믿기 힘든 이야기를 간직하고 있는 고대 왕국들을 찾아내 돋보기로 세심하게 조사하고 기록하는 쿠키. 오래된 유적의 비밀이 풀릴 때면 너무 기쁜 나머지 올리브유를 흘리기도 한다는데... ',
         bgimg: 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/884611b2-fefd-4203-01f9-4650b6d24100/public',
         skill: {
             skillName: '박쥐 대소동',
@@ -27,6 +29,7 @@ let cookieAR = [
         name: '페투치니맛 쿠키',
         img: 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/d7a5b0e6-595a-401d-e4ef-efc19dd70e00/format=avif',
         type: '에픽',
+        info : '우우우... 모든 것이 현란하게 빛나는 골드치즈 왕국의 황금도시와 가장 어울리지 않는 존재, 미라 페투치니맛 쿠키! 이 쿠키는 번쩍이는 장신구나 재료를 올린 다른 쿠키들과 다르게 오래 묵은 파스타면을 칭칭 감고 있다. 하지만 황금을 좋아하는 걸 보면 확실히 골드치즈 왕국의 백성은 맞는 듯하다. 왜 자신만 미라인지, 여기가 어디인지 모르겠다는 얼굴로 뒤뚱대며 돌아다니는 걸 보면 왠지 모를 으스스함이 느껴진다나. 만약 황금도시를 걷다가 어둠 속을 홀로 걷고 있던 페투치니맛 쿠키를 만나면 생전 처음 경험하는 이상한 세계의 뒤편으로 빨려들어갈 수 있다고 하는데... ',
         bgimg: 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/d19fe6bc-0f5e-4561-f96c-102c5f5abe00/public',
         skill: {
             skillName: '불안정한 페투치니',
@@ -38,6 +41,7 @@ let cookieAR = [
         name: '뷔 쿠키',
         img: 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/1634d5a9-1679-41b0-fbc8-47274273de00/public',
         type: '스페셜',
+        info: '비둘기에게 밥주는 걸 좋아하고 꽃을 보면 꼭 챙겨가는 낭만쟁이, 뷔 쿠키! 잘생긴 외모에 풍성한 아래 속눈썹이 매력 포인트! 넘치는 끼와 감성적인 보이스로 방탄소년단 쿠키들의 무대를 더욱 풍부하게 만들어준다. 무대에 설 때마다 매번 다른 매력을 보여주는 것으로 유명한데, 어찌나 다양한 매력을 가지고 있는지 팬들 사이에서는 호랑이와 곰돌이 중 닮은 동물을 고르느라 애를 먹을 정도라고! 사교적인 성격 덕분에 누구와도 친해질 수 있다는 뷔 쿠키. 쿠키 왕국에 와서도 쿠키들과 소중한 추억을 하나하나 쌓아가는 것을 기대 중이라고 한다.',
         bgimg: 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/1634d5a9-1679-41b0-fbc8-47274273de00/public',
         skill: {
             skillName: '아미의 가호',
@@ -49,6 +53,7 @@ let cookieAR = [
         name: '샤이닝글리터맛 쿠키',
         img: 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/053b55cb-f072-4606-cc9b-0682c6109200/format=avif',
         type: '슈퍼에픽',
+        info: '아침에는 음악방송에서, 점심에는 사인 남긴 가게에서, 저녁에는 빌딩 광고판에서! 하루라도 샤이닝글리터맛 쿠키의 얼굴을 보지 않는 날은 없다! 중독적인 노래와 독보적인 퍼포먼스로 데뷔하자마자 단숨에 슈퍼스타가 된 쿠키. 팝스타로서 최고점에 오른 대스타 샤이닝글리터맛 쿠키의 다음 행보는... 바로 락스타를 향한 새로운 도전! 오랫동안 간직해온 락을 향한 열정에 자신만의 반짝임을 더해 선보이는 새로운 모습과 노래에 쿠키 세계는 또 한 번 열광할 수밖에! 화려한 팝스타가 락 스피릿을 이해할 리 없다고 비판하는 쿠키도 있지만, 어떤 모습으로든 언제나 반짝이는 샤이닝글리터맛 쿠키는 새로운 도전이 무섭지 않다. 진심어린 열정을 담는 것이 바로 락 스피릿이니까!',
         bgimg: 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/c20b5ac6-fcb1-4e60-a34f-d2e646694700/public',
         skill: {
             skillName: '내 무대에 집중해!',
@@ -57,19 +62,35 @@ let cookieAR = [
         }
     }
 ]
-let typeImg = {
-    에픽 : '',
-    레전더리 : '',
-}
+let typeImg = [
+    {
+    에픽 : 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/e6cc601e-19ee-421b-e936-9cdd20eaf100/public',
+    레전더리 : 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/fb2bbed1-186c-4edf-1741-7edb8cdf7100/public',
+    슈퍼에픽 : 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/ef97da70-b550-428a-c03c-ed4db59a9300/public',
+    스페셜 : 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/dc7567c4-7d16-4017-52c2-4586e7112500/public',
+    에이션트 : 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/b80b67b8-dc5c-49e3-07ca-f1673e459100/public',
+    드래곤 : 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/9ea3ad41-1df7-4b8e-0e52-3c1f9ac48400/public',
+    }
+]
 
+let cookieNum = 0;
 
 let mainInfoContainer = document.getElementsByClassName('main_info_container');
 let mainInfoPic = mainInfoContainer[0].getElementsByClassName('main_info_pic');
 let gridBox1 = mainInfoContainer[0].getElementsByClassName('grid_box1');
+let gridBox2 = mainInfoContainer[0].getElementsByClassName('grid_box2');
 
 
-console.log(gridBox1[0]);
-mainInfoPic[0].children[0].src=`${cookieAR[0].img}`;
+
+mainInfoPic[0].children[0].src=`${cookieAR[cookieNum].img}`;
+gridBox1[0].children[0].src=`${typeImg[cookieNum].에픽}`;
+gridBox2[0].innerText=`${cookieAR[cookieNum].name}`;
+mainInfoContainer[0].children[1].children[2].innerText=`${cookieAR[cookieNum].info}`;
+
+
+console.log(mainInfoContainer[0].children[1].children[2]);
+
+
 // switch(cookieAR[0].type){
 //     case '에픽' :
 
