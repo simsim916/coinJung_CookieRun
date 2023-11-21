@@ -1,0 +1,300 @@
+@import url('https://webfontworld.github.io/cookierun/CookieRun.css');
+
+*{
+    padding: 0;
+    margin: 0;
+    /* font-family: 'CookieRun'; */
+}
+
+a{
+    text-decoration: underline;
+}
+.whole{
+    left: 350px;
+    width : 1280px;
+    margin: auto;
+}
+.item{
+    width: 1020px;
+    height: 886px;
+    /* background-color: antiquewhite; */
+    border: 1px solid rgba(0,0,0,0.3);
+    box-sizing: border-box;
+    margin: auto;
+    position: relative;
+    display: flex;
+}
+.item_leftbox{
+    width: 50%; height: 100%;
+    position: relative;
+}
+.item_img{
+    width: 100%;
+    margin: auto;
+}
+.item_img img{
+    width: 95%;
+    position: absolute; top: 15px; left:50%; transform: translateX(-50%);
+}
+.item_imgBtn{
+    width: 510px;
+    height:70px;
+    position: absolute;
+    top: 510px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.item_imgBtn img{
+    width: 40px;
+    height: 40px;
+    background-color: red;
+    margin: 0px 5px;
+}
+.item_rightbox{
+    width: 510px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    padding: 30px 40px;
+    box-sizing: border-box;
+    border-left: 1px solid rgba(0,0,0,0.3);
+    display: block;
+}
+.item_rightbox_point{
+    width: 430px;
+    height: 250px;
+    border: 1px solid rgba(0,0,0,0.3);
+    box-sizing: border-box;
+    margin: auto;
+    position: absolute;
+    left: calc((100% - 430px)/2);
+}
+.item_rightbox_info{
+    width: 430px;
+    min-height: 71px;   
+    line-height: 53px;
+    margin: auto;
+}
+.item_rightbox_title{
+    font-size: 1.1rem;
+    font-weight: bold;
+    
+}
+.item_rightbox_point_title{
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    box-sizing: border-box;
+    line-height: 53px;
+    text-align: left;
+    font-weight: bold;
+    padding: 0px 16px;
+    
+}
+.item_rightbox_point_price{
+    width: 396px; 
+    margin: 16px;
+    position: relative;
+}
+.item_rightbox_info>div:nth-of-type(2){
+    font-size: 1.4rem;
+    color:#F79A49;
+    transform: translateX(80%);
+}
+.item_rightbox_point_price_w{
+    font-size: 0.8rem;
+}
+.item_rightbox_point_price_w_max{
+    font-weight: bold;
+    display: flex;
+    width: 30%;
+    justify-content: space-between;
+    text-wrap: nowrap;
+}
+.item_rightbox_point_price_w_basic{
+    margin-bottom: 10px;
+}
+.item_rightbox_point_price_tip{
+    height: 113px; 
+    width: 100%;
+    border: 1px solid rgba(0,0,0,0.1);
+    box-sizing: border-box;
+    font-size: 0.8rem;
+    display: flex;
+    padding : 13px 17px;
+    background-color: rgb(230, 225, 225);
+    
+}
+.item_rightbox_point_price_tip_left{
+    width: 50%;
+    height: 100%;
+    text-align: left;
+    display:grid;
+    opacity: 0.3;
+}
+.teim_rightbox_point_price_tip_left>div:first-of-type{
+    opacity: inherit;
+}
+.item_rightbox_point_price_tip_right{
+    text-align: right;
+    width: 50%;
+    height: 100%;
+    display: grid;
+    opacity: 0.3;
+}
+.item_rightbox_ads{
+    height:42px;
+    width: 430px;
+    margin-top: 40px;
+    background-color: #192346;
+    line-height: 42px;
+    padding: 0px 16px;
+    box-sizing: border-box;
+    color: white;
+    background: url(https://shop-phinf.pstatic.net/20231117_291/1700205634587ieS33_PNG/1100x12628pc29.png) no-repeat center/cover;
+}
+.item_rightbox_point_card{
+    font-size: 0.9rem;
+    padding: 16px 0px;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+}
+.review{
+    width: 1020px;
+    height: 288px;
+    margin: 16px auto;
+}
+.review_title{
+    display: flex;
+    position: relative;
+    line-height: 52px;
+}
+.review_title_full{
+    display: flex;
+    position: absolute;
+    right: 0;
+}
+.review_title_full>div{
+    width: 19px; height: 19px;
+    text-align: center;
+    font-size: 0.8rem;
+    text-wrap: nowrap;
+}
+.review_case{
+    width: 100%; height:calc(118px*2);
+    display: grid;
+    grid-template: repeat(2,1fr) / repeat(2,1fr);
+}
+.review_case>div{
+    width: 100%; height: 118px;
+    display: flex;
+    position: relative;
+    font-size: 0.9rem;
+    /* border: 1px solid; */
+}
+.review_case>div:nth-of-type(2n+1){
+    border-right: 1px solid rgba(0,0,0,0.3);
+}
+.review_case_imgs{
+    width: 80px; height: 80px;
+    background: url(https://phinf.pstatic.net/checkout.phinf/20230926_132/1695719203892BmFab_JPEG/1000165333.jpg?type=f300_300) no-repeat cover/center;
+    background-color: pink;
+    position: absolute;
+    right: 10px;
+}
+.best{
+    width: 1020px;
+    height:293px;
+    margin: auto;
+}
+.best>span{
+    background-color: #F79A49;
+}
+.best_items{
+    width: 100%;
+    height: 262px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+.best_items>div{
+    width: 188px;
+}
+.best_items>div>img{
+    width: 188px; height: 188px;
+}
+.best_items>div>div:first-of-type{
+    color: #444444;
+    font-size: 0.8rem;
+}
+.best_items>div>div:last-of-type{
+    margin: 5px;
+    font-size: 0.8rem;
+}
+.item_rightbox_point_transit{
+    font-size: 0.9rem;
+    padding: 16px 0px;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+}
+.item_rightbox_point_transit>p:nth-of-type(1)>span, .item_rightbox_point_transit>p:nth-of-type(3) a{
+    color:#F79A49;
+}
+.item_rightbox_point_transit>p:nth-of-type(2){
+    opacity: 0.5;
+}
+.item_rightbox_point_quantity{
+    text-align: center;
+    display: flex;
+    line-height: 34px;
+    box-sizing: border-box;
+    padding : 16px 0px;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+}
+.item_rightbox_point_quantity>span:first-of-type, .item_rightbox_point_quantity>span:last-of-type{
+    height: 34px; width: 34px;
+    background-color: lightgrey;
+    border: 1px solid rgba(0,0,0,0.3);
+}
+.item_rightbox_point_quantity>span:nth-last-of-type(2) {
+    width: 46px;
+    border-top: 1px solid rgba(0,0,0,0.3);
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+}
+.item_rightbox_point_decision_btn{
+    display:grid;
+    height: 104px; width: 100%;
+    grid-template: repeat(2,1fr) / repeat(3,1fr);
+    gap: 5px;
+    text-align: center;
+    margin: 16px 0px;
+}
+
+.item_rightbox_point_decision_check{
+    display: flex;
+    position: relative;
+    margin: 16px 0px;
+    align-items: center;
+}
+.item_rightbox_point_decision_check>div:nth-of-type(1){
+    text-align: left;
+}
+.item_rightbox_point_decision_check>div:nth-of-type(2){
+    text-align: right;
+    position: absolute;
+    right: 0;
+}
+.item_rightbox_point_decision_check>div:nth-of-type(2)>span:nth-of-type(2){
+    font-size: 1.4rem;
+    color:#F79A49;
+}
+.item_rightbox_point_decision_btn>div {
+    height: 50px;
+    width: 100%;
+    line-height: 50px;
+    border-radius: 10px;
+}
+.btn_1{
+    grid-column: 1 / -1 ;
+    background-color: #00DE5A;
+}
+
+.btn_2, .btn_3, .btn_4 {
+    border: 1px solid rgba(0,0,0,0.2);
+}
