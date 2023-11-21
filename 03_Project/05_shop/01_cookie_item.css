@@ -20,7 +20,9 @@ h3 {
     position: relative;
     margin-bottom: 20px;
 }
-
+.main_head span{
+    color: red;
+}
 .main_head>div {
     display: flex;
     position: absolute;
