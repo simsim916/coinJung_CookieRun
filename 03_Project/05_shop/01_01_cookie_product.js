@@ -47,7 +47,7 @@ let productAR = [
         update: '2023-11-20',
         title: '[쿠키런스토어]브레이브 어드벤쳐 용감한쿠키',
         intro: '모험을 떠나는 용감한 쿠키가 귀여운 인형 키링으로!',
-        price: '2,000',
+        price: '20,000',
         img: [
             'https://shop-phinf.pstatic.net/20230712_149/1689141723147orsKB_JPEG/3343809127994028_1734275766.jpg?type=m510',
             'https://shop-phinf.pstatic.net/20230712_127/1689141731171yd5hn_JPEG/2472532521839555_309567386.jpg?type=m510',
