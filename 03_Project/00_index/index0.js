@@ -6,15 +6,15 @@ let navBg = document.querySelector("#nav_bg");
 let headerCookie = document.querySelector("#header_cookie");
 let header = document.querySelector("header");
 const headerImg = [
-    '../img/bg1.webp',
-    '../img/bg2.webp',
-    '../img/bg3.png',
-    '../img/bg4.webp',
-    '../img/bg5.webp',
-    '../img/bg6.webp',
-    '../img/bg7.png',
-    '../img/bg8.png',
-    '../img/bg9.png',
+    './img/bg1.webp',
+    './img/bg2.webp',
+    './img/bg3.png',
+    './img/bg4.webp',
+    './img/bg5.webp',
+    './img/bg6.webp',
+    './img/bg7.png',
+    './img/bg8.png',
+    './img/bg9.png',
 ]
 const cookie = [
     "https://i.pinimg.com/originals/5e/a7/82/5ea782dee1243d13f4fcdedf96cb4c4d.gif",
