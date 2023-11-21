@@ -16,6 +16,15 @@ const headerImg = [
     './img/bg8.png',
     './img/bg9.png',
 ]
+const indexImg = [
+    ['./img/update1.jpg', '11월 업데이트'],
+    ['./img/event1.png', '모험의 탑'],
+    ['./img/event2.png', '퍼스트 브레이브'],
+    ['./img/event3.png', '쿠키런 1조원'],
+    ['./img/event1.png', '신규 레이드 모드'],
+    ['./img/event1.png', '신규 쿠키'],
+    ['./img/event1.png', '7주년 소원캠프']
+]
 const cookie = [
     "https://i.pinimg.com/originals/5e/a7/82/5ea782dee1243d13f4fcdedf96cb4c4d.gif",
     'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/c27781aa-4293-49cf-e523-c2f63499d700/format=webp',
@@ -54,3 +63,12 @@ navBg.addEventListener('mouseout',()=>{
         nav.style.backgroundColor="#2b2b3750";
     }
 });
+
+{
+    let eventSlideImg = document.getElementsByClassName('event_slide_img');
+    let eventSlideBtn = document.getElementsByClassName('event_slide_btn');
+    for (let i = 0 ; i < indexImg.length; i++){
+        eventSlideImg[0].innerHTML += `<img src="${indexImg[i][0]}" alt="${indexImg[i][1]}">`;
+        eventSlideBtn[0].children[0].innerHTML += `<span>${indexImg[i][1]}</span>`
+    }
+}
