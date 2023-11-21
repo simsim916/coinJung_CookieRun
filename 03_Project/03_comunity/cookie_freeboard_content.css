@@ -173,6 +173,15 @@ h2{
     background-color: #E5E5E5;
 
     padding: 10px 0px 20px;
+
+}
+
+.user_info{
+    text-align: center;
+
+    color: lime;
+    font-weight: bold;
+    font-size: large;
 }
 
 .comment_num, .like_num, .read_num, .share{
