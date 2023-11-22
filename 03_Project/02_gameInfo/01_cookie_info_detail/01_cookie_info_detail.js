@@ -6,12 +6,12 @@ let cookieAR = [
         img: "https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/54e1ec2f-823d-4945-f54c-c2c31236ed00/format=webp",
         type: '에픽',
         info: '말랑말랑한 치즈 조각에 앉아, 공중에 가득 떠 있는 황금창을 통해 골드치즈 왕국 곳곳을 지켜보는 쿠키가 있으니.바로 관제실의 주인 모짜렐라맛 쿠키다! 왕국의 골칫거리를 해결하라는 골드치즈 쿠키의 명을 받들어 여러 문제를 처리해 왔다는데? 수로 속에 빠진 치즈볼새의 반지를 찾는 일부터, 황금도시로 침입한 몬스터 추적까지! 그 어떤 사건사고도 금창 조작 한 번으로 간단히 해결해 낸다.',
-        bgimg: 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/437c8f58-6fc6-4b96-9bf0-681ed20aa300/public',
-        skill: {
+        // bgimg: 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/437c8f58-6fc6-4b96-9bf0-681ed20aa300/public',
+        skill: [{
             skillName: '몰캉몰캉 모짜렐라',
             skillInfo: '종을 흔들어 아군에게 버프를 걸고 모짜렐라 새를 부른다. 모짜렐라 새는 적들에게 피해를 주고 함께 멀리 날아가 모짜렐라 웅덩이를 만든다. 모짜렐라 웅덩이에 빠진 적들은 지속 피해를 입고 이동속도와 공격속도가 감소한다.',
             skillImg: 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/d27aa78f-06f1-42d6-7a2a-33938e342300/public',
-        }
+        }]
     },
     {
         name: '올리브맛 쿠키',
@@ -80,15 +80,21 @@ let mainInfoPic = mainInfoContainer[0].getElementsByClassName('main_info_pic');
 let gridBox1 = mainInfoContainer[0].getElementsByClassName('grid_box1');
 let gridBox2 = mainInfoContainer[0].getElementsByClassName('grid_box2');
 
+let introBox = document.getElementsByClassName('intro_box');
+let skillBox = introBox[0].getElementsByClassName('skill_box');
 
 
 mainInfoPic[0].children[0].src=`${cookieAR[cookieNum].img}`;
 gridBox1[0].children[0].src=`${typeImg[cookieNum].에픽}`;
 gridBox2[0].innerText=`${cookieAR[cookieNum].name}`;
 mainInfoContainer[0].children[1].children[2].innerText=`${cookieAR[cookieNum].info}`;
+skillBox[0].children[1].src=`${cookieAR[cookieNum].skill[cookieNum].skillImg}`;
+skillBox[0].children[2].innerText=`${cookieAR[cookieNum].skill[cookieNum].skillName}`;
+skillBox[0].children[3].innerText=`${cookieAR[cookieNum].skill[cookieNum].skillInfo}`;
 
 
-console.log(mainInfoContainer[0].children[1].children[2]);
+
+console.log(cookieAR[0].skill[0].skillImg);
 
 
 // switch(cookieAR[0].type){

@@ -59,7 +59,7 @@ main{
     color: antiquewhite;
     padding: 30px;
 }
-.introbox{
+.intro_box{
     margin-top: 50px;
     border: 1px solid rgb(255, 181, 181);
     display: grid;
@@ -69,7 +69,7 @@ main{
     padding: 35px;
     background-color: rgb(255, 253, 253);
 }
-.skil_box{
+.skill_box{
     display: grid;
     margin: auto;
     padding-bottom: 50px;
@@ -78,7 +78,7 @@ main{
     background-color: #f9dafa;
     border: 3px dotted rgb(233, 187, 187);
 }
-.skil{
+.skill{
     background: linear-gradient(45deg, #c28c27, #b634bb);
     border: 2px solid rgb(221, 123, 123);
     color: aliceblue;
@@ -89,16 +89,16 @@ main{
     margin-top: 30px;
     margin-bottom: 30px;
 }
-.skil_box>img{
+.skill_box>img{
     width: 100px;
 }
-.skil_name{
+.skill_name{
     margin-bottom: 20px;
     color:#561858;
     padding: 5px;
     font-weight: 600;
 }
-.skil_intro{
+.skill_intro{
     width: 70%;
     padding: 20px;
     background-color: rgb(255, 255, 255);
