@@ -30,11 +30,11 @@ const cookie = [
 
 let random = Math.floor(Math.random()*headerImg.length);
 let random2 = Math.floor(Math.random()*headerImg.length);
-header.style.backgroundImage=`linear-gradient( #2b2b3720, #2b2b3720), url(${headerImg[random]})`;
+header.style.backgroundImage=`url(${headerImg[random]})`;
 headerCookie.setAttribute('src',`${cookie[random2]}`);
 
 window.addEventListener('scroll',()=>{
-    if (parseInt(window.scrollY)) {
+    if (parseInt(window.scrollY) || navBg.style.visibility == "initial") {
         nav.style.backgroundColor="#2b2b37ff";
     } else {
         nav.style.backgroundColor="#2b2b3750";
@@ -48,7 +48,7 @@ nav.addEventListener('mouseenter',()=>{
 navBg.addEventListener('mouseout',()=>{
     navBg.style.visibility="hidden";
     for (let a of subLi) a.style.visibility="hidden";
-    if (parseInt(window.scrollY)) {
+    if (parseInt(window.scrollY) ) {
         nav.style.backgroundColor="#2b2b37ff";
     } else {
         nav.style.backgroundColor="#2b2b3750";
