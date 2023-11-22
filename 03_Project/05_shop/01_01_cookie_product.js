@@ -47,7 +47,7 @@ let productAR = [
         update: '2023-11-20',
         title: '[쿠키런스토어]브레이브 어드벤쳐 용감한쿠키',
         intro: '모험을 떠나는 용감한 쿠키가 귀여운 인형 키링으로!',
-        price: '20,000',
+        price: 20000,
         img: [
             'https://shop-phinf.pstatic.net/20230712_149/1689141723147orsKB_JPEG/3343809127994028_1734275766.jpg?type=m510',
             'https://shop-phinf.pstatic.net/20230712_127/1689141731171yd5hn_JPEG/2472532521839555_309567386.jpg?type=m510',
@@ -57,7 +57,9 @@ let productAR = [
         ],
         views: 0,
         sell : 0,
-        stock: 10
+        stock: 10,
+        textreview: 1,
+        photoreview: 0
     },
     {
         update: '2023-11-20',
@@ -99,6 +101,8 @@ let itemNum = 3;
     let itemRightBox = document.getElementsByClassName('item_rightbox_info')
     let itemImg = document.getElementsByClassName('item_img');
     let itemImgBtn = document.getElementsByClassName('item_imgBtn');
+    let basic = document.getElementById('basic');
+    // let maxpoint = document.getElementById('maxpoint');
     itemImg[0].innerHTML = `<img src="${productAR[itemNum].img[0]}" alt="${productAR[itemNum].title[0]}">`;
 
     for (let i = 0 ; i < productAR[itemNum].img.length; i++){
@@ -106,7 +110,9 @@ let itemNum = 3;
     }
 
     itemRightBox[0].children[0].innerText=`${productAR[itemNum].title}`;
-    itemRightBox[0].children[1].innerText=`${productAR[itemNum].price} 원`;
+    itemRightBox[0].children[1].innerText=`${productAR[itemNum].price.toLocaleString()} 원`;
+    basic.innerText = `${productAR[itemNum].price/100}원`
+    // maxpoint.innerText = `${(productAR[itemNum].price/100)+}원`
 }
 
 
