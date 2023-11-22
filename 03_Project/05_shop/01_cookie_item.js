@@ -95,31 +95,7 @@ let itemBox = document.getElementsByClassName('item');
 let listOption = document.getElementsByClassName('list_option');
 let lastBold = listOption[0].children[0].children[0];
 
-// 아이템 리스트 자동으로 만들기, sold out/best 박스 넣기, 재고 없으면 투명해지기
-{
-
-    for (let i = 0 ; i < productAR.length ; i++) {
-        let img = itemBox[i].getElementsByTagName('img');
-        let itemPrice = itemBox[i].getElementsByClassName('item_price');
-        let itemTitle = itemBox[i].getElementsByClassName('item_title');
-        let itemIntro = itemBox[i].getElementsByClassName('item_intro');
-        img[0].src=productAR[i].img[0];
-        itemPrice[0].innerText = `${productAR[i].price} 원`;
-        itemTitle[0].innerText = `${productAR[i].title}`;
-        itemIntro[0].innerText = `${productAR[i].intro}`;
-        if (productAR[i].stock == 0) {
-            for (let j = 0; j < itemBox[i].children.length-2; j++){
-                itemBox[i].children[j].style.opacity = '0.3';
-            }
-            itemBox[i].innerHTML += `<div class="soldout">SOLD OUT</div>`;
-        }
-        if (productAR[i].sell >= 10) {
-            itemBox[i].innerHTML += `<div class="best">BEST</div>`;
-            
-        }
-        
-    }
-}
+listWriter();
 // 옵션 박스 열기 / 닫기
 {
     let optionClose = optionBox[0].getElementsByClassName('option_close');
@@ -159,7 +135,6 @@ let lastBold = listOption[0].children[0].children[0];
 // }
 
 
-
 //순서 박스 옵션 선택 시 글자 진하게 변경
 {
     listOption[0].addEventListener('click', (event) => {
@@ -175,8 +150,7 @@ let lastBold = listOption[0].children[0].children[0];
             }
         }
         lastBold = listOption;
-    })
-    
+    })    
 }
 // 상품 총 갯수 표시
 {
@@ -194,6 +168,64 @@ let lastBold = listOption[0].children[0].children[0];
     }
 }
 
-{
-
+// 게시판 작성 함수
+function listWriter() {
+    for (let i = 0; i < productAR.length; i++) {
+        let img = itemBox[i].getElementsByTagName('img');
+        let itemPrice = itemBox[i].getElementsByClassName('item_price');
+        let itemTitle = itemBox[i].getElementsByClassName('item_title');
+        let itemIntro = itemBox[i].getElementsByClassName('item_intro');
+        img[0].src = productAR[i].img[0];
+        itemPrice[0].innerText = `${productAR[i].price.toLocaleString()} 원`;
+        itemTitle[0].innerText = `${productAR[i].title}`;
+        itemIntro[0].innerText = `${productAR[i].intro}`;
+        if (productAR[i].stock == 0) {
+            for (let j = 0; j < itemBox[i].children.length - 2; j++) {
+                itemBox[i].children[j].style.opacity = '0.3';
+            }
+            itemBox[i].innerHTML += `<div class="soldout">SOLD OUT</div>`;
+        }
+        if (productAR[i].sell >= 10) {
+            itemBox[i].innerHTML += `<div class="best">BEST</div>`;
+        }
+    }
+}
+// 가격 낮은순 게시판 작성
+function ProductARPriceRise(){
+    for (let i = 0, t; i < productAR.length - 1; i++) {
+        for (let j = i + 1; j < productAR.length; j++) {
+            if (productAR[i].price > productAR[j].price) {
+                t = productAR[i];
+                productAR[i] = productAR[j];
+                productAR[j] = t;
+            }
+        }
+    }
+    listWriter();
+}
+// 인기도순 작성
+function ProductARViewDown(){
+    for (let i = 0, t; i < productAR.length - 1; i++) {
+        for (let j = i + 1; j < productAR.length; j++) {
+            if (productAR[i].views < productAR[j].views) {
+                t = productAR[i];
+                productAR[i] = productAR[j];
+                productAR[j] = t;
+            }
+        }
+    }
+    listWriter()
+}
+//최신등록순 작성
+function ProductARDateDown(){
+    for (let i = 0, t; i < productAR.length - 1; i++) {
+        for (let j = i + 1; j < productAR.length; j++) {
+            if (productAR[i].date > productAR[j].date) {
+                t = productAR[i];
+                productAR[i] = productAR[j];
+                productAR[j] = t;
+            }
+        }
+    }
+    listWriter()
 }
