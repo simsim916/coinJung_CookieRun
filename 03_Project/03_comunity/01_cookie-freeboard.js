@@ -79,7 +79,7 @@ let freeboardAR = [
         userInfo : '봉삼이',
         heart : 33,
         read : 571,
-        commentNum : 2,
+        commentNum : 1,
         alticle : 
 `너프하지마라진짜
 
@@ -96,7 +96,7 @@ let freeboardAR = [
         userInfo : '그린실버타운',
         heart : 332,
         read : 5723,
-        commentNum : 6,
+        commentNum : 5,
         alticle : 
 `CSS도 안익숙한데 자바스크립트 언제 할수있을까
 님들은 ㅓㅇ떰
@@ -118,88 +118,99 @@ let freeboardAR = [
         userInfo : '그래도이쁨',
         heart : 0,
         read : 57,
-        freeboard_date : '12시간 전'
+        freeboard_date : '12시간 전',
+        commentNum : 65
     },
     {
         subject : '스토브 인증기 왜이럼?',
         userInfo : '그래도이쁨',
         heart : 0,
         read : 57,
-        freeboard_date : '12시간 전'
+        freeboard_date : '12시간 전',
+        commentNum : 65
     },
     {
         subject : '스토브 인증기 왜이럼?',
         userInfo : '그래도이쁨',
         heart : 0,
         read : 57,
-        freeboard_date : '12시간 전'
+        freeboard_date : '12시간 전',
+        commentNum : 65
     },
     {
         subject : '스토브 인증기 왜이럼?',
         userInfo : '그래도이쁨',
         heart : 0,
         read : 57,
-        freeboard_date : '12시간 전'
+        freeboard_date : '12시간 전',
+        commentNum : 65
     },
     {
         subject : '스토브 인증기 왜이럼?',
         userInfo : '그래도이쁨',
         heart : 0,
         read : 57,
-        freeboard_date : '12시간 전'
+        freeboard_date : '12시간 전',
+        commentNum : 65
     },
     {
         subject : '스토브 인증기 왜이럼?',
         userInfo : '그래도이쁨',
         heart : 0,
         read : 57,
-        freeboard_date : '12시간 전'
+        freeboard_date : '12시간 전',
+        commentNum : 65
     },
     {
         subject : '스토브 인증기 왜이럼?',
         userInfo : '그래도이쁨',
         heart : 0,
         read : 57,
-        freeboard_date : '12시간 전'
+        freeboard_date : '12시간 전',
+        commentNum : 65
     },
     {
         subject : '스토브 인증기 왜이럼?',
         userInfo : '그래도이쁨',
         heart : 0,
         read : 57,
-        freeboard_date : '12시간 전'
+        freeboard_date : '12시간 전',
+        commentNum : 65
     },
     {
         subject : '스토브 인증기 왜이럼?',
         userInfo : '그래도이쁨',
         heart : 0,
         read : 57,
-        freeboard_date : '12시간 전'
+        freeboard_date : '12시간 전',
+        commentNum : 65
     },
 ];
 
 let main = document.getElementsByTagName('main'),
-    noSubject = main[0].querySelectorAll('.notice_subject'),
-    noDate = main[0].querySelectorAll('.notice_date'),
-    list_freeboard = main[0].querySelectorAll('.list_freeboard');
+/*notice 부분 선언*/
+noSubject = main[0].querySelectorAll('.notice_subject'),
+noDate = main[0].querySelectorAll('.notice_date'),
+list_notice = main[0].querySelectorAll('.list_notice'),
+
+/*content 부분 선언*/
+list_freeboard = main[0].querySelectorAll('.list_freeboard');
 
 
-
-console.log(list_freeboard[0].children[5]);
-
-    for(let i = 0 ; i < noSubject.length ; i++){
+    /*notice 반복문*/
+    for(let i = 0 ; i < list_notice.length ; i++){
         noSubject[i].innerText = `${notiboardAR[i].notice_subject}`;
         noDate[i].innerText = `${notiboardAR[i].notice_date}`;
     }
 
 
-
-    // for(let i = 0 ; i < list_freeboard.length ; i++){
-    //     list_freeboard[i].children[0].innerHTML = `${freeboardAR[i].subject}`;
-    //     list_freeboard[i].children[1].innerHTML = `${freeboardAR[i].userInfo}`;
-    //     list_freeboard[i].children[2].innerHTML = `${freeboardAR[i].heart}`;
-    //     list_freeboard[i].children[4].innerHTML = `${freeboardAR[i].read}`;
-    //     list_freeboard[i].children[5].innerHTML = `${freeboardAR[i].freeboard_date}`;
-    // }
-
-
+    /*contet 반복문*/
+    for(let i = 0 ; i < list_freeboard.length ; i++){
+        for(let j = 0 ; j < list_freeboard.length ; j++){
+            list_freeboard[i].children[0].innerText = `${freeboardAR[i].subject}`;
+            list_freeboard[i].children[1].innerText = `${freeboardAR[i].userInfo}`;
+            list_freeboard[i].children[2].innerText = `${freeboardAR[i].heart}`;
+            list_freeboard[i].children[3].innerText = `${freeboardAR[i].read}`;
+            list_freeboard[i].children[4].innerText = `${freeboardAR[i].commentNum}`;
+        }
+    }
