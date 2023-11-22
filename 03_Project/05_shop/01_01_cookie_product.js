@@ -1,6 +1,6 @@
 'use strict';
 
-let productAR = [
+const productAR = [
     {
         update:'2023-11-20',
         title: '[쿠키런스토어]쿠키런 스키릇팩 피규어',
@@ -13,7 +13,9 @@ let productAR = [
         ],
         views: 0,
         sell : 0,
-        stock: 10
+        stock: 10,
+        textreview: 1,
+        photoreview: 0,
     },
     {
         update: '2023-11-20',
@@ -27,7 +29,9 @@ let productAR = [
         ],
         views: 0,
         sell : 0,
-        stock: 10
+        stock: 10,
+        textreview: 1,
+        photoreview: 0,
     },
     {
         update: '2023-11-20',
@@ -41,7 +45,9 @@ let productAR = [
         ],
         views: 0,
         sell : 0,
-        stock: 10
+        stock: 10,
+        textreview: 1,
+        photoreview: 0,
     },
     {
         update: '2023-11-20',
@@ -59,7 +65,7 @@ let productAR = [
         sell : 0,
         stock: 10,
         textreview: 1,
-        photoreview: 0
+        photoreview: 1,
     },
     {
         update: '2023-11-20',
@@ -73,7 +79,9 @@ let productAR = [
         ],
         views: 0,
         sell : 0,
-        stock: 10
+        stock: 10,
+        textreview: 1,
+        photoreview: 0,
     },
     {
         update: '2023-11-20',
@@ -87,34 +95,65 @@ let productAR = [
         ],
         views: 0,
         sell : 0,
-        stock: 10
+        stock: 10,
+        textreview: 1,
+        photoreview: 0,
     },
-
-
+        
 ];
-
+let productAR2 = productAR;
 let itemNum = 3;
 
-
+function productARSellDown() {
+    for (let i = 0 , t; i < productAR2.length-1; i++){
+        for (let j = i+1 ; j < productAR2.length ; j++) {
+            if ( productAR2[i].sell < productAR2[j].sell){
+                t = productAR2[i];
+                productAR2[i] = productAR2[j];
+                productAR2[j] = t;
+                
+            }
+        }
+    }
+}
 // 게시글 작성하는거
 {
     let itemRightBox = document.getElementsByClassName('item_rightbox_info')
     let itemImg = document.getElementsByClassName('item_img');
     let itemImgBtn = document.getElementsByClassName('item_imgBtn');
     let basic = document.getElementById('basic');
-    // let maxpoint = document.getElementById('maxpoint');
-    itemImg[0].innerHTML = `<img src="${productAR[itemNum].img[0]}" alt="${productAR[itemNum].title[0]}">`;
+    let bestitem = document.getElementsByClassName('best_items');
+    let maxpoint = document.getElementById('maxpoint');
+    let textpoint, photopoint;
 
-    for (let i = 0 ; i < productAR[itemNum].img.length; i++){
-        itemImgBtn[0].innerHTML +=`<img src="${productAR[itemNum].img[i]}" alt="${productAR[itemNum].title[i]}">`;
+    itemImg[0].innerHTML = `<img src="${productAR[itemNum].img[0]}" alt="${productAR[itemNum].title}">`;
+    
+    {if(productAR[itemNum].textreview == 1){
+        textpoint = 50;
+    } else {
+        textpoint = 0;
     }
 
+    if(productAR[itemNum].photoreview == 1){
+        photopoint = 100;
+    } else{
+        photopoint = 0;
+    }}
+
+    for (let i = 0 ; i < productAR[itemNum].img.length; i++){
+        itemImgBtn[0].innerHTML +=`<img src="${productAR[itemNum].img[i]}" alt="${productAR[itemNum].title}">`;
+    }
+    // 베스트 상품
+    productARSellDown(); // 이 때, productAR2가 '정렬된 productAR'이 됨
+    for (let i =0 ; i < 4; i++){
+    bestitem[0].innerHTML += `<div><a href="#"><img src="${productAR2[i].img[0]}"><p>${productAR2[i].title}</p><p>${productAR2[i].price.toLocaleString()}</p></a></div>`;
+    }
+        
     itemRightBox[0].children[0].innerText=`${productAR[itemNum].title}`;
     itemRightBox[0].children[1].innerText=`${productAR[itemNum].price.toLocaleString()} 원`;
     basic.innerText = `${productAR[itemNum].price/100}원`
-    // maxpoint.innerText = `${(productAR[itemNum].price/100)+}원`
+    maxpoint.innerText = `${(productAR[itemNum].price/100)+textpoint+photopoint}원`
 }
-
 
 // 제품 이미지 슬라이드
 {
@@ -127,3 +166,4 @@ let itemNum = 3;
         }
     })
 }
+    
