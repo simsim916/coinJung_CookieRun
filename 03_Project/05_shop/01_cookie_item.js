@@ -26,7 +26,7 @@ let productAR = [
             'https://shop-phinf.pstatic.net/20231114_124/1699952960161AhGyC_PNG/52025347519581164_186066631.png?type=m510',
         ],
         views: 0,
-        sell : 0,
+        sell :10,
         stock: 10
     },
     {
@@ -41,7 +41,7 @@ let productAR = [
         ],
         views: 0,
         sell : 0,
-        stock: 10
+        stock: 0
     },
     {
         update: '2023-11-20',
@@ -95,7 +95,7 @@ let itemBox = document.getElementsByClassName('item');
 let listOption = document.getElementsByClassName('list_option');
 let lastBold = listOption[0].children[0].children[0];
 
-// 아이템 리스트 자동으로 만들기
+// 아이템 리스트 자동으로 만들기, sold out/best 박스 넣기, 재고 없으면 투명해지기
 {
 
     for (let i = 0 ; i < productAR.length ; i++) {
@@ -107,6 +107,16 @@ let lastBold = listOption[0].children[0].children[0];
         itemPrice[0].innerText = `${productAR[i].price} 원`;
         itemTitle[0].innerText = `${productAR[i].title}`;
         itemIntro[0].innerText = `${productAR[i].intro}`;
+        if (productAR[i].stock == 0) {
+            for (let j = 0; j < itemBox[i].children.length-2; j++){
+                itemBox[i].children[j].style.opacity = '0.3';
+            }
+            itemBox[i].innerHTML += `<div class="soldout">SOLD OUT</div>`;
+        }
+        if (productAR[i].sell == 10) {
+            itemBox[i].innerHTML += `<div class="best">BEST</div>`;
+            
+        }
         
     }
 }
@@ -114,7 +124,7 @@ let lastBold = listOption[0].children[0].children[0];
 {
     let optionClose = optionBox[0].getElementsByClassName('option_close');
     optionBar[0].addEventListener('click',(event)=>{
-        if(event.target != optionClose[0]) {
+        if (event.target != optionClose[0] && event.target.tagName=="LI") {
         optionBox[0].style.visibility="initial";
         } else {
             optionBox[0].style.visibility="hidden";
@@ -182,7 +192,8 @@ let lastBold = listOption[0].children[0].children[0];
             }
         }
     }
+}
 
-
+{
 
 }
