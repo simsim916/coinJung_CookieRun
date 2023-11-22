@@ -186,7 +186,7 @@ nav ul li ul li{
 }
 .event_slide_btn{
     position: absolute; bottom: 0;
-    height: 50px; 
+    height: 50px; width: 100%;
     background-color: #00000070;
     display: flex; align-items: center;
     font-size: initial; color: white;
@@ -201,6 +201,12 @@ nav ul li ul li{
 }
 .event_slide_btn div{
     width: calc(100% - 120px);
+    white-space: nowrap;
+    overflow: hidden;
+}
+.event_slide_btn div span{
+    opacity: 0.7;
+
 }
 .event_slide_btn div span{
     margin: 0 20px;
