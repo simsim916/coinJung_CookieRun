@@ -96,8 +96,3 @@ skillBox[0].children[3].innerText=`${cookieAR[cookieNum].skill[cookieNum].skillI
 
 console.log(cookieAR[0].skill[0].skillImg);
 
-
-// switch(cookieAR[0].type){
-//     case '에픽' :
-
-// }
