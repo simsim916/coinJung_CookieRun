@@ -3,11 +3,10 @@
     margin: 0;
 }
 
-main {
+main{
     width: 1024px;
-    margin: 0% auto;
-    position: 100vw / 2;
-
+    margin: auto;
+    height: 70%;
 }
 
 h3 {
@@ -70,8 +69,8 @@ h3 {
     z-index: 2;
     width: 450px;
     height: 500px;
-    top: 100px;
-    left: 100px;
+    top: 650px;
+    left: 150px;
     visibility: hidden;
 }
 .option_close{
@@ -183,7 +182,7 @@ h3 {
 
 .main_item {
     display: grid;
-    position: absolute;
+    /* position: absolute; */
     flex-wrap: wrap;
     grid-template: repeat(4, 1fr) / repeat(3, 1fr);
     gap: 30px;
@@ -255,4 +254,23 @@ h3 {
 
 .item:hover .icon {
     display: flex;
+}
+.show_screen{
+    width: 1024px;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    gap: 20px;
+}
+.show_screen button{
+    width: 40px;
+    height: 40px;
+
+    line-height: 40px;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    /* border: none; */
+    boropacity: ;
+    left: calc(50% - 20px);
 }
