@@ -12,7 +12,7 @@ let productAR = [
             'https://shop-phinf.pstatic.net/20231114_70/1699953413567rf7dx_JPEG/12503080342079771_653990839.jpg?type=m510'
         ],
         views: 0,
-        sell : 0,
+        sell : 15,
         stock: 10
     },
     {
@@ -113,7 +113,7 @@ let lastBold = listOption[0].children[0].children[0];
             }
             itemBox[i].innerHTML += `<div class="soldout">SOLD OUT</div>`;
         }
-        if (productAR[i].sell == 10) {
+        if (productAR[i].sell >= 10) {
             itemBox[i].innerHTML += `<div class="best">BEST</div>`;
             
         }
