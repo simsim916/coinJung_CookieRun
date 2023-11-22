@@ -231,29 +231,26 @@ h3 {
 }
 
 .item>.icon {
-    border-radius: 100%;
+    border-radius: 50%;
     width: 50px;
     height: 50px;
-    line-height: 50px;
     font-size: 30px;
     background-color: white;
     color: gray;
-    border: 0;
     position: absolute;
-    display: none;
+    /* display: none; */
     justify-content: center;
     align-items: center;
-    text-align: center;
     top: 220px;
     left: calc(50% - 25px);
 }
 
-.item>.icon:nth-last-of-type(2) {
-    left: calc(50% - 50px);
-}
-
 .item>.icon:nth-last-of-type(1) {
-    left: calc(50% + 10px);
+    /* left: calc(50% + 10px); */
+
+}
+.item>.icon:nth-last-of-type(2) {
+    left: calc(50% - 140px);
 }
 
 .item:hover .icon {

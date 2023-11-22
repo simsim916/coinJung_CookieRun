@@ -5,6 +5,7 @@ let subLi = document.querySelectorAll(".sub_li");
 let navBg = document.querySelector("#nav_bg");
 let headerCookie = document.querySelector("#header_cookie");
 let header = document.querySelector("header");
+let lastSlideBtn;
 const headerImg = [
     './img/bg1.webp',
     './img/bg2.webp',
@@ -17,13 +18,13 @@ const headerImg = [
     './img/bg9.png',
 ]
 const indexImg = [
-    ['./img/update1.jpg', '11월 업데이트'],
-    ['./img/event1.png', '모험의 탑'],
-    ['./img/event2.png', '퍼스트 브레이브'],
-    ['./img/event3.png', '쿠키런 1조원'],
-    ['./img/event1.png', '신규 레이드 모드'],
-    ['./img/event1.png', '신규 쿠키'],
-    ['./img/event1.png', '7주년 소원캠프']
+    ['./img/update1.jpg', '11월 업데이트', 0],
+    ['./img/event1.png', '모험의 탑', 1],
+    ['./img/event2.png', '퍼스트 브레이브', 2],
+    ['./img/event3.png', '쿠키런 1조원', 3],
+    ['./img/event1.png', '신규 레이드 모드', 4],
+    ['./img/event1.png', '신규 쿠키', 5],
+    ['./img/event1.png', '7주년 소원캠프', 6]
 ]
 const cookie = [
     "https://i.pinimg.com/originals/5e/a7/82/5ea782dee1243d13f4fcdedf96cb4c4d.gif",
@@ -63,12 +64,32 @@ navBg.addEventListener('mouseout',()=>{
         nav.style.backgroundColor="#2b2b3750";
     }
 });
-
+// main 슬라이드 이미지
 {
-    let eventSlideImg = document.getElementsByClassName('event_slide_img');
-    let eventSlideBtn = document.getElementsByClassName('event_slide_btn');
+
+    // 슬라이드 버튼 & 이미지 생성
+    let eventSlide = document.getElementsByClassName('event_slide');
+    let eventSlideImg = eventSlide[0].getElementsByClassName('event_slide_img');
+    let eventSlideBtn = eventSlide[0].getElementsByClassName('event_slide_btn');
+    eventSlideImg[0].innerHTML = `<img src="${indexImg[0][0]}" alt="${indexImg[0][1]}">`;
     for (let i = 0 ; i < indexImg.length; i++){
-        eventSlideImg[0].innerHTML += `<img src="${indexImg[i][0]}" alt="${indexImg[i][1]}">`;
         eventSlideBtn[0].children[0].innerHTML += `<span>${indexImg[i][1]}</span>`
     }
+
+    // 슬라이드 버튼 선택시 강조
+    lastSlideBtn = eventSlideBtn[0].children[0].children[0]; lastSlideBtn.style.opacity="1"
+    eventSlide[0].addEventListener('click',(event)=>{
+        if(event.target.tagName == 'SPAN'){
+            lastSlideBtn.style.opacity = "0.7";
+            event.target.style.opacity = "1";
+            lastSlideBtn = event.target;
+            for(let i of indexImg) {
+                if( i[1] == lastSlideBtn.innerText) {
+                    eventSlideImg[0].children[0].src=`${i[0]}`
+                }
+            }
+        }
+    })
 }
+
+// 
