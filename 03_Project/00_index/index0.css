@@ -245,7 +245,7 @@ nav ul li ul li{
     display: flex; justify-content: center;
 }
 .shop_slide_bth div{
-    width: 20px; height: 20px; margin: 0 3px;
+    width: 15px; height: 15px; margin: 0 3px;
     background-color: #252428; border-radius: 50%;
 }
 .main_info{
