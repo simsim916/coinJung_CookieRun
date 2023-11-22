@@ -36,6 +36,8 @@ main{
     margin-bottom: 5px;
 
     text-decoration: none;
+
+    /* opacity: 1; */
 }
 
 .list_sort>a{
@@ -43,7 +45,6 @@ main{
 
     width: 70px;
     height: 30px;
-    opacity: 1;
 }
 
 .list_sort>:first-child::before{
@@ -56,10 +57,10 @@ main{
 
 .list_sort>:last-child{
     margin-left: 10px;
-    opacity: .5;
+
 }
 .list_sort>:last-child::before{
-    content: '';
+    content: '\f00c';
     font: var(--fa-font-solid);
 
 

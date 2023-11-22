@@ -35,7 +35,7 @@ let freeboardAR = [
     {
         subject : '쿠키런 풀스펙 구매합니다..!',
         userInfo : '그린탑코인정',
-        heart : 6,
+        heart : 62,
         read : 81,
         commentNum : 2,
         alticle : 
@@ -60,7 +60,7 @@ let freeboardAR = [
     {
         subject : '두둠칫 둠칫 친추 ㄱ',
         userInfo : '두둠칫 둠칫',
-        heart : 7,
+        heart : 74,
         read : 231,
         commentNum : 2,
         alticle : 
@@ -77,7 +77,7 @@ let freeboardAR = [
     {
         subject : '결정석너프하면접을거임',
         userInfo : '봉삼이',
-        heart : 33,
+        heart : 333,
         read : 571,
         commentNum : 1,
         alticle : 
@@ -94,7 +94,7 @@ let freeboardAR = [
     {
         subject : '솔직히 자바스크립트 개어려움',
         userInfo : '그린실버타운',
-        heart : 332,
+        heart : 32,
         read : 5723,
         commentNum : 5,
         alticle : 
@@ -116,7 +116,7 @@ let freeboardAR = [
     {
         subject : '스토브 인증기 왜이럼?',
         userInfo : '그래도이쁨',
-        heart : 0,
+        heart : 10,
         read : 57,
         freeboard_date : '12시간 전',
         commentNum : 65
@@ -124,7 +124,7 @@ let freeboardAR = [
     {
         subject : '스토브 인증기 왜이럼?',
         userInfo : '그래도이쁨',
-        heart : 0,
+        heart : 40,
         read : 57,
         freeboard_date : '12시간 전',
         commentNum : 65
@@ -132,7 +132,7 @@ let freeboardAR = [
     {
         subject : '스토브 인증기 왜이럼?',
         userInfo : '그래도이쁨',
-        heart : 0,
+        heart : 34,
         read : 57,
         freeboard_date : '12시간 전',
         commentNum : 65
@@ -140,7 +140,7 @@ let freeboardAR = [
     {
         subject : '스토브 인증기 왜이럼?',
         userInfo : '그래도이쁨',
-        heart : 0,
+        heart : 43,
         read : 57,
         freeboard_date : '12시간 전',
         commentNum : 65
@@ -148,7 +148,7 @@ let freeboardAR = [
     {
         subject : '스토브 인증기 왜이럼?',
         userInfo : '그래도이쁨',
-        heart : 0,
+        heart : 123,
         read : 57,
         freeboard_date : '12시간 전',
         commentNum : 65
@@ -156,7 +156,7 @@ let freeboardAR = [
     {
         subject : '스토브 인증기 왜이럼?',
         userInfo : '그래도이쁨',
-        heart : 0,
+        heart : 43,
         read : 57,
         freeboard_date : '12시간 전',
         commentNum : 65
@@ -164,7 +164,7 @@ let freeboardAR = [
     {
         subject : '스토브 인증기 왜이럼?',
         userInfo : '그래도이쁨',
-        heart : 0,
+        heart : 13,
         read : 57,
         freeboard_date : '12시간 전',
         commentNum : 65
@@ -172,7 +172,7 @@ let freeboardAR = [
     {
         subject : '스토브 인증기 왜이럼?',
         userInfo : '그래도이쁨',
-        heart : 0,
+        heart : 43,
         read : 57,
         freeboard_date : '12시간 전',
         commentNum : 65
@@ -180,7 +180,7 @@ let freeboardAR = [
     {
         subject : '스토브 인증기 왜이럼?',
         userInfo : '그래도이쁨',
-        heart : 0,
+        heart : 12,
         read : 57,
         freeboard_date : '12시간 전',
         commentNum : 65
@@ -194,7 +194,10 @@ noDate = main[0].querySelectorAll('.notice_date'),
 list_notice = main[0].querySelectorAll('.list_notice'),
 
 /*content 부분 선언*/
-list_freeboard = main[0].querySelectorAll('.list_freeboard');
+list_freeboard = main[0].querySelectorAll('.list_freeboard'),
+
+/*리뷰순 좋아요순 선언*/
+list_sort = main[0].querySelectorAll('.list_sort');
 
 
     /*notice 반복문*/
@@ -204,7 +207,7 @@ list_freeboard = main[0].querySelectorAll('.list_freeboard');
     }
 
 
-    /*contet 반복문*/
+    /*content 반복문*/
     for(let i = 0 ; i < list_freeboard.length ; i++){
         for(let j = 0 ; j < list_freeboard.length ; j++){
             list_freeboard[i].children[0].innerText = `${freeboardAR[i].subject}`;
@@ -214,3 +217,64 @@ list_freeboard = main[0].querySelectorAll('.list_freeboard');
             list_freeboard[i].children[4].innerText = `${freeboardAR[i].commentNum}`;
         }
     }
+
+    /*리뷰순 좋아요순*/
+
+    console.log(list_sort[0].children[0]);
+
+
+    function read_turn(){
+        for(let i=0, temp; i<list_freeboard.length-1 ; i++){
+            for(let j = i+1 ; j<list_freeboard.length ; j++){
+                if(freeboardAR[i].read < freeboardAR[j].read){
+                    temp = freeboardAR[i];
+                    freeboardAR[i] = freeboardAR[j];
+                    freeboardAR[j] = temp;
+                }
+            }
+        }
+
+    }
+    function heart_turn(){
+        for(let i=0, temp; i<list_freeboard.length-1 ; i++){
+            for(let j = i+1 ; j<list_freeboard.length ; j++){
+                if(freeboardAR[i].heart < freeboardAR[j].heart){
+                    temp = freeboardAR[i];
+                    freeboardAR[i] = freeboardAR[j];
+                    freeboardAR[j] = temp;
+                }
+            }
+        }
+    }
+
+    list_sort[0].children[0].addEventListener('click', (event) =>{
+        let turn = event.target;
+        list_sort[0].children[0].style.opacity = 1;
+        list_sort[0].children[1].style.opacity = 0.5;
+        if(turn.innerText == "리뷰순"){
+            read_turn();
+            for (let i = 0; i < list_freeboard.length; i++) {
+                list_freeboard[i].children[0].innerText = `${freeboardAR[i].subject}`;
+                list_freeboard[i].children[1].innerText = `${freeboardAR[i].userInfo}`;
+                list_freeboard[i].children[2].innerText = `${freeboardAR[i].heart}`;
+                list_freeboard[i].children[3].innerText = `${freeboardAR[i].read}`;
+                list_freeboard[i].children[4].innerText = `${freeboardAR[i].commentNum}`;
+            }
+        }
+    })
+
+    list_sort[0].children[1].addEventListener('click', (event) =>{
+        let turn = event.target;
+        list_sort[0].children[0].style.opacity = 0.5;
+        list_sort[0].children[1].style.opacity = 1;
+        if(turn.innerText == "좋아요순"){
+            heart_turn();
+            for (let i = 0; i < list_freeboard.length; i++) {
+                list_freeboard[i].children[0].innerText = `${freeboardAR[i].subject}`;
+                list_freeboard[i].children[1].innerText = `${freeboardAR[i].userInfo}`;
+                list_freeboard[i].children[2].innerText = `${freeboardAR[i].heart}`;
+                list_freeboard[i].children[3].innerText = `${freeboardAR[i].read}`;
+                list_freeboard[i].children[4].innerText = `${freeboardAR[i].commentNum}`;
+            }
+    }
+})
