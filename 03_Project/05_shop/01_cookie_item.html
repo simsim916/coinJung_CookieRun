@@ -10,6 +10,7 @@
     <script defer src="../00_index/index.js"></script>
     <link rel="stylesheet" href="../00_index/index.css">
     <link rel="stylesheet" href="./01_cookie_item.css">
+    <script defer src="./01_cookie_item.js"></script>
 
 </head>
 
@@ -26,16 +27,16 @@
                     <img src="https://www.devsisters.com/_next/image?url=%2Fimage%2Fhome%2Fourgames-kingdom-logo.png&w=640&q=75" alt="">
                 </div>
                 <ul>
-                    <li><a href="./01_news/notice.html">새소식</a>
+                    <li><a href="./01_news/01_notice.html">새소식</a>
                         <ul class="sub_li">
-                            <li><a href="./01_news/cookie_noticeboard.html">공지사항</a></li>
+                            <li><a href="./01_news/01_notice.html">공지사항</a></li>
                             <li><a href="./01_news/02_update.html">업데이트</a></li>
                             <li><a href="./01_news/03_event.html">이벤트</a></li>
                         </ul>
                     </li>
-                    <li><a href="./02_gameInfo/01_cookie_info.css">게임정보</a>
+                    <li><a href="./02_ga nmmeInfo/01_cookie_info.html">게임정보</a>
                         <ul class="sub_li">
-                            <li><a href="./02_gameInfo/01_cookie_info.css">쿠키 소개</a></li>
+                            <li><a href="./02_gameInfo/01_cookie_info.html">쿠키 소개</a></li>
                             <li><a href="./02_gameInfo/02_game_info.html">게임 소개</a></li>
                             <li><a href="./02_gameInfo/03_world_info.html">쿠키 월드 소개</a></li>
                         </ul>
@@ -45,7 +46,7 @@
                             <li><a href="./03_comunity/01_cookie_freeboard.html">자유 게시판</a></li>
                         </ul>
                     </li>
-                    <li><a href="./04_media/01_media.css">미디어</a>
+                    <li><a href="./04_media/01_media.html">미디어</a>
                         <ul class="sub_li">
                             <li><a href="./04_media/01_media.html">영상</a></li>
                             <li><a href="./04_media/02_artwork.html">아트워크</a></li>
@@ -81,51 +82,48 @@
     
     <main>
         <div class="main_head">
-            <h3>토이</h3>
+            <h3>쿠키런 상품</h3>
             <div>
-                <p><a href="https://brand.naver.com/cookierun">홈</a></p>
-                <p>카테고리
-                <p>토이(총__개)</p>
+                <p id="total">상품 (총 <span></span>개)</p>
             </div>
         </div>
 
         <div class="main_option">
             <ul>
-                <li>무료배송</li>
-                <li>혜택정보
-                    <div class="option_box">
-                        <div class="option_title">혜택정보
-                            <ul>
-                                <li>할인상품</li>
-                                <li>무료상품</li>
-                                <li>무료교환반품</li>
-                            </ul>
-                        </div>
-                        <div class="option_title">배송유형
-                            <ul>
-                                <li>오늘출발</li>
-                                <li>희망일배송</li>
-                            </ul>
-                        </div>
-                        <div class="option_title">상품유형
-                            <ul>
-                                <li>예약구매</li>
-                            </ul>
-                        </div>
-                        <div class="option_title flexBox">가격대 <br>
-                            <input type="price" placeholder="2,000"> ~ <input type="price" placeholder="139,000">
-                            <div class="application">적용</div>
-                        </div>
-                        <div class="option_last">
-                            <div class="reset">초기화</div>
-                            <div class="click">상품보기</div>
-                        </div>
-                    </div>
-                </li>
+                <li>혜택정보</li>
                 <li>배송유형</li>
                 <li>상품유형</li>
                 <li>가격대</li>
             </ul>
+            <div class="option_box">
+                <div class="option_title">혜택정보
+                    <ul>
+                        <li>할인상품</li>
+                        <li>무료상품</li>
+                        <li>무료교환반품</li>
+                    </ul>
+                </div>
+                <div class="option_title">배송유형
+                    <ul>
+                        <li>오늘출발</li>
+                        <li>예약배송</li>
+                    </ul>
+                </div>
+                <div class="option_title">상품유형
+                    <ul>
+                        <li>예약구매</li>
+                    </ul>
+                </div>
+                <div class="option_title flexBox">가격대 <br>
+                    <input type="price" placeholder="2,000"> ~ <input type="price" placeholder="139,000">
+                    <div class="application">적용</div>
+                </div>
+                <div class="option_last">
+                    <div class="reset">초기화</div>
+                    <div class="click">상품보기</div>
+                </div>
+                <div class="option_close">X</div>
+            </div>
         </div>
 
         <div class="list_option">
@@ -134,22 +132,56 @@
                 <li>최신등록순</li>
                 <li>낮은가격순</li>
                 <li>높은가격순</li>
-                <li>할인율순</li>
-                <li>누적판매순</li>
-                <li>리뷰많은순</li>
-                <li>평점많은순</li>
+                <li>판매높은순</li>
             </ul>
         </div>
 
         <div class="main_item">
             <div class="item">
-                <div><img
-                        src="https://shop-phinf.pstatic.net/20231114_202/1699953403443Iz8WI_JPEG/52025790832298130_1281338351.jpg?type=f296_296"
-                        alt=""></div>
-                <div class="soldout">SOLD OUT</div>
-                <p>5,000원</p>
-                <p>[쿠키런스토어]쿠키런 스키릇팩 피규어</p>
-                <p class="item_sub">** 1차 수량 품절로, 재입고 예정입니다. 재입고 예정일 : 11/17(금) ~ 20(월)</p>
+                <img src="" alt="">
+                <p class="item_price"></p>
+                <p class="item_title"></p>
+                <p class="item_intro"></p>
+                <div class="icon"><i class="fa-solid fa-neuter"></i></div>
+                <div class="icon"><i class="fa-solid fa-plus"></i></div>
+            </div>
+            <div class="item">
+                <img src="" alt="">
+                <p class="item_price"></p>
+                <p class="item_title"></p>
+                <p class="item_intro"></p>
+                <div class="icon"><i class="fa-solid fa-neuter"></i></div>
+                <div class="icon"><i class="fa-solid fa-plus"></i></div>
+            </div>
+            <div class="item">
+                <img src="" alt="">
+                <p class="item_price"></p>
+                <p class="item_title"></p>
+                <p class="item_intro"></p>
+                <div class="icon"><i class="fa-solid fa-neuter"></i></div>
+                <div class="icon"><i class="fa-solid fa-plus"></i></div>
+            </div>
+            <div class="item">
+                <img src="" alt="">
+                <p class="item_price"></p>
+                <p class="item_title"></p>
+                <p class="item_intro"></p>
+                <div class="icon"><i class="fa-solid fa-neuter"></i></a></div>
+                <div class="icon"><i class="fa-solid fa-plus"></i></div>
+            </div>
+            <div class="item">
+                <img src="" alt="">
+                <p class="item_price"></p>
+                <p class="item_title"></p>
+                <p class="item_intro"></p>
+                <div class="icon"><i class="fa-solid fa-neuter"></i></a></div>
+                <div class="icon"><i class="fa-solid fa-plus"></i></div>
+            </div>
+            <div class="item">
+                <img src="" alt="">
+                <p class="item_price"></p>
+                <p class="item_title"></p>
+                <p class="item_intro"></p>
                 <div class="icon"><i class="fa-solid fa-neuter"></i></a></div>
                 <div class="icon"><i class="fa-solid fa-plus"></i></div>
             </div>
@@ -157,12 +189,13 @@
                 <div><img
                         src="https://shop-phinf.pstatic.net/20231114_258/1699952949584oLc3t_JPEG/12502616375115323_1205563992.jpg?type=f296_296"
                         alt=""></div>
-                <div class="soldout">SOLD OUT</div>
+                
                 <p>5,000원</p>
                 <p>[쿠키런스토어]쿠키런 랜덤 키체인</p>
                 <p class="item_sub">** 1차 수량 품절로, 재입고 예정입니다. 재입고 예정일 : 11/17(금) ~ 20(월)</p>
                 <div class="icon"><i class="fa-solid fa-neuter"></i></a></div>
                 <div class="icon"><i class="fa-solid fa-plus"></i></div>
+                <div class="soldout">SOLD OUT</div>
             </div>
             <div class="item">
                 <div><img
@@ -177,12 +210,12 @@
             </div>
             <div class="item">
                 <div><img
-                        src="https://shop-phinf.pstatic.net/20230711_53/1689065284946vVsqU_JPEG/4846257798732907_441903086.jpg?type=f296_296"
+                        src="https://shop-phinf.pstatic.net/20230712_149/1689141723147orsKB_JPEG/3343809127994028_1734275766.jpg?type=f296_296"
                         alt=""></div>
                 <!-- <div class="best">BEST</div> -->
                 <p>2,000원</p>
-                <p>[쿠키런스토어]쿠키런 플리퍼즈 (랜덤)</p>
-                <p class="item_sub">쿠키런 플리퍼즈 24종 👉🏻 1개 주문 시 랜덤으로 1개, 👉🏻 24개 주문 시 중복없는 1박스로 배송됩니다.</p>
+                <p>[쿠키런스토어]브레이브 어드벤쳐 용감한쿠키</p>
+                <p class="item_sub">모험을 떠나는 용감한 쿠키가 귀여운 인형 키링으로!</p>
                 <div class="icon"><i class="fa-solid fa-neuter"></i></a></div>
                 <div class="icon"><i class="fa-solid fa-plus"></i></div>
                 <p class="item_sub">평점 5.0 · 리뷰 16</p>

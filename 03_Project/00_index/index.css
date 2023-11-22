@@ -23,11 +23,12 @@ a{
     background-color: #2e2e37ff;
 }
 header{
-    background-position: bottom ;
+    background-image: url(../img/bg1.webp);
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     height: 375px;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 .header_top{
     width: 1024px;

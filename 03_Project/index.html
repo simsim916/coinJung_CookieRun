@@ -5,30 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://webfontworld.github.io/cookierun/CookieRun.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/d68045e863.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./00_index/index.css">
-    <script defer src="./00_index/index.js"></script>
+    <link rel="stylesheet" href="./00_index/index0.css">
+    <script defer src="./00_index/index0.js"></script>
     <title>쿠키런 | 온라인 굿즈샵</title>
 </head>
 <body>
     <header>
         <div id="nav_bg"></div>
         <nav>
-            <div class="header_top">
+            <div class="header_top container">
                 <div class="header_logo">
                     <h1>쿠키런</h1>
                     <img src="https://www.devsisters.com/_next/image?url=%2Fimage%2Fhome%2Fourgames-kingdom-logo.png&w=640&q=75" alt="">
                 </div>
                 <ul>
-                    <li><a href="./01_news/notice.html">새소식</a>
+                    <li><a href="./01_news/01_notice.html">새소식</a>
                         <ul class="sub_li">
-                            <li><a href="./01_news/cookie_noticeboard.html">공지사항</a></li>
+                            <li><a href="./01_news/01_notice.html">공지사항</a></li>
                             <li><a href="./01_news/02_update.html">업데이트</a></li>
                             <li><a href="./01_news/03_event.html">이벤트</a></li>
                         </ul>
                     </li>
-                    <li><a href="./02_gameInfo/01_cookie_info.css">게임정보</a>
+                    <li><a href="./02_gameInfo/01_cookie_info.html">게임정보</a>
                         <ul class="sub_li">
-                            <li><a href="./02_gameInfo/01_cookie_info.css">쿠키 소개</a></li>
+                            <li><a href="./02_gameInfo/01_cookie_info.html">쿠키 소개</a></li>
                             <li><a href="./02_gameInfo/02_game_info.html">게임 소개</a></li>
                             <li><a href="./02_gameInfo/03_world_info.html">쿠키 월드 소개</a></li>
                         </ul>
@@ -38,7 +38,7 @@
                             <li><a href="./03_comunity/01_cookie_freeboard.html">자유 게시판</a></li>
                         </ul>
                     </li>
-                    <li><a href="./04_media/01_media.css">미디어</a>
+                    <li><a href="./04_media/01_media.html">미디어</a>
                         <ul class="sub_li">
                             <li><a href="./04_media/01_media.html">영상</a></li>
                             <li><a href="./04_media/02_artwork.html">아트워크</a></li>
@@ -57,25 +57,77 @@
                 </ul>
             </div>
         </nav>
-        <div class="header_title">
-            <div><i class="fa-regular fa-file-lines"></i></div><span>새소식</span>
-        </div>
         <div class="header_cookie">
                 <img id="header_cookie" src="https://i.pinimg.com/originals/5e/a7/82/5ea782dee1243d13f4fcdedf96cb4c4d.gif" alt="">
         </div>
     </header>
     <div class="header_bottom">
-        <div>
-            <ul>
-                <li>새소식</li>
-                <li>게임정보</li>
-                <li>커뮤니티</li>
-                <li>미디어</li>
-                <li>SHOP</li>
-                <li>고객센터</li>
-            </ul>
+        <div class="container">
+            <div class="header_left">
+                <img src="./img/update1_mini.jpg" alt="">
+                <div>
+                    <p>업데이트 정보센터</p>
+                    <p>2023.11.21<br>ver.1.2.382 업데이트 </p>
+                </div>
+            </div>
+            <img src="./img/index_logo.png" alt="">
+            <div class="header_right">
+                <div class="dev_login">Devsisters<br>로그인</div>
+                <div class="kakao_login">Kakao <br>로그인</div>
+            </div>
         </div>
     </div>
-    
+    <!-- <div class="header_download container">
+        <img src="https://www.cookierun-kingdom.com/4dfe840b9808fd9590bfcb159e7fc8d2.svg" alt="">
+        <img src="https://www.cookierun-kingdom.com/787c3a0930060cd3cd921a0cdc4dd400.svg" alt="">
+        <img src="https://www.cookierun-kingdom.com/5b4f531ec1076a54baed605a65616276.svg" alt="">
+        <img src="https://www.cookierun-kingdom.com/e5759740943c57bca5a07da208a6a4cb.svg" alt="">
+    </div> -->
+    <main>
+        <div class="img_box container">
+            <div class="event_slide">
+                <div>
+                    <i class="fa-solid fa-chevron-left"></i>
+                    <i class="fa-solid fa-pause"></i>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+                <div class="event_slide_img">
+                </div>
+                <div class="event_slide_btn">
+                    <div>
+                    </div>
+                </div>
+            </div>
+            <div class="shop_slide">
+                <img src="./img/cookierunstore.jpg" alt="">
+                <p>주간의 인기 상품</p>
+                <img src="https://shop-phinf.pstatic.net/20230712_149/1689141723147orsKB_JPEG/3343809127994028_1734275766.jpg?type=m510" alt="">
+                <p class="item_title">[쿠키런스토어]브레이브 어드벤쳐 용감한쿠키</p>
+                <div class="shop_slide_bth">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+
+        </div>
+        <hr>
+        <div class="main_info container">
+            <div>
+                <h3>쿠키런 킹덤<br>새소식</h3>
+                <div>새소식 보러가기 <i class="fa-solid fa-square-caret-right"></i></div>
+            </div>
+            <div>
+                <div class="info_slide">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
 </html>
