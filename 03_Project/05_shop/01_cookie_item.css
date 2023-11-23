@@ -21,16 +21,29 @@ h3{
     color: red;
 }
 .main_head>div{
-    display: flex;
     position: absolute;
     right: 0;
-    bottom: 0;
+    bottom: 10px;
+    line-height: 50px;
 }
 .main_head>div>p{
     font-size: 15px;
     font-weight: bolder;
     opacity: 0.7;
     width: 100px;
+}
+.grid_box{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    position: absolute;
+    
+}
+.grid_box li{
+    background-color: red;
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
 }
 .main_option>ul{
     display: flex;
@@ -123,6 +136,10 @@ h3{
     text-align: center;
     margin-left: 10px;
 }
+.list_option{
+    width: 100%;
+    height: 70px;
+}
 .list_option>ul{
     display: flex;
     margin-bottom: 20px;
@@ -132,13 +149,6 @@ h3{
     padding: 10px 10px;
     font-size: 13px;
     opacity: 0.7;
-}
-.grid_box li{
-    background-color: red;
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    
 }
 .option_last>.reset{
     width: 120px;

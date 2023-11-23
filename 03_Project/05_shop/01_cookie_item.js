@@ -6,7 +6,7 @@ let productAR = [
         title: '[쿠키런스토어]쿠키런 스키릇팩 피규어',
         intro: '** 1차 수량 품절로, 재입고 예정입니다. 재입고 예정일 : 11/17(금) ~ 20(월)',
         price: 5000,
-        img: [
+        img: [ 
             'https://shop-phinf.pstatic.net/20231114_202/1699953403443Iz8WI_JPEG/52025790832298130_1281338351.jpg?type=m510',
             'https://shop-phinf.pstatic.net/20231114_110/1699953409184PThGI_JPEG/10886639949869620_312616009.jpg?type=m510',
             'https://shop-phinf.pstatic.net/20231114_70/1699953413567rf7dx_JPEG/12503080342079771_653990839.jpg?type=m510'
@@ -182,6 +182,7 @@ let listOption = document.getElementsByClassName('list_option');
 let lastBold = listOption[0].children[0].children[0];
 let showScreen = document.getElementsByClassName('show_screen');
 let pageNum = 1;
+let gridBox = document.getElementsByClassName('grid_box');
 
 // 옵션 박스 열기 / 닫기
 {
@@ -209,7 +210,6 @@ let pageNum = 1;
     })
 }
 // 아이템 갯수(배열) 9개씩 나타내기, 금액단위 설정 
-
 const imgPage = 9;
 function listWriter() {
     let mainItem = document.getElementsByClassName('main_item');
@@ -217,7 +217,7 @@ function listWriter() {
     for (let i = 0 + (pageNum - 1) * imgPage; i < imgPage + (pageNum - 1) * imgPage; i++) {
         if (i == productAR.length) break;
         mainItem[0].innerHTML +=
-        `<div class="item">
+            `<div class="item">
         <img src="${productAR[i].img[0]}" alt="">
         <p class="item_price">${productAR[i].price.toLocaleString()} 원</p>
         <p class="item_title">${productAR[i].title}</p>
@@ -225,6 +225,11 @@ function listWriter() {
         <div class="icon"><i class="fa-solid fa-neuter"></i></div>
         <div class="icon"><i class="fa-solid fa-plus"></i></div>
         </div>`;
+    
+
+        // 아이템 갯수 6개씩 나타내기
+        
+        
  
 // 재고 없을 때 이미지 투명도, BEST/SOLDOUT 박스 넣기    
     if (productAR[i].stock == 0) {
@@ -239,7 +244,18 @@ function listWriter() {
 }
 }
 
-//페이지 박스 만들기
+//아이템목록(6개 / 9개) 만들기
+// gridBox.children[1].addEventListener('click', (event) => {
+//     if (gridBox.children[1] == 'LI')
+//         switch (gridBox.children[1].innerText) {
+//             case '1':
+//                 listWriter();
+//                 break;
+//         }
+// })
+
+
+//페이지 이미지박스 만들기, 페이지 넘어갈 때 보이는 화면 기준점 잡기
 {
     let pageAmount; 
     pageAmount = productAR.length / 9
@@ -250,14 +266,12 @@ function listWriter() {
         
         if (event.target != showScreen[0]) {
             pageNum = event.target.innerText;
-            window.scrollTo(0, 400);
+            window.scrollTo(0, 300);
             listWriter();
         }
     })
-    //show아닐때 눌러진 타겟의 이너텍스트를 가져온다
-    //event타겟이 show아닐때
 }
-//상품 리스트 순서 클릭 시 배열 
+//상품 리스트 순서 클릭 시 배열, 첫화면에 인기도순 나타내기 
 {
     lastBold.style.fontWeight = 'bold';
     lastBold.style.opacity = "1";
