@@ -165,7 +165,10 @@ let freeboardAR = [
         freeboard_date : '12시간 전'
     },
 ];
+
+
 let noticeNum = window.location.href;
+
 
 let title = document.getElementsByClassName('title');
 let alticle = document.getElementsByClassName('alticle');
@@ -174,142 +177,50 @@ let comment_list = document.getElementsByClassName('comment_list');
 let user_icon = document.getElementsByClassName('user_icon');
 let info = document.getElementsByClassName('info');
 
+console.log(comment_list[0].childNodes[1].childNodes[3]);
 
-// 게시글 작성하기 html 1
-function html1(){
-    title[0].children[0].innerText = `${freeboardAR[0].subject}`;
-    title[0].children[1].innerText = `${freeboardAR[0].userInfo}`;
-    title[0].children[2].innerText = `${freeboardAR[0].freeboard_date}`;
+// 게시글 작성하기
+function html(num){
+    let temp = 1;
 
-    alticle[0].children[0].innerText = `${freeboardAR[0].alticle}`;
+    title[0].children[0].innerText = `${freeboardAR[num].subject}`;
+    title[0].children[1].innerText = `${freeboardAR[num].userInfo}`;
+    title[0].children[2].innerText = `${freeboardAR[num].freeboard_date}`;
 
-    alticle_like[0].children[0].innerText = `${freeboardAR[0].heart}`;
+    alticle[0].children[0].innerText = `${freeboardAR[num].alticle}`;
 
-    comment_list[0].childNodes[1].childNodes[1].children[1].innerText = `${freeboardAR[0].comment_user_info[0]}`;
-    comment_list[0].childNodes[1].childNodes[1].children[2].innerText = `${freeboardAR[0].content[0]}`;
-    comment_list[0].childNodes[1].childNodes[3].children[1].innerText = `${freeboardAR[0].comment_user_info[1]}`;
-    comment_list[0].childNodes[1].childNodes[3].children[2].innerText = `${freeboardAR[0].content[1]}`;
+    alticle_like[0].children[0].innerText = `${freeboardAR[num].heart}`;
 
-    user_icon[0].childNodes[3].innerText = `${freeboardAR[0].userInfo}`;
+    for(let i = 0 ; i < freeboardAR[num].content.length ; i++){
+        comment_list[0].childNodes[1].childNodes[temp].children[1].innerText = `${freeboardAR[num].comment_user_info[i]}`;
+        comment_list[0].childNodes[1].childNodes[temp].children[2].innerText = `${freeboardAR[num].content[i]}`;
 
-    info[0].children[1].children[1].innerText = `${freeboardAR[0].commentNum}`;
-    info[0].children[2].children[1].innerText = `${freeboardAR[0].heart}`;
-    info[0].children[3].children[1].innerText = `${freeboardAR[0].read}`;
+        temp += 2;
+    }
+    user_icon[0].childNodes[3].innerText = `${freeboardAR[num].userInfo}`;
+
+    info[0].children[1].children[1].innerText = `${freeboardAR[num].commentNum}`;
+    info[0].children[2].children[1].innerText = `${freeboardAR[num].heart}`;
+    info[0].children[3].children[1].innerText = `${freeboardAR[num].read}`;
 }
-
-
-// 게시글 작성하기 html 2
-function html2(){
-    title[0].children[0].innerText = `${freeboardAR[1].subject}`;
-    title[0].children[1].innerText = `${freeboardAR[1].userInfo}`;
-    title[0].children[2].innerText = `${freeboardAR[1].freeboard_date}`;
-
-    alticle[0].children[0].innerText = `${freeboardAR[1].alticle}`;
-
-    alticle_like[0].children[0].innerText = `${freeboardAR[1].heart}`;
-
-    comment_list[0].childNodes[1].childNodes[1].children[1].innerText = `${freeboardAR[1].comment_user_info[0]}`;
-    comment_list[0].childNodes[1].childNodes[1].children[2].innerText = `${freeboardAR[1].content[0]}`;
-    comment_list[0].childNodes[1].childNodes[3].children[1].innerText = `${freeboardAR[1].comment_user_info[1]}`;
-    comment_list[0].childNodes[1].childNodes[3].children[2].innerText = `${freeboardAR[1].content[1]}`;
-
-    user_icon[0].childNodes[3].innerText = `${freeboardAR[1].userInfo}`;
-
-    info[0].children[1].children[1].innerText = `${freeboardAR[1].commentNum}`;
-    info[0].children[2].children[1].innerText = `${freeboardAR[1].heart}`;
-    info[0].children[3].children[1].innerText = `${freeboardAR[1].read}`;
-}
-
-// 게시글 작성하기 html 3
-function html3(){
-    title[0].children[0].innerText = `${freeboardAR[2].subject}`;
-    title[0].children[1].innerText = `${freeboardAR[2].userInfo}`;
-    title[0].children[2].innerText = `${freeboardAR[2].freeboard_date}`;
-
-    alticle[0].children[0].innerText = `${freeboardAR[2].alticle}`;
-
-    alticle_like[0].children[0].innerText = `${freeboardAR[2].heart}`;
-
-    comment_list[0].childNodes[1].childNodes[1].children[1].innerText = `${freeboardAR[2].comment_user_info[0]}`;
-    comment_list[0].childNodes[1].childNodes[1].children[2].innerText = `${freeboardAR[2].content[0]}`;
-    comment_list[0].childNodes[1].childNodes[3].children[1].innerText = `${freeboardAR[2].comment_user_info[1]}`;
-    comment_list[0].childNodes[1].childNodes[3].children[2].innerText = `${freeboardAR[2].content[1]}`;
-
-    user_icon[0].childNodes[3].innerText = `${freeboardAR[2].userInfo}`;
-
-    info[0].children[1].children[1].innerText = `${freeboardAR[2].commentNum}`;
-    info[0].children[2].children[1].innerText = `${freeboardAR[2].heart}`;
-    info[0].children[3].children[1].innerText = `${freeboardAR[2].read}`;
-}
-
-// 게시글 작성하기 html 4
-function html4(){
-    title[0].children[0].innerText = `${freeboardAR[3].subject}`;
-    title[0].children[1].innerText = `${freeboardAR[3].userInfo}`;
-    title[0].children[2].innerText = `${freeboardAR[3].freeboard_date}`;
-
-    alticle[0].children[0].innerText = `${freeboardAR[3].alticle}`;
-
-    alticle_like[0].children[0].innerText = `${freeboardAR[3].heart}`;
-
-    comment_list[0].childNodes[1].childNodes[1].children[1].innerText = `${freeboardAR[3].comment_user_info[0]}`;
-    comment_list[0].childNodes[1].childNodes[1].children[2].innerText = `${freeboardAR[3].content[0]}`;
-    // comment_list[0].childNodes[1].childNodes[3].children[1].innerText = `${freeboardAR[2].comment_user_info[1]}`;
-    // comment_list[0].childNodes[1].childNodes[3].children[2].innerText = `${freeboardAR[2].content[1]}`;
-
-    user_icon[0].childNodes[3].innerText = `${freeboardAR[3].userInfo}`;
-
-    info[0].children[1].children[1].innerText = `${freeboardAR[3].commentNum}`;
-    info[0].children[2].children[1].innerText = `${freeboardAR[3].heart}`;
-    info[0].children[3].children[1].innerText = `${freeboardAR[3].read}`;
-}
-
-// 게시글 작성하기 html 5
-function html5(){
-    title[0].children[0].innerText = `${freeboardAR[4].subject}`;
-    title[0].children[1].innerText = `${freeboardAR[4].userInfo}`;
-    title[0].children[2].innerText = `${freeboardAR[4].freeboard_date}`;
-
-    alticle[0].children[0].innerText = `${freeboardAR[4].alticle}`;
-
-    alticle_like[0].children[0].innerText = `${freeboardAR[4].heart}`;
-
-    comment_list[0].childNodes[1].childNodes[1].children[1].innerText = `${freeboardAR[4].comment_user_info[0]}`;
-    comment_list[0].childNodes[1].childNodes[1].children[2].innerText = `${freeboardAR[4].content[0]}`;
-    comment_list[0].childNodes[1].childNodes[3].children[1].innerText = `${freeboardAR[4].comment_user_info[1]}`;
-    comment_list[0].childNodes[1].childNodes[3].children[2].innerText = `${freeboardAR[4].content[1]}`;
-    comment_list[0].childNodes[1].childNodes[5].children[1].innerText = `${freeboardAR[4].comment_user_info[2]}`;
-    comment_list[0].childNodes[1].childNodes[5].children[2].innerText = `${freeboardAR[4].content[2]}`;
-    comment_list[0].childNodes[1].childNodes[7].children[1].innerText = `${freeboardAR[4].comment_user_info[3]}`;
-    comment_list[0].childNodes[1].childNodes[7].children[2].innerText = `${freeboardAR[4].content[3]}`;
-    comment_list[0].childNodes[1].childNodes[9].children[1].innerText = `${freeboardAR[4].comment_user_info[4]}`;
-    comment_list[0].childNodes[1].childNodes[9].children[2].innerText = `${freeboardAR[4].content[4]}`;
-    comment_list[0].childNodes[1].childNodes[11].children[1].innerText = `${freeboardAR[4].comment_user_info[5]}`;
-    comment_list[0].childNodes[1].childNodes[11].children[2].innerText = `${freeboardAR[4].content[5]}`;
-
-    user_icon[0].childNodes[3].innerText = `${freeboardAR[4].userInfo}`;
-
-    info[0].children[1].children[1].innerText = `${freeboardAR[4].commentNum}`;
-    info[0].children[2].children[1].innerText = `${freeboardAR[4].heart}`;
-    info[0].children[3].children[1].innerText = `${freeboardAR[4].read}`;
-}
-
-
-
-console.log(comment_list[0].childNodes[1].childNodes[1].children[1])
 
 if(noticeNum.includes('content_1.html')) {
-    html1();
+    let num = 0;
+    html(num);
 }
 else if(noticeNum.includes('content_2.html')) {
-    html2();
+    let num = 1;
+    html(num);
 }
 else if(noticeNum.includes('content_3.html')) {
-    html3();
+    let num = 2;
+    html(num);
 }
 else if(noticeNum.includes('content_4.html')) {
-    html4();
+    let num = 3;
+    html(num);
 }
 else if(noticeNum.includes('content_5.html')) {
-    html5();
+    let num = 4;
+    html(num);
 }
