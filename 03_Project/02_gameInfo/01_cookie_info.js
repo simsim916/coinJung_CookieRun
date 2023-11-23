@@ -311,8 +311,13 @@ function detail (event) {
 let mainOpt = document.getElementsByClassName('main_option');
 
 let typeAlt; 
-mainOpt[0].children[i]
 // let typeNum;
+
+mainOpt[0].children.addEventListener('click', (event)=>{
+    let OptTypeImg = event.target;
+    let OptName = OptTypeImg.getAttribute('alt');
+    console.log(OptName);
+})
 
 // mainOpt[0].children.addEventListener('click',qlry)
 
@@ -331,4 +336,4 @@ mainOpt[0].children[i]
     
 
 
-console.log(mainOpt[0].children[6].getAttribute('alt'));
+// console.log(mainOpt[0].children;
