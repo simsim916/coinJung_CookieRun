@@ -285,13 +285,17 @@ function cookieType(cookieType) {
     }
 }
 
+let lastPage
 writeCookieList();
 {
-    let lastPage
-    mainList[0].addEventListener('click',(event)=>{
-        let eventOJ = event.target.closest('.main_list_box')
-        let cookieName = eventOJ.children[1].innerText;
-        let compare;
+    main[0].addEventListener('click', detail)
+}
+
+
+function detail (event) {
+    let eventOJ = event.target.closest('.main_list_box')
+    let cookieName = eventOJ.children[1].innerText;
+    let compare;
     for (let i = 0 ; i < cookieAR.length ; i++){
         if(cookieName == cookieAR[i].name){
             compare = i;
@@ -316,12 +320,10 @@ writeCookieList();
         </div>
     </div>`
     let backButton = main[0].getElementsByClassName('back_button');
-
     backButton[0].addEventListener('click',(event)=>{
         if(event.target.className == 'back_button')
         main[0].innerHTML = lastPage;
+        main[0].addEventListener('click', detail)
     
-    })
-    })
+})
 }
-
