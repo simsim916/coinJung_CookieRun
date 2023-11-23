@@ -5,6 +5,7 @@ let subLi = document.querySelectorAll(".sub_li");
 let navBg = document.querySelector("#nav_bg");
 let headerCookie = document.querySelector("#header_cookie");
 let header = document.querySelector("header");
+let shopSlideImg = document.getElementsByClassName('shop_slide_img');
 let lastSlideBtn;
 const headerImg = [
     './img/bg1.webp',
@@ -180,21 +181,39 @@ navBg.addEventListener('mouseout',()=>{
     })
 }
 
-// 
 {
-    
+    ARRise();
+
+    for (let i = 0 ; i < 5 ; i++){
+        shopSlideImg[0].innerHTML += `<div><img src="${productAR[i].img[0]}" alt="${productAR[i].title}"><p class="item_title">${productAR[i].title}</p></div>`
+    }
 }
 
 {
+    let shopSlideBtn = document.getElementsByClassName('shop_slide_bth');
+    let lastSlideLi=shopSlideBtn[0].children[0];
+    lastSlideLi.style.opacity="1";
+    lastSlideLi.style.width="30px";
+    shopSlideBtn[0].addEventListener('click',(event)=>{
+        if (event.target.tagName == "LI"){
+            lastSlideLi.style.opacity="0.3";
+            event.target.style.opacity="1";
+            event.target.style.width="30px";
+            lastSlideLi.style.width="13px";
+            lastSlideLi=event.target;
+            shopSlideImg[0].style.transform=`translateX(-${event.target.innerText*20}%)`;
+        }
+    });
+}
+
+function ARRise(){
     for (let i = 0 , t; i < productAR.length-1; i++){
         for (let j = i+1 ; j < productAR.length ; j++) {
-            if ( productAR[i].price > productAR[j].price){
+            if ( productAR[i].sell > productAR[j].sell){
                 t = productAR[i];
                 productAR[i] = productAR[j];
                 productAR[j] = t;
-                
             }
         }
     }
-    console.log(productAR);
 }
