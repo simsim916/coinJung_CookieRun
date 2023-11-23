@@ -310,9 +310,9 @@ writeCookieList();
     <div class="intro_box">
         <div class="skill_box">
             <p class="skill">스킬</p>
-            <img src="" alt="">
-            <p class="skill_name"></p>
-            <p class="skill_intro"></p>
+            <img src="${cookieAR[compare].skill.skillImg}" alt="${cookieAR[compare].skill.skillName}">
+            <p class="skill_name">${cookieAR[compare].skill.skillName}</p>
+            <p class="skill_intro">${cookieAR[compare].skill.skillInfo}</p>
         </div>
     </div>`
     let backButton = main[0].getElementsByClassName('back_button');
