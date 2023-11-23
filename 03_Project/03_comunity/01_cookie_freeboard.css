@@ -277,14 +277,15 @@ main{
     text-align: center;
     margin: 1px;
     border: 1px solid gray;
+    /* background-color: white; */
 
     padding: 10px;
 }
 
-.a{
+/* .page>.default{
     background-color: black;
     color: white;
-}
+} */
 
 .page>a:hover{
     background-color: black;

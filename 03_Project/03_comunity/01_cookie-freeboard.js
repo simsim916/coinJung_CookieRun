@@ -185,6 +185,158 @@ let freeboardAR = [
         freeboard_date : '12시간 전',
         commentNum : 65
     },
+    {
+        subject : '스토브 인증기 왜이럼?',
+        userInfo : '그래도이쁨',
+        heart : 12,
+        read : 57,
+        freeboard_date : '12시간 전',
+        commentNum : 65
+    },
+    {
+        subject : '스토브 인증기 왜이럼?',
+        userInfo : '그래도이쁨',
+        heart : 12,
+        read : 57,
+        freeboard_date : '12시간 전',
+        commentNum : 65
+    },
+    {
+        subject : '스토브 인증기 왜이럼?',
+        userInfo : '그래도이쁨',
+        heart : 12,
+        read : 57,
+        freeboard_date : '12시간 전',
+        commentNum : 65
+    },
+    {
+        subject : '스토브 인증기 왜이럼?',
+        userInfo : '그래도이쁨',
+        heart : 12,
+        read : 57,
+        freeboard_date : '12시간 전',
+        commentNum : 65
+    },
+    {
+        subject : '스토브 인증기 왜이럼?',
+        userInfo : '그래도이쁨',
+        heart : 12,
+        read : 57,
+        freeboard_date : '12시간 전',
+        commentNum : 65
+    },
+    {
+        subject : '스토브 인증기 왜이럼?',
+        userInfo : '그래도이쁨',
+        heart : 12,
+        read : 57,
+        freeboard_date : '12시간 전',
+        commentNum : 65
+    },
+    {
+        subject : '스토브 인증기 왜이럼?',
+        userInfo : '그래도이쁨',
+        heart : 12,
+        read : 57,
+        freeboard_date : '12시간 전',
+        commentNum : 65
+    },
+    {
+        subject : '스토브 인증기 왜이럼?',
+        userInfo : '그래도이쁨',
+        heart : 12,
+        read : 57,
+        freeboard_date : '12시간 전',
+        commentNum : 65
+    },
+    {
+        subject : '스토브 인증기 왜이럼?',
+        userInfo : '그래도이쁨',
+        heart : 12,
+        read : 57,
+        freeboard_date : '12시간 전',
+        commentNum : 65
+    },
+    {
+        subject : '스토브 인증기 왜이럼?',
+        userInfo : '그래도이쁨',
+        heart : 12,
+        read : 57,
+        freeboard_date : '12시간 전',
+        commentNum : 65
+    },
+    {
+        subject : '스토브 인증기 왜이럼?',
+        userInfo : '그래도이쁨',
+        heart : 12,
+        read : 57,
+        freeboard_date : '12시간 전',
+        commentNum : 65
+    },
+    {
+        subject : '스토브 인증기 왜이럼?',
+        userInfo : '그래도이쁨',
+        heart : 12,
+        read : 57,
+        freeboard_date : '12시간 전',
+        commentNum : 65
+    },
+    {
+        subject : '스토브 인증기 왜이럼?',
+        userInfo : '그래도이쁨',
+        heart : 12,
+        read : 57,
+        freeboard_date : '12시간 전',
+        commentNum : 65
+    },
+    {
+        subject : '스토브 인증기 왜이럼?',
+        userInfo : '그래도이쁨',
+        heart : 12,
+        read : 57,
+        freeboard_date : '12시간 전',
+        commentNum : 65
+    },
+    {
+        subject : '스토브 인증기 왜이럼?',
+        userInfo : '그래도이쁨',
+        heart : 12,
+        read : 57,
+        freeboard_date : '12시간 전',
+        commentNum : 65
+    },
+    {
+        subject : '스토브 인증기 왜이럼?',
+        userInfo : '그래도이쁨',
+        heart : 12,
+        read : 57,
+        freeboard_date : '12시간 전',
+        commentNum : 65
+    },
+    {
+        subject : '스토브 인증기 왜이럼?',
+        userInfo : '그래도이쁨',
+        heart : 12,
+        read : 57,
+        freeboard_date : '12시간 전',
+        commentNum : 65
+    },
+    {
+        subject : '스토브 인증기 왜이럼?',
+        userInfo : '그래도이쁨',
+        heart : 12,
+        read : 57,
+        freeboard_date : '12시간 전',
+        commentNum : 65
+    },
+    {
+        subject : '스토브 인증기 왜이럼?',
+        userInfo : '그래도이쁨',
+        heart : 12,
+        read : 57,
+        freeboard_date : '12시간 전',
+        commentNum : 65
+    },
 ];
 
 let main = document.getElementsByTagName('main'),
@@ -223,12 +375,12 @@ free_content = main[0].querySelector('.free_content');
         content.children[0].innerHTML = noticeHTML;
     }
 
+
+    /* ====================================== */
     /** content 부분 태그, 내용 채우기 반복문 **/
-    {
-        let sort = 10;
-        let array = document.getElementById('sort');
-        // let array1 = array.value;
-        console.log(array.children[0].value);
+
+    function array(sort){
+  
 
         let contentHTML = '';
         for(let i = 0 ; i < sort ; i++){
@@ -243,25 +395,20 @@ free_content = main[0].querySelector('.free_content');
             `;
         }
         free_content.innerHTML = contentHTML;
-
-
     }
 
+    let sort = document.getElementById('sort');
+    sort.addEventListener('change', (event) =>{
+        let selcet_option = event.target.value;
+        console.log(selcet_option);
+        if(selcet_option == 10) array(selcet_option)
+        else if(selcet_option == 20) array(selcet_option)
+        else if(selcet_option == 30) array(selcet_option)
+    })
+    array(10);
 
 
-    /** a태그 링크 기능 삭제 부분 **/
-    {
-        let preventLink = document.querySelectorAll('a');
-    
-        preventLink.forEach(function (link) {                   // 구글링해서 사용했음 -> forEach: 지금은 위에서 preventLink를 선언해서 'a'태그를 다 찾아서 배열의 형태로 저장했고 
-            link.addEventListener('click', function (event) {
-                console.log('Event handler executed!');
-                event.preventDefault();                         //  forEach 를 사용해서 link 기능을 클릭했을 시 작동되지 않도록 막음(preventDefault)
-            });
-        });    
-    }    
-
-
+    /* ====================================== */
     /** 리뷰순 좋아요순 **/
     {
         let list_freeboard = main[0].querySelectorAll('.list_freeboard');
@@ -322,10 +469,7 @@ free_content = main[0].querySelector('.free_content');
         })
     }
 
-
-
-
-
+    /* ====================================== */
     /** inner HTML 게시판 상호작용 **/
     {
         /* HTML 삭제 후 alticle 삽입 */
@@ -453,4 +597,64 @@ free_content = main[0].querySelector('.free_content');
     
     }
 
+    /* ====================================== */
 
+    /**  page 생성, page 넘김 **/
+    let page = main[0].getElementsByClassName('page');
+    let selcet_option = sort.value;
+    let page_num = Math.round(freeboardAR.length/selcet_option);        // 구글링 -> round 반올림
+
+    /* page 데이터 수 만큼 생성 */
+    for(let i = 0 ; i < page_num ; i++){
+
+        if(i == 0 ){
+            page[0].innerHTML += `
+                 <a href="#" class="default">${i+1}</a>
+            `
+        }
+        else{
+            page[0].innerHTML += `
+                 <a href="#" class="">${i+1}</a>
+            `
+        }
+    }
+
+
+
+
+
+
+
+    // let pageBoxes = document.querySelectorAll('.page');
+
+    // pageBoxes.forEach((pageBox, index) => {
+    //     pageBox.addEventListener('click', (event) => {
+    //         let turn = event.target;
+    //         for (let i = 0; i < pageBoxes.length; i++) {
+    //             if (pageBoxes[i] === turn) {
+    //                 // 클릭한 페이지 박스의 색상 변경
+    //                 turn.style.backgroundColor = "black";
+    //                 turn.style.color = "white";
+    //             } else {
+    //                 // 나머지 페이지 박스의 색상 초기화
+    //                 pageBoxes[i].style.backgroundColor = "white";
+    //                 pageBoxes[i].style.color = "black";
+    //             }
+    //         }
+    //     });
+    // }); ㅡㅡ
+
+
+
+
+
+    /* ====================================== */
+    /** a태그 링크 기능 삭제 부분 **/
+
+    let preventLink = document.querySelectorAll('a');
+    
+    preventLink.forEach(function (link) {                   // 구글링해서 사용했음 -> forEach: 지금은 위에서 preventLink를 선언해서 'a'태그를 다 찾아서 배열의 형태로 저장했고 
+        link.addEventListener('click', function (event) {
+            event.preventDefault();                         //  forEach 를 사용해서 link 기능을 클릭했을 시 작동되지 않도록 막음(preventDefault)
+        });
+    });    
