@@ -1,8 +1,6 @@
-*{
-    border-radius: 17px;  
-    /* font-family:  */
-}
+
 main{
+    border-radius: 17px;  
     width: 1024px;
     margin: auto;
 }
