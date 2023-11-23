@@ -1,15 +1,12 @@
-*{
-    border-radius: 17px;  
-    /* font-family:  */
-}
-main{
+
+main{ 
     width: 1024px;
     margin: auto;
 }
 
 .main_info_container{
+    border-radius: 17px; 
     background-image: url(https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/437c8f58-6fc6-4b96-9bf0-681ed20aa300/public);
-    border-radius: 17px;
     border: 2px solid rgb(255, 163, 163);
     height: 450px;
     background-repeat: no-repeat;
@@ -32,6 +29,7 @@ main{
     left: 25%;
 }
 .main_info_self{
+    border-radius: 17px; 
     background-color: rgba(255, 206, 206, 0.4);;
     position: absolute;
     display: grid;
@@ -57,16 +55,31 @@ main{
     color: azure; 
 }
 .cookie_self{
+    border-radius: 17px; 
     letter-spacing: 1px;
     grid-column: 1/3 ;
     background-color: rgba(39, 9, 9, 0.4);
-    border-radius: 17px;
     color: antiquewhite;
     padding: 30px;
     height: 200px;
     overflow: auto;
 }
+.cookie_self::-webkit-scrollbar{
+    width: 15px;
+}
+.cookie_self::-webkit-scrollbar-track{
+    border-radius: 17px;
+    margin: 10px;
+    background-color: transparent;
+}
+.cookie_self::-webkit-scrollbar-thumb{
+    border-radius: 17px;
+    background-color: rgba(39, 9, 9, 0.6);
+}
+
+
 .intro_box{
+    border-radius: 17px; 
     margin-top: 50px;
     border: 1px solid rgb(255, 181, 181);
     display: grid;
@@ -77,6 +90,7 @@ main{
     background-color: rgb(255, 253, 253);
 }
 .skill_box{
+    border-radius: 17px; 
     display: grid;
     margin: auto;
     padding-bottom: 50px;
@@ -86,6 +100,7 @@ main{
     border: 3px dotted rgb(233, 187, 187);
 }
 .skill{
+    border-radius: 17px; 
     background: linear-gradient(45deg, #c28c27, #b634bb);
     border: 2px solid rgb(221, 123, 123);
     color: aliceblue;
@@ -106,6 +121,7 @@ main{
     font-weight: 600;
 }
 .skill_intro{
+    border-radius: 17px; 
     width: 70%;
     padding: 20px;
     background-color: rgb(255, 255, 255);

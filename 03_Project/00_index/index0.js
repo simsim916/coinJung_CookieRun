@@ -217,3 +217,7 @@ function ARRise(){
         }
     }
 }
+
+{
+    let infoSlide = document.getElementsByClassName('info_slide');
+}

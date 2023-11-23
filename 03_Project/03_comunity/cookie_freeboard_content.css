@@ -6,13 +6,15 @@ main{
     height: 100vh;
     width: 1024px;
     margin: auto;
+
+    position: relative;
 }
 h2{
     font-size: 30px;
     margin: 15px 0;
     padding: 50px 0px 25px;
 
-    border-bottom: 3px solid;
+    /* border-bottom: 3px solid; */
 }
 
 .notice_option{
@@ -51,12 +53,12 @@ h2{
 }
 
 .info{
-    position: fixed;
 
-    translate: calc((1024px / 10) * 7);
+    position: absolute;
+    right: 0;
+
     width: calc((1024px / 10) * 3);
     height: 100%;
-    /* background-color: aqua; */
 }
 
 /*==================================================================*/
@@ -209,7 +211,6 @@ h2{
 .like_num>span+span::before{
     content: '\f164  ';
     font: var(--fa-font-solid);
-    color: rgb(112, 112, 236);
 }
 
 .share>span+span::before{
