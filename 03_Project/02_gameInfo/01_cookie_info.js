@@ -302,8 +302,23 @@ function detail (event) {
         }
     }        
     lastPage = main[0].innerHTML;
-    main[0].innerHTML = `<div class="back_button">뒤로가기</div><div class="main_info_container"><img src="${cookieAR[compare].img}" alt="${cookieAR[compare].name}"><div class="main_info_pic"></div><div class="main_info_self"><div class="grid_box1"><img src="${cookieType(cookieAR[compare].type)}" alt="${cookieAR[compare].type}"></div><div class="grid_box2">${cookieAR[compare].name}</div><p class="cookie_self">${cookieAR[compare].info}</p></div></div><div class="intro_box"><div class="skill_box"><p class="skill">스킬</p><img src="" alt=""><p class="skill_name"></p><p class="skill_intro"></p></div></div>`
-    main[0].removeEventListener('click',detail)
+    main[0].innerHTML = 
+        `<div class="back_button">뒤로가기</div><div class="main_info_container"><img src="${cookieAR[compare].img}" alt="${cookieAR[compare].name}">
+        <div class="main_info_pic"></div>
+        <div class="main_info_self">
+            <div class="grid_box1"><img src="${cookieType(cookieAR[compare].type)}" alt="${cookieAR[compare].type}"></div>
+            <div class="grid_box2">${cookieAR[compare].name}</div>
+            <p class="cookie_self">${cookieAR[compare].info}</p>
+        </div>
+    </div>
+    <div class="intro_box">
+        <div class="skill_box">
+            <p class="skill">스킬</p>
+            <img src="${cookieAR[compare].skill.skillImg}" alt="${cookieAR[compare].skill.skillName}">
+            <p class="skill_name">${cookieAR[compare].skill.skillName}</p>
+            <p class="skill_intro">${cookieAR[compare].skill.skillInfo}</p>
+        </div>
+    </div>`
     let backButton = main[0].getElementsByClassName('back_button');
     backButton[0].addEventListener('click',(event)=>{
         if(event.target.className == 'back_button')
