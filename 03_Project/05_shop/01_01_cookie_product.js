@@ -114,6 +114,7 @@ let textpoint, photopoint;
 let pointDetails = document.getElementById('pointDetails');
 let cardDetails = document.getElementById('cardDetails');
 let quantityBox = document.getElementsByClassName('item_rightbox_point_quantity');
+
 // 포인트 관련 기능
 // {
 // // 포인트 추가 창  
@@ -253,8 +254,8 @@ let quantityBox = document.getElementsByClassName('item_rightbox_point_quantity'
                                 <i class="fa-regular fa-circle-question"></i>
                             </div>
                             <div class="item_rightbox_point_decision_total">
-                                <span id="totalAmount">개</span>
-                                <span id="totalPrice">원</span>
+                                <span id="totalAmount"></span>
+                                <span id="totalPrice"></span>
                             </div>
                         </div>
                         <div>
@@ -279,14 +280,11 @@ let quantityBox = document.getElementsByClassName('item_rightbox_point_quantity'
                 </div>
     `
 // 토탈 구하기
-    let totalAmount = document.getElementById('totalAmount');
-    let totalPrice = document.getElementById('totalPrice');
+let totalAmount = document.getElementById('totalAmount');
+let totalPrice = document.getElementById('totalPrice');
 
-    totalAmount = quantityBox[0].children[2].value;
-    totalPrice = ((quantityBox[0].children[2].value)*productAR[itemNum].price).toLocaleString();
-
-    console.log(totalAmount);
-    // console.log(${totalPrice});
+    totalAmount.innerText =`${quantityBox[0].children[1].value}개`
+    totalPrice.innerText= `${((quantityBox[0].children[1].value)*productAR[itemNum].price).toLocaleString()}원`
 
 }
 // 베스트 상품
@@ -312,16 +310,21 @@ let quantityBox = document.getElementsByClassName('item_rightbox_point_quantity'
 }
  
 // 수량 박스 작동 기능
-{
+// {
     quantityBox[0].addEventListener('click', (event)=> {
+
         if(quantityBox[0].children[1].value>0 && event.target==quantityBox[0].children[0]){
             quantityBox[0].children[1].value-=1;
         }
         if(event.target==quantityBox[0].children[2]){
             quantityBox[0].children[1].value= +quantityBox[0].children[1].value + 1;
         }
+        totalAmount.innerText =`${quantityBox[0].children[1].value}개`
+        totalPrice.innerText= `${((quantityBox[0].children[1].value)*productAR[itemNum].price).toLocaleString()}원`
     })
-}
+
+
+// }
 
 
 // 판매순 내림차순
