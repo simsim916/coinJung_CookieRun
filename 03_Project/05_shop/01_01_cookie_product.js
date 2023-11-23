@@ -278,17 +278,7 @@ let quantityBox = document.getElementsByClassName('item_rightbox_point_quantity'
                     </div>
                 </div>
     `
-// 토탈 구하기
-    let totalAmount = document.getElementById('totalAmount');
-    let totalPrice = document.getElementById('totalPrice');
 
-    totalAmount = quantityBox[0].children[2].value;
-    totalPrice = ((quantityBox[0].children[2].value)*productAR[itemNum].price).toLocaleString();
-
-    console.log(totalAmount);
-    // console.log(${totalPrice});
-
-}
 // 베스트 상품
 {
     productARSellDown(); // 이 때, productAR2가 '정렬된 productAR'이 됨
@@ -320,7 +310,23 @@ let quantityBox = document.getElementsByClassName('item_rightbox_point_quantity'
         if(event.target==quantityBox[0].children[2]){
             quantityBox[0].children[1].value= +quantityBox[0].children[1].value + 1;
         }
+        totalAmount = quantityBox[0].children[1].value;
+        console.log(totalAmount);
     })
+
+}
+
+// 토탈 구하기
+let totalAmount = document.getElementById('totalAmount');
+let totalPrice = document.getElementById('totalPrice');
+
+console.log(quantityBox[0].children[1].value);
+totalAmount = quantityBox[0].children[1].value;
+totalPrice = ((quantityBox[0].children[2].value)*productAR[itemNum].price).toLocaleString();
+
+// console.log(totalAmount);
+// console.log(totalPrice);
+
 }
 
 

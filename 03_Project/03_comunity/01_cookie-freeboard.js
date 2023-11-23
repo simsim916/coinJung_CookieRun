@@ -226,9 +226,9 @@ free_content = main[0].querySelector('.free_content');
     /** content 부분 태그, 내용 채우기 반복문 **/
     {
         let sort = 10;
-        let array = document.getElementById(sort);
-        let array1 = array.selectE
-        console.log(array.value);
+        let array = document.getElementById('sort');
+        // let array1 = array.value;
+        console.log(array.children[0].value);
 
         let contentHTML = '';
         for(let i = 0 ; i < sort ; i++){
