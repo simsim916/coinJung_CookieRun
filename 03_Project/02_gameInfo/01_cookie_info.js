@@ -310,30 +310,30 @@ function detail (event) {
 
 let mainOpt = document.getElementsByClassName('main_option');
 
-let typeAlt; 
-// let typeNum;
+let typeAlt;
 
-mainOpt[0].children.addEventListener('click', (event)=>{
+mainOpt[0].addEventListener('click', (event) => {
     let OptTypeImg = event.target;
-    let OptName = OptTypeImg.getAttribute('alt');
-    console.log(OptName);
-})
+    
+    if (OptTypeImg.tagName == "IMG") {
+        typeAlt = OptTypeImg.getAttribute('alt');
+        mainList[0].innerHTML = "";
+    for (let i = 0; i < cookieAR.length; i++) {
+        if (typeAlt == cookieAR[i].type) {    
+            mainList[0].innerHTML += 
+            `<div class="main_list_box"><img src="${cookieAR[i].img}" alt="${cookieAR[i].name}">
+            <div class="main_list_item_name">${cookieAR[i].name}</div>
+            <div class="main_list_item_type"><img src="${cookieType(cookieAR[i].type)}" alt="${cookieAR[i].type}"></div>
+            </div>`;
+            }
+        }
+    }
+});
 
-// mainOpt[0].children.addEventListener('click',qlry)
 
-// function qlry {
-// for (let i = 0; i < mainOpt[0].children.length; i++) {
-//     if (cookieAR.type == typeAlt) {
-//         typeAlt = mainOpt[0].children[i].getAttribute('alt');
-        
-//         typeNum = i;
-//     }
-// }
-// }
 
 
 
     
 
 
-// console.log(mainOpt[0].children;
