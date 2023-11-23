@@ -285,43 +285,26 @@ function cookieType(cookieType) {
     }
 }
 
+let lastPage
 writeCookieList();
 {
-    let lastPage
-    mainList[0].addEventListener('click',(event)=>{
+    main[0].addEventListener('click',(event) => {
         let eventOJ = event.target.closest('.main_list_box')
-        let cookieName = eventOJ.children[1].innerText;
+        let cookieName = eventOJ && eventOJ.children[1].innerText;
         let compare;
-    for (let i = 0 ; i < cookieAR.length ; i++){
-        if(cookieName == cookieAR[i].name){
-            compare = i;
-        }
-    }        
-    lastPage = main[0].innerHTML;
-    main[0].innerHTML = 
-        `<div class="back_button">뒤로가기</div><div class="main_info_container"><img src="${cookieAR[compare].img}" alt="${cookieAR[compare].name}">
-        <div class="main_info_pic"></div>
-        <div class="main_info_self">
-            <div class="grid_box1"><img src="${cookieType(cookieAR[compare].type)}" alt="${cookieAR[compare].type}"></div>
-            <div class="grid_box2">${cookieAR[compare].name}</div>
-            <p class="cookie_self">${cookieAR[compare].info}</p>
-        </div>
-    </div>
-    <div class="intro_box">
-        <div class="skill_box">
-            <p class="skill">스킬</p>
-            <img src="" alt="">
-            <p class="skill_name"></p>
-            <p class="skill_intro"></p>
-        </div>
-    </div>`
-    let backButton = main[0].getElementsByClassName('back_button');
-
-    backButton[0].addEventListener('click',(event)=>{
-        if(event.target.className == 'back_button')
-        main[0].innerHTML = lastPage;
+        for (let i = 0 ; i < cookieAR.length ; i++){
+            if(cookieName == cookieAR[i].name){
+                compare = i;
+            }
+        }        
+        lastPage = main[0].innerHTML;
+        main[0].innerHTML = `<div class="back_button">뒤로가기</div><div class="main_info_container"><img src="${cookieAR[compare].img}" alt="${cookieAR[compare].name}"><div class="main_info_pic"></div><div class="main_info_self">
+            <div class="grid_box1"><img src="${cookieType(cookieAR[compare].type)}" alt="${cookieAR[compare].type}"></div><div class="grid_box2">${cookieAR[compare].name}</div><p class="cookie_self">${cookieAR[compare].info}</p></div></div><div class="intro_box"><div class="skill_box"><p class="skill">스킬</p><img src="" alt=""><p class="skill_name"></p><p class="skill_intro"></p></div></div>`
+        let backButton = main[0].getElementsByClassName('back_button');
     
-    })
+        backButton[0].addEventListener('click',(event)=>{
+            if(event.target.className == 'back_button')
+            main[0].innerHTML = lastPage;
+        })
     })
 }
-
