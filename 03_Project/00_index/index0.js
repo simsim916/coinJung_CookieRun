@@ -207,9 +207,16 @@ navBg.addEventListener('mouseout',()=>{
 }
 
 function ARRise(){
+// 
+{
+    
+}
+
+
+function productARSellDown{
     for (let i = 0 , t; i < productAR.length-1; i++){
         for (let j = i+1 ; j < productAR.length ; j++) {
-            if ( productAR[i].sell > productAR[j].sell){
+            if ( productAR[i].price > productAR[j].price){
                 t = productAR[i];
                 productAR[i] = productAR[j];
                 productAR[j] = t;

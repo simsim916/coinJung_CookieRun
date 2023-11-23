@@ -75,7 +75,7 @@
     </div>
     <div class = "whole">
         <div class = "item">
-            <div class="item_leftbox">
+            <!-- <div class="item_leftbox">
                 <div class="item_img">
                 </div>
                 <div class="item_imgBtn">
@@ -83,67 +83,71 @@
             </div>
             <div class="item_rightbox">
                 <div class="item_rightbox_info">
-                    <div class="item_rightbox_title"></div>
-                    <div>12,900원</div>
+                    <div></div>
+                    <div></div>
                 </div>
                 <div class="item_rightbox_point">
                     <div class="item_rightbox_point_title">
-                        <span>쿠키런 스토어 고객을 위한 혜택</span></div>
-                    <div class="item_rightbox_point_price">
-                        <div class="item_rightbox_point_price_w">
-                            <div class="item_rightbox_point_price_w_max">
-                                <span>최대 적립 포인트</span>
-                                <span>279원</span>
+                        <span>쿠키런 스토어 고객을 위한 혜택</span>
+                    </div>
+                    <div class="item_rightbox_point_max">
+                        <div>
+                            <span>최대 적립 포인트</span>
+                            <div>
+                                <span id="maxpoint"></span>
                                 <i class="fa-regular fa-circle-question"></i>
                             </div>
-                            <div class="item_rightbox_point_price_w_basic">
-                                <span>└ 기본적립</span>
-                                <span>129원</span>
-                            </div>
                         </div>
-                        <div class="item_rightbox_point_price_tip">
-                            <div class="item_rightbox_point_price_tip_left">
-                                <div>TIP. 포인트 더 받는 방법</div>
-                                <div><a href="https://nid.naver.com">최대 5% 적립, 무료 시작</a></div>
-                                <div><a href="https://nid.naver.com">네이버 현대카드로 결제 시</a></div>
-                                <div><a href="https://nid.naver.com/">네이버페이 머니로 결제 시</a></div>
-                            </div>
-                            <div class="item_rightbox_point_price_tip_right">
-                                <span>최대 2,205원</span>
-                                <span>980원</span>
-                                <span>1,225원</span>
-                                <span>490원</span>
-                            </div>
+                        <div>
+                            <span>└ 기본적립</span> 
+                            <div id="basic"></div>
+                        </div>
+                    </div>
+                    <div class="item_rightbox_point_price_tip">
+                        <div>
+                            <div>TIP. 포인트 더 받는 방법</div>
+                            <div><a href="https://nid.naver.com">최대 5% 적립, 무료 시작</a></div>
+                            <div><a href="https://nid.naver.com">네이버 현대카드로 결제 시</a></div>
+                            <div><a href="https://nid.naver.com/">네이버페이 머니로 결제 시</a></div>
+                        </div>
+                        <div>
+                            <span>최대 2,205원</span>
+                            <span>980원</span>
+                            <span>1,225원</span>
+                            <span>490원</span>
                         </div>
                     </div>
                     <div class="item_rightbox_ads"></div>
                     <div class="item_rightbox_point_card">
                         <span>무이자 할부</span>
                         <span>| 카드 자세히보기</span>
+                        <i class="fa-regular fa-circle-question"></i>
                     </div>
+                    <div id="pointDetails"></div>
+                    <div id="cardDetails"></div>
                     <div class="item_rightbox_point_transit">
                         <p>택배배송 | 3,000원<span>&#40;주문시 결제&#41; &#183;</span> CJ 대한통운&#40;오네&#41;</p>
                         <p>30,000원 이상 구매 시 무료&#47;제주, 도서 지역 추가 3,000원</p>
                         <p><a href="#">배송비 절약상품 보기</a></p>
                     </div>
                     <div class="item_rightbox_point_quantity">
-                        <span>&#45;</span>
-                        <span>1</span>
-                        <span>&#43;</span>
+                        <div style="border: none;">&#45;</div>
+                        <input type="text" id="quantity" name="toBuy" value=1 style="text-align: center; "/>
+                        <div style="border: none;">&#43;</div>
                     </div>
                     <div class="item_rightbox_point_decision">
-                        <div class="item_rightbox_point_decision_check">
+                        <div>
                             <div>
                                 <span>총 상품 금액</span>
                                 <i class="fa-regular fa-circle-question"></i>
                             </div>
-                            <div>
+                            <div class="item_rightbox_point_decision_total">
                                 <span>총 수량 1개 |</span>
                                 <span>12,900</span>
                                 <span>원</span>
                             </div>
                         </div>
-                        <div class="item_rightbox_point_decision_btn">
+                        <div>
                             <div class="btn_1">
                                 <i class="fa-solid fa-circle-chevron-right"></i>
                                 <span>구매하기</span>
@@ -162,7 +166,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
         <div class = "review">
@@ -180,11 +184,11 @@
                 <div>
                     <div>
                         <div class="review_case_stars">
-                            <i class="fa-solid fa-star" style="color: #ff0000;"></i>
-                            <i class="fa-solid fa-star" style="color: #ff0000;"></i>
-                            <i class="fa-solid fa-star" style="color: #ff0000;"></i>
-                            <i class="fa-solid fa-star" style="color: #ff0000;"></i>
-                            <i class="fa-solid fa-star" style="color: #ff0000;"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
                             <span>5</span>
                         </div>
                         <div>
@@ -198,11 +202,11 @@
                 <div>
                     <div>
                         <div class="review_case_stars">
-                            <i class="fa-solid fa-star" style="color: #ff0000;"></i>
-                            <i class="fa-solid fa-star" style="color: #ff0000;"></i>
-                            <i class="fa-solid fa-star" style="color: #ff0000;"></i>
-                            <i class="fa-solid fa-star" style="color: #ff0000;"></i>
-                            <i class="fa-solid fa-star" style="color: #ff0000;"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
                             <span>5</span>
                         </div>
                         <div>
@@ -253,28 +257,8 @@
             </div>
         </div>
         <aside class = "best">
-            <span>베스트 상품</span>
+            <p>베스트 상품</p>
             <div class="best_items">
-                <div>
-                    <img src="https://shop-phinf.pstatic.net/20231114_202/1699953403443Iz8WI_JPEG/52025790832298130_1281338351.jpg?type=m510" alt="image">
-                    <div>쿠키런 시크릿팩 피규어</div>
-                    <div>5,000원</div>
-                </div>
-                <div>
-                    <img src="https://shop-phinf.pstatic.net/20231114_258/1699952949584oLc3t_JPEG/12502616375115323_1205563992.jpg?type=m510" alt="image">
-                    <div>쿠키런 랜덤 키체인</div>
-                    <div>5,000원</div>
-                </div>
-                <div>
-                    <img src="https://shop-phinf.pstatic.net/20231107_123/1699332251801gjxdW_JPEG/2889125558569288_1157254165.jpg?type=m510" alt="image">
-                    <div>브레이버스 부스터 팩 1탄</div>
-                    <div>1,000원</div>
-                </div>
-                <div>
-                    <img src="https://shop-phinf.pstatic.net/20231107_123/1699332251801gjxdW_JPEG/2889125558569288_1157254165.jpg?type=f80_80" alt="image">
-                    <div>곰젤리 솜인형 분홍곰&노란곰</div>
-                    <div>33,900원</div>
-                </div>
             </div>
         </aside>
     </div>
