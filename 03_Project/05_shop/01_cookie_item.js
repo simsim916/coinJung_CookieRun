@@ -131,19 +131,6 @@ let lastBold = listOption[0].children[0].children[0];
         }
     })
 }
-// 옵션 박스 옵션 선택 색 변경
-{
-    optionBox[0].addEventListener('click',(event)=>{
-        let eventLi = event.target;
-        if (eventLi.tagName == 'LI'){
-            if (eventLi.style.backgroundColor == "orange"){
-                eventLi.style.backgroundColor = "rgb(250, 248, 248)";
-            } else {
-                eventLi.style.backgroundColor = "orange";
-            }
-        }
-    })
-}
 // {
 //     optionBox[0].addEventListener('click',(event)=>{
 //         let eventOJ = event.target.closest('li');

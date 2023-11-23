@@ -18,6 +18,10 @@ main{
     position: relative;
     grid-template-columns: 1fr 1fr;
 }
+.main_info_container>img{
+    width: 300px;
+    position: absolute; top: 50%; left:10%; transform:translateY(-50%);
+}
 .main_info_pic{
     position: relative;
 }
@@ -59,6 +63,8 @@ main{
     border-radius: 17px;
     color: antiquewhite;
     padding: 30px;
+    height: 200px;
+    overflow: auto;
 }
 .intro_box{
     margin-top: 50px;
