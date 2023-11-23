@@ -169,7 +169,6 @@ let freeboardAR = [
 
 let noticeNum = window.location.href;
 
-
 let title = document.getElementsByClassName('title');
 let alticle = document.getElementsByClassName('alticle');
 let alticle_like = document.getElementsByClassName('alticle_like');
@@ -203,7 +202,6 @@ function html(num){
     info[0].children[2].children[1].innerText = `${freeboardAR[num].heart}`;
     info[0].children[3].children[1].innerText = `${freeboardAR[num].read}`;
 }
-
 if(noticeNum.includes('content_1.html')) {
     let num = 0;
     html(num);

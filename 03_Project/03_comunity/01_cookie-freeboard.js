@@ -225,8 +225,13 @@ free_content = main[0].querySelector('.free_content');
 
     /** content 부분 태그, 내용 채우기 반복문 **/
     {
+        let sort = 10;
+        let array = document.getElementById(sort);
+        let array1 = array.selectE
+        console.log(array.value);
+
         let contentHTML = '';
-        for(let i = 0 ; i < freeboardAR.length ; i++){
+        for(let i = 0 ; i < sort ; i++){
                 contentHTML += `
                 <a href="#" class="list_freeboard">
                     <div class="freeboard_subject">${freeboardAR[i].subject}</div>
@@ -238,11 +243,13 @@ free_content = main[0].querySelector('.free_content');
             `;
         }
         free_content.innerHTML = contentHTML;
+
+
     }
 
 
 
-/** a태그 링크 기능 삭제 부분 **/
+    /** a태그 링크 기능 삭제 부분 **/
     {
         let preventLink = document.querySelectorAll('a');
     
@@ -430,7 +437,7 @@ free_content = main[0].querySelector('.free_content');
     
         /* "클릭"이 감지 됐을 때 inner HTML 게시판 상호작용 실행 */
         let list_freeboard = main[0].querySelectorAll('.list_freeboard');
-        
+
         for(let i = 0 ; i < list_freeboard.length ; i++){
             list_freeboard[i].addEventListener('click', (event) => {
                 let turn = event.target,
