@@ -36,6 +36,8 @@ main{
     margin-bottom: 5px;
 
     text-decoration: none;
+
+    /* opacity: 1; */
 }
 
 .list_sort>a{
@@ -43,6 +45,25 @@ main{
 
     width: 70px;
     height: 30px;
+}
+
+.list_sort>:first-child::before{
+    content: '\f00c';
+    font: var(--fa-font-solid);
+
+    margin-right: 2px;
+}
+
+
+.list_sort>:last-child{
+    margin-left: 10px;
+
+}
+.list_sort>:last-child::before{
+    content: '\f00c';
+    font: var(--fa-font-solid);
+
+
 }
 
 .list_notice{
@@ -133,9 +154,10 @@ main{
 
     list-style: none;
     text-decoration: none;
-    color: black;
+    color: rgb(43, 37, 37);
 
     padding: 3px 10px 7px 30px;
+    
 
     border-bottom: 1px solid #e0d4d4;
 }
@@ -150,13 +172,64 @@ main{
 
     list-style: none;
     text-decoration: none;
-    color: black;
 
-    padding: 3px 10px 7px 30px;
+    padding: 3px 10px 7px 15px;
 
     border-bottom: 1px solid #e0d4d4;
 }
 
+.userInfo{
+    color: gray;
+    font-size: small;
+}
+.userInfo::before{
+    content: '';
+    
+    width: 14px;
+    height: 14px;
+    background-image: url("https://ssl.nexon.com/s2/game/maplestory/renewal/common/world_icon/icon_9.png");
+
+    margin-right: 3px;
+}
+
+.heart{
+    font-size: small;
+}
+
+.heart::before{
+    content: "\f004";
+    font: var(--fa-font-solid);
+
+    color: rgb(112, 112, 236);
+
+    margin-right: 4px;
+
+}
+
+.read{
+    font-size: small;
+}
+.read::before{
+    content: '\f06e';
+    font: var(--fa-font-solid);
+
+    margin-right: 4px;
+
+    opacity: .3;
+}
+
+.freeboard_date{
+    font-size: small;
+}
+
+.freeboard_date::before{
+    content: '\f4ad';
+    font: var(--fa-font-solid);
+
+    margin-right: 4px;
+
+    opacity: .5;
+}
 .list_notice:hover{
     background-color: #F9F9F9;
 }
@@ -183,6 +256,8 @@ main{
 
     width: 200px;
     height: 50px;
+
+    margin-top: 5px;
 }
 
 .page{
@@ -192,7 +267,6 @@ main{
     justify-content: center;
     align-items: center;
 
-    /* background-color: aqua; */
 }
 
 .page>a{
@@ -201,11 +275,18 @@ main{
     height: 40px;
     line-height: 40px;
     text-align: center;
+    margin: 1px;
+    border: 1px solid gray;
 
     padding: 10px;
 }
 
-.page>a:hover{
-    background-color: #B8B8B8;
+.a{
+    background-color: black;
+    color: white;
 }
 
+.page>a:hover{
+    background-color: black;
+    color: white;
+}

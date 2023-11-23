@@ -35,7 +35,7 @@ let freeboardAR = [
     {
         subject : '쿠키런 풀스펙 구매합니다..!',
         userInfo : '그린탑코인정',
-        heart : 6,
+        heart : 62,
         read : 81,
         commentNum : 2,
         alticle : 
@@ -60,7 +60,7 @@ let freeboardAR = [
     {
         subject : '두둠칫 둠칫 친추 ㄱ',
         userInfo : '두둠칫 둠칫',
-        heart : 7,
+        heart : 74,
         read : 231,
         commentNum : 2,
         alticle : 
@@ -77,9 +77,9 @@ let freeboardAR = [
     {
         subject : '결정석너프하면접을거임',
         userInfo : '봉삼이',
-        heart : 33,
+        heart : 333,
         read : 571,
-        commentNum : 2,
+        commentNum : 1,
         alticle : 
 `너프하지마라진짜
 
@@ -94,9 +94,9 @@ let freeboardAR = [
     {
         subject : '솔직히 자바스크립트 개어려움',
         userInfo : '그린실버타운',
-        heart : 332,
+        heart : 32,
         read : 5723,
-        commentNum : 6,
+        commentNum : 5,
         alticle : 
 `CSS도 안익숙한데 자바스크립트 언제 할수있을까
 님들은 ㅓㅇ떰
@@ -116,90 +116,334 @@ let freeboardAR = [
     {
         subject : '스토브 인증기 왜이럼?',
         userInfo : '그래도이쁨',
-        heart : 0,
+        heart : 10,
         read : 57,
-        freeboard_date : '12시간 전'
+        freeboard_date : '12시간 전',
+        commentNum : 65
     },
     {
         subject : '스토브 인증기 왜이럼?',
         userInfo : '그래도이쁨',
-        heart : 0,
+        heart : 40,
         read : 57,
-        freeboard_date : '12시간 전'
+        freeboard_date : '12시간 전',
+        commentNum : 65
     },
     {
         subject : '스토브 인증기 왜이럼?',
         userInfo : '그래도이쁨',
-        heart : 0,
+        heart : 34,
         read : 57,
-        freeboard_date : '12시간 전'
+        freeboard_date : '12시간 전',
+        commentNum : 65
     },
     {
         subject : '스토브 인증기 왜이럼?',
         userInfo : '그래도이쁨',
-        heart : 0,
+        heart : 43,
         read : 57,
-        freeboard_date : '12시간 전'
+        freeboard_date : '12시간 전',
+        commentNum : 65
     },
     {
         subject : '스토브 인증기 왜이럼?',
         userInfo : '그래도이쁨',
-        heart : 0,
+        heart : 123,
         read : 57,
-        freeboard_date : '12시간 전'
+        freeboard_date : '12시간 전',
+        commentNum : 65
     },
     {
         subject : '스토브 인증기 왜이럼?',
         userInfo : '그래도이쁨',
-        heart : 0,
+        heart : 43,
         read : 57,
-        freeboard_date : '12시간 전'
+        freeboard_date : '12시간 전',
+        commentNum : 65
     },
     {
         subject : '스토브 인증기 왜이럼?',
         userInfo : '그래도이쁨',
-        heart : 0,
+        heart : 13,
         read : 57,
-        freeboard_date : '12시간 전'
+        freeboard_date : '12시간 전',
+        commentNum : 65
     },
     {
         subject : '스토브 인증기 왜이럼?',
         userInfo : '그래도이쁨',
-        heart : 0,
+        heart : 43,
         read : 57,
-        freeboard_date : '12시간 전'
+        freeboard_date : '12시간 전',
+        commentNum : 65
     },
     {
         subject : '스토브 인증기 왜이럼?',
         userInfo : '그래도이쁨',
-        heart : 0,
+        heart : 12,
         read : 57,
-        freeboard_date : '12시간 전'
+        freeboard_date : '12시간 전',
+        commentNum : 65
     },
 ];
 
 let main = document.getElementsByTagName('main'),
-    noSubject = main[0].querySelectorAll('.notice_subject'),
-    noDate = main[0].querySelectorAll('.notice_date'),
-    list_freeboard = main[0].querySelectorAll('.list_freeboard');
+
+/*notice 부분 선언*/
+noSubject = main[0].querySelectorAll('.notice_subject'),
+noDate = main[0].querySelectorAll('.notice_date'),
+list_notice = main[0].querySelectorAll('.list_notice'),
+
+/*리뷰순 좋아요순 선언*/
+list_sort = main[0].querySelectorAll('.list_sort'),
+
+/* HTML 태그를 반복문을 통한 생성 관련 선언 */
+content = main[0].querySelector('.content'),
+free_content = main[0].querySelector('.free_content');
 
 
 
-console.log(list_freeboard[0].children[5]);
 
-    for(let i = 0 ; i < noSubject.length ; i++){
-        noSubject[i].innerText = `${notiboardAR[i].notice_subject}`;
-        noDate[i].innerText = `${notiboardAR[i].notice_date}`;
+
+
+    /** 공지부분 태그, 내용 채우기 반복문  **/
+    {
+        let noticeHTML = '';
+        for (let i = 0; i < notiboardAR.length; i++) {
+            noticeHTML += `
+                <a href="#" class="list_notice">
+                    <div class="notice_header">
+                        <span class="notice"></span>
+                    </div>
+                    <div class="notice_subject">${notiboardAR[i].notice_subject}</div>
+                    <div class="notice_date">${notiboardAR[i].notice_date}</div>
+                </a>
+            `;
+        }
+        content.children[0].innerHTML = noticeHTML;
+    }
+
+    /** content 부분 태그, 내용 채우기 반복문 **/
+    {
+        let contentHTML = '';
+        for(let i = 0 ; i < freeboardAR.length ; i++){
+                contentHTML += `
+                <a href="#" class="list_freeboard">
+                    <div class="freeboard_subject">${freeboardAR[i].subject}</div>
+                    <div class="userInfo">${freeboardAR[i].userInfo}</div>
+                    <div class="heart">${freeboardAR[i].heart}</div>
+                    <div class="read">${freeboardAR[i].read}</div>
+                    <div class="freeboard_date">${freeboardAR[i].commentNum}</div> 
+                </a>
+            `;
+        }
+        free_content.innerHTML = contentHTML;
     }
 
 
 
-    // for(let i = 0 ; i < list_freeboard.length ; i++){
-    //     list_freeboard[i].children[0].innerHTML = `${freeboardAR[i].subject}`;
-    //     list_freeboard[i].children[1].innerHTML = `${freeboardAR[i].userInfo}`;
-    //     list_freeboard[i].children[2].innerHTML = `${freeboardAR[i].heart}`;
-    //     list_freeboard[i].children[4].innerHTML = `${freeboardAR[i].read}`;
-    //     list_freeboard[i].children[5].innerHTML = `${freeboardAR[i].freeboard_date}`;
-    // }
+/** a태그 링크 기능 삭제 부분 **/
+    {
+        let preventLink = document.querySelectorAll('a');
+    
+        preventLink.forEach(function (link) {                   // 구글링해서 사용했음 -> forEach: 지금은 위에서 preventLink를 선언해서 'a'태그를 다 찾아서 배열의 형태로 저장했고 
+            link.addEventListener('click', function (event) {
+                console.log('Event handler executed!');
+                event.preventDefault();                         //  forEach 를 사용해서 link 기능을 클릭했을 시 작동되지 않도록 막음(preventDefault)
+            });
+        });    
+    }    
+
+
+    /** 리뷰순 좋아요순 **/
+    {
+        let list_freeboard = main[0].querySelectorAll('.list_freeboard');
+        function read_turn(){
+            for(let i=0, temp; i<list_freeboard.length-1 ; i++){
+                for(let j = i+1 ; j<list_freeboard.length ; j++){
+                    if(freeboardAR[i].read < freeboardAR[j].read){
+                        temp = freeboardAR[i];
+                        freeboardAR[i] = freeboardAR[j];
+                        freeboardAR[j] = temp;
+                    }
+                }
+            }
+        
+        }
+        function heart_turn(){
+            for(let i=0, temp; i<list_freeboard.length-1 ; i++){
+                for(let j = i+1 ; j<list_freeboard.length ; j++){
+                    if(freeboardAR[i].heart < freeboardAR[j].heart){
+                        temp = freeboardAR[i];
+                        freeboardAR[i] = freeboardAR[j];
+                        freeboardAR[j] = temp;
+                    }
+                }
+            }
+        }
+        
+        list_sort[0].children[0].addEventListener('click', (event) =>{
+            let turn = event.target;
+            list_sort[0].children[0].style.opacity = 1;
+            list_sort[0].children[1].style.opacity = 0.5;
+            if(turn.innerText == "리뷰순"){
+                read_turn();
+                for (let i = 0; i < list_freeboard.length; i++) {
+                    list_freeboard[i].children[0].innerText = `${freeboardAR[i].subject}`;
+                    list_freeboard[i].children[1].innerText = `${freeboardAR[i].userInfo}`;
+                    list_freeboard[i].children[2].innerText = `${freeboardAR[i].heart}`;
+                    list_freeboard[i].children[3].innerText = `${freeboardAR[i].read}`;
+                    list_freeboard[i].children[4].innerText = `${freeboardAR[i].commentNum}`;
+                }
+            }
+        })
+        
+        list_sort[0].children[1].addEventListener('click', (event) =>{
+            let turn = event.target;
+            list_sort[0].children[0].style.opacity = 0.5;
+            list_sort[0].children[1].style.opacity = 1;
+            if(turn.innerText == "좋아요순"){
+                heart_turn();
+                for (let i = 0; i < list_freeboard.length; i++) {
+                    list_freeboard[i].children[0].innerText = `${freeboardAR[i].subject}`;
+                    list_freeboard[i].children[1].innerText = `${freeboardAR[i].userInfo}`;
+                    list_freeboard[i].children[2].innerText = `${freeboardAR[i].heart}`;
+                    list_freeboard[i].children[3].innerText = `${freeboardAR[i].read}`;
+                    list_freeboard[i].children[4].innerText = `${freeboardAR[i].commentNum}`;
+                }
+        }
+        })
+    }
+
+
+
+
+
+    /** inner HTML 게시판 상호작용 **/
+    {
+        /* HTML 삭제 후 alticle 삽입 */
+        function insert_alticle(){
+            main[0].innerHTML = "";
+    
+            main[0].innerHTML = main[0].innerHTML + `
+            <div class="notice_option">
+            <h2>자유 게시판</h2>
+            <a href ="./01_cookie_freeboard.html" class="back_list">목록가기</a>
+        </div>
+        
+        <section class = "data">
+            <div class = "title">
+                <p></p>
+                <div class = "user_name"></div>
+                <div class = "alticle_date"></div>
+            </div>
+            <div class="alticle">
+                <pre></pre>
+            </div>
+            <div class="alticle_like">
+                <button type="button"></button>
+            </div>
+            <div class = "comment">
+                <h3>댓글</h3>
+                <div class="comment_logout">
+                    <p>로그인 후 댓글을 남길 수 있습니다.</p>
+                    <button>로그인</button>
+                </div>
+                <div class="comment_list">
+                    <ul>
+                        <li>
+                            <img src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/a5bae60f-65cb-472b-09ba-4b2f62199700/format=webp" alt="">
+                           <button type="button"></button>
+                           <p></p> 
+                        </li>
+                        <li class="test">
+                            <img src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/c27781aa-4293-49cf-e523-c2f63499d700/format=webp" alt="">
+                           <button type="button"></button>
+                           <p></p> 
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section class = "info">
+            <div class="user_icon">
+                <div class="user_thumb">
+                    <button type="button"><img src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/5f4cbe1f-a8cd-417e-fe54-5ca34620da00/format=webp" alt=""></button>  
+                </div>
+                <div class="user_info"></div>
+                <div class="user_link">
+                  <button type="button">쿠키 배합실</button>
+                  <button type="button">쿠키 플레이스</button>
+                </div>
+            </div>
+            <div class="comment_num">
+              <span>댓글</span>
+              <span></span>
+            </div>
+            <div class="like_num">
+              <span>좋아요</span>
+              <span></span>
+            </div>
+            <div class="read_num">
+              <span>조회수</span>
+              <span></span>
+            </div>
+            <div class="share">
+              <span>공유</span>
+              <span></span>
+            </div>
+        </section>
+            
+            `;
+        }
+    
+        /* 해당 alticle 정보 삽입 */
+        function alticle_js(index){
+            let title = document.getElementsByClassName('title');
+            let alticle = document.getElementsByClassName('alticle');
+            let alticle_like = document.getElementsByClassName('alticle_like');
+            let comment_list = document.getElementsByClassName('comment_list');
+            let user_icon = document.getElementsByClassName('user_icon');
+            let info = document.getElementsByClassName('info');
+    
+            title[0].children[0].innerText = `${freeboardAR[index].subject}`;
+            title[0].children[1].innerText = `${freeboardAR[index].userInfo}`;
+            title[0].children[2].innerText = `${freeboardAR[index].freeboard_date}`;
+        
+            alticle[0].children[0].innerText = `${freeboardAR[index].alticle}`;
+        
+            alticle_like[0].children[0].innerText = `${freeboardAR[index].heart}`;
+        
+            for(let i = 0 ; i < freeboardAR[index].content.length ; i++){
+                comment_list[0].childNodes[1].childNodes[i * 2 + 1].children[1].innerText = `${freeboardAR[index].comment_user_info[i]}`;
+                comment_list[0].childNodes[1].childNodes[i * 2 + 1].children[2].innerText = `${freeboardAR[index].content[i]}`;
+            }
+            user_icon[0].childNodes[3].innerText = `${freeboardAR[index].userInfo}`;
+        
+            info[0].children[1].children[1].innerText = `${freeboardAR[index].commentNum}`;
+            info[0].children[2].children[1].innerText = `${freeboardAR[index].heart}`;
+            info[0].children[3].children[1].innerText = `${freeboardAR[index].read}`;
+        }
+    
+    
+        /* "클릭"이 감지 됐을 때 inner HTML 게시판 상호작용 실행 */
+        let list_freeboard = main[0].querySelectorAll('.list_freeboard');
+        
+        for(let i = 0 ; i < list_freeboard.length ; i++){
+            list_freeboard[i].addEventListener('click', (event) => {
+                let turn = event.target,
+                data = turn.innerText;
+    
+                let index = freeboardAR.findIndex(item => item.subject === data);
+            
+    
+                insert_alticle();       // 기존 HTML 삭제 / alticle 양식 추가
+                alticle_js(index);      // alticle 내용 추가
+            })
+        }
+    
+    }
 
 
