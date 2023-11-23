@@ -174,12 +174,14 @@ let productAR = [
 
 ];
 
+// 변수 모음
 let optionBar = document.getElementsByClassName('main_option');
 let optionBox = document.getElementsByClassName('option_box');
 let itemBox = document.getElementsByClassName('item');
 let listOption = document.getElementsByClassName('list_option');
 let lastBold = listOption[0].children[0].children[0];
-
+let showScreen = document.getElementsByClassName('show_screen');
+let pageNum = 1;
 
 // 옵션 박스 열기 / 닫기
 {
@@ -192,60 +194,99 @@ let lastBold = listOption[0].children[0].children[0];
         }
     })
 }
-// {
-//     optionBox[0].addEventListener('click',(event)=>{
-//         let eventOJ = event.target.closest('li');
+// 옵션 박스 안에 옵션 선택 시 색상 변경
+{
+    optionBox[0].addEventListener('click',(event)=>{
+        let eventOJ = event.target.closest('li');
 
-//         if(optionBox[0].contains(eventOJ)){
-//             if(event.target.style.backgroundColor == "orange"){
-//                 event.target.style.backgroundColor="rgb(250, 248, 248)"
-//             } else {
-//                 event.target.style.backgroundColor="orange"
-//             }
-//         }
-//     })
-// }
+        if(optionBox[0].contains(eventOJ)){
+            if(event.target.style.backgroundColor == "orange"){
+                event.target.style.backgroundColor="rgb(250, 248, 248)"
+            } else {
+                event.target.style.backgroundColor="orange"
+            }
+        }
+    })
+}
+// 아이템 갯수(배열) 9개씩 나타내기, 금액단위 설정 
 
-//박스 옵션의 낮은가격순을 클릭하면 아이템 목록을 낮은 가격순으로 나타내기
-// listOption addEventListner (click, ProductARPriceRise)
-// 내가 클릭한게 li일때 작동
-
-
-// {
-//     listOption[0].addEventListner('click', (event) => {
-//         if (event.target.tagName == "LI") {
-//             ProductARPriceRise();
-//         }
-//     })
-// }
-
-
-let mainItem = document.getElementsByClassName('main_item');
-for (let i = 0; i < productAR.length; i++) {
-mainItem[0].innerHTML +=
-    `<div class="item">
-    <img src="" alt="">
-    <p class="item_price"></p>
-    <p class="item_title"></p>
-    <p class="item_intro"></p>
-    <div class="icon"><i class="fa-solid fa-neuter"></i></div>
-    <div class="icon"><i class="fa-solid fa-plus"></i></div>
-    </div>`;
+const imgPage = 9;
+function listWriter() {
+    let mainItem = document.getElementsByClassName('main_item');
+    mainItem[0].innerHTML = '';
+    for (let i = 0 + (pageNum - 1) * imgPage; i < imgPage + (pageNum - 1) * imgPage; i++) {
+        if (i == productAR.length) break;
+        mainItem[0].innerHTML +=
+        `<div class="item">
+        <img src="${productAR[i].img[0]}" alt="">
+        <p class="item_price">${productAR[i].price.toLocaleString()} 원</p>
+        <p class="item_title">${productAR[i].title}</p>
+        <p class="item_intro">${productAR[i].intro}</p>
+        <div class="icon"><i class="fa-solid fa-neuter"></i></div>
+        <div class="icon"><i class="fa-solid fa-plus"></i></div>
+        </div>`;
+ 
+// 재고 없을 때 이미지 투명도, BEST/SOLDOUT 박스 넣기    
+    if (productAR[i].stock == 0) {
+        for (let j = 0; j < itemBox[i % imgPage].children.length - 2; j++) {
+            itemBox[i % imgPage].children[j].style.opacity = '0.3';
+        }
+        itemBox[i % imgPage].innerHTML += `<div class="soldout">SOLD OUT</div>`;
+    }
+    if (productAR[i].sell >= 30) {
+        itemBox[i % imgPage].innerHTML += `<div class="best">BEST</div>`;
+    }
+}
 }
 
-//순서 박스 옵션 선택 시 글자 진하게 변경
+//페이지 박스 만들기
 {
+    let pageAmount; 
+    pageAmount = productAR.length / 9
+    for (let i=0; i<pageAmount ; i++){
+        showScreen[0].innerHTML+= `<div>${i+1}</div>`;
+    }
+    showScreen[0].addEventListener('click', event => {
+        
+        if (event.target != showScreen[0]) {
+            pageNum = event.target.innerText;
+            window.scrollTo(0, 400);
+            listWriter();
+        }
+    })
+    //show아닐때 눌러진 타겟의 이너텍스트를 가져온다
+    //event타겟이 show아닐때
+}
+//상품 리스트 순서 클릭 시 배열 
+{
+    lastBold.style.fontWeight = 'bold';
+    lastBold.style.opacity = "1";
     listOption[0].addEventListener('click', (event) => {
         let listOption = event.target;
         lastBold.style.fontWeight = 'lighter';
         lastBold.style.opacity = "0.7";
+        console.log(listOption)
+        console.log(listOption.innerText)
         if (listOption.tagName == 'LI') {
-            if (listOption.innerText == "인기도순") ProductARViewDown();
-            else if (listOption.innerText == "최신등록순") ProductARDateDown();
-            else if (listOption.innerText == "낮은가격순" ) ProductARPriceRise();
-            else if (listOption.innerText == "높은가격순") ProductARPriceDown();
-            else if (listOption.innerText == "판매높은순") ProductARSellDown();
-            if (listOption.style.fontWeight == "bold") {
+            switch (listOption.innerText) {
+                case '인기도순':
+                    ProductARViewDown();
+                    break;
+                case '최신등록순':
+                    ProductARDateDown();
+                    break;
+                case '낮은가격순':
+                    ProductARPriceRise();
+                    break;
+                case '판매높은순':
+                    ProductARSellDown();
+                    break;
+                case '높은가격순':
+                    ProductARPriceDown();
+                    break;
+            }
+//선택한 옵션 글자 진하게 변경            
+        if (listOption.style.fontWeight == "bold") {
                 listOption.style.fontWeight = 'lighter';
             } else {
                 listOption.style.fontWeight = "bold";
@@ -258,41 +299,10 @@ mainItem[0].innerHTML +=
 // 상품 총 갯수 표시
 {
     let total = document.getElementById('total');
-    total.children[0].innerText = ` ${itemBox.length} `;
-}
-
-{
-    for (let i = 0, t; i < productAR.length - 1; i++){
-        for (let j = i + 1; j < productAR.length; j++){
-            if (productAR[i].price > productAR[j].price) {
-                
-            }
-        }
-    }
+    total.children[0].innerText = ` ${productAR.length} `;
 }
 listWriter();
-// 게시판 작성 함수
-function listWriter() {
-    for (let i = 0; i < productAR.length; i++) {
-        let img = itemBox[i].getElementsByTagName('img');
-        let itemPrice = itemBox[i].getElementsByClassName('item_price');
-        let itemTitle = itemBox[i].getElementsByClassName('item_title');
-        let itemIntro = itemBox[i].getElementsByClassName('item_intro');
-        img[0].src = productAR[i].img[0];
-        itemPrice[0].innerText = `${productAR[i].price.toLocaleString()} 원`;
-        itemTitle[0].innerText = `${productAR[i].title}`;
-        itemIntro[0].innerText = `${productAR[i].intro}`;
-        if (productAR[i].stock == 0) {
-            for (let j = 0; j < itemBox[i].children.length - 2; j++) {
-                itemBox[i].children[j].style.opacity = '0.3';
-            }
-            itemBox[i].innerHTML += `<div class="soldout">SOLD OUT</div>`;
-        }
-        if (productAR[i].sell >= 30) {
-            itemBox[i].innerHTML += `<div class="best">BEST</div>`;
-        }
-    }
-}
+
 // 인기도순 작성
 function ProductARViewDown(){
     for (let i = 0, t; i < productAR.length - 1; i++) {
@@ -359,42 +369,3 @@ function ProductARSellDown(){
     listWriter();
 }
 
-// let showScreen = document.getElementsByClassName('show_screen');
-// let screenNumber = document.getElementsByClassName('screen1');
-// function showScreen(screenNumber){
-//     if (screenNumber === 1) {
-//         document.getElementsByClassName('screen1').remove('hidden');
-//         document.getElementsByClassName('screen2').add('hidden');
-        
-//     } else if (screenNumber === 2) {
-//         document.getElementsByClassName('screen1').remove('hidden');
-//         document.getElementsByClassName('screen2').add('hidden');
-        
-//     }
-// }
-
-
-
-
-
-// let imageIndex = 0;
-// const imageScreen = 6;
-
-// function showNextImages() {
-//     imageIndex += imageScreen;
-
-//     if (imageIndex < mainItem.length) {
-//         for (let i = 0; i < mainItem.length; i++){
-//             if (i >= imageIndex && i < imageIndex + imageScreen) {
-//                 mainItem[i].style.dispaly = 'block';
-//             } else {
-//                 mainItem[i].style.dispaly = 'none';
-//             }
-//         }
-//     }
-// }
-
-// const nextButton = document.getElementsByClassName('screen2');
-// nextButton.addEventListener('click', showNextImages);
-
-// showNextImages();
