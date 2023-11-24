@@ -1,7 +1,7 @@
 .login-wrapper{
     width: 600px;
     height: 300px;
-    padding: 40px;
+    padding: 40px; 
     box-sizing: border-box;
     margin: auto;
     
@@ -11,12 +11,14 @@ body{
     font-family: 'CookieRun';
 }
 .login-wrapper > h2{
-    font-size: 60px;
+    font-size: 90px;
     color:goldenrod;
     margin-bottom: 20px;
     margin: auto;
     text-decoration: solid;
-    text-align: auto;
+    text-align: center;
+    
+    
 }
 #login-form > input[type="checkbox"]{
     display: none;
@@ -55,26 +57,18 @@ body{
 
     
 }
-#login-form > input[type="submit"]{
-    color: #f7f3f3;
-    font-size: 20px;
-    background-color:orange;
-    position: absolute;
-    top :10%;
-    left: 62%;
-    padding: 40px;
-    font-weight: bolder;
-    width: 25%;
-    line-height: 5px;
+
+#login{ 
+    border: 1px solid rgb(173, 172, 172);
     font-family: 'CookieRun';
-}
-#login{
-    border: 1px solid black;
+    background: url("../img/cookie6.gif");
+    
 }
 
-pre{
+pre>div{
     position: relative;
-
+    font-family: 'CookieRun';
+    font-size: 14px;
 }
 
 
@@ -95,8 +89,8 @@ span{
     font-weight: bolder;
     color: #616060;
     position: relative;
-    left: 80px;
-    margin-top: 95px;
+    left: 110px;
+    margin-top: 115px;
     font-family: 'CookieRun';
     justify-content: space-around;
     text-align: center;
@@ -114,41 +108,92 @@ span{
     color: #616060;
 }
 
+.ID{
+    cursor: pointer;
+    padding-left: 40px;
+    background-image: url("checkbox.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+    size: 10%;
+    font-family: 'CookieRun';
+    border-radius: 25px;
 
-.logo{
-    width: 400px;
-    height: 40px;
-    margin-top: 30px;
+}
+.PW{
+    cursor: pointer;
+    padding-left: 40px;
+    background-image: url("checkbox.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+    size: 10%;
+    font-family: 'CookieRun';
+    border-radius: 25px;
+}
+.button{
+    color: #f7f3f3;
+    font-size: 20px;
+    background-color:orange;
+    position: absolute;
+    top : 6%;
+    left: 60%;
+    padding: 40px;
+    font-weight: bolder;
+    width: 25%;
+    line-height: 5px;
+    font-family: 'CookieRun';
+    border-radius: 25px;
+}
+.notice_img{
+    width: 300px;
+    height: 210px;
+    background: url("../03_Project/img/update1.jpg");
+    background-position: cover;
+    background-size: 100% 100%;
+    position: absolute;
+    top: 49%;
+    right: 43%;
+    border-radius: 40px;
+}
+#Nexon{
+    box-sizing: border-box;
+    border: ipx solid black;
+}
+.login_list{
+    list-style: none;
     display: flex;
+    gap: 20px;
+    position: relative;
+    right: 20px;
+    
+}
+.login_list>li{
+    display: flex;
+    font-size: 30px;
+    font-weight: bolder;
+    font-family: 'CookieRun';
+    width: 400px;
+    text-align: center;
+    height: 40px;
+}
+.Nexon{
+    color: orange;
+    border: 2px solid orange;
+    border-radius: 10px; 
     justify-content: center;
-    align-items: center;
-}
-
-.logo>a{
-    display: inline-block;
-    width: 20px;
-    height: 21px;
-    background-color: #616060;
-    background: url("./img/google.svg");
-    margin-left: 24%;
-}
-.logo1{
-    display: inline-block;
-    width: 21px;
-    height: 21px;
-    background-color: #606061;
-    margin-left: 0%;
-    background: url("./img/facebook.svg");
+    
     
 
 }
-.logo2{
-    display: inline-block;
-    width: 20px;
-    height: 29px;
-    background-color: #606061;
-    margin: auto;
-    background: url("./img/apple\ \(1\).svg");
-
+.Kakao{
+    color: rgb(160, 159, 159);
+    border: 2px solid rgb(160, 159, 159);
+    border-radius: 10px;
+    justify-content: center;
 }
 
+#login2{
+    
+    display: none;
+}
