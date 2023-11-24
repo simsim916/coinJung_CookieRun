@@ -1,0 +1,154 @@
+.login-wrapper{
+    width: 600px;
+    height: 300px;
+    padding: 40px;
+    box-sizing: border-box;
+    margin: auto;
+    
+}
+body{
+    font-size: 7px;
+    font-family: 'CookieRun';
+}
+.login-wrapper > h2{
+    font-size: 60px;
+    color:goldenrod;
+    margin-bottom: 20px;
+    margin: auto;
+    text-decoration: solid;
+    text-align: auto;
+}
+#login-form > input[type="checkbox"]{
+    display: none;
+    margin: auto;
+    
+    
+}
+#login-form > label{
+    color: #616060;
+    font-size: 12px;
+    font-weight: bolder;
+    line-height: 0px;
+    font-family: 'CookieRun';
+
+}
+#login-form input[type="checkbox"] + label{
+    cursor: pointer;
+    padding-left: 26px;
+    background-image: url("checkbox.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+    size: 10%;
+    font-family: 'CookieRun';
+    
+}
+#login-form input[type="checkbox"]:checked + label{
+    background-image: url("checkbox-active.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: auto;
+    position: absolute;
+    position: relative;
+    font-family: 'CookieRun';
+    
+
+    
+}
+#login-form > input[type="submit"]{
+    color: #f7f3f3;
+    font-size: 20px;
+    background-color:orange;
+    position: absolute;
+    top :10%;
+    left: 62%;
+    padding: 40px;
+    font-weight: bolder;
+    width: 25%;
+    line-height: 5px;
+    font-family: 'CookieRun';
+}
+#login{
+    border: 1px solid black;
+}
+
+pre{
+    position: relative;
+
+}
+
+
+
+#login-form > input{
+    width: 50%;
+    height: 40px;
+    padding: 0 20px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    border-radius: 20px;
+    background-color: #F8F8F8;
+    font-family: 'CookieRun';
+}
+span{
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bolder;
+    color: #616060;
+    position: relative;
+    left: 80px;
+    margin-top: 95px;
+    font-family: 'CookieRun';
+    justify-content: space-around;
+    text-align: center;
+    width: 80px;
+    
+}
+.list1{
+    border-right: 1px solid;
+    color: #616060;
+    
+
+}
+.list2{
+    border-right: 1px solid;
+    color: #616060;
+}
+
+
+.logo{
+    width: 400px;
+    height: 40px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo>a{
+    display: inline-block;
+    width: 20px;
+    height: 21px;
+    background-color: #616060;
+    background: url("./img/google.svg");
+    margin-left: 24%;
+}
+.logo1{
+    display: inline-block;
+    width: 21px;
+    height: 21px;
+    background-color: #606061;
+    margin-left: 0%;
+    background: url("./img/facebook.svg");
+    
+
+}
+.logo2{
+    display: inline-block;
+    width: 20px;
+    height: 29px;
+    background-color: #606061;
+    margin: auto;
+    background: url("./img/apple\ \(1\).svg");
+
+}
+
