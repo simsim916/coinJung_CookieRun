@@ -5,6 +5,7 @@ let subLi = document.querySelectorAll(".sub_li");
 let navBg = document.querySelector("#nav_bg");
 let headerCookie = document.querySelector("#header_cookie");
 let header = document.querySelector("header");
+let shopSlideImg = document.getElementsByClassName('shop_slide_img');
 let lastSlideBtn;
 const headerImg = [
     './img/bg1.webp',
@@ -125,6 +126,20 @@ let productAR = [
 
 
 ];
+const slideMenu = [
+    {html : `<div><img src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/54e1ec2f-823d-4945-f54c-c2c31236ed00/format=webp" alt=""><p>새소식</p><p>쿠키 세상의 새로운 소식을 만나보세요!</p></div>`,
+    bgcolor : `#a71c44`},
+    {html : `<div><img src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/e3cec218-533b-4c5b-54b1-b8cd0ff19c00/format=webp" alt=""><p>게임 정보</p><p>다양한 쿠키들과 짜릿한 액션을 즐겨보세요!</p></div>`,
+    bgcolor : `#d08e4e`},
+    {html : `<div><img src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/4780ff10-2546-42bd-3e01-aafad5678100/format=avif" alt=""><p>커뮤니티</p><p>유저분들의 생각과 의견을 공유해주세요!</p></div>`,
+    bgcolor : `#E5B532` },
+    {html : `<div><img src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/5c73d6cf-acca-4794-2c6b-e7657f07d500/format=webp" alt=""><p>미디어</p><p>게임 밖 쿠키들의 이야기를 들어보세요!</p></div>`,
+    bgcolor : `#E5B532`},
+    {html : `<div><img src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/5c73d6cf-acca-4794-2c6b-e7657f07d500/format=webp" alt=""><p>SHOP</p><p>쿠키들의 다양한 상품들을 만나보세요!</p></div>`,
+    bgcolor : `#E5B532`},
+    {html : `<div><img src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/5c73d6cf-acca-4794-2c6b-e7657f07d500/format=webp" alt=""><p>고객센터</p><p>유저의 이야기를 직접 전달해주세요!</p></div>`,
+    bgcolor : `#E5B532`}
+]
 
 let random = Math.floor(Math.random()*headerImg.length);
 let random2 = Math.floor(Math.random()*headerImg.length);
@@ -180,21 +195,49 @@ navBg.addEventListener('mouseout',()=>{
     })
 }
 
-// 
 {
-    
+    ARRise();
+
+    for (let i = 0 ; i < 5 ; i++){
+        shopSlideImg[0].innerHTML += `<div><img src="${productAR[i].img[0]}" alt="${productAR[i].title}"><p class="item_title">${productAR[i].title}</p></div>`
+    }
 }
 
 {
+    let shopSlideBtn = document.getElementsByClassName('shop_slide_bth');
+    let lastSlideLi=shopSlideBtn[0].children[0];
+    lastSlideLi.style.opacity="1";
+    lastSlideLi.style.width="30px";
+    shopSlideBtn[0].addEventListener('click',(event)=>{
+        if (event.target.tagName == "LI"){
+            lastSlideLi.style.opacity="0.3";
+            event.target.style.opacity="1";
+            event.target.style.width="30px";
+            lastSlideLi.style.width="13px";
+            lastSlideLi=event.target;
+            shopSlideImg[0].style.transform=`translateX(-${event.target.innerText*20}%)`;
+        }
+    });
+}
+
+function ARRise(){
     for (let i = 0 , t; i < productAR.length-1; i++){
         for (let j = i+1 ; j < productAR.length ; j++) {
             if ( productAR[i].price > productAR[j].price){
                 t = productAR[i];
                 productAR[i] = productAR[j];
                 productAR[j] = t;
-                
             }
         }
     }
-    console.log(productAR);
+}
+
+{
+    let infoSlide = document.getElementsByClassName('info_slide');
+    let num = 0;
+
+    setInterval(()=>{
+        infoSlide[num]
+    })
+
 }
