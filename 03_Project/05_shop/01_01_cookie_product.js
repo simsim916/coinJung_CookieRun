@@ -116,7 +116,7 @@ let cardDetails = document.getElementById('cardDetails');
 let quantityBox = document.getElementsByClassName('item_rightbox_point_quantity');
 
 // 포인트 관련 기능
-// {
+{
 // // 포인트 추가 창  
 //     {
 //     pointDetails.innerHTML =`<div>
@@ -183,7 +183,7 @@ let quantityBox = document.getElementsByClassName('item_rightbox_point_quantity'
             photopoint= 0;
         }
 
-// }
+}
 
 //게시글 작성
 {
@@ -291,7 +291,7 @@ let totalPrice = document.getElementById('totalPrice');
 {
     productARSellDown(); // 이 때, productAR2가 '정렬된 productAR'이 됨
     for (let i =0 ; i < 4; i++){
-    bestitem[0].innerHTML += `<div><a href="#"><img src="${productAR2[i].img[0]}"><p>${productAR2[i].title}</p><p>${productAR2[i].price.toLocaleString()}</p></a></div>`;
+    bestitem[0].innerHTML += `<div><a href="#"><img src="${productAR2[i].img[0]}" alt="${productAR[itemNum].title}"><p>${productAR2[i].title}</p><p>${productAR2[i].price.toLocaleString()}</p></a></div>`;
     }
 }
 
@@ -325,6 +325,19 @@ let totalPrice = document.getElementById('totalPrice');
 
 
 // }
+
+// 베스트상품 상세페이지로 변경하기
+{
+   bestitem[0].children[0].addEventListener('click', (event) => {
+       let k = event.target.getAttribute('title');
+       
+       for(i=0 ; i < productAR[0].length ; ){
+            k 
+       }
+        }
+    )
+   }
+   
 
 
 // 판매순 내림차순
