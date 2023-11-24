@@ -308,11 +308,13 @@ main>ul>li{
     border: 1px solid;
 }
 .warning{
-    width: 90%; height:3%; padding: 5%;
-    margin: 5% 0%;
+    width: 80%; height:3%; padding: 5%;
+    margin: 5% auto;
     line-height: 150%;
     background-color: lightgray;
 }
 .warning>ul>li{
+    list-style: none;
     font-size: 0.8rem;
+    text-indent: 30px;
 }
