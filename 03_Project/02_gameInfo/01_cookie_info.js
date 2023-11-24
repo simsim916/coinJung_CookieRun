@@ -308,25 +308,14 @@ function detail(event) {
     })
 }
 
+
 let mainOpt = document.getElementsByClassName('main_option');
-// console.log(mainOpt[0].children[4]);
+
 let typeAlt;
 
 mainOpt[0].addEventListener('click', (event) => {
-    let OptTypeImg = event.target;
-    console.log(OptTypeImg);
-    
-    
-
-    // for (let i = 0; i < mainOpt.length; i++) {
-    //     if (mainOpt[0].children[i].alt == OptTypeImg.alt) {
-    //         mainOpt[0].children[i].style.opacity = '1';
-    //     } else {
-    //         mainOpt[0].children[i].style.opacity = '0.3';
-    //     }
-    // }
-    
-
+    let OptTypeImg = event.target;    
+//타입별 정렬
     if (OptTypeImg.tagName == "IMG") {
         typeAlt = OptTypeImg.getAttribute('alt');
         mainList[0].innerHTML = "";
