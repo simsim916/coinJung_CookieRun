@@ -410,8 +410,9 @@ free_content = main[0].querySelector('.free_content');
 
     /* ====================================== */
     /** 리뷰순 좋아요순 **/
-    {
         let list_freeboard = main[0].querySelectorAll('.list_freeboard');
+
+        /* read 순 함수 */
         function read_turn(){
             for(let i=0, temp; i<list_freeboard.length-1 ; i++){
                 for(let j = i+1 ; j<list_freeboard.length ; j++){
@@ -424,6 +425,8 @@ free_content = main[0].querySelector('.free_content');
             }
         
         }
+
+        /* heart 순 함수 */
         function heart_turn(){
             for(let i=0, temp; i<list_freeboard.length-1 ; i++){
                 for(let j = i+1 ; j<list_freeboard.length ; j++){
@@ -436,6 +439,7 @@ free_content = main[0].querySelector('.free_content');
             }
         }
         
+        /* 리뷰순 클릭 감지 */
         list_sort[0].children[0].addEventListener('click', (event) =>{
             let turn = event.target;
             list_sort[0].children[0].style.opacity = 1;
@@ -452,6 +456,7 @@ free_content = main[0].querySelector('.free_content');
             }
         })
         
+        /* 좋아요순 클릭 감지 */
         list_sort[0].children[1].addEventListener('click', (event) =>{
             let turn = event.target;
             list_sort[0].children[0].style.opacity = 0.5;
@@ -467,7 +472,6 @@ free_content = main[0].querySelector('.free_content');
                 }
         }
         })
-    }
 
     /* ====================================== */
     /** inner HTML 게시판 상호작용 **/
@@ -599,52 +603,38 @@ free_content = main[0].querySelector('.free_content');
 
     /* ====================================== */
 
-    /**  page 생성, page 넘김 **/
-    let page = main[0].getElementsByClassName('page');
-    let selcet_option = sort.value;
-    let page_num = Math.round(freeboardAR.length/selcet_option);        // 구글링 -> round 반올림
+let page = main[0].getElementsByClassName('page');
+let selcet_option = sort.value;
+let page_num = Math.round(freeboardAR.length/selcet_option);
 
-    /* page 데이터 수 만큼 생성 */
-    for(let i = 0 ; i < page_num ; i++){
-
-        if(i == 0 ){
-            page[0].innerHTML += `
-                 <a href="#" class="default">${i+1}</a>
-            `
-        }
-        else{
-            page[0].innerHTML += `
-                 <a href="#" class="">${i+1}</a>
-            `
-        }
+for (let i = 0; i < page_num; i++) {
+    if (i == 0) {
+        page[0].innerHTML += `
+            <a href="#" class="default">${i + 1}</a>
+        `;
+    } else {
+        page[0].innerHTML += `
+            <a href="#" class="other">${i + 1}</a>
+        `;
     }
+}
 
+let pageBoxes = document.querySelectorAll('.page a');
 
-
-
-
-
-
-    // let pageBoxes = document.querySelectorAll('.page');
-
-    // pageBoxes.forEach((pageBox, index) => {
-    //     pageBox.addEventListener('click', (event) => {
-    //         let turn = event.target;
-    //         for (let i = 0; i < pageBoxes.length; i++) {
-    //             if (pageBoxes[i] === turn) {
-    //                 // 클릭한 페이지 박스의 색상 변경
-    //                 turn.style.backgroundColor = "black";
-    //                 turn.style.color = "white";
-    //             } else {
-    //                 // 나머지 페이지 박스의 색상 초기화
-    //                 pageBoxes[i].style.backgroundColor = "white";
-    //                 pageBoxes[i].style.color = "black";
-    //             }
-    //         }
-    //     });
-    // }); ㅡㅡ
-
-
+pageBoxes.forEach((pageBox, index) => {
+    pageBox.addEventListener('click', (event) => {
+        let turn = event.target;
+        for (let i = 0; i < pageBoxes.length; i++) {
+            if (pageBoxes[i] == turn) {
+                // 클릭한 페이지 박스의 색상 변경
+                turn.classList.add('default');
+            } else {
+                // 나머지 페이지 박스의 색상 초기화
+                pageBoxes[i].classList.remove('default');
+            }
+        }
+    });
+});
 
 
 
@@ -652,7 +642,7 @@ free_content = main[0].querySelector('.free_content');
     /** a태그 링크 기능 삭제 부분 **/
 
     let preventLink = document.querySelectorAll('a');
-    
+    console.log(preventLink);
     preventLink.forEach(function (link) {                   // 구글링해서 사용했음 -> forEach: 지금은 위에서 preventLink를 선언해서 'a'태그를 다 찾아서 배열의 형태로 저장했고 
         link.addEventListener('click', function (event) {
             event.preventDefault();                         //  forEach 를 사용해서 link 기능을 클릭했을 시 작동되지 않도록 막음(preventDefault)

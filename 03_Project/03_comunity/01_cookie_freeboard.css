@@ -269,7 +269,7 @@ main{
 
 }
 
-.page>a{
+.other, .page>a{
     display: inline-block;
     width: 40px;
     height: 40px;
@@ -282,10 +282,10 @@ main{
     padding: 10px;
 }
 
-/* .page>.default{
+.default{
     background-color: black;
     color: white;
-} */
+}
 
 .page>a:hover{
     background-color: black;
