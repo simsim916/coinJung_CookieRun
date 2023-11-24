@@ -237,7 +237,7 @@ function ARRise(){
     let num = 0;
 
     setInterval(()=>{
-        infoSlide[]/
+        infoSlide[num]
     })
 
 }
