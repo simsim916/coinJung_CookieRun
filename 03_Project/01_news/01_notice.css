@@ -154,7 +154,6 @@ main{
     font-weight: bold;
     color: rgb(27, 148, 196);
 
-  
 
 }
 
@@ -164,13 +163,17 @@ main{
     line-height: 70px;
 
 
+
 }
 .notice_subject, .inspection_subject{
     line-height: 70px;
     padding: 3px 10px 7px 30px;
 }
 
-.inspection_subject:hover{
+.notice_post>a{
+    display: inline-block;
+}
+.notice_post>a:hover{
     text-decoration: underline;
     cursor: pointer;
     background-color: rgb(245, 245, 231);
@@ -180,4 +183,6 @@ main{
     text-decoration: underline;
     cursor: pointer;
     background-color: rgb(245, 245, 231);
-}
+} 
+
+
