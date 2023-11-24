@@ -224,3 +224,7 @@ function productARSellDown{
         }
     }
 }
+
+{
+    let infoSlide = document.getElementsByClassName('info_slide');
+}
