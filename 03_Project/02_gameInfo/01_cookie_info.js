@@ -245,7 +245,7 @@ let cookieAR = [
         }
     },
 ]
-let typeImg = [
+let cookieTypeImg = [
     {   
         올 : '',
         에픽: 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/e6cc601e-19ee-421b-e936-9cdd20eaf100/public',
