@@ -173,7 +173,7 @@ let productAR = [
 ];
 
 // 변수 모음
-let optionBar = document.getElementsByClassName('main_option');
+let mainOption = document.getElementsByClassName('main_option');
 let optionBox = document.getElementsByClassName('option_box');
 let itemBox = document.getElementsByClassName('item');
 let listOption = document.getElementsByClassName('list_option');
@@ -188,7 +188,7 @@ let optionTitle = document.getElementsByClassName('option_title');
 // 옵션 박스 열기 / 닫기
 {
     let optionClose = optionBox[0].getElementsByClassName('option_close');
-    optionBar[0].addEventListener('click', (event) => {
+    mainOption[0].addEventListener('click', (event) => {
         if (event.target != optionClose[0] && event.target.tagName == "LI") {
             optionBox[0].style.visibility = "initial";
         } else {
@@ -213,7 +213,7 @@ let optionTitle = document.getElementsByClassName('option_title');
     })
 })
 }
-// 아이템 갯수(배열) 9개씩 나타내기, 금액단위 설정 
+// 아이템 개수(배열) 9개씩 나타내기, 금액단위 설정 
 let imgPage = 9;
 function listWriter() {
 
@@ -242,8 +242,6 @@ function listWriter() {
         }
     }
 }
-
-
 //페이지 이미지박스 만들기, 페이지 넘어갈 때 보이는 화면 기준점 잡기
 {
     let pageAmount;
@@ -260,7 +258,6 @@ function listWriter() {
         }
     })
 }
-
 //아이템목록 누르면 숫자 진하게 표시
 let lastGrid = gridBoxLi[0];
 lastGrid.style.border = '4px solid black';
@@ -274,7 +271,7 @@ for (let i = 0; i < gridBoxLi.length; i++) {
             mainItem[0].style.gridTemplate = "repeat(3, 700px) / repeat(2, 1fr)";
         } else {
             imgPage = 9;
-            mainItem[0].style.gridTemplate = "repeat(3, 400px) / repeat(3, 1fr)";
+            mainItem[0].style.gridTemplate = "repeat(3, 500px) / repeat(3, 1fr)";
         
         }
         listWriter();
@@ -319,12 +316,12 @@ for (let i = 0; i < gridBoxLi.length; i++) {
         lastBold = listOption;
     })
 }
-// 상품 총 갯수 표시
+// 상품 총 개수 표시
 {
     let total = document.getElementById('total');
     total.children[0].innerText = ` ${productAR.length} `;
+    listWriter(); //위치 확인 필요. 기존에 { } 밖에 있었음
 }
-listWriter();
 
 // 인기도순 작성
 function ProductARViewDown() {
