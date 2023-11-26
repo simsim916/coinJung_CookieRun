@@ -224,7 +224,7 @@ let cookieAR = [
         }
     },
 ]
-let typeImg = [
+let cookieTypeImg = [
     {   
         '올' : '',
         '에픽': 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/e6cc601e-19ee-421b-e936-9cdd20eaf100/public',
@@ -268,10 +268,10 @@ let lastPage;
 writeCookieList();
 {
     main[0].addEventListener('click', detail)
+    
 }
 
-
-function detail (event) {
+async function detail (event) {
     let eventOJ = event.target.closest('.main_list_box')
     let cookieName = eventOJ.children[1].innerText;
     let compare;
@@ -280,7 +280,7 @@ function detail (event) {
             compare = i;
         }
     }        
-    lastPage = main[0].innerHTML;
+    lastPage=main[0].innerHTML;
     main[0].innerHTML = 
         `<h3 class="back_button">뒤로가기</h3>
         <div class="main_info_container"><img src="${cookieAR[compare].img}" alt="${cookieAR[compare].name}">
@@ -298,7 +298,10 @@ function detail (event) {
             <p class="skill_name">${cookieAR[compare].skill.skillName}</p>
             <p class="skill_intro">${cookieAR[compare].skill.skillInfo}</p>
         </div>
-    </div>`
+    </div>`;
+    console.log(event)
+    removeEventListener(event);
+    console.log(event)
     let backButton = main[0].getElementsByClassName('back_button');
     backButton[0].addEventListener('click',(event)=>{
         if(event.target.className == 'back_button')
@@ -307,33 +310,3 @@ function detail (event) {
     
 })
 }
-
-let mainOpt = document.getElementsByClassName('main_option');
-
-let typeAlt;
-
-mainOpt[0].addEventListener('click', (event) => {
-    let OptTypeImg = event.target;
-    
-    if (OptTypeImg.tagName == "IMG") {
-        typeAlt = OptTypeImg.getAttribute('alt');
-        mainList[0].innerHTML = "";
-    for (let i = 0; i < cookieAR.length; i++) {
-        if (typeAlt == cookieAR[i].type) {    
-            mainList[0].innerHTML += 
-            `<div class="main_list_box"><img src="${cookieAR[i].img}" alt="${cookieAR[i].name}">
-            <div class="main_list_item_name">${cookieAR[i].name}</div>
-            <div class="main_list_item_type"><img src="${cookieType(cookieAR[i].type)}" alt="${cookieAR[i].type}"></div>
-            </div>`;
-            }
-        }
-    }
-});
-
-
-
-
-
-    
-
-
