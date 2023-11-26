@@ -244,17 +244,13 @@ display:grid;
     display: flex;
     position: relative;
     font-size: 0.9rem;
-    /* border: 1px solid; */
 }
-.review_case>div:nth-of-type(2n+1){
-    border-right: 1px solid rgba(0,0,0,0.3);
-}
-.review_case_imgs{
+#reviewImg{
     width: 80px; height: 80px;
-    background: url(https://phinf.pstatic.net/checkout.phinf/20230926_132/1695719203892BmFab_JPEG/1000165333.jpg?type=f300_300) no-repeat cover/center;
-    background-color: pink;
+    background: url(https://phinf.pstatic.net/checkout.phinf/20231117_270/1700195215914r4pE1_JPEG/20231117_132638.jpg?type=f300_300) no-repeat cover/center;
     position: absolute;
-    right: 10px;
+    right: 30px;
+    border-radius: 10px;
 }
 .best{
     width: 1024px;
@@ -293,7 +289,6 @@ display:grid;
 }
 main, .aside{
     width: 1024px; margin: 5% auto;
-    background-color: pink;
 }
 main>ul{
     list-style: none;
@@ -307,6 +302,9 @@ main>ul>li{
     background-color: gray;
     border: 1px solid;
 }
+main p{
+    margin: 10px 0px;
+}
 .warning{
     width: 80%; height:3%; padding: 5%;
     margin: 5% auto;
@@ -317,4 +315,38 @@ main>ul>li{
     list-style: none;
     font-size: 0.8rem;
     text-indent: 30px;
+}
+main button{
+    margin: 5px;
+}
+.itemGrid{
+    width: 100%; height: 200px;
+    display: grid;
+    grid-template: repeat(5,1fr) / repeat(4,1fr);
+}
+.itemGrid>div{
+    text-align: center;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+.itemGrid>div:nth-of-type(2n-1){
+    background-color: gray;
+}
+
+#vip{
+    width: calc(255px*4); height: 127px;
+    display: flex; justify-content: space-between;
+    align-items: center;
+    background-color: pink;
+}
+#vip>div{
+    width: 255px; height: 127px;
+    text-align: center; text-wrap: nowrap;
+    border: 1px solid black;
+    position: relative;
+    line-height: 127px;
+}
+#vip>div:first-child>span{
+    position: absolute;
+    top: calc((100%-127px)/2);
 }
