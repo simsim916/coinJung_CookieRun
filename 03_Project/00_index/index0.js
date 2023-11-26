@@ -232,12 +232,12 @@ function ARRise(){
     }
 }
 
-{
-    let infoSlide = document.getElementsByClassName('info_slide');
-    let num = 0;
+// {
+//     let infoSlide = document.getElementsByClassName('info_slide');
+//     let num = 0;
 
-    setInterval(()=>{
-        infoSlide[num]
-    })
+//     setInterval(()=>{
+//         infoSlide[num].style.transform=
+//     })
 
-}
+// }
