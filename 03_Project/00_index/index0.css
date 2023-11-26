@@ -2,6 +2,23 @@
     margin: 0;
     font-family: 'CookieRun';
 }
+#backBtn{
+    width: 50px; height: 50px;
+    position: fixed; right: 50px; bottom: 50px; z-index: 5; border-radius: 10px;
+    background-color: #000;
+    color: white; text-align: center;display: flex; justify-content: center; align-items: center;
+    opacity: 0.5;
+}
+#backBtn ul{
+    list-style: none; padding: 0;
+    position: absolute;
+    bottom: 100%;
+}
+#backBtn li{
+    background-color: #000;
+    width: 300%;
+    float: right;
+}
 .container{
     width: 1024px; margin: auto; position: relative;
 }

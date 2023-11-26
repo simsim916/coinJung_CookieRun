@@ -2,9 +2,79 @@
 
 
 let main = document.getElementById('main');
+let game1 = document.getElementsByClassName('game_1');
 
+indexWrite ();
 // 인덱스 작성
-{
+function indexWrite (){
+    main.innerHTML=`<div class="img_box container">
+    <div class="event_slide">
+        <div>
+            <i class="fa-solid fa-chevron-left"></i>
+            <i class="fa-solid fa-pause"></i>
+            <i class="fa-solid fa-chevron-right"></i>
+        </div>
+        <div class="event_slide_img">
+        </div>
+        <div class="event_slide_btn">
+            <div>
+            </div>
+        </div>
+    </div>
+    <div class="shop_slide">
+        <img src="./img/cookierunstore.jpg" alt="">
+        <p>주간의 인기 상품</p>
+        <div class="shop_slide_img">
+        </div>
+        <lu class="shop_slide_bth">
+            <li>0</li>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </lu>
+    </div>
+
+</div>
+<hr>
+<div class="main_info container">
+    <div>
+        <h3>쿠키런 킹덤<br>새소식</h3>
+        <div>새소식 보러가기 <i class="fa-solid fa-square-caret-right"></i></div>
+    </div>
+    <div>
+        <div class="info_slide">
+            <div>
+                <img src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/54e1ec2f-823d-4945-f54c-c2c31236ed00/format=webp" alt="">
+                <p>새소식</p>
+                <p>쿠키 세상의 새로운 소식을 만나보세요!</p>
+            </div>
+            <div>
+                <img src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/e3cec218-533b-4c5b-54b1-b8cd0ff19c00/format=webp" alt="">
+                <p>게임 정보</p>
+                <p>다양한 쿠키들과 짜릿한 액션을 즐겨보세요!</p>
+            </div>
+            <div>
+                <img src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/4780ff10-2546-42bd-3e01-aafad5678100/format=avif" alt="">
+                <p>커뮤니티</p>
+                <p>유저분들의 생각과 의견을 공유해주세요!</p>
+            </div>
+            <div>
+                <p>미디어</p>
+                <p>게임 밖 쿠키들의 이야기를 들어보세요!</p>
+            </div>
+            <div>
+                <p>SHOP</p>
+                <p>쿠키들의 다양한 상품들을 만나보세요!</p>
+            </div>
+            <div>
+                <p>고객센터</p>
+                <p>유저의 이야기를 직접 전달해주세요!</p>
+            </div>
+        </div>
+    </div>
+</div>`
+
     const slideMenu = [
         {html : `<div><img src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/54e1ec2f-823d-4945-f54c-c2c31236ed00/format=webp" alt=""><p>새소식</p><p>쿠키 세상의 새로운 소식을 만나보세요!</p></div>`,
         bgcolor : `#a71c44`},
@@ -148,60 +218,19 @@ navBg.addEventListener('mouseout',()=>{
 
 }
 
-let lastMainAr = [],
-     lastHeadAr = [];
-let lastMain = document.getElementById('main').innerHTML;
-let lastHead = document.getElementById('headBottom').innerHTML;
+let backBtn = document.getElementById('backBtn');
 
-lastMainAr.push(lastMain);
-lastHeadAr.push(lastHead);
-
-
-
-//민지 JS 
-{
-let game1 = document.getElementsByClassName('game_1');
-let cookieTypeImg = [
-    {   
-        올 : '',
-        에픽: 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/e6cc601e-19ee-421b-e936-9cdd20eaf100/public',
-        레전더리: 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/fb2bbed1-186c-4edf-1741-7edb8cdf7100/public',
-        슈퍼에픽: 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/ef97da70-b550-428a-c03c-ed4db59a9300/public',
-        스페셜: 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/dc7567c4-7d16-4017-52c2-4586e7112500/public',
-        에이션트: 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/b80b67b8-dc5c-49e3-07ca-f1673e459100/public',
-        드래곤: 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/9ea3ad41-1df7-4b8e-0e52-3c1f9ac48400/public',
-    }
-]
-function cookieType(cookieType) {
-    switch (cookieType) {
-        case "에픽":
-            return 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/e6cc601e-19ee-421b-e936-9cdd20eaf100/public'
-        case "레전더리":
-            return 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/fb2bbed1-186c-4edf-1741-7edb8cdf7100/public'
-        case "슈퍼에픽":
-            return 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/ef97da70-b550-428a-c03c-ed4db59a9300/public'
-        case "스페셜":
-            return 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/dc7567c4-7d16-4017-52c2-4586e7112500/public'
-        case "에이션트":
-            return 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/b80b67b8-dc5c-49e3-07ca-f1673e459100/public'
-        case "드래곤":
-            return 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/9ea3ad41-1df7-4b8e-0e52-3c1f9ac48400/public'
-    }
-}
-
-for (let i = 0 ; i < game1.length ; i++) {
-    game1[i].addEventListener('click',()=>{
+function cookieinfoWrite(){
+    {
         main.innerHTML = `<h3>쿠키소개</h3><div class="main_option">
-        <img src="./img/tag_all.png" alt="올" class="default">
+        <img src="./img/tag_all.png" alt="올" class="selected">
         <img src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/e6cc601e-19ee-421b-e936-9cdd20eaf100/public" alt="에픽">
         <img src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/dc7567c4-7d16-4017-52c2-4586e7112500/public" alt="스페셜">
         <img src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/fb2bbed1-186c-4edf-1741-7edb8cdf7100/public" alt="레전더리">
         <img src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/ef97da70-b550-428a-c03c-ed4db59a9300/public" alt="슈퍼에픽">
         <img src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/b80b67b8-dc5c-49e3-07ca-f1673e459100/public" alt="에이션트">
         <img src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/9ea3ad41-1df7-4b8e-0e52-3c1f9ac48400/public" alt="드래곤">
-    </div> 
-    <div class="main_list">
-    </div>`;
+    </div> <div class="main_list"></div>`;
     let mainList = document.getElementsByClassName('main_list');
     fetch("http://localhost:3000/cookieData")
     .then(response=>response.json())
@@ -238,28 +267,25 @@ for (let i = 0 ; i < game1.length ; i++) {
                 <p class="skill_intro">${ json[0][compare].skill.skillInfo}</p>
             </div>
         </div>`;
-        // let backButton = main[0].getElementsByClassName('back_button');
     }
-
-})
-
-
-
+    })
     }
-    
-    
-    )
-
-
 }
-
+function cookieType(cookieType) {
+    switch (cookieType) {
+        case "에픽":
+            return 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/e6cc601e-19ee-421b-e936-9cdd20eaf100/public'
+        case "레전더리":
+            return 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/fb2bbed1-186c-4edf-1741-7edb8cdf7100/public'
+        case "슈퍼에픽":
+            return 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/ef97da70-b550-428a-c03c-ed4db59a9300/public'
+        case "스페셜":
+            return 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/dc7567c4-7d16-4017-52c2-4586e7112500/public'
+        case "에이션트":
+            return 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/b80b67b8-dc5c-49e3-07ca-f1673e459100/public'
+        case "드래곤":
+            return 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/9ea3ad41-1df7-4b8e-0e52-3c1f9ac48400/public'
+    }
 }
-// {
-//     let infoSlide = document.getElementsByClassName('info_slide');
-//     let num = 0;
+game1[1].addEventListener('click',cookieinfoWrite)
 
-//     setInterval(()=>{
-//         infoSlide[num].style.transform=
-//     })
-
-// }
