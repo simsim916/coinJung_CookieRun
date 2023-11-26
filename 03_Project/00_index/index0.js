@@ -1,6 +1,6 @@
 'use strict';
 
-
+import WriteCookieList from "./02_gameInfo/01_cookie_info"
 
 
 
@@ -157,6 +157,17 @@ let lastHead = document.getElementById('headBottom').innerHTML;
 lastMainAr.push(lastMain);
 lastHeadAr.push(lastHead);
 
+writeCookieList();
+
+//쿠키 소개 리스트 작성
+function writeCookieList() {
+    fetch("http://localhost:3000/cookieData")
+    .then(response=>response.json())
+    .then(json => {
+    for (let i = 0; i < json[0].length; i++) {
+        mainList[0].innerHTML += `<div class="main_list_box"><img src="${json[0][i].img}" alt="${json[0][i].name}"><div class="main_list_item_name">${json[0][i].name}</div><div class="main_list_item_type"><img src="${cookieType(json[0][i].type)}" alt="${json[0][i].type}"></div></div>`
+    }})
+}
 
 // {
 //     let infoSlide = document.getElementsByClassName('info_slide');
