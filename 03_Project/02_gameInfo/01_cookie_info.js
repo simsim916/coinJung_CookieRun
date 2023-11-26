@@ -262,9 +262,15 @@ let cookieTypeImg = [
 let main = document.getElementsByTagName('main')
 let mainList = main[0].getElementsByClassName('main_list')
 // 쿠키 목록 작성 시키는 함수
-function writeCookieList() {
-    for (let i = 0; i < cookieAR.length; i++) {
-        mainList[0].innerHTML += `<div class="main_list_box"><img src="${cookieAR[i].img}" alt="${cookieAR[i].name}"><div class="main_list_item_name">${cookieAR[i].name}</div><div class="main_list_item_type"><img src="${cookieType(cookieAR[i].type)}" alt="${cookieAR[i].type}"></div></div>`
+export default function writeCookieList() {
+    function getData(){
+        fetch("http://localhost:3000/cookieData")
+        .then(response=>response.json())
+        .then(json => {
+            console.log(json)
+        for (let i = 0; i < json[0].length; i++) {
+            mainList[0].innerHTML += `<div class="main_list_box"><img src="${json[0][i].img}" alt="${json[0][i].name}"><div class="main_list_item_name">${json[0][i].name}</div><div class="main_list_item_type"><img src="${cookieType(json[0][i].type)}" alt="${json[0][i].type}"></div></div>`
+        }})
     }
 }
 // 쿠키 타입 검색해서 이미지 선택하는 함수

@@ -149,8 +149,13 @@ navBg.addEventListener('mouseout',()=>{
 
 }
 
-let lastPage;
-lastPage = document.getElementsByTagName('main');
+let lastMainAr = [],
+     lastHeadAr = [];
+let lastMain = document.getElementById('main').innerHTML;
+let lastHead = document.getElementById('headBottom').innerHTML;
+
+lastMainAr.push(lastMain);
+lastHeadAr.push(lastHead);
 
 
 // {
