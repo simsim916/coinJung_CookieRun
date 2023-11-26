@@ -14,6 +14,7 @@ let productAR = [
         views: 100,
         sell: 15,
         stock: 10
+        delivery:/
     },
     {
         update: '2023-01-10',
@@ -183,6 +184,7 @@ let pageNum = 1;
 let gridBox = document.getElementsByClassName('grid_box');
 let gridBoxLi = document.querySelectorAll('.grid_box>li')
 let mainItem = document.getElementsByClassName('main_item');
+let optionTitle = document.getElementsByClassName('option_title');
 
 // 옵션 박스 열기 / 닫기
 {
@@ -199,8 +201,10 @@ let mainItem = document.getElementsByClassName('main_item');
 {
     optionBox[0].addEventListener('click', (event) => {
         let eventOJ = event.target.closest('li');
-
-        if (optionBox[0].contains(eventOJ)) {
+        optionTitle[0].addEventListener('click', (event) => {
+            let optionTitle = event.target;    
+            
+            if (optionBox[0].contains(eventOJ)) {
             if (event.target.style.backgroundColor == "orange") {
                 event.target.style.backgroundColor = "rgb(250, 248, 248)"
             } else {
@@ -208,6 +212,7 @@ let mainItem = document.getElementsByClassName('main_item');
             }
         }
     })
+})
 }
 // 아이템 갯수(배열) 9개씩 나타내기, 금액단위 설정 
 let imgPage = 9;
@@ -256,23 +261,6 @@ function listWriter() {
         }
     })
 }
-//아이템목록(6개) 만들기
-// {
-    //     let pageSix;
-    //     pageSix = productAR.length / 6
-    //     for (let i = 0; i < pageSix; i++) {
-        //         showScreen[0].innerHTML += `<div>${i + 1}</div>`;
-//     }
-//     showScreen[0].addEventListener('click', event => {
-
-    //         if (event.target != showScreen[0]) {
-        //             pageNum = event.target.innerText;
-        //             window.scrollTo(0, 300);
-        //             listWriter();
-        //         }
-//     })
-// }
-
 
 //아이템목록 누르면 숫자 진하게 표시
 let lastGrid = gridBoxLi[0];
