@@ -74,9 +74,7 @@ fetch("http://localhost:3000/cookieGIF")
                 }
             }
         })
-    }
-    )
-    
+    })
 }
 
 //(스크립트) main 우측 제품 슬라이드 이미지
@@ -159,16 +157,8 @@ lastPage = document.getElementsByTagName('main');
 //     let infoSlide = document.getElementsByClassName('info_slide');
 //     let num = 0;
 
-<<<<<<< HEAD
 //     setInterval(()=>{
 //         infoSlide[num].style.transform=
 //     })
 
 // }
-=======
-    setInterval(()=>{
-        infoSlide[num]
-    })
-}
-
->>>>>>> 1036f31265feab3149e534384ce7973d3877c494
