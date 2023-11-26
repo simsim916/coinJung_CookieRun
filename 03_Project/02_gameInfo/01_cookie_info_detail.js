@@ -268,8 +268,6 @@ let main = document.getElementsByTagName("main");
 
 function cookieType(cookieType) {
     switch (cookieType) {
-
-
         case "에픽":
             return 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/e6cc601e-19ee-421b-e936-9cdd20eaf100/public'
         case "레전더리":

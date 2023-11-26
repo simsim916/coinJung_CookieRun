@@ -13,7 +13,6 @@ let cookieTypeImg = [
 ]
 
 
-
 let main = document.getElementsByTagName('main')
 let mainList = main[0].getElementsByClassName('main_list')
 // 쿠키 목록 작성 시키는 함수
@@ -51,18 +50,20 @@ writeCookieList();
     
 }
 
-async function detail (event) {
+
+function detail(event) {
     let eventOJ = event.target.closest('.main_list_box')
     let cookieName = eventOJ.children[1].innerText;
     let compare;
-    for (let i = 0 ; i < cookieAR.length ; i++){
-        if(cookieName == cookieAR[i].name){
+    for (let i = 0; i < cookieAR.length; i++) {
+        if (cookieName == cookieAR[i].name) {
             compare = i;
         }
-    }        
-    lastPage=main[0].innerHTML;
-    main[0].innerHTML = 
-        `<div class="back_button">뒤로가기</div><div class="main_info_container"><img src="${cookieAR[compare].img}" alt="${cookieAR[compare].name}">
+    }
+    lastPage = main[0].innerHTML;
+    main[0].innerHTML =
+        `<h3 class="back_button">뒤로가기</h3>
+        <div class="main_info_container"><img src="${cookieAR[compare].img}" alt="${cookieAR[compare].name}">
         <div class="main_info_pic"></div>
         <div class="main_info_self">
             <div class="grid_box1"><img src="${cookieType(cookieAR[compare].type)}" alt="${cookieAR[compare].type}"></div>
@@ -82,19 +83,44 @@ async function detail (event) {
     removeEventListener(event);
     console.log(event)
     let backButton = main[0].getElementsByClassName('back_button');
-    backButton[0].addEventListener('click',(event)=>{
-        if(event.target.className == 'back_button')
-        main[0].innerHTML = lastPage;
-    main[0].addEventListener('click', detail)
-    })
+    backButton[0].addEventListener('click', (event) => {
+        if (event.target.className == 'back_button')
+            main[0].innerHTML = lastPage;
+        main[0].addEventListener('click', detail)
 
+    })
 }
 
-// function backBtn (){
-//     let backButton = main[0].getElementsByClassName('back_button');
-//     backButton[0].addEventListener('click',(event)=>{
-//         if(event.target.className == 'back_button')
-//         main[0].innerHTML = lastPage;
-//     main[0].addEventListener('click', detail)
-//     })
-// }
+
+let mainOpt = document.getElementsByClassName('main_option');
+
+let typeAlt;
+
+mainOpt[0].addEventListener('click', (event) => {
+    let OptTypeImg = event.target;    
+//타입별 정렬
+    if (OptTypeImg.tagName == "IMG") {
+        typeAlt = OptTypeImg.getAttribute('alt');
+        mainList[0].innerHTML = "";
+        if (typeAlt == "올") {
+            
+            for (let i = 0;i < cookieAR.length;i++) {
+                mainList[0].innerHTML += `<div class="main_list_box"><img src="${cookieAR[i].img}" alt="${cookieAR[i].name}"><div class="main_list_item_name">${cookieAR[i].name}</div><div class="main_list_item_type"><img src="${cookieType(cookieAR[i].type)}" alt="${cookieAR[i].type}"></div></div>`;
+            }
+        } else {
+            for (let i = 0; i<cookieAR.length;i++) {
+                if (typeAlt == cookieAR[i].type) {    
+                    mainList[0].innerHTML += `<div class="main_list_box"><img src="${cookieAR[i].img}" alt="${cookieAR[i].name}"><div class="main_list_item_name">${cookieAR[i].name}</div><div class="main_list_item_type"><img src="${cookieType(cookieAR[i].type)}" alt="${cookieAR[i].type}"></div></div>`;}
+        }
+
+    }
+    }
+});
+
+
+
+
+
+
+
+
