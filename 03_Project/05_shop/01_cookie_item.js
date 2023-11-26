@@ -263,32 +263,22 @@ function listWriter() {
 
 //아이템목록 누르면 숫자 진하게 표시
 let lastGrid = gridBoxLi[0];
+lastGrid.style.border = '4px solid black';
 for (let i = 0; i < gridBoxLi.length; i++) {
-
     gridBoxLi[i].addEventListener('click', (event) => {
-        let gridBoxChi = event.target;
-        lastGrid.style.fontWeight = '1';
-        lastGrid.style.backgroundColor = 'red';
-        console.log(gridBoxChi)
-        if (gridBoxChi == gridBoxLi[1]) {
+        let eventOJ = event.target;
+        lastGrid.style.border = '4px solid #fff'
+        eventOJ.style.border = '4px solid black'
+        if (eventOJ == gridBoxLi[1]) {
             imgPage = 6;
-            mainItem[0].style.gridTemplate="repeat(3, 1fr) / repeat(2, 1fr)";
+            mainItem[0].style.gridTemplate = "repeat(3, 700px) / repeat(2, 1fr)";
         } else {
             imgPage = 9;
-            mainItem[0].style.gridTemplate = "repeat(3, 1fr) / repeat(3, 1fr)";
-        }
-        console.log(imgPage)
-
-        if (gridBoxChi.style.fontWeight = 'lighter') {
-            gridBoxChi.style.fontWeight = '0.7';
-            gridBoxChi.style.backgroundColor = 'yellow';
-        } else {
-            gridBoxChi.style.fontWeight = 'bold';
-            gridBoxChi.style.fontWeight = '0.7';
-            gridBoxChi.style.backgroundColor = 'yellow';
+            mainItem[0].style.gridTemplate = "repeat(3, 400px) / repeat(3, 1fr)";
+        
         }
         listWriter();
-        lastGrid = gridBoxChi;
+        lastGrid = eventOJ;
     }
     )
 }
