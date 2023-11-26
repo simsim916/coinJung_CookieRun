@@ -15,7 +15,7 @@ let cookieTypeImg = [
 
 
 let main = document.getElementsByTagName('main')
-let mainList = main[0].getElementsByClassName('main_list')
+
 // 쿠키 목록 작성 시키는 함수
 function writeCookieList() {
     for (let i = 0; i < cookieAR.length; i++) {
@@ -42,13 +42,9 @@ function cookieType(cookieType) {
     }
 }
 
-let lastPage;
 writeCookieList();
-{
-    main[0].addEventListener('click', detail)
-    
-}
-
+let mainList = main[0].getElementsByClassName('main_list')
+mainList[0].addEventListener('click', detail)
 
 function detail(event) {
     let eventOJ = event.target.closest('.main_list_box')
@@ -78,17 +74,7 @@ function detail(event) {
             <p class="skill_intro">${cookieAR[compare].skill.skillInfo}</p>
         </div>
     </div>`;
-    console.log(event)
-    removeEventListener(event);
-    console.log(event)
     let backButton = main[0].getElementsByClassName('back_button');
-    backButton[0].addEventListener('click',(event)=>{
-        if(event.target.className == 'back_button')
-        main[0].innerHTML = lastPage;
-<<<<<<<<< Temporary merge branch 1
-        main[0].addEventListener('click', detail)
-    
-})
 }
 
 let mainOpt = document.getElementsByClassName('main_option');

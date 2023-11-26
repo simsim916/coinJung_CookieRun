@@ -1,8 +1,7 @@
 'use strict';
 
-import WriteCookieList from "./02_gameInfo/01_cookie_info"
 
-
+let main = document.getElementById('main');
 
 // 인덱스 작성
 {
@@ -157,18 +156,104 @@ let lastHead = document.getElementById('headBottom').innerHTML;
 lastMainAr.push(lastMain);
 lastHeadAr.push(lastHead);
 
-writeCookieList();
 
-//쿠키 소개 리스트 작성
-function writeCookieList() {
+
+//민지 JS 
+{
+let game1 = document.getElementsByClassName('game_1');
+let cookieTypeImg = [
+    {   
+        올 : '',
+        에픽: 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/e6cc601e-19ee-421b-e936-9cdd20eaf100/public',
+        레전더리: 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/fb2bbed1-186c-4edf-1741-7edb8cdf7100/public',
+        슈퍼에픽: 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/ef97da70-b550-428a-c03c-ed4db59a9300/public',
+        스페셜: 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/dc7567c4-7d16-4017-52c2-4586e7112500/public',
+        에이션트: 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/b80b67b8-dc5c-49e3-07ca-f1673e459100/public',
+        드래곤: 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/9ea3ad41-1df7-4b8e-0e52-3c1f9ac48400/public',
+    }
+]
+function cookieType(cookieType) {
+    switch (cookieType) {
+        case "에픽":
+            return 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/e6cc601e-19ee-421b-e936-9cdd20eaf100/public'
+        case "레전더리":
+            return 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/fb2bbed1-186c-4edf-1741-7edb8cdf7100/public'
+        case "슈퍼에픽":
+            return 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/ef97da70-b550-428a-c03c-ed4db59a9300/public'
+        case "스페셜":
+            return 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/dc7567c4-7d16-4017-52c2-4586e7112500/public'
+        case "에이션트":
+            return 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/b80b67b8-dc5c-49e3-07ca-f1673e459100/public'
+        case "드래곤":
+            return 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/9ea3ad41-1df7-4b8e-0e52-3c1f9ac48400/public'
+    }
+}
+
+for (let i = 0 ; i < game1.length ; i++) {
+    game1[i].addEventListener('click',()=>{
+        main.innerHTML = `<h3>쿠키소개</h3><div class="main_option">
+        <img src="./img/tag_all.png" alt="올" class="default">
+        <img src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/e6cc601e-19ee-421b-e936-9cdd20eaf100/public" alt="에픽">
+        <img src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/dc7567c4-7d16-4017-52c2-4586e7112500/public" alt="스페셜">
+        <img src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/fb2bbed1-186c-4edf-1741-7edb8cdf7100/public" alt="레전더리">
+        <img src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/ef97da70-b550-428a-c03c-ed4db59a9300/public" alt="슈퍼에픽">
+        <img src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/b80b67b8-dc5c-49e3-07ca-f1673e459100/public" alt="에이션트">
+        <img src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/9ea3ad41-1df7-4b8e-0e52-3c1f9ac48400/public" alt="드래곤">
+    </div> 
+    <div class="main_list">
+    </div>`;
+    let mainList = document.getElementsByClassName('main_list');
     fetch("http://localhost:3000/cookieData")
     .then(response=>response.json())
     .then(json => {
     for (let i = 0; i < json[0].length; i++) {
         mainList[0].innerHTML += `<div class="main_list_box"><img src="${json[0][i].img}" alt="${json[0][i].name}"><div class="main_list_item_name">${json[0][i].name}</div><div class="main_list_item_type"><img src="${cookieType(json[0][i].type)}" alt="${json[0][i].type}"></div></div>`
-    }})
+    }
+    mainList[0].addEventListener('click', detail);
+
+    function detail(event) {
+        let eventOJ = event.target.closest('.main_list_box')
+        let cookieName = eventOJ.children[1].innerText;
+        let compare;
+        for (let i = 0; i <  json[0].length; i++) {
+            if (cookieName ==  json[0][i].name) {
+                compare = i;
+            }
+        }
+        main.innerHTML =
+            `<h3 class="back_button">뒤로가기</h3>
+            <div class="main_info_container"><img src="${ json[0][compare].img}" alt="${ json[0][compare].name}">
+            <div class="main_info_pic"></div>
+            <div class="main_info_self">
+                <div class="grid_box1"><img src="${cookieType( json[0][compare].type)}" alt="${ json[0][compare].type}"></div>
+                <div class="grid_box2">${ json[0][compare].name}</div>
+                <p class="cookie_self">${ json[0][compare].info}</p>
+            </div>
+        </div>
+        <div class="intro_box">
+            <div class="skill_box">
+                <p class="skill">스킬</p>
+                <img src="${ json[0][compare].skill.skillImg}" alt="${ json[0][compare].skill.skillName}">
+                <p class="skill_name">${ json[0][compare].skill.skillName}</p>
+                <p class="skill_intro">${ json[0][compare].skill.skillInfo}</p>
+            </div>
+        </div>`;
+        // let backButton = main[0].getElementsByClassName('back_button');
+    }
+
+})
+
+
+
+    }
+    
+    
+    )
+
+
 }
 
+}
 // {
 //     let infoSlide = document.getElementsByClassName('info_slide');
 //     let num = 0;
