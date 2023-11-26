@@ -14,7 +14,6 @@ let productAR = [
         views: 100,
         sell: 15,
         stock: 10
-        delivery:/
     },
     {
         update: '2023-01-10',
