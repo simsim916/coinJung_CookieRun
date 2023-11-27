@@ -1,28 +1,10 @@
 'use strict';
 let indexBox = document.getElementById('indexBox');
 
-indexWrite ();
+let backBtn = document.getElementById('backBtn');
+let lastSlideBtn, lastSlideBtn2;
 
-let subLi = document.querySelectorAll(".sub_li");
-let headerCookie = document.querySelector("#header_cookie");
-let header = document.querySelector("header");
-let shopSlideImg = document.getElementsByClassName('shop_slide_img');
-let eventSlide = document.getElementsByClassName('event_slide');
-let eventSlideImg = eventSlide[0].getElementsByClassName('event_slide_img');
-let eventSlideBtn = eventSlide[0].getElementsByClassName('event_slide_btn');
-console.log(eventSlideBtn[0].children[0].children[0])
-let lastSlideBtn = eventSlideBtn[0].children[0].children[0]; lastSlideBtn.style.opacity="1";
-
-
-// 상품 슬라이드 버튼 
-function shopslideBtn(event){
-    if(event.target.tagName == 'SPAN'){
-        lastSlideBtn.style.opacity = "0.7";
-        event.target.style.opacity = "1";
-        lastSlideBtn = event.target;
-        for(let i of indexImg) {if( i[1] == lastSlideBtn.innerText) eventSlideImg[0].children[0].src=`${i[0]}`;}
-    }
-}
+indexWrite();
 
 // 인덱스 작성
 function indexWrite (){
@@ -63,11 +45,11 @@ function indexWrite (){
             <div class="shop_slide_img">
             </div>
             <lu class="shop_slide_bth">
-                <li onclick="shopslideBtn">0</li>
-                <li onclick="shopslideBtn">1</li>
-                <li onclick="shopslideBtn">2</li>
-                <li onclick="shopslideBtn">3</li>
-                <li onclick="shopslideBtn">4</li>
+                <li onclick="mainShopSlideBtn(event)">0</li>
+                <li onclick="mainShopSlideBtn(event)">1</li>
+                <li onclick="mainShopSlideBtn(event)">2</li>
+                <li onclick="mainShopSlideBtn(event)">3</li>
+                <li onclick="mainShopSlideBtn(event)">4</li>
             </lu>
         </div>
 
@@ -113,6 +95,7 @@ function indexWrite (){
     </main>`;
 
 //(스크립트) nav 백그라운드 이미지
+let header = document.querySelector("header");
 fetch("http://localhost:3000/headerImg")
 .then(response=>response.json())
 .then(json => 
@@ -120,6 +103,7 @@ fetch("http://localhost:3000/headerImg")
 )
 
 //(스크립트) nav 쿠키 gif
+let headerCookie = document.querySelector("#header_cookie");
 fetch("http://localhost:3000/cookieGIF")
 .then(response=>response.json())
 .then(json => 
@@ -127,22 +111,25 @@ fetch("http://localhost:3000/cookieGIF")
 )
 
 //(스크립트) main 슬라이드 이미지
-    // 슬라이드 버튼 & 이미지 생성
+// 슬라이드 버튼 & 이미지 생성
 fetch("http://localhost:3000/eventImg")
 .then(response=>response.json())
 .then(json => {
+    let eventSlide = document.getElementsByClassName('event_slide');
+    let eventSlideImg = eventSlide[0].getElementsByClassName('event_slide_img');
+    let eventSlideBtn = eventSlide[0].getElementsByClassName('event_slide_btn');
     eventSlideImg[0].innerHTML = `<img src="${json[0][0][0]}" alt="${json[0][0][1]}">`;
     for (let i = 0 ; i < json[0].length; i++){
-        eventSlideBtn[0].children[0].innerHTML += `<span onclick="eventslideBtn(event)">${json[0][i][1]}</span>`
+        eventSlideBtn[0].children[0].innerHTML += `<span class="mainSlideBtn" onclick="eventslideBtn(event)">${json[0][i][1]}</span>`
     }
-    // 슬라이드 버튼 선택시 강조
+
 })
-    
 
 //(스크립트) main 우측 제품 슬라이드 이미지
 fetch("http://localhost:3000/product")
 .then(response=>response.json())
 .then(json => {
+    let shopSlideImg = document.getElementsByClassName('shop_slide_img');
         for (let i = 0 , t; i < json[0].length-1; i++){
             for (let j = i+1 ; j < json[0].length ; j++) {
                 if ( json[0][i].price > json[0][j].price){
@@ -155,26 +142,16 @@ fetch("http://localhost:3000/product")
     for (let i = 0 ; i < 5 ; i++){
         shopSlideImg[0].innerHTML += `<div><img src="${json[0][i].img[0]}" alt="${json[0][i].title}"><p class="item_title">${json[0][i].title}</p></div>`
     }
+    let mainSlideBtn = document.getElementsByClassName('mainSlideBtn');
+lastSlideBtn = mainSlideBtn[0];
+lastSlideBtn.style.opacity="1";
 })
-
 
 //(스크립트) main 우측 제품 슬라이드 버튼
 let shopSlideBtn = document.getElementsByClassName('shop_slide_bth');
-let lastSlideLi=shopSlideBtn[0].children[0];
-lastSlideLi.style.opacity="1";
-lastSlideLi.style.width="30px";
-shopSlideBtn[0].addEventListener('click',(event)=>{
-    if(event.target != lastSlideLi){
-        if (event.target.tagName == "LI"){
-            lastSlideLi.style.opacity="0.3";
-            event.target.style.opacity="1";
-            event.target.style.width="30px";
-            lastSlideLi.style.width="13px";
-            lastSlideLi=event.target;
-            shopSlideImg[0].style.transform=`translateX(-${event.target.innerText*20}%)`;
-        }
-    }
-});
+lastSlideBtn2=shopSlideBtn[0].children[0];
+lastSlideBtn2.style.opacity="1";
+lastSlideBtn2.style.width="30px";
 
 //(이벤트) nav 스크롤에따라 진하기 
 {
@@ -189,6 +166,7 @@ window.addEventListener('scroll',()=>{
 
 //(이벤트) nav 마우스 진입시 서브메뉴 펼치기
 let nav = document.querySelector("nav");
+let subLi = document.querySelectorAll(".sub_li");
 nav.addEventListener('mouseenter',()=>{
     navBg.style.visibility="initial";
     nav.style.backgroundColor="#2b2b37ff";
@@ -205,14 +183,52 @@ navBg.addEventListener('mouseout',()=>{
     }
 });
 
-
 }
 
-let backBtn = document.getElementById('backBtn');
+// 인덱스 메인 슬라이드 이미지 버튼 작동 함수
+function eventslideBtn(event){
+    let eventSlide = document.getElementsByClassName('event_slide');
+    let eventSlideImg = eventSlide[0].getElementsByClassName('event_slide_img');
+    fetch("http://localhost:3000/eventImg")
+    .then(response=>response.json())
+    .then(json => {
+    if(event.target.tagName == 'SPAN'){
+        lastSlideBtn.style.opacity = "0.7";
+        event.target.style.opacity = "1";
+        lastSlideBtn = event.target;
+        for(let i of json[0]) {if( i[1] == lastSlideBtn.innerText) eventSlideImg[0].children[0].src=`${i[0]}`;}
+    }
+})
+}
 
+// 인덱스 상품 슬라이드 이미지 버튼 작동 함수
+function mainShopSlideBtn(event){
+    let shopSlideImg = document.getElementsByClassName('shop_slide_img');
+    if(event.target != lastSlideBtn2){
+        if (event.target.tagName == "LI"){
+            lastSlideBtn2.style.opacity="0.3";
+            event.target.style.opacity="1";
+            event.target.style.width="30px";
+            lastSlideBtn2.style.width="13px";
+            lastSlideBtn2=event.target;
+            shopSlideImg[0].style.transform=`translateX(-${event.target.innerText*20}%)`;
+        }
+    }
+}
+
+// 민지 쿠키소개 페이지 전환
 function cookieinfoWrite(){
-    {
-        main.innerHTML = `<h3>쿠키소개</h3><div class="main_option">
+    let headBottom = document.getElementById('headBottom')
+    headBottom.classList.add("subPage")
+    headBottom.innerHTML=`<div>
+        <ul>
+            <li onclick="cookieinfoWrite()">쿠키 소개</li>
+            <li>게임 소개</li>
+            <li>게임 월드 소개</li>
+        </ul>
+    </div>`;
+        main.innerHTML = `
+    </div><h3>쿠키소개</h3><div class="main_option">
         <img src="./img/tag_all.png" alt="올" class="selected">
         <img src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/e6cc601e-19ee-421b-e936-9cdd20eaf100/public" alt="에픽">
         <img src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/dc7567c4-7d16-4017-52c2-4586e7112500/public" alt="스페셜">
@@ -240,7 +256,7 @@ function cookieinfoWrite(){
             }
         }
         main.innerHTML =
-            `<h3 class="back_button">뒤로가기</h3>
+            `<h3 class="back_button" onclick="cookieinfoWrite()">목록가기</h3>
             <div class="main_info_container"><img src="${ json[0][compare].img}" alt="${ json[0][compare].name}">
             <div class="main_info_pic"></div>
             <div class="main_info_self">
@@ -259,37 +275,24 @@ function cookieinfoWrite(){
         </div>`;
     }
     })
-    }
-}
-function cookieType(cookieType) {
-    switch (cookieType) {
-        case "에픽":
-            return 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/e6cc601e-19ee-421b-e936-9cdd20eaf100/public'
-        case "레전더리":
-            return 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/fb2bbed1-186c-4edf-1741-7edb8cdf7100/public'
-        case "슈퍼에픽":
-            return 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/ef97da70-b550-428a-c03c-ed4db59a9300/public'
-        case "스페셜":
-            return 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/dc7567c4-7d16-4017-52c2-4586e7112500/public'
-        case "에이션트":
-            return 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/b80b67b8-dc5c-49e3-07ca-f1673e459100/public'
-        case "드래곤":
-            return 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/9ea3ad41-1df7-4b8e-0e52-3c1f9ac48400/public'
+    function cookieType(cookieType) {
+        switch (cookieType) {
+            case "에픽":
+                return 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/e6cc601e-19ee-421b-e936-9cdd20eaf100/public'
+            case "레전더리":
+                return 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/fb2bbed1-186c-4edf-1741-7edb8cdf7100/public'
+            case "슈퍼에픽":
+                return 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/ef97da70-b550-428a-c03c-ed4db59a9300/public'
+            case "스페셜":
+                return 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/dc7567c4-7d16-4017-52c2-4586e7112500/public'
+            case "에이션트":
+                return 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/b80b67b8-dc5c-49e3-07ca-f1673e459100/public'
+            case "드래곤":
+                return 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/9ea3ad41-1df7-4b8e-0e52-3c1f9ac48400/public'
+        }
     }
 }
 
 
 
-function eventslideBtn(event){
-    fetch("http://localhost:3000/eventImg")
-    .then(response=>response.json())
-    .then(json => {
-    lastSlideBtn.style.opacity="1";
-    if(event.target.tagName == 'SPAN'){
-        lastSlideBtn.style.opacity = "0.7";
-        event.target.style.opacity = "1";
-        lastSlideBtn = event.target;
-        for(let i of json[0]) {if( i[1] == lastSlideBtn.innerText) eventSlideImg[0].children[0].src=`${i[0]}`;}
-    }
-})
-}
+
