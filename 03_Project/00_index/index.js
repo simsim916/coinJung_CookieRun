@@ -114,9 +114,10 @@ fetch("http://localhost:3000/cookieGIF")
 fetch("http://localhost:3000/eventImg")
 .then(response=>response.json())
 .then(json => {
-    let eventSlide = document.getElementsByClassName('event_slide');
-    let eventSlideImg = eventSlide[0].getElementsByClassName('event_slide_img');
-    let eventSlideBtn = eventSlide[0].getElementsByClassName('event_slide_btn');
+    let eventSlide = document.getElementsByClassName('event_slide'),
+     eventSlideImg = eventSlide[0].getElementsByClassName('event_slide_img'),
+     eventSlideBtn = eventSlide[0].getElementsByClassName('event_slide_btn');
+
     eventSlideImg[0].innerHTML = `<img src="${json[0][0][0]}" alt="${json[0][0][1]}">`;
     for (let i = 0 ; i < json[0].length; i++){
         eventSlideBtn[0].children[0].innerHTML += `<span class="mainSlideBtn" onclick="eventslideBtn(event)">${json[0][i][1]}</span>`
@@ -216,6 +217,7 @@ function mainShopSlideBtn(event){
 }
 
 /*                    ▲▲▲▲  문석  ▲▲▲▲                    */ 
+/*                    ▼▼▼▼  민지  ▼▼▼▼                    */ 
 
 // 민지 쿠키소개 페이지 전환
 function cookieinfoWrite(){
@@ -295,6 +297,7 @@ function cookieinfoWrite(){
 }
 
 /*                    ▲▲▲▲  민지  ▲▲▲▲                    */ 
+/*                    ▼▼▼▼  창민  ▼▼▼▼                    */ 
 
 function noticeWrite(){
     let headBottom = document.getElementById('headBottom')
@@ -496,6 +499,7 @@ function loginWrite(){
     }
     document.getElementById('loginBG').style.visibility="initial";
 }
+
 function changeKakao(event){
     var TitleCookie= document.getElementById("titleCookie");
     var TitleKakao= document.getElementById("titleKakao");
@@ -504,8 +508,8 @@ function changeKakao(event){
     let eventOJ = event.target.closest("li");
 
     let loginList = document.getElementsByClassName('login_list');
-    loginList[0].children[0].style.border="2px solid orange";
-    loginList[0].children[0].style.color= "orange";
+    loginList[0].children[0].style.border="2px solid rgb(160, 159, 159)";
+    loginList[0].children[0].style.color= "rgb(160, 159, 159)";
     //쿠키런 안보이게
     TitleCookie.style.display="none";
     ImgCookie.style.display="none";
@@ -517,6 +521,7 @@ function changeKakao(event){
     eventOJ.style.color= "orange";
     lastBtn = eventOJ;
 }   
+
 function changeCookie(event){
     var TitleCookie= document.getElementById("titleCookie");
     var TitleKakao= document.getElementById("titleKakao");
@@ -537,7 +542,14 @@ function changeCookie(event){
     eventOJ.style.color= "orange";
     lastBtn = eventOJ;
 }
+
 function closelogin(event){
     if(event.target==document.getElementById('loginBG')) document.getElementById('loginBG').style.visibility="hidden";
 }
+
 /*                    ▲▲▲▲  창민  ▲▲▲▲                    */ 
+/*                    ▼▼▼▼  수미  ▼▼▼▼                    */ 
+
+
+
+/*                    ▲▲▲▲  수미  ▲▲▲▲                    */ 
