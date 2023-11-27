@@ -7,7 +7,7 @@
     <title>쿠키런 | 온라인 굿즈샵</title>
     <link href="https://webfontworld.github.io/cookierun/CookieRun.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/f05190bdd8.js" crossorigin="anonymous"></script>
-    <script defer src="../00_index/index.js"></script>
+    <!-- <script defer src="../00_index/index.js"></script> -->
     <link rel="stylesheet" href="../00_index/index.css">
     <link rel="stylesheet" href="./01_cookie_item.css">
     <script defer src="./01_cookie_item.js"></script>
@@ -73,11 +73,6 @@
         </div>
     </header>
     <div class="header_bottom">
-        <div>
-            <ul>
-                <li><a href="./01_cookie_item.html">온라인 굿즈샵</a></li>
-            </ul>
-        </div>
     </div>
     <main>
         <div class="main_head">
@@ -85,35 +80,34 @@
             <div>
                 <p id="total">상품 (총 <span></span>개)</p>
                 <ul class="grid_box">
-                    <li></li>
-                    <li></li>
+                    <li onclick="gridBoxBtn(event)"></li>
+                    <li onclick="gridBoxBtn(event)"></li>
                 </ul>
             </div>
         </div>
-
         <div class="main_option">
             <ul>
-                <li>혜택정보</li>
-                <li>배송유형</li>
-                <li>상품유형</li>
-                <li>가격대</li>
+                <li onclick="optionBoxOpen(event)">혜택정보</li>
+                <li onclick="optionBoxOpen(event)">배송유형</li>
+                <li onclick="optionBoxOpen(event)">상품유형</li>
+                <li onclick="optionBoxOpen(event)">가격대</li>
             </ul>
             <div class="option_box">
                 <div class="option_title">혜택정보
                     <ul>
-                        <li>할인상품</li>
-                        <li>무료상품</li>
+                        <li onclick="optionBoxListColor(event)">할인상품</li>
+                        <li onclick="optionBoxListColor(event)">무료상품</li>
                     </ul>
                 </div>
                 <div class="option_title">배송유형
                     <ul>
-                        <li>오늘출발</li>
-                        <li>예약배송</li>
+                        <li onclick="optionBoxListColor(event)">오늘출발</li>
+                        <li onclick="optionBoxListColor(event)">예약배송</li>
                     </ul>
                 </div>
                 <div class="option_title">상품유형
                     <ul>
-                        <li>예약구매</li>
+                        <li onclick="optionBoxListColor(event)">예약구매</li>
                     </ul>
                 </div>
                 <div class="option_title flexBox">가격대 <br>
@@ -122,24 +116,21 @@
                 </div>
                 <div class="option_last">
                     <div class="reset">초기화</div>
-                    <div class="click">상품보기</div>
+                    <div onclick="optionBoxClose(event)" id="option_clickID" class="click">상품보기</div>
                 </div>
-                <div class="option_close">X</div>
+                <div onclick="optionBoxClose(event)" id="option_closeID" class="option_close">X</div>
             </div>
         </div>
-
         <div class="list_option">
             <ul>
-                <li>인기도순</li>
-                <li>최신등록순</li>
-                <li>낮은가격순</li>
-                <li>높은가격순</li>
-                <li>판매높은순</li>
+                <li onclick="ProductARViewDown(event)">인기도순</li>
+                <li onclick="ProductARDateDown(event)">최신등록순</li>
+                <li onclick="ProductARPriceRise(event)">낮은가격순</li>
+                <li onclick="ProductARPriceDown(event)">높은가격순</li>
+                <li onclick="ProductARSellDown(event)">판매높은순</li>
             </ul>
         </div>
-
         <div class="main_item"></div>
-
         <div class="show_screen"></div>
     </main>
     
