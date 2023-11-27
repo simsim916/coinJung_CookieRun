@@ -1,38 +1,159 @@
 'use strict';
+let indexBox = document.getElementById('indexBox');
+let backBtn = document.getElementById('backBtn');
+let lastSlideBtn, lastSlideBtn2;
 
-let nav = document.querySelector("nav");
-let subLi = document.querySelectorAll(".sub_li");
-let navBg = document.querySelector("#nav_bg");
-let headerCookie = document.querySelector("#header_cookie");
+indexWrite();
+
+// 인덱스 작성
+function indexWrite (){
+    indexBox.innerHTML=`<div id="headBottom" class="header_bottom">
+    <div class="container">
+        <div class="header_left">
+            <img src="./img/update1_mini.jpg" alt="">
+            <div>
+                <p>업데이트 정보센터</p>
+                <p>2023.11.21<br>ver.1.2.382 업데이트 </p>
+            </div>
+        </div>
+        <img src="./img/index_logo.png" alt="">
+        <div class="header_right">
+            <div onclick="loginWrite()" class="dev_login">Devsisters<br>로그인</div>
+            <div onclick="loginWrite()" class="kakao_login">Kakao <br>로그인</div>
+        </div>
+    </div>
+    </div>
+    <main id="main">
+    <div class="img_box container">
+        <div class="event_slide">
+            <div>
+                <i class="fa-solid fa-chevron-left"></i>
+                <i class="fa-solid fa-pause"></i>
+                <i class="fa-solid fa-chevron-right"></i>
+            </div>
+            <div class="event_slide_img">
+            </div>
+            <div class="event_slide_btn">
+                <div>
+                </div>
+            </div>
+        </div>
+        <div class="shop_slide">
+            <img src="./img/cookierunstore.jpg" alt="">
+            <p>주간의 인기 상품</p>
+            <div class="shop_slide_img">
+            </div>
+            <lu class="shop_slide_bth">
+                <li onclick="mainShopSlideBtn(event)">0</li>
+                <li onclick="mainShopSlideBtn(event)">1</li>
+                <li onclick="mainShopSlideBtn(event)">2</li>
+                <li onclick="mainShopSlideBtn(event)">3</li>
+                <li onclick="mainShopSlideBtn(event)">4</li>
+            </lu>
+        </div>
+
+    </div>
+    <hr>
+    <div class="main_info container">
+        <div>
+            <h3>쿠키런 킹덤<br>새소식</h3>
+            <div>새소식 보러가기 <i class="fa-solid fa-square-caret-right"></i></div>
+        </div>
+        <div>
+            <div class="info_slide">
+                <div>
+                    <img src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/54e1ec2f-823d-4945-f54c-c2c31236ed00/format=webp" alt="">
+                    <p>새소식</p>
+                    <p>쿠키 세상의 새로운 소식을 만나보세요!</p>
+                </div>
+                <div>
+                    <img src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/e3cec218-533b-4c5b-54b1-b8cd0ff19c00/format=webp" alt="">
+                    <p>게임 정보</p>
+                    <p>다양한 쿠키들과 짜릿한 액션을 즐겨보세요!</p>
+                </div>
+                <div>
+                    <img src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/4780ff10-2546-42bd-3e01-aafad5678100/format=avif" alt="">
+                    <p>커뮤니티</p>
+                    <p>유저분들의 생각과 의견을 공유해주세요!</p>
+                </div>
+                <div>
+                    <p>미디어</p>
+                    <p>게임 밖 쿠키들의 이야기를 들어보세요!</p>
+                </div>
+                <div>
+                    <p>SHOP</p>
+                    <p>쿠키들의 다양한 상품들을 만나보세요!</p>
+                </div>
+                <div>
+                    <p>고객센터</p>
+                    <p>유저의 이야기를 직접 전달해주세요!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </main>`;
+
+//(스크립트) nav 백그라운드 이미지
 let header = document.querySelector("header");
-const headerImg = [
-    '../img/bg1.webp',
-    '../img/bg2.webp',
-    '../img/bg3.png',
-    '../img/bg4.webp',
-    '../img/bg5.webp',
-    '../img/bg6.webp',
-    '../img/bg7.png',
-    '../img/bg8.png',
-    '../img/bg9.png',
-]
-const cookie = [
-    "https://i.pinimg.com/originals/5e/a7/82/5ea782dee1243d13f4fcdedf96cb4c4d.gif",
-    'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/c27781aa-4293-49cf-e523-c2f63499d700/format=webp',
-    'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/4780ff10-2546-42bd-3e01-aafad5678100/format=webp',
-    'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/54e1ec2f-823d-4945-f54c-c2c31236ed00/format=webp',
-    'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/33f8248a-1aa4-4ce0-b5ea-4294e41f3c00/format=webp',
-    'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/07358c75-5680-4547-ea08-c2e5962d9100/format=webp',
-    'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/5f4cbe1f-a8cd-417e-fe54-5ca34620da00/format=webp',
-    'https://i.ibb.co/W3nhXY6/Madeleinecookiegachaanimation.gif',
-    'https://i.ibb.co/kQkRzjB/Lattecookiegachaanimation.gif'
-]
+fetch("http://localhost:3000/headerImg")
+.then(response=>response.json())
+.then(json => 
+    header.style.backgroundImage=`url(${json[0][Math.floor(Math.random()*json[0].length)]})`
+)
 
-let random = Math.floor(Math.random()*headerImg.length);
-let random2 = Math.floor(Math.random()*headerImg.length);
-header.style.backgroundImage=`url(${headerImg[random]})`;
-headerCookie.setAttribute('src',`${cookie[random2]}`);
+//(스크립트) nav 쿠키 gif
+let headerCookie = document.querySelector("#header_cookie");
+fetch("http://localhost:3000/cookieGIF")
+.then(response=>response.json())
+.then(json => 
+    headerCookie.setAttribute('src',`${json[0][Math.floor(Math.random()*json[0].length)]}`)
+)
 
+//(스크립트) main 슬라이드 이미지
+// 슬라이드 버튼 & 이미지 생성
+fetch("http://localhost:3000/eventImg")
+.then(response=>response.json())
+.then(json => {
+    let eventSlide = document.getElementsByClassName('event_slide');
+    let eventSlideImg = eventSlide[0].getElementsByClassName('event_slide_img');
+    let eventSlideBtn = eventSlide[0].getElementsByClassName('event_slide_btn');
+    eventSlideImg[0].innerHTML = `<img src="${json[0][0][0]}" alt="${json[0][0][1]}">`;
+    for (let i = 0 ; i < json[0].length; i++){
+        eventSlideBtn[0].children[0].innerHTML += `<span class="mainSlideBtn" onclick="eventslideBtn(event)">${json[0][i][1]}</span>`
+    }
+
+})
+
+//(스크립트) main 우측 제품 슬라이드 이미지
+fetch("http://localhost:3000/product")
+.then(response=>response.json())
+.then(json => {
+    let shopSlideImg = document.getElementsByClassName('shop_slide_img');
+        for (let i = 0 , t; i < json[0].length-1; i++){
+            for (let j = i+1 ; j < json[0].length ; j++) {
+                if ( json[0][i].price > json[0][j].price){
+                    t = json[0][i];
+                    json[0][i] = json[0][j];
+                    json[0][j] = t;
+                }
+            }
+        }
+    for (let i = 0 ; i < 5 ; i++){
+        shopSlideImg[0].innerHTML += `<div><img src="${json[0][i].img[0]}" alt="${json[0][i].title}"><p class="item_title">${json[0][i].title}</p></div>`
+    }
+    let mainSlideBtn = document.getElementsByClassName('mainSlideBtn');
+lastSlideBtn = mainSlideBtn[0];
+lastSlideBtn.style.opacity="1";
+})
+
+//(스크립트) main 우측 제품 슬라이드 버튼
+let shopSlideBtn = document.getElementsByClassName('shop_slide_bth');
+lastSlideBtn2=shopSlideBtn[0].children[0];
+lastSlideBtn2.style.opacity="1";
+lastSlideBtn2.style.width="30px";
+
+//(이벤트) nav 스크롤에따라 진하기 
+{
 window.addEventListener('scroll',()=>{
     if (parseInt(window.scrollY) || navBg.style.visibility == "initial") {
         nav.style.backgroundColor="#2b2b37ff";
@@ -40,11 +161,17 @@ window.addEventListener('scroll',()=>{
         nav.style.backgroundColor="#2b2b3750";
     }
 });
+}
+
+//(이벤트) nav 마우스 진입시 서브메뉴 펼치기
+let nav = document.querySelector("nav");
+let subLi = document.querySelectorAll(".sub_li");
 nav.addEventListener('mouseenter',()=>{
     navBg.style.visibility="initial";
     nav.style.backgroundColor="#2b2b37ff";
     for (let a of subLi) a.style.visibility="initial";
 });
+let navBg = document.querySelector("#nav_bg");
 navBg.addEventListener('mouseout',()=>{
     navBg.style.visibility="hidden";
     for (let a of subLi) a.style.visibility="hidden";
@@ -54,3 +181,363 @@ navBg.addEventListener('mouseout',()=>{
         nav.style.backgroundColor="#2b2b3750";
     }
 });
+
+}
+
+// 인덱스 메인 슬라이드 이미지 버튼 작동 함수
+function eventslideBtn(event){
+    let eventSlide = document.getElementsByClassName('event_slide');
+    let eventSlideImg = eventSlide[0].getElementsByClassName('event_slide_img');
+    fetch("http://localhost:3000/eventImg")
+    .then(response=>response.json())
+    .then(json => {
+    if(event.target.tagName == 'SPAN'){
+        lastSlideBtn.style.opacity = "0.7";
+        event.target.style.opacity = "1";
+        lastSlideBtn = event.target;
+        for(let i of json[0]) {if( i[1] == lastSlideBtn.innerText) eventSlideImg[0].children[0].src=`${i[0]}`;}
+    }
+})
+}
+
+// 인덱스 상품 슬라이드 이미지 버튼 작동 함수
+function mainShopSlideBtn(event){
+    let shopSlideImg = document.getElementsByClassName('shop_slide_img');
+    if(event.target != lastSlideBtn2){
+        if (event.target.tagName == "LI"){
+            lastSlideBtn2.style.opacity="0.3";
+            event.target.style.opacity="1";
+            event.target.style.width="30px";
+            lastSlideBtn2.style.width="13px";
+            lastSlideBtn2=event.target;
+            shopSlideImg[0].style.transform=`translateX(-${event.target.innerText*20}%)`;
+        }
+    }
+}
+
+/*                    ▲▲▲▲  문석  ▲▲▲▲                    */ 
+
+// 민지 쿠키소개 페이지 전환
+function cookieinfoWrite(){
+    let headBottom = document.getElementById('headBottom')
+    headBottom.classList.add("subPage")
+    headBottom.innerHTML=`<div>
+        <ul>
+            <li onclick="cookieinfoWrite()">쿠키 소개</li>
+            <li>게임 소개</li>
+            <li>게임 월드 소개</li>
+        </ul>
+    </div>`;
+        main.innerHTML = `
+    </div><h3>쿠키소개</h3><div class="main_option">
+        <img src="./img/tag_all.png" alt="올" class="selected">
+        <img src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/e6cc601e-19ee-421b-e936-9cdd20eaf100/public" alt="에픽">
+        <img src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/dc7567c4-7d16-4017-52c2-4586e7112500/public" alt="스페셜">
+        <img src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/fb2bbed1-186c-4edf-1741-7edb8cdf7100/public" alt="레전더리">
+        <img src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/ef97da70-b550-428a-c03c-ed4db59a9300/public" alt="슈퍼에픽">
+        <img src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/b80b67b8-dc5c-49e3-07ca-f1673e459100/public" alt="에이션트">
+        <img src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/9ea3ad41-1df7-4b8e-0e52-3c1f9ac48400/public" alt="드래곤">
+    </div> <div class="main_list"></div>`;
+    let mainList = document.getElementsByClassName('main_list');
+    fetch("http://localhost:3000/cookieData")
+    .then(response=>response.json())
+    .then(json => {
+    for (let i = 0; i < json[0].length; i++) {
+        mainList[0].innerHTML += `<div class="main_list_box"><img src="${json[0][i].img}" alt="${json[0][i].name}"><div class="main_list_item_name">${json[0][i].name}</div><div class="main_list_item_type"><img src="${cookieType(json[0][i].type)}" alt="${json[0][i].type}"></div></div>`
+    }
+    mainList[0].addEventListener('click', detail);
+
+    function detail(event) {
+        let eventOJ = event.target.closest('.main_list_box')
+        let cookieName = eventOJ.children[1].innerText;
+        let compare;
+        for (let i = 0; i <  json[0].length; i++) {
+            if (cookieName ==  json[0][i].name) {
+                compare = i;
+            }
+        }
+        main.innerHTML =
+            `<h3 class="back_button" onclick="cookieinfoWrite()">목록가기</h3>
+            <div class="main_info_container"><img src="${ json[0][compare].img}" alt="${ json[0][compare].name}">
+            <div class="main_info_pic"></div>
+            <div class="main_info_self">
+                <div class="grid_box1"><img src="${cookieType( json[0][compare].type)}" alt="${ json[0][compare].type}"></div>
+                <div class="grid_box2">${ json[0][compare].name}</div>
+                <p class="cookie_self">${ json[0][compare].info}</p>
+            </div>
+        </div>
+        <div class="intro_box">
+            <div class="skill_box">
+                <p class="skill">스킬</p>
+                <img src="${ json[0][compare].skill.skillImg}" alt="${ json[0][compare].skill.skillName}">
+                <p class="skill_name">${ json[0][compare].skill.skillName}</p>
+                <p class="skill_intro">${ json[0][compare].skill.skillInfo}</p>
+            </div>
+        </div>`;
+    }
+    })
+    function cookieType(cookieType) {
+        switch (cookieType) {
+            case "에픽":
+                return 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/e6cc601e-19ee-421b-e936-9cdd20eaf100/public'
+            case "레전더리":
+                return 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/fb2bbed1-186c-4edf-1741-7edb8cdf7100/public'
+            case "슈퍼에픽":
+                return 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/ef97da70-b550-428a-c03c-ed4db59a9300/public'
+            case "스페셜":
+                return 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/dc7567c4-7d16-4017-52c2-4586e7112500/public'
+            case "에이션트":
+                return 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/b80b67b8-dc5c-49e3-07ca-f1673e459100/public'
+            case "드래곤":
+                return 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/9ea3ad41-1df7-4b8e-0e52-3c1f9ac48400/public'
+        }
+    }
+}
+
+/*                    ▲▲▲▲  민지  ▲▲▲▲                    */ 
+
+function noticeWrite(){
+    let headBottom = document.getElementById('headBottom')
+    headBottom.classList.add("subPage")
+    headBottom.innerHTML=`        <div>
+    <ul>
+        <li onclick="noticeWrite()">공지사항</li>
+        <li>업데이트</li>
+        <li>이벤트</li>
+    </ul>
+</div>`;
+        main.innerHTML = `        <div class="notice_option">
+        <h3>공지사항</h3>
+        <div class="notice_option_right">
+            <select name="" id="">
+                <option value="">제목</option>
+                <option value="">내용</option>
+                <option value="">제목+내용</option>
+            </select>
+            <input placeholder="검색어를 입력해주세요.">
+            
+        </div>
+    </div>
+    <div class="notice_list">
+        <div><a href="#" class = "all">전체</a></div>
+        <div><a href="#" class = "notice">공지</a></div>
+        <div><a href="#" class = "inspection">점검</a></div>
+        <div><a href="#" class = "store">상점</a></div>
+        <div><a href="#" class = "event">이벤트</a></div>
+
+    </div>
+
+    <div class="notice_post">
+
+        <a onclick="noticeDetailWrite()">
+            <div class><span class="notice_icon">공지</span></div>
+            <div onclick="noticeDetailWrite()" class="notice_subject"><a onclick="noticeDetailWrite()">알려진 이슈를 안내해 드립니다.</a></div>
+            <div></div>
+            <div class="notice_date">2023.11.15</div>
+        </a>
+
+        <div><span class="notice_icon">공지</span></div>
+        <div class="notice_subject">알려진 이슈를 안내해 드립니다.</div>
+        <div></div>
+        <div class="notice_date">2023.11.15</div>
+
+        <div><span class="notice_icon">공지</span></div>
+        <div class="notice_subject">알려진 이슈를 안내해 드립니다.</div>
+        <div></div>
+        <div class="notice_date">2023.11.15</div>
+
+        <div><span class="inspection_icon">점검</span></div>
+        <div class="inspection_subject">11월 15일 정기점검 안내</div>
+        <div class="inspection_read"></div>
+        <div class="inspection_date">2023.11.14</div>
+        <div><span class="inspection_icon">점검</span></div>
+        <div class="inspection_subject">11월 15일 정기점검 안내</div>
+        <div class="inspection_read"></div>
+        <div class="inspection_date">2023.11.14</div>
+        <div><span class="inspection_icon">점검</span></div>
+        <div class="inspection_subject">11월 15일 정기점검 안내</div>
+        <div class="inspection_read"></div>
+        <div class="inspection_date">2023.11.14</div>
+        <div><span class="inspection_icon">점검</span></div>
+        <div class="inspection_subject">11월 15일 정기점검 안내</div>
+        <div class="inspection_read"></div>
+        <div class="inspection_date">2023.11.14</div>
+        <div><span class="inspection_icon">점검</span></div>
+        <div class="inspection_subject">11월 15일 정기점검 안내</div>
+        <div class="inspection_read"></div>
+        <div class="inspection_date">2023.11.14</div>
+        <div><span class="inspection_icon">점검</span></div>
+        <div class="inspection_subject">11월 15일 정기점검 안내</div>
+        <div class="inspection_read"></div>
+        <div class="inspection_date">2023.11.14</div>
+        <div><span class="inspection_icon">점검</span></div>
+        <div class="inspection_subject">11월 15일 정기점검 안내</div>
+        <div class="inspection_read"></div>
+        <div class="inspection_date">2023.11.14</div>
+        <div><span class="inspection_icon">점검</span></div>
+        <div class="inspection_subject">11월 15일 정기점검 안내</div>
+        <div class="inspection_read"></div>
+        <div class="inspection_date">2023.11.14</div>
+        <div><span class="inspection_icon">점검</span></div>
+        <div class="inspection_subject">11월 15일 정기점검 안내</div>
+        <div class="inspection_read"></div>
+        <div class="inspection_date">2023.11.14</div>
+        <div><span class="inspection_icon">점검</span></div>
+        <div class="inspection_subject">11월 15일 정기점검 안내</div>
+        <div class="inspection_read"></div>
+        <div class="inspection_date">2023.11.14</div>
+        <div><span class="inspection_icon">점검</span></div>
+        <div class="inspection_subject">11월 15일 정기점검 안내</div>
+        <div class="inspection_read"></div>
+        <div class="inspection_date">2023.11.14</div>
+
+    </div>`;
+}
+
+function noticeDetailWrite(){
+    let headBottom = document.getElementById('headBottom')
+    headBottom.classList.add("subPage")
+    headBottom.innerHTML=`        <div>
+    <ul>
+        <li onclick="noticeWrite()">공지사항</li>
+        <li>업데이트</li>
+        <li>이벤트</li>
+    </ul>
+</div>`;
+        main.innerHTML = `    <div class="notice_option2">
+        <h3>공지사항</h3>
+        <div class="notice_header">공지 알려진 이슈를 안내해드립니다. (11/22 수정)
+            <div class="notice_date">2023.11.22 09:59
+            </div>
+        </div>
+        <a href ="./01_notice.html" class="back_list">목록가기</a>
+        <div class="notice_img22"></div>
+        <div href ="../img/cookie1.gif.html"></div>
+
+        <pre>안녕하세요 쿠키런 킹덤입니다.
+현재까지 게임 내의 알려진 버그를 안내해 드립니다.
+
+알려진 버그들은 수정 작업이 진행되고 있으며, 해결되면 공지사항을 통해 안내해 드리도록 하겠습니다.
+
+
+            
+알려진 버그 외, 다른 이상 현상을 확인하시는 경우 고객센터를 통해 제보해 주시기 바랍니다.
+            
+[ 고객센터 바로가기(PC) ] 
+            
+[ 고객센터 바로가기(Mobile) ]
+            
+            
+            
+※ 게임 내 우측 하단 [서비스센터] > [고객센터]를 통해서도 버그를 제보하실 수 있습니다.
+            
+게임 내에서는 스크린샷을 촬영하여 바로 이미지를 첨부하실 수도 있으며, 버그 제보 시 제보 내용과 관련된 정확한 명칭과
+            
+현상 설명을 함께 기재해 주시면 문제 확인에 큰 도움이 됩니다.
+            
+Ex) 퀘스트명, NPC 이름, 지역 이름, 아이템 이름 등
+            
+            
+            
+또한, 알려진 버그에 공지된 항목 중, 오류 현상이 아닌 것으로 확인되었거나 
+            
+각종 업데이트 및 클라이언트 패치로 해결된 오류는 항목에서 제외가 되었음을 안내해 드립니다.
+            
+            
+            
+보다 안정적이고 쾌적한 게임 환경을 제공하기 위해 최선을 다하겠습니다.
+            
+            
+            
+            
+            
+항상 감사 드립니다.</pre>
+</div>
+<div class="notice_side"></div>`;
+}
+
+function loginWrite(){
+    if (!indexBox.contains(document.getElementById('loginBG'))){
+    indexBox.innerHTML += `<div id="loginBG" onclick="closelogin(event)"><div class="login-wrapper">
+    <h2 id="titleCookie">COOKIERUN</h2>
+    <h2 id="titleKakao" style="display:none">KAKAO</h2>
+    <pre>
+        <ul class="login_list">
+            <li class="Nexon" onClick="changeCookie(event)">NEXON로그인</li>
+            <li class="Kakao" onClick="changeKakao(event)">KAKAO로그인</li>
+        </ul>
+        <div id="login">
+            <!-- <form method="post" action="서버의url" id="login_form"> -->
+                <input class="ID" cltype="text" name="userName" placeholder="ID를 입력해주세요."><br>
+                <input class="PW" type="password" name="userPassword" placeholder="Password">
+                <label for="remember-check">
+                    <input type="checkbox" id="remember-check">로그인 유지
+                </label>
+                <input class="button" type="submit" value="로그인">
+                <div class="logo"><a href="./img/google.svg"></a> <div class="logo1"></div> <div class="logo2"></div>
+                <div id="imgCookie" class="notice_img"></div>
+                <div id="imgKakao" class="notice_img2" style="display:none"></div>
+                <div><span class="list1 span">아이디 찾기</span><span class="list2 span">비밀번호 찾기</span><span class="span">회원가입</span></div>
+            </form>
+        </div><div>`;
+    document.getElementsByClassName('login-wrapper')[0].style.position="fixed";
+    document.getElementsByClassName('login-wrapper')[0].style.top="50%";
+    document.getElementsByClassName('login-wrapper')[0].style.left="50%";
+    document.getElementsByClassName('login-wrapper')[0].style.transform="translate(-50%,-50%)";
+    document.getElementById('loginBG').style.position="fixed";
+    document.getElementById('loginBG').style.top="0";
+    document.getElementById('loginBG').style.zIndex="15";
+    document.getElementById('loginBG').style.width="100%"
+    document.getElementById('loginBG').style.height="100%"
+    document.getElementById('loginBG').style.backgroundColor="#00000090"
+    let loginList = document.getElementsByClassName('login_list');
+    loginList[0].children[1].style.border="2px solid rgb(160, 159, 159)";
+    loginList[0].children[1].style.color= "rgb(160, 159, 159)";
+    }
+    document.getElementById('loginBG').style.visibility="initial";
+}
+function changeKakao(event){
+    var TitleCookie= document.getElementById("titleCookie");
+    var TitleKakao= document.getElementById("titleKakao");
+    var ImgCookie = document.getElementById("imgCookie");
+    var ImgKakao = document.getElementById("imgKakao");
+    let eventOJ = event.target.closest("li");
+
+    let loginList = document.getElementsByClassName('login_list');
+    loginList[0].children[0].style.border="2px solid orange";
+    loginList[0].children[0].style.color= "orange";
+    //쿠키런 안보이게
+    TitleCookie.style.display="none";
+    ImgCookie.style.display="none";
+    
+    //카카오 보이게
+    TitleKakao.style.display="";
+    ImgKakao.style.display="";
+    eventOJ.style.border="2px solid orange";
+    eventOJ.style.color= "orange";
+    lastBtn = eventOJ;
+}   
+function changeCookie(event){
+    var TitleCookie= document.getElementById("titleCookie");
+    var TitleKakao= document.getElementById("titleKakao");
+    var ImgCookie = document.getElementById("imgCookie");
+    var ImgKakao = document.getElementById("imgKakao");
+    let eventOJ = event.target.closest("li");
+    let loginList = document.getElementsByClassName('login_list');
+    loginList[0].children[1].style.border="2px solid rgb(160, 159, 159)";
+    loginList[0].children[1].style.color= "rgb(160, 159, 159)";
+    //쿠키런 보이게
+    TitleCookie.style.display="";
+    ImgCookie.style.display="";
+    
+    //카카오 안보이게
+    TitleKakao.style.display="none";
+    ImgKakao.style.display="none";
+    eventOJ.style.border="2px solid orange";
+    eventOJ.style.color= "orange";
+    lastBtn = eventOJ;
+}
+function closelogin(event){
+    if(event.target==document.getElementById('loginBG')) document.getElementById('loginBG').style.visibility="hidden";
+}
+/*                    ▲▲▲▲  창민  ▲▲▲▲                    */ 

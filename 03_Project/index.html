@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://webfontworld.github.io/cookierun/CookieRun.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/d68045e863.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./00_index/index0.css">
-    <script  defer src="./00_index/index0.js"></script>
+    <link rel="stylesheet" href="./00_index/index.css">
+    <link rel="stylesheet" href="./01_news/01_notice.css">
+    <link rel="stylesheet" href="./01_news/01_notice_content.css">
+    <link rel="stylesheet" href="./01_news/02_rogin.css">
+    <script  defer src="./00_index/index.js"></script>
     <script defer>
 
     </script>
@@ -24,11 +27,11 @@
                     <img onclick="indexWrite()" src="https://www.devsisters.com/_next/image?url=%2Fimage%2Fhome%2Fourgames-kingdom-logo.png&w=640&q=75" alt="">
                 </div>
                 <ul>
-                    <li class="notice_1"><a href="./01_news/01_notice.html">새소식</a>
+                    <li class="notice_1" onclick="noticeWrite()">새소식
                         <ul class="sub_li">
-                            <li class="notice_1"><a href="./01_news/01_notice.html">공지사항</a></li>
-                            <li class="notice_2"><a href="./01_news/02_update.html">업데이트</a></li>
-                            <li class="notice_3"><a href="./01_news/03_event.html">이벤트</a></li>
+                            <li class="notice_1" onclick="noticeWrite()">공지사항</li>
+                            <li class="notice_2">업데이트</li>
+                            <li class="notice_3">이벤트</li>
                         </ul>
                     </li>
                     <li class="game_1" onclick="cookieinfoWrite()">게임정보

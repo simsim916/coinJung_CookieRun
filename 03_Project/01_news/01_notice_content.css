@@ -10,21 +10,15 @@ main{
 h2{
     font-size: 50px;
     margin: 20px 0;
-    padding: 50px 0px 25px;
-
     border-bottom: 3px solid;
 }
-
 .back_list{
     position: absolute;
     right: 0;
     top: 0;
-
     margin-bottom: 5px;
-
     padding: 10px;
     border: solid 1px #E2E2E2;
-
     text-decoration: none;
     color: black;
 }
@@ -42,9 +36,8 @@ h2{
     padding: 27px 46px 20px 10px;
     margin-left: 1px;
     width: 70%;
-   
 }
-.notice_option{
+.notice_option1{
     position: relative;
 }
 .notice_date{
@@ -52,7 +45,7 @@ h2{
     color: gray;
     margin-top: 7px;
 }
-.notice_img{
+.notice_img22{
     width: 300px;
     height: 210px;
     background: url("../img/cookie6.gif");
