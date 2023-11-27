@@ -19,6 +19,11 @@ h2{
 
 .notice_option{
     position: relative;
+
+    width: 70%;
+}
+.list{
+    width: 30%;
 }
 .back_list{
     position: absolute;

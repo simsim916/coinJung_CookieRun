@@ -1,151 +1,160 @@
 'use strict';
+let indexBox = document.getElementById('indexBox');
 
-let nav = document.querySelector("nav");
-let subLi = document.querySelectorAll(".sub_li");
-let navBg = document.querySelector("#nav_bg");
-let headerCookie = document.querySelector("#header_cookie");
+let backBtn = document.getElementById('backBtn');
+let lastSlideBtn, lastSlideBtn2;
+
+indexWrite();
+
+// 인덱스 작성
+function indexWrite (){
+    indexBox.innerHTML=`<div id="headBottom" class="header_bottom">
+    <div class="container">
+        <div class="header_left">
+            <img src="./img/update1_mini.jpg" alt="">
+            <div>
+                <p>업데이트 정보센터</p>
+                <p>2023.11.21<br>ver.1.2.382 업데이트 </p>
+            </div>
+        </div>
+        <img src="./img/index_logo.png" alt="">
+        <div class="header_right">
+            <div class="dev_login">Devsisters<br>로그인</div>
+            <div class="kakao_login">Kakao <br>로그인</div>
+        </div>
+    </div>
+    </div>
+    <main id="main">
+    <div class="img_box container">
+        <div class="event_slide">
+            <div>
+                <i class="fa-solid fa-chevron-left"></i>
+                <i class="fa-solid fa-pause"></i>
+                <i class="fa-solid fa-chevron-right"></i>
+            </div>
+            <div class="event_slide_img">
+            </div>
+            <div class="event_slide_btn">
+                <div>
+                </div>
+            </div>
+        </div>
+        <div class="shop_slide">
+            <img src="./img/cookierunstore.jpg" alt="">
+            <p>주간의 인기 상품</p>
+            <div class="shop_slide_img">
+            </div>
+            <lu class="shop_slide_bth">
+                <li onclick="mainShopSlideBtn(event)">0</li>
+                <li onclick="mainShopSlideBtn(event)">1</li>
+                <li onclick="mainShopSlideBtn(event)">2</li>
+                <li onclick="mainShopSlideBtn(event)">3</li>
+                <li onclick="mainShopSlideBtn(event)">4</li>
+            </lu>
+        </div>
+
+    </div>
+    <hr>
+    <div class="main_info container">
+        <div>
+            <h3>쿠키런 킹덤<br>새소식</h3>
+            <div>새소식 보러가기 <i class="fa-solid fa-square-caret-right"></i></div>
+        </div>
+        <div>
+            <div class="info_slide">
+                <div>
+                    <img src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/54e1ec2f-823d-4945-f54c-c2c31236ed00/format=webp" alt="">
+                    <p>새소식</p>
+                    <p>쿠키 세상의 새로운 소식을 만나보세요!</p>
+                </div>
+                <div>
+                    <img src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/e3cec218-533b-4c5b-54b1-b8cd0ff19c00/format=webp" alt="">
+                    <p>게임 정보</p>
+                    <p>다양한 쿠키들과 짜릿한 액션을 즐겨보세요!</p>
+                </div>
+                <div>
+                    <img src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/4780ff10-2546-42bd-3e01-aafad5678100/format=avif" alt="">
+                    <p>커뮤니티</p>
+                    <p>유저분들의 생각과 의견을 공유해주세요!</p>
+                </div>
+                <div>
+                    <p>미디어</p>
+                    <p>게임 밖 쿠키들의 이야기를 들어보세요!</p>
+                </div>
+                <div>
+                    <p>SHOP</p>
+                    <p>쿠키들의 다양한 상품들을 만나보세요!</p>
+                </div>
+                <div>
+                    <p>고객센터</p>
+                    <p>유저의 이야기를 직접 전달해주세요!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </main>`;
+
+//(스크립트) nav 백그라운드 이미지
 let header = document.querySelector("header");
-let shopSlideImg = document.getElementsByClassName('shop_slide_img');
-let lastSlideBtn;
-const headerImg = [
-    './img/bg1.webp',
-    './img/bg2.webp',
-    './img/bg3.png',
-    './img/bg4.webp',
-    './img/bg5.webp',
-    './img/bg6.webp',
-    './img/bg7.png',
-    './img/bg8.png',
-    './img/bg9.png',
-];
-const indexImg = [
-    ['./img/update1.jpg', '11월 업데이트', 0],
-    ['./img/event1.png', '모험의 탑', 1],
-    ['./img/event2.png', '퍼스트 브레이브', 2],
-    ['./img/event3.png', '쿠키런 1조원', 3],
-    ['./img/event1.png', '신규 레이드 모드', 4],
-    ['./img/event1.png', '신규 쿠키', 5],
-    ['./img/event1.png', '7주년 소원캠프', 6]
-];
-const cookie = [
-    "https://i.pinimg.com/originals/5e/a7/82/5ea782dee1243d13f4fcdedf96cb4c4d.gif",
-    'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/c27781aa-4293-49cf-e523-c2f63499d700/format=webp',
-    'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/4780ff10-2546-42bd-3e01-aafad5678100/format=webp',
-    'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/54e1ec2f-823d-4945-f54c-c2c31236ed00/format=webp',
-    'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/33f8248a-1aa4-4ce0-b5ea-4294e41f3c00/format=webp',
-    'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/07358c75-5680-4547-ea08-c2e5962d9100/format=webp',
-    'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/5f4cbe1f-a8cd-417e-fe54-5ca34620da00/format=webp',
-    'https://i.ibb.co/W3nhXY6/Madeleinecookiegachaanimation.gif',
-    'https://i.ibb.co/kQkRzjB/Lattecookiegachaanimation.gif'
-];
-let productAR = [
-    {
-        update:'2023-11-20',
-        title: '[쿠키런스토어]쿠키런 스키릇팩 피규어',
-        intro: '** 1차 수량 품절로, 재입고 예정입니다. 재입고 예정일 : 11/17(금) ~ 20(월)',
-        price: 5000,
-        img: [
-            'https://shop-phinf.pstatic.net/20231114_202/1699953403443Iz8WI_JPEG/52025790832298130_1281338351.jpg?type=m510',
-            'https://shop-phinf.pstatic.net/20231114_110/1699953409184PThGI_JPEG/10886639949869620_312616009.jpg?type=m510',
-            'https://shop-phinf.pstatic.net/20231114_70/1699953413567rf7dx_JPEG/12503080342079771_653990839.jpg?type=m510'
-        ],
-        views: 0,
-        sell : 0,
-        stock: 10
-    },
-    {
-        update: '2023-11-20',
-        title: '[쿠키런스토어]쿠키런 랜덤 키체인',
-        intro: '** 1차 수량 품절로, 재입고 예정입니다. 재입고 예정일 : 11/17(금) ~ 20(월)',
-        price: 5000,
-        img: [
-            'https://shop-phinf.pstatic.net/20231114_258/1699952949584oLc3t_JPEG/12502616375115323_1205563992.jpg?type=o1000',
-            'https://shop-phinf.pstatic.net/20231114_239/1699953157715MKUUp_PNG/12502824501346304_791880017.png?type=m510',
-            'https://shop-phinf.pstatic.net/20231114_124/1699952960161AhGyC_PNG/52025347519581164_186066631.png?type=m510',
-        ],
-        views: 0,
-        sell :10,
-        stock: 10
-    },
-    {
-        update: '2023-11-20',
-        title: '[러블리 인형공방X메리베어 장난감가게]곰젤리 솜인형 분홍곰&노란곰 (예약구매)',
-        intro: '※구매 전 주의사항💖 기존 러블리 인형공방 곰젤리 솜인형은 신규 출시된 곰젤리 솜인형 분홍곰과 동일한 사이즈입니다.',
-        price: 33900,
-        img: [
-            'https://shop-phinf.pstatic.net/20231107_123/1699332251801gjxdW_JPEG/2889125558569288_1157254165.jpg?type=m510',
-            'https://shop-phinf.pstatic.net/20231107_213/1699332318038Oxyfx_JPEG/21061882862541920_1286727552.jpg?type=m510',
-            'https://shop-phinf.pstatic.net/20231107_249/1699332283919gEG1R_JPEG/5049165717078541_2138465965.jpg?type=m510',
-        ],
-        views: 0,
-        sell : 0,
-        stock: 0
-    },
-    {
-        update: '2023-11-20',
-        title: '[쿠키런스토어]브레이브 어드벤쳐 용감한쿠키',
-        intro: '모험을 떠나는 용감한 쿠키가 귀여운 인형 키링으로!',
-        price: 2000,
-        img: [
-            'https://shop-phinf.pstatic.net/20230712_149/1689141723147orsKB_JPEG/3343809127994028_1734275766.jpg?type=m510',
-            'https://shop-phinf.pstatic.net/20230712_127/1689141731171yd5hn_JPEG/2472532521839555_309567386.jpg?type=m510',
-            'https://shop-phinf.pstatic.net/20230712_86/1689141740472nE1ue_JPEG/2472541823698659_1014661318.jpg?type=m510',
-        ],
-        views: 0,
-        sell : 0,
-        stock: 10
-    },
-    {
-        update: '2023-11-20',
-        title: '[쿠키런스토어]용과 드래곤 솜인형',
-        intro: '[ 용과 드래곤 솜인형 정식 출시! ] 예약구매 종료 후 많은 분들이 재입고 문의러블리 인형공방에서 생산된 귀여운 매력의 용과 드래곤 솜인형을 실물로 만나보세요 💖',
-        price: 25500,
-        img: [
-            'https://shop-phinf.pstatic.net/20230517_44/1684285908800m8pmy_JPEG/37653453786116170_2131712759.jpg?type=m510',
-            'https://shop-phinf.pstatic.net/20230517_253/1684285934380zHmLR_JPEG/1328414787855998_52302134.jpg?type=m10000_10000_no_rotate',
-            'https://shop-phinf.pstatic.net/20230517_177/16842859454345tSW5_JPEG/1957429866527695_2095394078.jpg?type=m510',
-        ],
-        views: 0,
-        sell : 0,
-        stock: 10
-    },
-    {
-        update: '2023-11-20',
-        title: '[쿠키런스토어]생일케이크맛 쿠키 멜로디 인형',
-        intro: '',
-        price: 28900,
-        img: [
-            'https://shop-phinf.pstatic.net/20230530_41/168541639577879P8x_PNG/331284706142756_1175157606.png?type=m510',
-            'https://shop-phinf.pstatic.net/20230530_202/1685416401019ni7bi_PNG/34294242827817026_188283953.png?type=m510',
-            'https://shop-phinf.pstatic.net/20230530_147/1685416406452XeL6u_PNG/932495258998725_283619380.png?type=m510',
-        ],
-        views: 0,
-        sell : 0,
-        stock: 10
-    },
+fetch("http://localhost:3000/headerImg")
+.then(response=>response.json())
+.then(json => 
+    header.style.backgroundImage=`url(${json[0][Math.floor(Math.random()*json[0].length)]})`
+)
 
+//(스크립트) nav 쿠키 gif
+let headerCookie = document.querySelector("#header_cookie");
+fetch("http://localhost:3000/cookieGIF")
+.then(response=>response.json())
+.then(json => 
+    headerCookie.setAttribute('src',`${json[0][Math.floor(Math.random()*json[0].length)]}`)
+)
 
-];
-const slideMenu = [
-    {html : `<div><img src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/54e1ec2f-823d-4945-f54c-c2c31236ed00/format=webp" alt=""><p>새소식</p><p>쿠키 세상의 새로운 소식을 만나보세요!</p></div>`,
-    bgcolor : `#a71c44`},
-    {html : `<div><img src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/e3cec218-533b-4c5b-54b1-b8cd0ff19c00/format=webp" alt=""><p>게임 정보</p><p>다양한 쿠키들과 짜릿한 액션을 즐겨보세요!</p></div>`,
-    bgcolor : `#d08e4e`},
-    {html : `<div><img src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/4780ff10-2546-42bd-3e01-aafad5678100/format=avif" alt=""><p>커뮤니티</p><p>유저분들의 생각과 의견을 공유해주세요!</p></div>`,
-    bgcolor : `#E5B532` },
-    {html : `<div><img src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/5c73d6cf-acca-4794-2c6b-e7657f07d500/format=webp" alt=""><p>미디어</p><p>게임 밖 쿠키들의 이야기를 들어보세요!</p></div>`,
-    bgcolor : `#E5B532`},
-    {html : `<div><img src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/5c73d6cf-acca-4794-2c6b-e7657f07d500/format=webp" alt=""><p>SHOP</p><p>쿠키들의 다양한 상품들을 만나보세요!</p></div>`,
-    bgcolor : `#E5B532`},
-    {html : `<div><img src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/5c73d6cf-acca-4794-2c6b-e7657f07d500/format=webp" alt=""><p>고객센터</p><p>유저의 이야기를 직접 전달해주세요!</p></div>`,
-    bgcolor : `#E5B532`}
-]
+//(스크립트) main 슬라이드 이미지
+// 슬라이드 버튼 & 이미지 생성
+fetch("http://localhost:3000/eventImg")
+.then(response=>response.json())
+.then(json => {
+    let eventSlide = document.getElementsByClassName('event_slide');
+    let eventSlideImg = eventSlide[0].getElementsByClassName('event_slide_img');
+    let eventSlideBtn = eventSlide[0].getElementsByClassName('event_slide_btn');
+    eventSlideImg[0].innerHTML = `<img src="${json[0][0][0]}" alt="${json[0][0][1]}">`;
+    for (let i = 0 ; i < json[0].length; i++){
+        eventSlideBtn[0].children[0].innerHTML += `<span class="mainSlideBtn" onclick="eventslideBtn(event)">${json[0][i][1]}</span>`
+    }
 
-let random = Math.floor(Math.random()*headerImg.length);
-let random2 = Math.floor(Math.random()*headerImg.length);
-header.style.backgroundImage=`url(${headerImg[random]})`;
-headerCookie.setAttribute('src',`${cookie[random2]}`);
+})
 
+//(스크립트) main 우측 제품 슬라이드 이미지
+fetch("http://localhost:3000/product")
+.then(response=>response.json())
+.then(json => {
+    let shopSlideImg = document.getElementsByClassName('shop_slide_img');
+        for (let i = 0 , t; i < json[0].length-1; i++){
+            for (let j = i+1 ; j < json[0].length ; j++) {
+                if ( json[0][i].price > json[0][j].price){
+                    t = json[0][i];
+                    json[0][i] = json[0][j];
+                    json[0][j] = t;
+                }
+            }
+        }
+    for (let i = 0 ; i < 5 ; i++){
+        shopSlideImg[0].innerHTML += `<div><img src="${json[0][i].img[0]}" alt="${json[0][i].title}"><p class="item_title">${json[0][i].title}</p></div>`
+    }
+    let mainSlideBtn = document.getElementsByClassName('mainSlideBtn');
+lastSlideBtn = mainSlideBtn[0];
+lastSlideBtn.style.opacity="1";
+})
+
+//(스크립트) main 우측 제품 슬라이드 버튼
+let shopSlideBtn = document.getElementsByClassName('shop_slide_bth');
+lastSlideBtn2=shopSlideBtn[0].children[0];
+lastSlideBtn2.style.opacity="1";
+lastSlideBtn2.style.width="30px";
+
+//(이벤트) nav 스크롤에따라 진하기 
+{
 window.addEventListener('scroll',()=>{
     if (parseInt(window.scrollY) || navBg.style.visibility == "initial") {
         nav.style.backgroundColor="#2b2b37ff";
@@ -153,11 +162,17 @@ window.addEventListener('scroll',()=>{
         nav.style.backgroundColor="#2b2b3750";
     }
 });
+}
+
+//(이벤트) nav 마우스 진입시 서브메뉴 펼치기
+let nav = document.querySelector("nav");
+let subLi = document.querySelectorAll(".sub_li");
 nav.addEventListener('mouseenter',()=>{
     navBg.style.visibility="initial";
     nav.style.backgroundColor="#2b2b37ff";
     for (let a of subLi) a.style.visibility="initial";
 });
+let navBg = document.querySelector("#nav_bg");
 navBg.addEventListener('mouseout',()=>{
     navBg.style.visibility="hidden";
     for (let a of subLi) a.style.visibility="hidden";
@@ -167,77 +182,117 @@ navBg.addEventListener('mouseout',()=>{
         nav.style.backgroundColor="#2b2b3750";
     }
 });
-// main 슬라이드 이미지
-{
 
-    // 슬라이드 버튼 & 이미지 생성
+}
+
+// 인덱스 메인 슬라이드 이미지 버튼 작동 함수
+function eventslideBtn(event){
     let eventSlide = document.getElementsByClassName('event_slide');
     let eventSlideImg = eventSlide[0].getElementsByClassName('event_slide_img');
-    let eventSlideBtn = eventSlide[0].getElementsByClassName('event_slide_btn');
-    eventSlideImg[0].innerHTML = `<img src="${indexImg[0][0]}" alt="${indexImg[0][1]}">`;
-    for (let i = 0 ; i < indexImg.length; i++){
-        eventSlideBtn[0].children[0].innerHTML += `<span>${indexImg[i][1]}</span>`
+    fetch("http://localhost:3000/eventImg")
+    .then(response=>response.json())
+    .then(json => {
+    if(event.target.tagName == 'SPAN'){
+        lastSlideBtn.style.opacity = "0.7";
+        event.target.style.opacity = "1";
+        lastSlideBtn = event.target;
+        for(let i of json[0]) {if( i[1] == lastSlideBtn.innerText) eventSlideImg[0].children[0].src=`${i[0]}`;}
     }
-
-    // 슬라이드 버튼 선택시 강조
-    lastSlideBtn = eventSlideBtn[0].children[0].children[0]; lastSlideBtn.style.opacity="1"
-    eventSlide[0].addEventListener('click',(event)=>{
-        if(event.target.tagName == 'SPAN'){
-            lastSlideBtn.style.opacity = "0.7";
-            event.target.style.opacity = "1";
-            lastSlideBtn = event.target;
-            for(let i of indexImg) {
-                if( i[1] == lastSlideBtn.innerText) {
-                    eventSlideImg[0].children[0].src=`${i[0]}`
-                }
-            }
-        }
-    })
+})
 }
 
-{
-    ARRise();
-
-    for (let i = 0 ; i < 5 ; i++){
-        shopSlideImg[0].innerHTML += `<div><img src="${productAR[i].img[0]}" alt="${productAR[i].title}"><p class="item_title">${productAR[i].title}</p></div>`
-    }
-}
-
-{
-    let shopSlideBtn = document.getElementsByClassName('shop_slide_bth');
-    let lastSlideLi=shopSlideBtn[0].children[0];
-    lastSlideLi.style.opacity="1";
-    lastSlideLi.style.width="30px";
-    shopSlideBtn[0].addEventListener('click',(event)=>{
+// 인덱스 상품 슬라이드 이미지 버튼 작동 함수
+function mainShopSlideBtn(event){
+    let shopSlideImg = document.getElementsByClassName('shop_slide_img');
+    if(event.target != lastSlideBtn2){
         if (event.target.tagName == "LI"){
-            lastSlideLi.style.opacity="0.3";
+            lastSlideBtn2.style.opacity="0.3";
             event.target.style.opacity="1";
             event.target.style.width="30px";
-            lastSlideLi.style.width="13px";
-            lastSlideLi=event.target;
+            lastSlideBtn2.style.width="13px";
+            lastSlideBtn2=event.target;
             shopSlideImg[0].style.transform=`translateX(-${event.target.innerText*20}%)`;
-        }
-    });
-}
-
-function ARRise(){
-    for (let i = 0 , t; i < productAR.length-1; i++){
-        for (let j = i+1 ; j < productAR.length ; j++) {
-            if ( productAR[i].price > productAR[j].price){
-                t = productAR[i];
-                productAR[i] = productAR[j];
-                productAR[j] = t;
-            }
         }
     }
 }
 
-{
-    let infoSlide = document.getElementsByClassName('info_slide');
-    let num = 0;
+// 민지 쿠키소개 페이지 전환
+function cookieinfoWrite(){
+    let headBottom = document.getElementById('headBottom')
+    headBottom.classList.add("subPage")
+    headBottom.innerHTML=`<div>
+        <ul>
+            <li onclick="cookieinfoWrite()">쿠키 소개</li>
+            <li>게임 소개</li>
+            <li>게임 월드 소개</li>
+        </ul>
+    </div>`;
+        main.innerHTML = `
+    </div><h3>쿠키소개</h3><div class="main_option">
+        <img src="./img/tag_all.png" alt="올" class="selected">
+        <img src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/e6cc601e-19ee-421b-e936-9cdd20eaf100/public" alt="에픽">
+        <img src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/dc7567c4-7d16-4017-52c2-4586e7112500/public" alt="스페셜">
+        <img src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/fb2bbed1-186c-4edf-1741-7edb8cdf7100/public" alt="레전더리">
+        <img src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/ef97da70-b550-428a-c03c-ed4db59a9300/public" alt="슈퍼에픽">
+        <img src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/b80b67b8-dc5c-49e3-07ca-f1673e459100/public" alt="에이션트">
+        <img src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/9ea3ad41-1df7-4b8e-0e52-3c1f9ac48400/public" alt="드래곤">
+    </div> <div class="main_list"></div>`;
+    let mainList = document.getElementsByClassName('main_list');
+    fetch("http://localhost:3000/cookieData")
+    .then(response=>response.json())
+    .then(json => {
+    for (let i = 0; i < json[0].length; i++) {
+        mainList[0].innerHTML += `<div class="main_list_box"><img src="${json[0][i].img}" alt="${json[0][i].name}"><div class="main_list_item_name">${json[0][i].name}</div><div class="main_list_item_type"><img src="${cookieType(json[0][i].type)}" alt="${json[0][i].type}"></div></div>`
+    }
+    mainList[0].addEventListener('click', detail);
 
-    setInterval(()=>{
-        infoSlide[num]
+    function detail(event) {
+        let eventOJ = event.target.closest('.main_list_box')
+        let cookieName = eventOJ.children[1].innerText;
+        let compare;
+        for (let i = 0; i <  json[0].length; i++) {
+            if (cookieName ==  json[0][i].name) {
+                compare = i;
+            }
+        }
+        main.innerHTML =
+            `<h3 class="back_button" onclick="cookieinfoWrite()">목록가기</h3>
+            <div class="main_info_container"><img src="${ json[0][compare].img}" alt="${ json[0][compare].name}">
+            <div class="main_info_pic"></div>
+            <div class="main_info_self">
+                <div class="grid_box1"><img src="${cookieType( json[0][compare].type)}" alt="${ json[0][compare].type}"></div>
+                <div class="grid_box2">${ json[0][compare].name}</div>
+                <p class="cookie_self">${ json[0][compare].info}</p>
+            </div>
+        </div>
+        <div class="intro_box">
+            <div class="skill_box">
+                <p class="skill">스킬</p>
+                <img src="${ json[0][compare].skill.skillImg}" alt="${ json[0][compare].skill.skillName}">
+                <p class="skill_name">${ json[0][compare].skill.skillName}</p>
+                <p class="skill_intro">${ json[0][compare].skill.skillInfo}</p>
+            </div>
+        </div>`;
+    }
     })
-
+    function cookieType(cookieType) {
+        switch (cookieType) {
+            case "에픽":
+                return 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/e6cc601e-19ee-421b-e936-9cdd20eaf100/public'
+            case "레전더리":
+                return 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/fb2bbed1-186c-4edf-1741-7edb8cdf7100/public'
+            case "슈퍼에픽":
+                return 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/ef97da70-b550-428a-c03c-ed4db59a9300/public'
+            case "스페셜":
+                return 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/dc7567c4-7d16-4017-52c2-4586e7112500/public'
+            case "에이션트":
+                return 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/b80b67b8-dc5c-49e3-07ca-f1673e459100/public'
+            case "드래곤":
+                return 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/9ea3ad41-1df7-4b8e-0e52-3c1f9ac48400/public'
+        }
+    }
 }
+
+
+
+
