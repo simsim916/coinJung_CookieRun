@@ -2,7 +2,7 @@
 
 let productAR = [
     {
-        update:'2023-11-20',
+        update: '2023-11-20',
         title: '[쿠키런스토어]쿠키런 스키릇팩 피규어',
         intro: '** 1차 수량 품절로, 재입고 예정입니다. 재입고 예정일 : 11/17(금) ~ 20(월)',
         price: 5000,
@@ -12,7 +12,7 @@ let productAR = [
             'https://shop-phinf.pstatic.net/20231114_70/1699953413567rf7dx_JPEG/12503080342079771_653990839.jpg?type=m510'
         ],
         views: 100,
-        sell : 15,
+        sell: 15,
         stock: 10
     },
     {
@@ -23,10 +23,10 @@ let productAR = [
         img: [
             'https://shop-phinf.pstatic.net/20231114_258/1699952949584oLc3t_JPEG/12502616375115323_1205563992.jpg?type=o1000',
             'https://shop-phinf.pstatic.net/20231114_239/1699953157715MKUUp_PNG/12502824501346304_791880017.png?type=m510',
-            'https://shop-phinf.pstatic.net/20231114_124/1699952960161AhGyC_PNG/52025347519581164_186066631.png?type=m510',
+            'https://shop-phinf.pstatic.net/20231114_124/1699952960161AhGyC_PNG/52025347519581164_186066631.png?type=m510'
         ],
         views: 10,
-        sell :10,
+        sell: 10,
         stock: 10
     },
     {
@@ -37,10 +37,10 @@ let productAR = [
         img: [
             'https://shop-phinf.pstatic.net/20231107_123/1699332251801gjxdW_JPEG/2889125558569288_1157254165.jpg?type=m510',
             'https://shop-phinf.pstatic.net/20231107_213/1699332318038Oxyfx_JPEG/21061882862541920_1286727552.jpg?type=m510',
-            'https://shop-phinf.pstatic.net/20231107_249/1699332283919gEG1R_JPEG/5049165717078541_2138465965.jpg?type=m510',
+            'https://shop-phinf.pstatic.net/20231107_249/1699332283919gEG1R_JPEG/5049165717078541_2138465965.jpg?type=m510'
         ],
-        views:350,
-        sell : 52,
+        views: 350,
+        sell: 52,
         stock: 14
     },
     {
@@ -51,10 +51,10 @@ let productAR = [
         img: [
             'https://shop-phinf.pstatic.net/20230712_149/1689141723147orsKB_JPEG/3343809127994028_1734275766.jpg?type=m510',
             'https://shop-phinf.pstatic.net/20230712_127/1689141731171yd5hn_JPEG/2472532521839555_309567386.jpg?type=m510',
-            'https://shop-phinf.pstatic.net/20230712_86/1689141740472nE1ue_JPEG/2472541823698659_1014661318.jpg?type=m510',
+            'https://shop-phinf.pstatic.net/20230712_86/1689141740472nE1ue_JPEG/2472541823698659_1014661318.jpg?type=m510'
         ],
         views: 51,
-        sell : 3,
+        sell: 3,
         stock: 10
     },
     {
@@ -65,10 +65,10 @@ let productAR = [
         img: [
             'https://shop-phinf.pstatic.net/20230517_44/1684285908800m8pmy_JPEG/37653453786116170_2131712759.jpg?type=m510',
             'https://shop-phinf.pstatic.net/20230517_253/1684285934380zHmLR_JPEG/1328414787855998_52302134.jpg?type=m10000_10000_no_rotate',
-            'https://shop-phinf.pstatic.net/20230517_177/16842859454345tSW5_JPEG/1957429866527695_2095394078.jpg?type=m510',
+            'https://shop-phinf.pstatic.net/20230517_177/16842859454345tSW5_JPEG/1957429866527695_2095394078.jpg?type=m510'
         ],
         views: 60,
-        sell : 7,
+        sell: 7,
         stock: 10
     },
     {
@@ -79,10 +79,10 @@ let productAR = [
         img: [
             'https://shop-phinf.pstatic.net/20230530_41/168541639577879P8x_PNG/331284706142756_1175157606.png?type=m510',
             'https://shop-phinf.pstatic.net/20230530_202/1685416401019ni7bi_PNG/34294242827817026_188283953.png?type=m510',
-            'https://shop-phinf.pstatic.net/20230530_147/1685416406452XeL6u_PNG/932495258998725_283619380.png?type=m510',
+            'https://shop-phinf.pstatic.net/20230530_147/1685416406452XeL6u_PNG/932495258998725_283619380.png?type=m510'
         ],
         views: 99,
-        sell : 70,
+        sell: 70,
         stock: 10
     },
     {
@@ -93,10 +93,10 @@ let productAR = [
         img: [
             'https://shop-phinf.pstatic.net/20220823_62/1661233791836m8wqp_PNG/62369690490944342_876926460.png?type=m510',
             'https://shop-phinf.pstatic.net/20220823_286/1661233798336X6Blq_PNG/62369697006803626_162329504.png?type=m510',
-            'https://shop-phinf.pstatic.net/20220823_31/1661233802750kyKu0_PNG/62369701407927074_1535011828.png?type=m510',
+            'https://shop-phinf.pstatic.net/20220823_31/1661233802750kyKu0_PNG/62369701407927074_1535011828.png?type=m510'
         ],
         views: 1,
-        sell : 1,
+        sell: 1,
         stock: 0
     },
     {
@@ -107,10 +107,10 @@ let productAR = [
         img: [
             'https://shop-phinf.pstatic.net/20231026_67/1698307135475QB3CW_PNG/45272390259857309_1833212626.png?type=m510',
             'https://shop-phinf.pstatic.net/20231026_30/1698307522671C5yD8_PNG/6731570879509740_1254135976.png?type=m10000_10000_no_rotate',
-            'https://shop-phinf.pstatic.net/20231026_41/16983075272592Sd87_PNG/15634458736097447_2139218969.png?type=m510',
+            'https://shop-phinf.pstatic.net/20231026_41/16983075272592Sd87_PNG/15634458736097447_2139218969.png?type=m510'
         ],
         views: 26,
-        sell : 60,
+        sell: 60,
         stock: 22
     },
     {
@@ -121,10 +121,10 @@ let productAR = [
         img: [
             'https://shop-phinf.pstatic.net/20230913_273/16945972840111Yj0G_PNG/8486141803720366_870153347.png?type=m510',
             'https://shop-phinf.pstatic.net/20230913_228/1694597301207gBESe_PNG/7804699658075337_110220462.png?type=m510',
-            'https://shop-phinf.pstatic.net/20230913_270/1694597296827isbAb_PNG/8486154589164739_1378573262.png?type=m510',
+            'https://shop-phinf.pstatic.net/20230913_270/1694597296827isbAb_PNG/8486154589164739_1378573262.png?type=m510'
         ],
         views: 51,
-        sell : 59,
+        sell: 59,
         stock: 3
     },
     {
@@ -135,10 +135,10 @@ let productAR = [
         img: [
             'https://shop-phinf.pstatic.net/20230223_67/1677117527603W2Ckx_PNG/78253362385111924_1812615033.png?type=m510',
             'https://shop-phinf.pstatic.net/20230223_234/1677117508708KS9Em_PNG/78253343483341702_1100125177.png?type=m510',
-            'https://shop-phinf.pstatic.net/20230223_219/1677117513824zFxn2_PNG/78253348589325963_1123206294.png?type=m510',
+            'https://shop-phinf.pstatic.net/20230223_219/1677117513824zFxn2_PNG/78253348589325963_1123206294.png?type=m510'
         ],
         views: 5,
-        sell : 11,
+        sell: 11,
         stock: 0
     },
     {
@@ -153,7 +153,7 @@ let productAR = [
             'https://shop-phinf.pstatic.net/20230420_192/1681970414357MOsuc_PNG/521298182616958_2034132921.png?type=m510'
         ],
         views: 4,
-        sell : 55,
+        sell: 55,
         stock: 4
     },
     {
@@ -164,87 +164,166 @@ let productAR = [
         img: [
             'https://shop-phinf.pstatic.net/20221025_295/1666663529340vHblQ_PNG/67799308883748583_945922320.png?type=m510',
             'https://shop-phinf.pstatic.net/20221025_140/1666663539034xutmD_PNG/67799318721067920_2142540269.png?type=m510',
-            'https://shop-phinf.pstatic.net/20221025_58/1666663532651b5StV_PNG/67799312333419887_488323151.png?type=m510',
+            'https://shop-phinf.pstatic.net/20221025_58/1666663532651b5StV_PNG/67799312333419887_488323151.png?type=m510'
         ],
         views: 3,
-        sell : 3,
-        stock: 3
+        sell: 3,
+        stock: 0
     },
-
-
+    {
+        update: '2022-07-28',
+        title: '[쿠키런스토어] 브레이브 어드벤쳐 키트',
+        intro: '다양한 쿠키들을 만나러 어썸브레드로 가자! 왕관을 훔쳐 달아나는 케이크 들개부터 잡아볼까요',
+        price: 36900,
+        img: [
+            'https://shop-phinf.pstatic.net/20220928_225/1664328534323fnUSs_PNG/65464432854508140_518643531.png?type=m510',
+            'https://shop-phinf.pstatic.net/20220928_74/1664328525676DnMrD_PNG/65464424364280268_598838589.png?type=m510',
+            'https://shop-phinf.pstatic.net/20220928_81/1664328568344c3qsO_PNG/65464467033923194_1200714962.png?type=m510'
+        ],
+        views: 103,
+        sell: 103,
+        stock: 103
+    },
+    {
+        update: '2022-07-03',
+        title: '[쿠키런스토어] 마스코트 인형 키링 1탄',
+        intro: '쿠키런 속 모든 쿠키와 캐릭터를 마스코트 인형 키링으로 만나보세요! 당신의 최애 캐릭터는 누구?',
+        price: 12000,
+        img: [
+            'https://shop-phinf.pstatic.net/20220819_288/1660896333215ft9En_PNG/62032221856975838_457480920.png?type=m510',
+            'https://shop-phinf.pstatic.net/20220819_96/1660896326451qatrU_PNG/62032215106791469_513009483.png?type=m510',
+            'https://shop-phinf.pstatic.net/20220819_280/1660896336347i2PcY_PNG/62032225002720712_1069566276.png?type=m510'
+        ],
+        views: 7,
+        sell: 7,
+        stock: 0
+    }
 ];
 
-let optionBar = document.getElementsByClassName('main_option');
+// 변수 모음
+let mainOption = document.getElementsByClassName('main_option');
 let optionBox = document.getElementsByClassName('option_box');
 let itemBox = document.getElementsByClassName('item');
 let listOption = document.getElementsByClassName('list_option');
 let lastBold = listOption[0].children[0].children[0];
-
+let showScreen = document.getElementsByClassName('show_screen');
+let pageNum = 1;
+let gridBox = document.getElementsByClassName('grid_box');
+let gridBoxLi = document.querySelectorAll('.grid_box>li')
+let mainItem = document.getElementsByClassName('main_item');
+let optionTitle = document.getElementsByClassName('option_title');
 
 // 옵션 박스 열기 / 닫기
-{
     let optionClose = optionBox[0].getElementsByClassName('option_close');
-    optionBar[0].addEventListener('click',(event)=>{
-        if (event.target != optionClose[0] && event.target.tagName=="LI") {
-        optionBox[0].style.visibility="initial";
+    mainOption[0].addEventListener('click', (event) => {
+        if (event.target != optionClose[0] && event.target.tagName == "LI") {
+            optionBox[0].style.visibility = "initial";
         } else {
-            optionBox[0].style.visibility="hidden";
+            optionBox[0].style.visibility = "hidden";
+        }
+    })
+// 옵션 박스 안에 옵션 선택 시 색상 변경
+    optionBox[0].addEventListener('click', (event) => {
+        let eventOJ = event.target.closest('li');
+            if (optionBox[0].contains(eventOJ)) {
+                if (eventOJ.style.backgroundColor == "orange") {
+                    eventOJ.style.backgroundColor = "#fff"
+            } else {
+                    eventOJ.style.backgroundColor = "orange"
+            }
+        }
+    })
+// 아이템 개수(배열) 9개씩 나타내기, 금액단위 설정 
+let imgPage = 9;
+function listWriter() {
+    
+    mainItem[0].innerHTML = '';
+    for (let i = 0 + (pageNum - 1) * imgPage; i < imgPage + (pageNum - 1) * imgPage; i++) {
+        if (i == productAR.length) break;
+        mainItem[0].innerHTML +=
+        `<div class="item">
+        <img src="${productAR[i].img[0]}" alt="">
+        <p class="item_price">${productAR[i].price.toLocaleString()} 원</p>
+        <p class="item_title">${productAR[i].title}</p>
+        <p class="item_intro">${productAR[i].intro}</p>
+        <div class="icon"><i class="fa-solid fa-neuter"></i></div>
+        <div class="icon"><i class="fa-solid fa-plus"></i></div>
+        </div>`;
+        
+        // 재고 없을 때 이미지 투명도, BEST/SOLDOUT 박스 넣기    
+        if (productAR[i].stock == 0) {
+            for (let j = 0; j < itemBox[i % imgPage].children.length - 2; j++) {
+                itemBox[i % imgPage].children[j].style.opacity = '0.3';
+            }
+            itemBox[i % imgPage].innerHTML += `<div class="soldout">SOLD OUT</div>`;
+        }
+        if (productAR[i].sell >= 30) {
+            itemBox[i % imgPage].innerHTML += `<div class="best">BEST</div>`;
+        }
+    }
+    //아이템개수 9개 이상 등록시, 자동으로 다음 순번 페이지버튼 생성
+    let pageAmount = productAR.length / imgPage
+    showScreen[0].innerHTML = ``;
+    for (let i = 0; i < pageAmount; i++) {
+        showScreen[0].innerHTML += `<div>${i + 1}</div>`;
+    }
+    //페이지 넘어갈 때 보이는 화면 기준점 잡기    
+    showScreen[0].addEventListener('click', event => {
+
+        if (event.target != showScreen[0]) {
+            pageNum = event.target.innerText;
+            window.scrollTo(0, 300);
+            listWriter();
         }
     })
 }
-// {
-//     optionBox[0].addEventListener('click',(event)=>{
-//         let eventOJ = event.target.closest('li');
-
-//         if(optionBox[0].contains(eventOJ)){
-//             if(event.target.style.backgroundColor == "orange"){
-//                 event.target.style.backgroundColor="rgb(250, 248, 248)"
-//             } else {
-//                 event.target.style.backgroundColor="orange"
-//             }
-//         }
-//     })
-// }
-
-//박스 옵션의 낮은가격순을 클릭하면 아이템 목록을 낮은 가격순으로 나타내기
-// listOption addEventListner (click, ProductARPriceRise)
-// 내가 클릭한게 li일때 작동
-
-
-// {
-//     listOption[0].addEventListner('click', (event) => {
-//         if (event.target.tagName == "LI") {
-//             ProductARPriceRise();
-//         }
-//     })
-// }
-
-
-let mainItem = document.getElementsByClassName('main_item');
-for (let i = 0; i < productAR.length; i++) {
-mainItem[0].innerHTML +=
-    `<div class="item">
-    <img src="" alt="">
-    <p class="item_price"></p>
-    <p class="item_title"></p>
-    <p class="item_intro"></p>
-    <div class="icon"><i class="fa-solid fa-neuter"></i></div>
-    <div class="icon"><i class="fa-solid fa-plus"></i></div>
-    </div>`;
+//아이템목록 누르면 검정 테두리 표시, 첫 화면 9개 배열로 고정표시
+let lastGrid = gridBoxLi[0];
+lastGrid.style.border = '4px solid black';
+for (let i = 0; i < gridBoxLi.length; i++) {
+    gridBoxLi[i].addEventListener('click', (event) => {
+        let eventOJ = event.target;
+        lastGrid.style.border = '4px solid #fff'
+        eventOJ.style.border = '4px solid black'
+        if (eventOJ == gridBoxLi[1]) {
+            imgPage = 6;
+            mainItem[0].style.gridTemplate = "repeat(3, 700px) / repeat(2, 1fr)";
+        } else {
+            imgPage = 9;
+            mainItem[0].style.gridTemplate = "repeat(3, 500px) / repeat(3, 1fr)";
+        
+        }
+        listWriter();
+        lastGrid = eventOJ;
+    }
+    )
 }
-
-//순서 박스 옵션 선택 시 글자 진하게 변경
-{
+//상품 리스트 순서 클릭 시 배열, 첫화면에 인기도순 나타내기 
+    lastBold.style.fontWeight = 'bold';
+    lastBold.style.opacity = "1";
     listOption[0].addEventListener('click', (event) => {
         let listOption = event.target;
         lastBold.style.fontWeight = 'lighter';
         lastBold.style.opacity = "0.7";
         if (listOption.tagName == 'LI') {
-            if (listOption.innerText == "인기도순") ProductARViewDown();
-            else if (listOption.innerText == "최신등록순") ProductARDateDown();
-            else if (listOption.innerText == "낮은가격순" ) ProductARPriceRise();
-            else if (listOption.innerText == "높은가격순") ProductARPriceDown();
-            else if (listOption.innerText == "판매높은순") ProductARSellDown();
+            switch (listOption.innerText) {
+                case '인기도순':
+                    ProductARViewDown();
+                    break;
+                case '최신등록순':
+                    ProductARDateDown();
+                    break;
+                case '낮은가격순':
+                    ProductARPriceRise();
+                    break;
+                case '판매높은순':
+                    ProductARSellDown();
+                    break;
+                case '높은가격순':
+                    ProductARPriceDown();
+                    break;
+            }
+            //선택한 옵션 글자 진하게 변경            
             if (listOption.style.fontWeight == "bold") {
                 listOption.style.fontWeight = 'lighter';
             } else {
@@ -253,48 +332,14 @@ mainItem[0].innerHTML +=
             }
         }
         lastBold = listOption;
-    })    
-}
-// 상품 총 갯수 표시
-{
-    let total = document.getElementById('total');
-    total.children[0].innerText = ` ${itemBox.length} `;
-}
+    })
+// 상품 총 개수 표시
+let total = document.getElementById('total');
+total.children[0].innerText = ` ${productAR.length} `;
+listWriter(); 
 
-{
-    for (let i = 0, t; i < productAR.length - 1; i++){
-        for (let j = i + 1; j < productAR.length; j++){
-            if (productAR[i].price > productAR[j].price) {
-                
-            }
-        }
-    }
-}
-listWriter();
-// 게시판 작성 함수
-function listWriter() {
-    for (let i = 0; i < productAR.length; i++) {
-        let img = itemBox[i].getElementsByTagName('img');
-        let itemPrice = itemBox[i].getElementsByClassName('item_price');
-        let itemTitle = itemBox[i].getElementsByClassName('item_title');
-        let itemIntro = itemBox[i].getElementsByClassName('item_intro');
-        img[0].src = productAR[i].img[0];
-        itemPrice[0].innerText = `${productAR[i].price.toLocaleString()} 원`;
-        itemTitle[0].innerText = `${productAR[i].title}`;
-        itemIntro[0].innerText = `${productAR[i].intro}`;
-        if (productAR[i].stock == 0) {
-            for (let j = 0; j < itemBox[i].children.length - 2; j++) {
-                itemBox[i].children[j].style.opacity = '0.3';
-            }
-            itemBox[i].innerHTML += `<div class="soldout">SOLD OUT</div>`;
-        }
-        if (productAR[i].sell >= 30) {
-            itemBox[i].innerHTML += `<div class="best">BEST</div>`;
-        }
-    }
-}
 // 인기도순 작성
-function ProductARViewDown(){
+function ProductARViewDown() {
     for (let i = 0, t; i < productAR.length - 1; i++) {
         for (let j = i + 1; j < productAR.length; j++) {
             if (productAR[i].views < productAR[j].views) {
@@ -307,7 +352,7 @@ function ProductARViewDown(){
     listWriter()
 }
 //최신등록순 작성
-function ProductARDateDown(){
+function ProductARDateDown() {
     for (let i = 0, t; i < productAR.length - 1; i++) {
         for (let j = i + 1; j < productAR.length; j++) {
             if (productAR[i].update > productAR[j].update) {
@@ -320,7 +365,7 @@ function ProductARDateDown(){
     listWriter()
 }
 // 가격 낮은순 작성
-function ProductARPriceRise(){
+function ProductARPriceRise() {
     for (let i = 0, t; i < productAR.length - 1; i++) {
         for (let j = i + 1; j < productAR.length; j++) {
             if (productAR[i].price > productAR[j].price) {
@@ -333,7 +378,7 @@ function ProductARPriceRise(){
     listWriter();
 }
 // 높은 가격순 작성
-function ProductARPriceDown(){
+function ProductARPriceDown() {
     for (let i = 0, t; i < productAR.length - 1; i++) {
         for (let j = i + 1; j < productAR.length; j++) {
             if (productAR[i].price < productAR[j].price) {
@@ -346,7 +391,7 @@ function ProductARPriceDown(){
     listWriter();
 }
 //판매 높은순 작성
-function ProductARSellDown(){
+function ProductARSellDown() {
     for (let i = 0, t; i < productAR.length - 1; i++) {
         for (let j = i + 1; j < productAR.length; j++) {
             if (productAR[i].sell < productAR[j].sell) {
@@ -359,42 +404,3 @@ function ProductARSellDown(){
     listWriter();
 }
 
-// let showScreen = document.getElementsByClassName('show_screen');
-// let screenNumber = document.getElementsByClassName('screen1');
-// function showScreen(screenNumber){
-//     if (screenNumber === 1) {
-//         document.getElementsByClassName('screen1').remove('hidden');
-//         document.getElementsByClassName('screen2').add('hidden');
-        
-//     } else if (screenNumber === 2) {
-//         document.getElementsByClassName('screen1').remove('hidden');
-//         document.getElementsByClassName('screen2').add('hidden');
-        
-//     }
-// }
-
-
-
-
-
-// let imageIndex = 0;
-// const imageScreen = 6;
-
-// function showNextImages() {
-//     imageIndex += imageScreen;
-
-//     if (imageIndex < mainItem.length) {
-//         for (let i = 0; i < mainItem.length; i++){
-//             if (i >= imageIndex && i < imageIndex + imageScreen) {
-//                 mainItem[i].style.dispaly = 'block';
-//             } else {
-//                 mainItem[i].style.dispaly = 'none';
-//             }
-//         }
-//     }
-// }
-
-// const nextButton = document.getElementsByClassName('screen2');
-// nextButton.addEventListener('click', showNextImages);
-
-// showNextImages();
