@@ -106,11 +106,11 @@ mainOpt[0].addEventListener('click', (event) => {
     
 
 
-=========
-    main[0].addEventListener('click', detail)
-    })
+// =========
+//     main[0].addEventListener('click', detail)
+//     })
 
-}
+// }
 
 // function backBtn (){
 //     let backButton = main[0].getElementsByClassName('back_button');
@@ -120,4 +120,4 @@ mainOpt[0].addEventListener('click', (event) => {
 //     main[0].addEventListener('click', detail)
 //     })
 // }
->>>>>>>>> Temporary merge branch 2
+// >>>>>>>>> Temporary merge branch 2
