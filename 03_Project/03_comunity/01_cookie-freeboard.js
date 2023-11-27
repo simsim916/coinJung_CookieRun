@@ -14,7 +14,7 @@ let notiboardAR = [
 let freeboardAR = [
     {
         subject : '아오 밸런드 패치 언제함?',
-        userInfo : '금광동 쏘스윗',
+        userInfo : ['금광동 쏘스윗'],
         heart : 3,
         read : 57,
         commentNum : 2,
@@ -25,7 +25,7 @@ let freeboardAR = [
 
 업데이트 도데체 언제함??`,
         freeboard_date : '1시간 전',
-        comment_user_info : ['[슈비버거조하]', '[내여친존예]'],
+        comment_user_info : ['슈비버거조하', '내여친존예'],
         content : [
             '킹덤아레나 노잼; 업데이트좀',
             '솔직히 마틀렌 너무 사기야',
@@ -34,7 +34,7 @@ let freeboardAR = [
 
     {
         subject : '쿠키런 풀스펙 구매합니다..!',
-        userInfo : '그린탑코인정',
+        userInfo : ['그린탑코인정'],
         heart : 62,
         read : 81,
         commentNum : 2,
@@ -49,7 +49,7 @@ let freeboardAR = [
                    
 키티 미미같은 쿠키는 없어도 됩니다 ㅎㅎ`,
         freeboard_date : '3시간 전',
-        comment_user_info : ['[섹시소녀네티]', '[깜구클럽]'],
+        comment_user_info : ['섹시소녀네티', '깜구클럽'],
         content : [
             '메일보냈어요',
             '여기 이런거 올려도됨?',
@@ -59,7 +59,7 @@ let freeboardAR = [
 
     {
         subject : '두둠칫 둠칫 친추 ㄱ',
-        userInfo : '두둠칫 둠칫',
+        userInfo : ['두둠칫 둠칫'],
         heart : 74,
         read : 231,
         commentNum : 2,
@@ -67,7 +67,7 @@ let freeboardAR = [
 `길드원 구함
 마를렌서버 두둠칫 둠칫 친추 ㄱㄱ`,
         freeboard_date : '5시간 전',
-        comment_user_info : ['[창민이형파이팅]', '[★문석짱★]'],
+        comment_user_info : ['창민이형파이팅', '★문석짱★'],
         content : [
             '마를렌 누가함;;',
             '킹덤전 열수있음?',
@@ -76,7 +76,7 @@ let freeboardAR = [
 
     {
         subject : '결정석너프하면접을거임',
-        userInfo : '봉삼이',
+        userInfo : ['봉삼이'],
         heart : 333,
         read : 571,
         commentNum : 1,
@@ -85,15 +85,15 @@ let freeboardAR = [
 
 `,
         freeboard_date : '10시간 전',
-        comment_user_info : ['[지현누나힘내요]'],
+        comment_user_info : ['지현누나힘내요'],
         content : [
             '접지마여 할만한데',
         ]
     },
 
     {
-        subject : '솔직히 자바스크립트 개어려움',
-        userInfo : '그린실버타운',
+        subject : '솔직히 자바스크립트 너무 어려움ㅠㅠ',
+        userInfo : ['그린실버타운'],
         heart : 32,
         read : 5723,
         commentNum : 5,
@@ -102,13 +102,13 @@ let freeboardAR = [
 님들은 ㅓㅇ떰
 `,
         freeboard_date : '1시간 전',
-        comment_user_info : ['[창민이형파이팅]', '[★문석짱★]' ,'[봉삼이]','[민쥐]', '[지현누나힘내요]', '[에이스수미]'],
+        comment_user_info : ['창민이형파이팅', '★문석짱★' ,'봉삼이','민쥐', '지현누나힘내요', '자바의신 수미'],
         content : [
             'ㅇㅈ',
             '할만하던데',
             '와인정',
             'ㅇㅇ; 진도 너무빠름',
-            '나 오늘 그만둘뻔;;',
+            '파이팅해보자구요..',
             'ㅇㅇ 할만함 ㅎㅎ',
         ]
     },
@@ -585,10 +585,117 @@ let freeboardAR = [
         freeboard_date : '12시간 전',
         commentNum : 65
     },
+    {
+        subject : '스토브 인증기 왜이럼?',
+        userInfo : '그래도이쁨',
+        heart : 12,
+        read : 57,
+        freeboard_date : '12시간 전',
+        commentNum : 65
+    },
+    {
+        subject : '스토브 인증기 왜이럼?',
+        userInfo : '그래도이쁨',
+        heart : 12,
+        read : 57,
+        freeboard_date : '12시간 전',
+        commentNum : 65
+    },
+    {
+        subject : '스토브 인증기 왜이럼?',
+        userInfo : '그래도이쁨',
+        heart : 12,
+        read : 57,
+        freeboard_date : '12시간 전',
+        commentNum : 65
+    },
+    {
+        subject : '스토브 인증기 왜이럼?',
+        userInfo : '그래도이쁨',
+        heart : 12,
+        read : 57,
+        freeboard_date : '12시간 전',
+        commentNum : 65
+    },
+    {
+        subject : '스토브 인증기 왜이럼?',
+        userInfo : '그래도이쁨',
+        heart : 12,
+        read : 57,
+        freeboard_date : '12시간 전',
+        commentNum : 65
+    },
+    {
+        subject : '스토브 인증기 왜이럼?',
+        userInfo : '그래도이쁨',
+        heart : 12,
+        read : 57,
+        freeboard_date : '12시간 전',
+        commentNum : 65
+    },
 ];
 
-let main = document.getElementsByTagName('main'),
+let user = [
+    {
+        userInfo : '금광동 쏘스윗',
+        userImage : 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/1bbb1f94-16ce-4ca6-0b53-508cc6b01c00/format=avif'
+    },
+    {
+        userInfo : '슈비버거조하',
+        userImage : 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/54e1ec2f-823d-4945-f54c-c2c31236ed00/format=webp'
+    },
+    {
+        userInfo : '내여친존예',
+        userImage : 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/d7a5b0e6-595a-401d-e4ef-efc19dd70e00/format=avif'
+    },
+    {
+        userInfo : '섹시소녀네티',
+        userImage : 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/4c757485-3aa8-44e0-e216-bf5dcb749900/format=webp'
+    },
+    {
+        userInfo : '깜구클럽',
+        userImage : 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/07358c75-5680-4547-ea08-c2e5962d9100/format=webp'
+    },
+    {
+        userInfo : '두둠칫둠칫',
+        userImage : 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/57977eaf-57b3-4ee5-3f0d-5cb24b2c9200/format=webp'
+    },
+    {
+        userInfo : '그린탑코인정',
+        userImage : 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/7490b8b8-5e15-4b8f-7ccb-bffe50cb3000/format=webp'
+    },
+    {
+        userInfo : '봉삼이',
+        userImage : 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/4780ff10-2546-42bd-3e01-aafad5678100/format=avif'
+    },
+    {
+        userInfo : '지현누나힘내요',
+        userImage : 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/33f8248a-1aa4-4ce0-b5ea-4294e41f3c00/format=webp'
+    },
+    {
+        userInfo : '그린실버타운',
+        userImage : 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/a3eac2a5-9860-440d-064e-f578529cfb00/format=webp'
+    },
+    {
+        userInfo : '창민이형파이팅',
+        userImage : 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/5c73d6cf-acca-4794-2c6b-e7657f07d500/format=webp'
+    },
+    {
+        userInfo : '★문석짱★',
+        userImage : 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/30b05211-31d7-4d89-731a-766236b80400/format=webp'
+    },
+    {
+        userInfo : '민쥐',
+        userImage : 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/053b55cb-f072-4606-cc9b-0682c6109200/format=avif'
+    },
+    {
+        userInfo : '자바의신 수미',
+        userImage : 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/661a7cb3-20a3-4342-38b6-0002259dbc00/format=webp'
+    },
+]
 
+let nextPageSt = 0, nextPageEnd = 9;
+let main = document.getElementsByTagName('main'),
 /*notice 부분 선언*/
 noSubject = main[0].querySelectorAll('.notice_subject'),
 noDate = main[0].querySelectorAll('.notice_date'),
@@ -626,9 +733,6 @@ free_content = main[0].querySelector('.free_content');
 
     /* ====================================== */
     /** content 부분 태그, 내용 채우기 반복문 **/
-
-
-
     function array(start, end){
         let contentHTML = '';
         for(let i = start ; i < end ; i++){
@@ -645,6 +749,8 @@ free_content = main[0].querySelector('.free_content');
         free_content.innerHTML = contentHTML;
     }
 
+
+    /* 10개씩, 20개씩, 30개씩 보기 변경 감지, 현재 페이지에서 재 출력 */
     let sort = document.getElementById('sort');
     sort.addEventListener('change', (event) =>{
         let selcet_option = event.target.value;
@@ -653,15 +759,17 @@ free_content = main[0].querySelector('.free_content');
         if(selcet_option == 10) array(start, end)
         else if(selcet_option == 20) array(start, end)
         else if(selcet_option == 30) array(start, end)
-    })
-    array(0, 9);
 
+        let selectedOption = event.target.value;
+        update_page(selectedOption);
+    })
+    array(0, 9);            // 첫 화면 초기화
 
     /* ====================================== */
     /** 리뷰순 좋아요순 **/
         let list_freeboard = main[0].querySelectorAll('.list_freeboard');
 
-        /* read 순 함수 */
+        /* read 순 freeboardAR 재 배열 함수 */
         function read_turn(){
             for(let i=0, temp; i<list_freeboard.length-1 ; i++){
                 for(let j = i+1 ; j<list_freeboard.length ; j++){
@@ -675,7 +783,7 @@ free_content = main[0].querySelector('.free_content');
         
         }
 
-        /* heart 순 함수 */
+        /* heart 순 freeboardAR 재 배열 함수 */
         function heart_turn(){
             for(let i=0, temp; i<list_freeboard.length-1 ; i++){
                 for(let j = i+1 ; j<list_freeboard.length ; j++){
@@ -689,38 +797,34 @@ free_content = main[0].querySelector('.free_content');
         }
         
         /* 리뷰순 클릭 감지 */
-        list_sort[0].children[0].addEventListener('click', (event) =>{
+        function listWrite(event){
             let turn = event.target;
             list_sort[0].children[0].style.opacity = 1;
             list_sort[0].children[1].style.opacity = 0.5;
             if(turn.innerText == "리뷰순"){
                 read_turn();
-                for (let i = 0; i < list_freeboard.length; i++) {
-                    list_freeboard[i].children[0].innerText = `${freeboardAR[i].subject}`;
-                    list_freeboard[i].children[1].innerText = `${freeboardAR[i].userInfo}`;
-                    list_freeboard[i].children[2].innerText = `${freeboardAR[i].heart}`;
-                    list_freeboard[i].children[3].innerText = `${freeboardAR[i].read}`;
-                    list_freeboard[i].children[4].innerText = `${freeboardAR[i].commentNum}`;
-                }
-            }
-        })
-        
-        /* 좋아요순 클릭 감지 */
-        list_sort[0].children[1].addEventListener('click', (event) =>{
-            let turn = event.target;
-            list_sort[0].children[0].style.opacity = 0.5;
-            list_sort[0].children[1].style.opacity = 1;
-            if(turn.innerText == "좋아요순"){
+            } else {
                 heart_turn();
-                for (let i = 0; i < list_freeboard.length; i++) {
-                    list_freeboard[i].children[0].innerText = `${freeboardAR[i].subject}`;
-                    list_freeboard[i].children[1].innerText = `${freeboardAR[i].userInfo}`;
-                    list_freeboard[i].children[2].innerText = `${freeboardAR[i].heart}`;
-                    list_freeboard[i].children[3].innerText = `${freeboardAR[i].read}`;
-                    list_freeboard[i].children[4].innerText = `${freeboardAR[i].commentNum}`;
-                }
+            }
+            array(nextPageSt, nextPageEnd);
         }
-        })
+        
+        // /* 좋아요순 클릭 감지 */
+        // list_sort[0].children[1].addEventListener('click', (event) =>{
+        //     let turn = event.target;
+        //     list_sort[0].children[0].style.opacity = 0.5;
+        //     list_sort[0].children[1].style.opacity = 1;
+        //     if(turn.innerText == "좋아요순"){
+        //         heart_turn();
+        //         for (let i = 0; i < list_freeboard.length; i++) {
+        //             list_freeboard[i].children[0].innerText = `${freeboardAR[i].subject}`;
+        //             list_freeboard[i].children[1].innerText = `${freeboardAR[i].userInfo}`;
+        //             list_freeboard[i].children[2].innerText = `${freeboardAR[i].heart}`;
+        //             list_freeboard[i].children[3].innerText = `${freeboardAR[i].read}`;
+        //             list_freeboard[i].children[4].innerText = `${freeboardAR[i].commentNum}`;
+        //         }
+        // }
+        // })
 
     /* ====================================== */
     /** inner HTML 게시판 상호작용 **/
@@ -763,13 +867,9 @@ free_content = main[0].querySelector('.free_content');
         <section class = "info">
             <div class="user_icon">
                 <div class="user_thumb">
-                    <button type="button"><img src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/5f4cbe1f-a8cd-417e-fe54-5ca34620da00/format=webp" alt=""></button>  
+                    <button type="button"><img src="" alt=""></button>  
                 </div>
                 <div class="user_info"></div>
-                <div class="user_link">
-                  <button type="button">쿠키 배합실</button>
-                  <button type="button">쿠키 플레이스</button>
-                </div>
             </div>
             <div class="comment_num">
               <span>댓글</span>
@@ -778,7 +878,7 @@ free_content = main[0].querySelector('.free_content');
             <div class="like_num">
               <span>좋아요</span>
               <span></span>
-            </div>
+            </div> 
             <div class="read_num">
               <span>조회수</span>
               <span></span>
@@ -791,11 +891,12 @@ free_content = main[0].querySelector('.free_content');
             
             `;
 
+
             let comment_list = main[0].getElementsByClassName('comment_list');
             for(let i = 0 ; i < freeboardAR[index].content.length ; i++){
                 comment_list[0].children[0].innerHTML += `                        
-                <li class="test">
-                <img src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/c27781aa-4293-49cf-e523-c2f63499d700/format=webp" alt="">
+                <li>
+                <img src="" alt="">
                <button type="button"></button>
                <p></p> 
             </li>`
@@ -810,6 +911,7 @@ free_content = main[0].querySelector('.free_content');
             let comment_list = document.getElementsByClassName('comment_list');
             let user_icon = document.getElementsByClassName('user_icon');
             let info = document.getElementsByClassName('info');
+            let totComment = 0;
     
             title[0].children[0].innerText = `${freeboardAR[index].subject}`;
             title[0].children[1].innerText = `${freeboardAR[index].userInfo}`;
@@ -822,13 +924,30 @@ free_content = main[0].querySelector('.free_content');
             for(let i = 0 ; i < freeboardAR[index].content.length ; i++){
                 comment_list[0].childNodes[1].childNodes[i * 2 + 1].children[1].innerText = `${freeboardAR[index].comment_user_info[i]}`;
                 comment_list[0].childNodes[1].childNodes[i * 2 + 1].children[2].innerText = `${freeboardAR[index].content[i]}`;
-                console.log(freeboardAR[index].content.length);
+                totComment += 1;
             }
-            user_icon[0].childNodes[3].innerText = `${freeboardAR[index].userInfo}`;
-        
             info[0].children[1].children[1].innerText = `${freeboardAR[index].commentNum}`;
             info[0].children[2].children[1].innerText = `${freeboardAR[index].heart}`;
             info[0].children[3].children[1].innerText = `${freeboardAR[index].read}`;
+
+
+
+            /* 해당 유저의 이미지 삽입 */
+            for(let i = 0 ; i < user.length ; i++){
+                /* 글쓴이 이미지 삽입 */
+                if(user[i].userInfo == title[0].children[1].innerText){
+                    user_icon[0].children[0].children[0].children[0].src = user[i].userImage;
+                }
+
+                /* 댓글 유저 이미지 삽입 */
+                for(let j = 0 ; j < totComment ; j++){
+                    if(user[i].userInfo == comment_list[0].childNodes[1].childNodes[j * 2 + 1].children[1].innerText){
+                        comment_list[0].childNodes[1].childNodes[j * 2 + 1].children[0].src = user[i].userImage;
+                    }
+                }
+            }
+
+
 
             alticle_like[0].addEventListener('click', () =>{
                 freeboardAR[index].heart += 1;
@@ -839,7 +958,7 @@ free_content = main[0].querySelector('.free_content');
         }
     
     
-        /* "클릭"이 감지 됐을 때 inner HTML 게시판 상호작용 실행 */
+        /* 게시판 진입 "클릭"이 감지 됐을 때 inner HTML 게시판 상호작용 실행 */
         let list_freeboard = main[0].querySelectorAll('.list_freeboard');
 
         for(let i = 0 ; i < list_freeboard.length ; i++){
@@ -857,22 +976,17 @@ free_content = main[0].querySelector('.free_content');
     
     }
 
-
-
-
     /* ====================================== */
-    
-    
     /** 10개씩 보기, 20개씩 보기 ... // 10개씩 20개씩 .. 보기 적용 시 page nation container 변경  **/
-
-
 
     let page = main[0].getElementsByClassName('page');
     
     function update_page(selectedOption) {
         let page_num = Math.ceil(freeboardAR.length / selectedOption);
         page[0].innerHTML = "";
+
         
+        /* 10개 20개 30개 씩 나눠서 볼 경우 페이지 네이션 재 정리 */
         for (let i = 0; i < page_num; i++) {
             if (i == 0) {
                 page[0].innerHTML += `
@@ -884,16 +998,13 @@ free_content = main[0].querySelector('.free_content');
                 `;
             }
         }
-    
+
             let pageBoxes = document.querySelectorAll('.page a');
-    
         pageBoxes.forEach((pageBox, index) => {
             pageBox.addEventListener('click', (event) => {
                 let turn = event.target;
                 event.preventDefault();
-                let nextPageSt = (turn.innerText - 1) * selectedOption;
-                let nextPageEnd = nextPageSt + +(selectedOption);
-    
+
                 for (let i = 0; i < pageBoxes.length; i++) {
                     if (pageBoxes[i] == turn) {
                         // 클릭한 페이지 박스의 색상 변경
@@ -903,29 +1014,16 @@ free_content = main[0].querySelector('.free_content');
                         pageBoxes[i].classList.remove('default');
                     }
                 }
-    
-                if (selectedOption == 10) array(nextPageSt, nextPageEnd);
-                else if (selectedOption == 20) array(nextPageSt, nextPageEnd);
-                else if (selectedOption == 30) array(nextPageSt, nextPageEnd);
+
+                /* 페이지 네이션 - 1 에 선택한 10, 20, 30 개씩 보기 하면 해당 네이션에서 해당 페이지가 보임 */
+                nextPageSt = (turn.innerText - 1) * selectedOption;
+                nextPageEnd = nextPageSt + +(selectedOption);
+
+                array(nextPageSt, nextPageEnd);
             });
         });
-    }
-    
-    sort.addEventListener('change', (event) => {
-        let selectedOption = event.target.value;
-        update_page(selectedOption);
-    });
-    
+    }   
     update_page(10);
-
-
-    
-sort.addEventListener('change', (event) => {
-    let selectedOption = event.target.value;
-    update_page(selectedOption);
-}) 
-
-update_page(10);
 
 
 
@@ -941,22 +1039,11 @@ function findpage(){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
     /* ====================================== */
     /** a태그 링크 기능 삭제 부분 **/
 
     let preventLink = document.querySelectorAll('a');
-    preventLink.forEach(function (link) {                   // 구글링해서 사용했음 -> forEach: 지금은 위에서 preventLink를 선언해서 'a'태그를 다 찾아서 배열의 형태로 저장했고 
+    preventLink.forEach(function (link) {                   // forEach: 지금은 위에서 preventLink를 선언해서 'a'태그를 다 찾아서 배열의 형태로 저장했고 
         link.addEventListener('click', function (event) {
             event.preventDefault();                         //  forEach 를 사용해서 link 기능을 클릭했을 시 작동되지 않도록 막음(preventDefault)
         });
