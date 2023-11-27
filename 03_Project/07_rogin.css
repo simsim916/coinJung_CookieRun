@@ -10,11 +10,11 @@ body{
     font-size: 7px;
     font-family: 'CookieRun';
 }
-.login-wrapper > h2{
+#TitleCookie{
     font-size: 90px;
     color:goldenrod;
     margin-bottom: 20px;
-    margin: auto;
+    margin: auto; 
     text-decoration: solid;
     text-align: center;
     
@@ -152,8 +152,8 @@ span{
     background-position: cover;
     background-size: 100% 100%;
     position: absolute;
-    top: 49%;
-    right: 43%;
+    top: 33%;
+    right: 30%;
     border-radius: 40px;
 }
 #Nexon{
@@ -178,13 +178,10 @@ span{
     height: 40px;
 }
 .Nexon{
-    color: orange;
-    border: 2px solid orange;
+    color: rgb(160, 159, 159);
+    border: 2px solid rgb(160, 159, 159);
     border-radius: 10px; 
     justify-content: center;
-    
-    
-
 }
 .Kakao{
     color: rgb(160, 159, 159);
@@ -196,4 +193,35 @@ span{
 #login2{
     
     display: none;
+}
+.login-wrapper2{
+    display: none;
+}
+.notice_img2{
+    width: 250px;
+    height: 210px;
+    background: url("../03_Project/img/kakaoimg.png");
+    background-position: cover;
+    background-size: 100% 100%;
+    position: absolute;
+    top: 33%;
+    right: 30%;
+    border-radius: 40px;
+}
+#titleCookie{
+    font-size: 90px;
+    color:goldenrod;
+    margin-bottom: 20px;
+    margin: auto;
+    text-decoration: solid;
+    text-align: center;
+    
+}
+#titleKakao{
+    font-size: 90px;
+    color:goldenrod;
+    margin-bottom: 20px;
+    margin: auto;
+    text-decoration: solid;
+    text-align: center;
 }
