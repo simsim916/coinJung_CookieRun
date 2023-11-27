@@ -491,8 +491,8 @@ function loginWrite(){
     document.getElementById('loginBG').style.height="100%"
     document.getElementById('loginBG').style.backgroundColor="#00000090"
     let loginList = document.getElementsByClassName('login_list');
-    loginList[0].children[1].style.border="2px solid rgb(160, 159, 159)";
-    loginList[0].children[1].style.color= "rgb(160, 159, 159)";
+    loginList[0].children[0].style.border="2px solid orange";
+    loginList[0].children[0].style.color="orange";
     }
     document.getElementById('loginBG').style.visibility="initial";
 }
@@ -524,8 +524,8 @@ function changeCookie(event){
     var ImgKakao = document.getElementById("imgKakao");
     let eventOJ = event.target.closest("li");
     let loginList = document.getElementsByClassName('login_list');
-    loginList[0].children[1].style.border="2px solid rgb(160, 159, 159)";
-    loginList[0].children[1].style.color= "rgb(160, 159, 159)";
+    loginList[0].children[0].style.border="2px solid rgb(160, 159, 159)";
+    loginList[0].children[0].style.color= "rgb(160, 159, 159)";
     //쿠키런 보이게
     TitleCookie.style.display="";
     ImgCookie.style.display="";
