@@ -154,7 +154,7 @@ let freeboardAR = [
         commentNum : 65
     },
     {
-        subject : '스토브 인증기 왜이럼?',
+        subject : '스토브 인증기 왜이럼? 11번째',
         userInfo : '그래도이쁨',
         heart : 43,
         read : 57,
@@ -234,7 +234,7 @@ let freeboardAR = [
         commentNum : 65
     },
     {
-        subject : '스토브 인증기 왜이럼?',
+        subject : '스토브 인증기 왜이럼? 21번째',
         userInfo : '그래도이쁨',
         heart : 12,
         read : 57,
@@ -307,6 +307,254 @@ let freeboardAR = [
     },
     {
         subject : '스토브 인증기 왜이럼?',
+        userInfo : '그래도이쁨',
+        heart : 12,
+        read : 57,
+        freeboard_date : '12시간 전',
+        commentNum : 65
+    },
+    {
+        subject : '스토브 인증기 왜이럼? 31번째',
+        userInfo : '그래도이쁨',
+        heart : 12,
+        read : 57,
+        freeboard_date : '12시간 전',
+        commentNum : 65
+    },
+    {
+        subject : '스토브 인증기 왜이럼?',
+        userInfo : '그래도이쁨',
+        heart : 12,
+        read : 57,
+        freeboard_date : '12시간 전',
+        commentNum : 65
+    },
+    {
+        subject : '스토브 인증기 왜이럼?',
+        userInfo : '그래도이쁨',
+        heart : 12,
+        read : 57,
+        freeboard_date : '12시간 전',
+        commentNum : 65
+    },
+    {
+        subject : '스토브 인증기 왜이럼?',
+        userInfo : '그래도이쁨',
+        heart : 12,
+        read : 57,
+        freeboard_date : '12시간 전',
+        commentNum : 65
+    },
+    {
+        subject : '스토브 인증기 왜이럼?',
+        userInfo : '그래도이쁨',
+        heart : 12,
+        read : 57,
+        freeboard_date : '12시간 전',
+        commentNum : 65
+    },
+    {
+        subject : '스토브 인증기 왜이럼?',
+        userInfo : '그래도이쁨',
+        heart : 12,
+        read : 57,
+        freeboard_date : '12시간 전',
+        commentNum : 65
+    },
+    {
+        subject : '스토브 인증기 왜이럼?',
+        userInfo : '그래도이쁨',
+        heart : 12,
+        read : 57,
+        freeboard_date : '12시간 전',
+        commentNum : 65
+    },
+    {
+        subject : '스토브 인증기 왜이럼?',
+        userInfo : '그래도이쁨',
+        heart : 12,
+        read : 57,
+        freeboard_date : '12시간 전',
+        commentNum : 65
+    },
+    {
+        subject : '스토브 인증기 왜이럼?',
+        userInfo : '그래도이쁨',
+        heart : 12,
+        read : 57,
+        freeboard_date : '12시간 전',
+        commentNum : 65
+    },
+    {
+        subject : '스토브 인증기 왜이럼?',
+        userInfo : '그래도이쁨',
+        heart : 12,
+        read : 57,
+        freeboard_date : '12시간 전',
+        commentNum : 65
+    },
+    {
+        subject : '스토브 인증기 왜이럼? 41번째',
+        userInfo : '그래도이쁨',
+        heart : 12,
+        read : 57,
+        freeboard_date : '12시간 전',
+        commentNum : 65
+    },
+    {
+        subject : '스토브 인증기 왜이럼?',
+        userInfo : '그래도이쁨',
+        heart : 12,
+        read : 57,
+        freeboard_date : '12시간 전',
+        commentNum : 65
+    },
+    {
+        subject : '스토브 인증기 왜이럼?',
+        userInfo : '그래도이쁨',
+        heart : 12,
+        read : 57,
+        freeboard_date : '12시간 전',
+        commentNum : 65
+    },
+    {
+        subject : '스토브 인증기 왜이럼?',
+        userInfo : '그래도이쁨',
+        heart : 12,
+        read : 57,
+        freeboard_date : '12시간 전',
+        commentNum : 65
+    },
+    {
+        subject : '스토브 인증기 왜이럼?',
+        userInfo : '그래도이쁨',
+        heart : 12,
+        read : 57,
+        freeboard_date : '12시간 전',
+        commentNum : 65
+    },
+    {
+        subject : '스토브 인증기 왜이럼?',
+        userInfo : '그래도이쁨',
+        heart : 12,
+        read : 57,
+        freeboard_date : '12시간 전',
+        commentNum : 65
+    },
+    {
+        subject : '스토브 인증기 왜이럼?',
+        userInfo : '그래도이쁨',
+        heart : 12,
+        read : 57,
+        freeboard_date : '12시간 전',
+        commentNum : 65
+    },
+    {
+        subject : '스토브 인증기 왜이럼?',
+        userInfo : '그래도이쁨',
+        heart : 12,
+        read : 57,
+        freeboard_date : '12시간 전',
+        commentNum : 65
+    },
+    {
+        subject : '스토브 인증기 왜이럼?',
+        userInfo : '그래도이쁨',
+        heart : 12,
+        read : 57,
+        freeboard_date : '12시간 전',
+        commentNum : 65
+    },
+    {
+        subject : '스토브 인증기 왜이럼?',
+        userInfo : '그래도이쁨',
+        heart : 12,
+        read : 57,
+        freeboard_date : '12시간 전',
+        commentNum : 65
+    },
+    {
+        subject : '스토브 인증기 왜이럼? 51번째',
+        userInfo : '그래도이쁨',
+        heart : 12,
+        read : 57,
+        freeboard_date : '12시간 전',
+        commentNum : 65
+    },
+    {
+        subject : '스토브 인증기 왜이럼?',
+        userInfo : '그래도이쁨',
+        heart : 12,
+        read : 57,
+        freeboard_date : '12시간 전',
+        commentNum : 65
+    },
+    {
+        subject : '스토브 인증기 왜이럼?',
+        userInfo : '그래도이쁨',
+        heart : 12,
+        read : 57,
+        freeboard_date : '12시간 전',
+        commentNum : 65
+    },
+    {
+        subject : '스토브 인증기 왜이럼?',
+        userInfo : '그래도이쁨',
+        heart : 12,
+        read : 57,
+        freeboard_date : '12시간 전',
+        commentNum : 65
+    },
+    {
+        subject : '스토브 인증기 왜이럼?',
+        userInfo : '그래도이쁨',
+        heart : 12,
+        read : 57,
+        freeboard_date : '12시간 전',
+        commentNum : 65
+    },
+    {
+        subject : '스토브 인증기 왜이럼?',
+        userInfo : '그래도이쁨',
+        heart : 12,
+        read : 57,
+        freeboard_date : '12시간 전',
+        commentNum : 65
+    },
+    {
+        subject : '스토브 인증기 왜이럼?',
+        userInfo : '그래도이쁨',
+        heart : 12,
+        read : 57,
+        freeboard_date : '12시간 전',
+        commentNum : 65
+    },
+    {
+        subject : '스토브 인증기 왜이럼?',
+        userInfo : '그래도이쁨',
+        heart : 12,
+        read : 57,
+        freeboard_date : '12시간 전',
+        commentNum : 65
+    },
+    {
+        subject : '스토브 인증기 왜이럼?',
+        userInfo : '그래도이쁨',
+        heart : 12,
+        read : 57,
+        freeboard_date : '12시간 전',
+        commentNum : 65
+    },
+    {
+        subject : '스토브 인증기 왜이럼?',
+        userInfo : '그래도이쁨',
+        heart : 12,
+        read : 57,
+        freeboard_date : '12시간 전',
+        commentNum : 65
+    },
+    {
+        subject : '스토브 인증기 왜이럼? 61번째',
         userInfo : '그래도이쁨',
         heart : 12,
         read : 57,
@@ -379,11 +627,11 @@ free_content = main[0].querySelector('.free_content');
     /* ====================================== */
     /** content 부분 태그, 내용 채우기 반복문 **/
 
-    function array(sort){
-  
 
+
+    function array(start, end){
         let contentHTML = '';
-        for(let i = 0 ; i < sort ; i++){
+        for(let i = start ; i < end ; i++){
                 contentHTML += `
                 <a href="#" class="list_freeboard">
                     <div class="freeboard_subject">${freeboardAR[i].subject}</div>
@@ -400,12 +648,13 @@ free_content = main[0].querySelector('.free_content');
     let sort = document.getElementById('sort');
     sort.addEventListener('change', (event) =>{
         let selcet_option = event.target.value;
-        console.log(selcet_option);
-        if(selcet_option == 10) array(selcet_option)
-        else if(selcet_option == 20) array(selcet_option)
-        else if(selcet_option == 30) array(selcet_option)
+        let start = findpage() - 1;
+        let end = start + selcet_option;
+        if(selcet_option == 10) array(start, end)
+        else if(selcet_option == 20) array(start, end)
+        else if(selcet_option == 30) array(start, end)
     })
-    array(10);
+    array(0, 9);
 
 
     /* ====================================== */
@@ -477,7 +726,7 @@ free_content = main[0].querySelector('.free_content');
     /** inner HTML 게시판 상호작용 **/
     {
         /* HTML 삭제 후 alticle 삽입 */
-        function insert_alticle(){
+        function insert_alticle(index){
             main[0].innerHTML = "";
     
             main[0].innerHTML = main[0].innerHTML + `
@@ -505,18 +754,7 @@ free_content = main[0].querySelector('.free_content');
                     <button>로그인</button>
                 </div>
                 <div class="comment_list">
-                    <ul>
-                        <li>
-                            <img src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/a5bae60f-65cb-472b-09ba-4b2f62199700/format=webp" alt="">
-                           <button type="button"></button>
-                           <p></p> 
-                        </li>
-                        <li class="test">
-                            <img src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/c27781aa-4293-49cf-e523-c2f63499d700/format=webp" alt="">
-                           <button type="button"></button>
-                           <p></p> 
-                        </li>
-                        
+                    <ul>                      
                     </ul>
                 </div>
             </div>
@@ -552,6 +790,16 @@ free_content = main[0].querySelector('.free_content');
         </section>
             
             `;
+
+            let comment_list = main[0].getElementsByClassName('comment_list');
+            for(let i = 0 ; i < freeboardAR[index].content.length ; i++){
+                comment_list[0].children[0].innerHTML += `                        
+                <li class="test">
+                <img src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/c27781aa-4293-49cf-e523-c2f63499d700/format=webp" alt="">
+               <button type="button"></button>
+               <p></p> 
+            </li>`
+            }
         }
     
         /* 해당 alticle 정보 삽입 */
@@ -574,12 +822,20 @@ free_content = main[0].querySelector('.free_content');
             for(let i = 0 ; i < freeboardAR[index].content.length ; i++){
                 comment_list[0].childNodes[1].childNodes[i * 2 + 1].children[1].innerText = `${freeboardAR[index].comment_user_info[i]}`;
                 comment_list[0].childNodes[1].childNodes[i * 2 + 1].children[2].innerText = `${freeboardAR[index].content[i]}`;
+                console.log(freeboardAR[index].content.length);
             }
             user_icon[0].childNodes[3].innerText = `${freeboardAR[index].userInfo}`;
         
             info[0].children[1].children[1].innerText = `${freeboardAR[index].commentNum}`;
             info[0].children[2].children[1].innerText = `${freeboardAR[index].heart}`;
             info[0].children[3].children[1].innerText = `${freeboardAR[index].read}`;
+
+            alticle_like[0].addEventListener('click', () =>{
+                freeboardAR[index].heart += 1;
+
+                alticle_like[0].children[0].innerText = `${freeboardAR[index].heart}`;
+                info[0].children[2].children[1].innerText = `${freeboardAR[index].heart}`;
+            })
         }
     
     
@@ -594,47 +850,105 @@ free_content = main[0].querySelector('.free_content');
                 let index = freeboardAR.findIndex(item => item.subject === data);
             
     
-                insert_alticle();       // 기존 HTML 삭제 / alticle 양식 추가
+                insert_alticle(index);       // 기존 HTML 삭제 / alticle 양식 추가
                 alticle_js(index);      // alticle 내용 추가
             })
         }
     
     }
 
+
+
+
     /* ====================================== */
+    
+    
+    /** 10개씩 보기, 20개씩 보기 ... // 10개씩 20개씩 .. 보기 적용 시 page nation container 변경  **/
 
-let page = main[0].getElementsByClassName('page');
-let selcet_option = sort.value;
-let page_num = Math.round(freeboardAR.length/selcet_option);
 
-for (let i = 0; i < page_num; i++) {
-    if (i == 0) {
-        page[0].innerHTML += `
-            <a href="#" class="default">${i + 1}</a>
-        `;
-    } else {
-        page[0].innerHTML += `
-            <a href="#" class="other">${i + 1}</a>
-        `;
+
+    let page = main[0].getElementsByClassName('page');
+    
+    function update_page(selectedOption) {
+        let page_num = Math.ceil(freeboardAR.length / selectedOption);
+        page[0].innerHTML = "";
+        
+        for (let i = 0; i < page_num; i++) {
+            if (i == 0) {
+                page[0].innerHTML += `
+                    <a href="#" class="default">${i + 1}</a>
+                `;
+            } else {
+                page[0].innerHTML += `
+                    <a href="#" class="other">${i + 1}</a>
+                `;
+            }
+        }
+    
+            let pageBoxes = document.querySelectorAll('.page a');
+    
+        pageBoxes.forEach((pageBox, index) => {
+            pageBox.addEventListener('click', (event) => {
+                let turn = event.target;
+                event.preventDefault();
+                let nextPageSt = (turn.innerText - 1) * selectedOption;
+                let nextPageEnd = nextPageSt + +(selectedOption);
+    
+                for (let i = 0; i < pageBoxes.length; i++) {
+                    if (pageBoxes[i] == turn) {
+                        // 클릭한 페이지 박스의 색상 변경
+                        turn.classList.add('default');
+                    } else {
+                        // 나머지 페이지 박스의 색상 초기화
+                        pageBoxes[i].classList.remove('default');
+                    }
+                }
+    
+                if (selectedOption == 10) array(nextPageSt, nextPageEnd);
+                else if (selectedOption == 20) array(nextPageSt, nextPageEnd);
+                else if (selectedOption == 30) array(nextPageSt, nextPageEnd);
+            });
+        });
+    }
+    
+    sort.addEventListener('change', (event) => {
+        let selectedOption = event.target.value;
+        update_page(selectedOption);
+    });
+    
+    update_page(10);
+
+
+    
+sort.addEventListener('change', (event) => {
+    let selectedOption = event.target.value;
+    update_page(selectedOption);
+}) 
+
+update_page(10);
+
+
+
+function findpage(){
+    let findPage = document.querySelectorAll('.page a');
+
+    for(let i = 0 ; i < findPage.length ; i++){
+        if(findPage[i].className == 'default'){
+            return i+1;
+        }
     }
 }
 
-let pageBoxes = document.querySelectorAll('.page a');
 
-pageBoxes.forEach((pageBox, index) => {
-    pageBox.addEventListener('click', (event) => {
-        let turn = event.target;
-        for (let i = 0; i < pageBoxes.length; i++) {
-            if (pageBoxes[i] == turn) {
-                // 클릭한 페이지 박스의 색상 변경
-                turn.classList.add('default');
-            } else {
-                // 나머지 페이지 박스의 색상 초기화
-                pageBoxes[i].classList.remove('default');
-            }
-        }
-    });
-});
+
+
+
+
+
+
+
+
+
 
 
 
@@ -642,9 +956,8 @@ pageBoxes.forEach((pageBox, index) => {
     /** a태그 링크 기능 삭제 부분 **/
 
     let preventLink = document.querySelectorAll('a');
-    console.log(preventLink);
     preventLink.forEach(function (link) {                   // 구글링해서 사용했음 -> forEach: 지금은 위에서 preventLink를 선언해서 'a'태그를 다 찾아서 배열의 형태로 저장했고 
         link.addEventListener('click', function (event) {
             event.preventDefault();                         //  forEach 를 사용해서 link 기능을 클릭했을 시 작동되지 않도록 막음(preventDefault)
         });
-    });    
+    });
