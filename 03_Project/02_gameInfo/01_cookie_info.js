@@ -1,5 +1,6 @@
 'use strict';
 
+//쿠키 배열
 let cookieAR = [
     {
         name: '올리브맛 쿠키',
@@ -224,21 +225,13 @@ let cookieAR = [
         }
     },
 ]
-let typeImg = [
-    {
-        '올': '',
-        '에픽': 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/e6cc601e-19ee-421b-e936-9cdd20eaf100/public',
-        '레전더리': 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/fb2bbed1-186c-4edf-1741-7edb8cdf7100/public',
-        '슈퍼에픽': 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/ef97da70-b550-428a-c03c-ed4db59a9300/public',
-        '스페셜': 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/dc7567c4-7d16-4017-52c2-4586e7112500/public',
-        '에이션트': 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/b80b67b8-dc5c-49e3-07ca-f1673e459100/public',
-        '드래곤': 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/9ea3ad41-1df7-4b8e-0e52-3c1f9ac48400/public',
-    }
-]
+
+
 
 
 let main = document.getElementsByTagName('main')
 let mainList = main[0].getElementsByClassName('main_list')
+
 // 쿠키 목록 작성 시키는 함수
 function writeCookieList() {
     for (let i = 0; i < cookieAR.length; i++) {
@@ -246,7 +239,7 @@ function writeCookieList() {
         mainList[0].innerHTML += `<div class="main_list_box"><img src="${cookieAR[i].img}" alt="${cookieAR[i].name}"><div class="main_list_item_name">${cookieAR[i].name}</div><div class="main_list_item_type"><img src="${cookieType(cookieAR[i].type)}" alt="${cookieAR[i].type}"></div></div>`
     }
 }
-// 쿠키 타입 검색해서 이미지 선택하는 함수
+// 쿠키 타입을 검색하여 이미지 선택하는 함수
 function cookieType(cookieType) {
     switch (cookieType) {
         case "에픽":
@@ -265,15 +258,17 @@ function cookieType(cookieType) {
 }
 
 let lastPage;
+
 writeCookieList();
 {
     main[0].addEventListener('click', detail)
 }
 
 
-function detail(event) {
+function detail(event){ 
     let eventOJ = event.target.closest('.main_list_box')
     let cookieName = eventOJ.children[1].innerText;
+
     let compare;
     for (let i = 0; i < cookieAR.length; i++) {
         if (cookieName == cookieAR[i].name) {
@@ -308,32 +303,62 @@ function detail(event) {
     })
 }
 
+{
+    let mainOpt = document.getElementsByClassName('main_option');
+    
+    mainOpt[0].addEventListener('click', (event) => {
+            if (event.target.tagName =='IMG') {
+                if (event.target.getAttribute('class') === 'selected') {
+                    event.target.classList.remove('selected');
+                } else {
+                    event.target.classList.add('selected');
+                    console.log(event.target.getAttribute('class'))
+                    console.log(event.target.classList)
+                }
+            }
+        }
+    );
 
+}
 let mainOpt = document.getElementsByClassName('main_option');
-
 let typeAlt;
 
+// let optimgAr = mainOpt[0].querySelectorAll('img');
+
+// optimgAr.forEach((optImg, index) => {
+//     optImg.addEventListener('click', (event) => {
+//         let turn = event.target;
+//         for (let i = 0; i < optimgAr.length; i++) {
+//             if (turn.getAttribute('class') =='default') {
+//                 console.log(turn.getAttribute('class'))
+//             }
+//             if (optimgAr[i] === turn) {
+//                 turn.classList.add('default');
+//             } 
+//         }
+//     });
+// });
+
+
 mainOpt[0].addEventListener('click', (event) => {
-    let OptTypeImg = event.target;    
+    let OptTypeImg = event.target;   
 //타입별 정렬
     if (OptTypeImg.tagName == "IMG") {
         typeAlt = OptTypeImg.getAttribute('alt');
         mainList[0].innerHTML = "";
         if (typeAlt == "올") {
             
-            for (let i = 0;i < cookieAR.length;i++) {
+            for (let i = 0; i < cookieAR.length;i++) {
                 mainList[0].innerHTML += `<div class="main_list_box"><img src="${cookieAR[i].img}" alt="${cookieAR[i].name}"><div class="main_list_item_name">${cookieAR[i].name}</div><div class="main_list_item_type"><img src="${cookieType(cookieAR[i].type)}" alt="${cookieAR[i].type}"></div></div>`;
             }
         } else {
-            for (let i = 0; i<cookieAR.length;i++) {
+            for (let i = 0; i < cookieAR.length;i++) {
+
                 if (typeAlt == cookieAR[i].type) {    
                     mainList[0].innerHTML += `<div class="main_list_box"><img src="${cookieAR[i].img}" alt="${cookieAR[i].name}"><div class="main_list_item_name">${cookieAR[i].name}</div><div class="main_list_item_type"><img src="${cookieType(cookieAR[i].type)}" alt="${cookieAR[i].type}"></div></div>`;}
         }
-
-    }
-    }
+    }}
 });
-
 
 
 
