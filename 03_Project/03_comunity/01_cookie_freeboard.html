@@ -85,7 +85,7 @@
             <h3>자유 게시판</h3>
             <div class="notice_option_right">
                 <select onchange="sortArray(event)" name="sort" id="sort">
-                    <option value="10">10개씩 보기</option>
+                    <option onclick="() => {}" value="10">10개씩 보기</option>
                     <option value="20">20개씩 보기</option>
                     <option value="30">30개씩 보기</option>
                 </select>
@@ -93,8 +93,8 @@
         </div>
 
         <div class="list_sort">
-          <span onclick="listWrite(event)" href="#" class="turn_read">리뷰순</span>
-          <span onclick="listWrite(event)" href="#" class="turn_heart">좋아요순</span>
+          <span onclick="listWrite(event)" class="turn_read">리뷰순</span>
+          <span onclick="listWrite(event)" class="turn_heart">좋아요순</span>
         </div>
 
         <div class="content">
@@ -104,11 +104,7 @@
           <div class="free_content">
 
           </div>
-  
-          <div class = "footer">
-            <a href="#" class = "post">글쓰기</a>
-          </div>
-  
+
           <div class = "page">
           </div>
         </div>

@@ -657,7 +657,7 @@ let user = [
         userImage : 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/07358c75-5680-4547-ea08-c2e5962d9100/format=webp'
     },
     {
-        userInfo : '두둠칫둠칫',
+        userInfo : '두둠칫 둠칫',
         userImage : 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/57977eaf-57b3-4ee5-3f0d-5cb24b2c9200/format=webp'
     },
     {
@@ -694,29 +694,16 @@ let user = [
     },
 ]
 
-let nextPageSt = 0, nextPageEnd = 9;
-let notistart = 0, notiend = notiboardAR.length;
-let main = document.getElementsByTagName('main'),
-/*notice 부분 선언*/
-noSubject = main[0].querySelectorAll('.notice_subject'),
-noDate = main[0].querySelectorAll('.notice_date'),
-list_notice = main[0].querySelectorAll('.list_notice'),
-
-/*리뷰순 좋아요순 선언*/
-list_sort = main[0].querySelectorAll('.list_sort'),
-
-/* HTML 태그를 반복문을 통한 생성 관련 선언 */
-content = main[0].querySelector('.content'),
-free_content = main[0].querySelector('.free_content');
-
-
-
+let notistart = 0, notiend = notiboardAR.length;    // 초기화
+let nextPageSt = 0, nextPageEnd = 9;                // 초기화
 
 
 
     /** 공지부분 태그, 내용 채우기 반복문  **/
     function noticontent(notistart, notiend){
         let noticeHTML = '';
+        let main = document.getElementsByTagName('main');
+        let content = main[0].querySelector('.content');
         for (let i = notistart; i < notiend; i++) {
             noticeHTML += `
                 <a href="#" class="list_notice">
@@ -736,44 +723,55 @@ free_content = main[0].querySelector('.free_content');
     /* ====================================== */
     /** content 부분 태그, 내용 채우기 반복문 **/
     function array(start, end){
+        let main = document.getElementsByTagName('main');
+        let free_content = main[0].querySelector('.free_content');
         let contentHTML = '';
         for(let i = start ; i < end ; i++){
                 contentHTML += `
-                <a href="#" class="list_freeboard">
+                <div href="#" class="list_freeboard">
                     <div onclick="contentEnter(event)" class="freeboard_subject">${freeboardAR[i].subject}</div>
                     <div onclick="contentEnter(event)" class="userInfo">${freeboardAR[i].userInfo}</div>
                     <div onclick="contentEnter(event)" class="heart">${freeboardAR[i].heart}</div>
                     <div onclick="contentEnter(event)" class="read">${freeboardAR[i].read}</div>
                     <div onclick="contentEnter(event)" class="freeboard_date">${freeboardAR[i].commentNum}</div> 
-                </a>
+                </div>
             `;
         }
+
+        // let preventLink = document.querySelectorAll('a');
+        //     preventLink.forEach(function (link) {                   // forEach: 지금은 위에서 preventLink를 선언해서 'a'태그를 다 찾아서 배열의 형태로 저장했고 
+        //     link.addEventListener('click', function (event) {
+        //     event.preventDefault();                         //  forEach 를 사용해서 link 기능을 클릭했을 시 작동되지 않도록 막음(preventDefault)
+        //     });
+        // });
+
         free_content.innerHTML = contentHTML;
+        nextPageSt = start;
+        nextPageEnd = end;
     }
+    array(nextPageSt, nextPageEnd);            // 첫 화면 초기화
 
 
 
 
     /* ====================================== */
     /** 리뷰순 좋아요순 **/
-        let list_freeboard = main[0].querySelectorAll('.list_freeboard');
-
         /* read 순 freeboardAR 재 배열 함수 */
         function changeArray(judgement){
             if(judgement == 1){
-                for(let i=0, temp; i<list_freeboard.length-1 ; i++){
-                    for(let j = i+1 ; j<list_freeboard.length ; j++){
+                for(let i=0, temp; i<freeboardAR.length-1 ; i++){
+                    for(let j = i+1 ; j<freeboardAR.length ; j++){
                         if(freeboardAR[i].read < freeboardAR[j].read){
                             temp = freeboardAR[i];
                             freeboardAR[i] = freeboardAR[j];
                             freeboardAR[j] = temp;
                         }
                     }
-                }        
+                }
             }
             else{
-                for(let i=0, temp; i<list_freeboard.length-1 ; i++){
-                    for(let j = i+1 ; j<list_freeboard.length ; j++){
+                for(let i=0, temp; i<freeboardAR.length-1 ; i++){
+                    for(let j = i+1 ; j<freeboardAR.length ; j++){
                         if(freeboardAR[i].heart < freeboardAR[j].heart){
                             temp = freeboardAR[i];
                             freeboardAR[i] = freeboardAR[j];
@@ -786,7 +784,10 @@ free_content = main[0].querySelector('.free_content');
 
         /* 리뷰순, 좋아요순 감지 후 opacity 변경 및 freeboardAR 재 배열 함수 호출 */
         function listWrite(event){
+            let main = document.getElementsByTagName('main');
+            let list_sort = main[0].querySelectorAll('.list_sort');
             let turn = event.target;
+            
             if(turn.innerText == "리뷰순"){
                 list_sort[0].children[0].style.opacity = 1;
                 list_sort[0].children[1].style.opacity = 0.5;
@@ -797,6 +798,8 @@ free_content = main[0].querySelector('.free_content');
                 changeArray(2);
             }
             array(nextPageSt, nextPageEnd);
+
+
         }
 
 
@@ -807,12 +810,13 @@ free_content = main[0].querySelector('.free_content');
     
         /* HTML 삭제 후 alticle 삽입 */
         function insert_alticle(index){
+            let main = document.getElementsByTagName('main');
             main[0].innerHTML = "";
     
             main[0].innerHTML = main[0].innerHTML + `
             <div class="notice_option">
             <h2>자유 게시판</h2>
-            <a href ="./01_cookie_freeboard.html" class="back_list">목록가기</a>
+            <spen onclick="comeback(event)" class="backList">목록가기</spen>
         </div>
         
         <section class = "data">
@@ -867,7 +871,7 @@ free_content = main[0].querySelector('.free_content');
             
             `;
 
-
+            
             let comment_list = main[0].getElementsByClassName('comment_list');
             for(let i = 0 ; i < freeboardAR[index].content.length ; i++){
                 comment_list[0].children[0].innerHTML += `                        
@@ -946,32 +950,88 @@ free_content = main[0].querySelector('.free_content');
             insert_alticle(index);       // 기존 HTML 삭제 / alticle 양식 추가
             alticle_js(index);      // alticle 내용 추가
         }
+
+        /* 뒤로가기 */
+        function comeback(){
+            let main = document.getElementsByTagName('main');
+            
+            main[0].innerHTML = "";
+            main[0].innerHTML = main[0].innerHTML + `        
+            <div class="notice_option">
+            <h3>자유 게시판</h3>
+            <div class="notice_option_right">
+                <select onchange="sortArray(event)" name="sort" id="sort">
+                    <option value="10">10개씩 보기</option>
+                    <option value="20">20개씩 보기</option>
+                    <option value="30">30개씩 보기</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="list_sort">
+          <span onclick="listWrite(event)" class="turn_read">리뷰순</span>
+          <span onclick="listWrite(event)" class="turn_heart">좋아요순</span>
+        </div>
+
+        <div class="content">
+          <div class="content_notice">
+
+          </div>
+          <div class="free_content">
+
+          </div>
+
+          <div class = "page">
+          </div>
+        </div>`
+
+
+
+        noticontent(notistart, notiend);
+        array(nextPageSt, nextPageEnd);
+        update_page(10);
+        }
     
 
     /* ====================================== */
 
         /* 10개씩, 20개씩, 30개씩 보기 변경 감지, 현재 페이지에서 재 출력 */
-        let sort = document.getElementById('sort');
         function sortArray(event){
-            let selcet_option = event.target.value;
-            let start = findpage() - 1;
+            console.log(event.target);
+            let selcet_option = +(event.target.value);
+            let find = document.querySelectorAll('.page span');
+            let getFind;
+
+            console.log(find.length);
+
+
+
+            // 현재 페이지 네이션 찾기 
+            for(let i = 0 ; i < find.length ; i++){
+                if(find[i].className == 'default'){
+                    console.log(test);
+                }
+            }
+
+
+            let start = getFind - 1;
             let end = start + selcet_option;
-    
+
+
+                        
             array(start, end)
-    
-    
-            let selectedOption = event.target.value;
-            update_page(selectedOption);
+            
+            update_page(selcet_option);
         }
-        array(nextPageSt, nextPageEnd);            // 첫 화면 초기화
+ 
 
 
 
     /** 페이지 바꾸기 박스 클릭시 색상 변경 관련 코드  **/
 
-    let page = main[0].getElementsByClassName('page');
 
     function pageChanging(event){
+        let sort = document.getElementById('sort');
         let pageBoxes = document.querySelectorAll('.page span');
         let turn = event.target.innerText;
 
@@ -985,14 +1045,16 @@ free_content = main[0].querySelector('.free_content');
             }
         }
                 nextPageSt = (turn - 1) * +(sort.value);
-                nextPageEnd = nextPageSt + +(sort.value);
-                array(nextPageSt, nextPageEnd);
+                nextPageEnd = nextPageSt + +(sort.value) - 1;
 
+                array(nextPageSt, nextPageEnd);
 
     }
 
 /* 페이지 네이션 생성 및 클릭 시 동적 모션 적용 */
     function update_page(selectedOption) {
+        let main = document.getElementsByTagName('main');
+        let page = main[0].getElementsByClassName('page');
         let page_num = Math.ceil(freeboardAR.length / selectedOption);
         page[0].innerHTML = "";
 
@@ -1005,7 +1067,7 @@ free_content = main[0].querySelector('.free_content');
                 `;
             } else {
                 page[0].innerHTML += `
-                    <span onclick="pageChanging(event)" class="other">${i + 1}</span>
+                    <span onclick="pageChanging(event)" class="">${i + 1}</span>
                 `;
             }
         }
@@ -1014,24 +1076,14 @@ free_content = main[0].querySelector('.free_content');
 
 
 
-    function findpage(){
-    let findPage = document.querySelectorAll('.page span');
+    // function findpage(){
+    // let find = document.querySelectorAll('.page span');
 
-    for(let i = 0 ; i < findPage.length ; i++){
-        if(findPage[i].className == 'default'){
-            return i+1;
-        }
-    }
-    }
+    // for(let i = 0 ; i < find.length ; i++){
+    //     if(find[i].className == 'default'){
+    //         return (i+1);
+    //     }
+    // }
+    // }
 
 
-
-    /* ====================================== */
-    /** a태그 링크 기능 삭제 부분 **/
-
-    let preventLink = document.querySelectorAll('a');
-    preventLink.forEach(function (link) {                   // forEach: 지금은 위에서 preventLink를 선언해서 'a'태그를 다 찾아서 배열의 형태로 저장했고 
-        link.addEventListener('click', function (event) {
-            event.preventDefault();                         //  forEach 를 사용해서 link 기능을 클릭했을 시 작동되지 않도록 막음(preventDefault)
-        });
-    });

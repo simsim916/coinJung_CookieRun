@@ -22,6 +22,38 @@ main{
 
 }
 
+.backList{
+    position: absolute;
+    right: 0;
+
+    font-size: large;
+
+    width: 100px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    border: 1px solid rgb(207, 199, 199);
+    border-radius: 10px;
+
+    margin-bottom: 10px;
+}
+
+.backList:hover{
+    background-color: rgb(207, 199, 199);;
+}
+
+.backList::before{
+    content: '\f03a';
+    font: var(--fa-font-solid);
+
+    margin-right: 5px;
+}
+
 .notice_option_right{
     display: flex;
     position: absolute;
@@ -37,7 +69,8 @@ main{
 
     text-decoration: none;
 
-    /* opacity: 1; */
+    cursor: pointer;
+
 }
 
 .list_sort>a{
@@ -147,6 +180,8 @@ main{
 
 /*==============================*/
 
+
+
 .freeboard_subject{
     display: flex;
     justify-content: left;
@@ -233,6 +268,11 @@ main{
 .list_notice:hover{
     background-color: #F9F9F9;
 }
+
+.list_freeboard{
+    cursor: pointer;
+}
+
 .list_freeboard:hover{
     background-color: #F9F9F9;
 }
@@ -280,6 +320,8 @@ main{
     /* background-color: white; */
 
     padding: 10px;
+
+    cursor: pointer;
 }
 
 .default{
