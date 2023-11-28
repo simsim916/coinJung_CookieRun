@@ -115,7 +115,7 @@ let freeboardAR = [
 
     {
         subject : '롤하실분',
-        userInfo : ['금광동쏘스윗'],
+        userInfo : ['금광동 쏘스윗'],
         heart : 32,
         read : 5723,
         commentNum : 5,
@@ -736,7 +736,7 @@ let nextPageSt = 0, nextPageEnd = 9;                // 초기화
                         }
                     }
                 }
-            }
+            }        
         }
 
         /* 리뷰순, 좋아요순 감지 후 opacity 변경 및 freeboardAR 재 배열 함수 호출 */
@@ -962,6 +962,8 @@ let nextPageSt = 0, nextPageEnd = 9;                // 초기화
             
             array(start, end);           
             update_page(selcet_option);
+            
+
         }
  
 
@@ -1014,7 +1016,7 @@ let nextPageSt = 0, nextPageEnd = 9;                // 초기화
     update_page(10);
 
 
-
+/* 현재 페이지 박스 찾기 */
     function findpage(){
     let find = document.querySelectorAll('.page span');
 

@@ -69,15 +69,23 @@ main{
 
     text-decoration: none;
 
-    cursor: pointer;
-
+    
 }
 
-.list_sort>a{
+.list_sort>span{
     display: inline-block;
-
+    
     width: 70px;
     height: 30px;
+    
+    text-align: center;
+    line-height: 30px;
+    
+    cursor: pointer;
+}
+
+.list_sort>span:hover{
+    background-color: antiquewhite;
 }
 
 .list_sort>:first-child::before{
