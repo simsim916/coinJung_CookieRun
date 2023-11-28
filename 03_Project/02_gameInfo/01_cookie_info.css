@@ -10,7 +10,7 @@ menu>img{
     width: 150px;
     opacity: .3;
 }
-main>.main_option>.default{
+main>.main_option>.selected{
     opacity: 1;
 }
 .main_list{
