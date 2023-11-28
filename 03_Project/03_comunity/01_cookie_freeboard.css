@@ -1,3 +1,4 @@
+
 main{
     width: 1024px;
     height: 500px;
@@ -268,7 +269,7 @@ main{
 
 }
 
-.other, .page>a{
+.other, .page>span{
     display: inline-block;
     width: 40px;
     height: 40px;
@@ -286,7 +287,7 @@ main{
     color: white;
 }
 
-.page>a:hover{
+.page>span:hover{
     background-color: black;
     color: white;
 }

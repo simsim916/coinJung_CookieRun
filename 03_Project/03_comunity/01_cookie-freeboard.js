@@ -695,6 +695,7 @@ let user = [
 ]
 
 let nextPageSt = 0, nextPageEnd = 9;
+let notistart = 0, notiend = notiboardAR.length;
 let main = document.getElementsByTagName('main'),
 /*notice 부분 선언*/
 noSubject = main[0].querySelectorAll('.notice_subject'),
@@ -714,9 +715,9 @@ free_content = main[0].querySelector('.free_content');
 
 
     /** 공지부분 태그, 내용 채우기 반복문  **/
-    {
+    function noticontent(notistart, notiend){
         let noticeHTML = '';
-        for (let i = 0; i < notiboardAR.length; i++) {
+        for (let i = notistart; i < notiend; i++) {
             noticeHTML += `
                 <a href="#" class="list_notice">
                     <div class="notice_header">
@@ -729,6 +730,7 @@ free_content = main[0].querySelector('.free_content');
         }
         content.children[0].innerHTML = noticeHTML;
     }
+    noticontent(notistart, notiend);        // 첫 화면 초기화
 
 
     /* ====================================== */
@@ -738,11 +740,11 @@ free_content = main[0].querySelector('.free_content');
         for(let i = start ; i < end ; i++){
                 contentHTML += `
                 <a href="#" class="list_freeboard">
-                    <div class="freeboard_subject">${freeboardAR[i].subject}</div>
-                    <div class="userInfo">${freeboardAR[i].userInfo}</div>
-                    <div class="heart">${freeboardAR[i].heart}</div>
-                    <div class="read">${freeboardAR[i].read}</div>
-                    <div class="freeboard_date">${freeboardAR[i].commentNum}</div> 
+                    <div onclick="contentEnter(event)" class="freeboard_subject">${freeboardAR[i].subject}</div>
+                    <div onclick="contentEnter(event)" class="userInfo">${freeboardAR[i].userInfo}</div>
+                    <div onclick="contentEnter(event)" class="heart">${freeboardAR[i].heart}</div>
+                    <div onclick="contentEnter(event)" class="read">${freeboardAR[i].read}</div>
+                    <div onclick="contentEnter(event)" class="freeboard_date">${freeboardAR[i].commentNum}</div> 
                 </a>
             `;
         }
@@ -750,85 +752,59 @@ free_content = main[0].querySelector('.free_content');
     }
 
 
-    /* 10개씩, 20개씩, 30개씩 보기 변경 감지, 현재 페이지에서 재 출력 */
-    let sort = document.getElementById('sort');
-    sort.addEventListener('change', (event) =>{
-        let selcet_option = event.target.value;
-        let start = findpage() - 1;
-        let end = start + selcet_option;
-        if(selcet_option == 10) array(start, end)
-        else if(selcet_option == 20) array(start, end)
-        else if(selcet_option == 30) array(start, end)
 
-        let selectedOption = event.target.value;
-        update_page(selectedOption);
-    })
-    array(0, 9);            // 첫 화면 초기화
 
     /* ====================================== */
     /** 리뷰순 좋아요순 **/
         let list_freeboard = main[0].querySelectorAll('.list_freeboard');
 
         /* read 순 freeboardAR 재 배열 함수 */
-        function read_turn(){
-            for(let i=0, temp; i<list_freeboard.length-1 ; i++){
-                for(let j = i+1 ; j<list_freeboard.length ; j++){
-                    if(freeboardAR[i].read < freeboardAR[j].read){
-                        temp = freeboardAR[i];
-                        freeboardAR[i] = freeboardAR[j];
-                        freeboardAR[j] = temp;
+        function changeArray(judgement){
+            if(judgement == 1){
+                for(let i=0, temp; i<list_freeboard.length-1 ; i++){
+                    for(let j = i+1 ; j<list_freeboard.length ; j++){
+                        if(freeboardAR[i].read < freeboardAR[j].read){
+                            temp = freeboardAR[i];
+                            freeboardAR[i] = freeboardAR[j];
+                            freeboardAR[j] = temp;
+                        }
+                    }
+                }        
+            }
+            else{
+                for(let i=0, temp; i<list_freeboard.length-1 ; i++){
+                    for(let j = i+1 ; j<list_freeboard.length ; j++){
+                        if(freeboardAR[i].heart < freeboardAR[j].heart){
+                            temp = freeboardAR[i];
+                            freeboardAR[i] = freeboardAR[j];
+                            freeboardAR[j] = temp;
+                        }
                     }
                 }
             }
-        
         }
 
-        /* heart 순 freeboardAR 재 배열 함수 */
-        function heart_turn(){
-            for(let i=0, temp; i<list_freeboard.length-1 ; i++){
-                for(let j = i+1 ; j<list_freeboard.length ; j++){
-                    if(freeboardAR[i].heart < freeboardAR[j].heart){
-                        temp = freeboardAR[i];
-                        freeboardAR[i] = freeboardAR[j];
-                        freeboardAR[j] = temp;
-                    }
-                }
-            }
-        }
-        
-        /* 리뷰순 클릭 감지 */
+        /* 리뷰순, 좋아요순 감지 후 opacity 변경 및 freeboardAR 재 배열 함수 호출 */
         function listWrite(event){
             let turn = event.target;
-            list_sort[0].children[0].style.opacity = 1;
-            list_sort[0].children[1].style.opacity = 0.5;
             if(turn.innerText == "리뷰순"){
-                read_turn();
+                list_sort[0].children[0].style.opacity = 1;
+                list_sort[0].children[1].style.opacity = 0.5;
+                changeArray(1);
             } else {
-                heart_turn();
+                list_sort[0].children[0].style.opacity = 0.5;
+                list_sort[0].children[1].style.opacity = 1;
+                changeArray(2);
             }
             array(nextPageSt, nextPageEnd);
         }
-        
-        // /* 좋아요순 클릭 감지 */
-        // list_sort[0].children[1].addEventListener('click', (event) =>{
-        //     let turn = event.target;
-        //     list_sort[0].children[0].style.opacity = 0.5;
-        //     list_sort[0].children[1].style.opacity = 1;
-        //     if(turn.innerText == "좋아요순"){
-        //         heart_turn();
-        //         for (let i = 0; i < list_freeboard.length; i++) {
-        //             list_freeboard[i].children[0].innerText = `${freeboardAR[i].subject}`;
-        //             list_freeboard[i].children[1].innerText = `${freeboardAR[i].userInfo}`;
-        //             list_freeboard[i].children[2].innerText = `${freeboardAR[i].heart}`;
-        //             list_freeboard[i].children[3].innerText = `${freeboardAR[i].read}`;
-        //             list_freeboard[i].children[4].innerText = `${freeboardAR[i].commentNum}`;
-        //         }
-        // }
-        // })
+
+
+
 
     /* ====================================== */
     /** inner HTML 게시판 상호작용 **/
-    {
+    
         /* HTML 삭제 후 alticle 삽입 */
         function insert_alticle(index){
             main[0].innerHTML = "";
@@ -849,7 +825,7 @@ free_content = main[0].querySelector('.free_content');
                 <pre></pre>
             </div>
             <div class="alticle_like">
-                <button type="button"></button>
+                <button onclick="addHeart(event)" type="button"></button>
             </div>
             <div class = "comment">
                 <h3>댓글</h3>
@@ -959,83 +935,94 @@ free_content = main[0].querySelector('.free_content');
     
     
         /* 게시판 진입 "클릭"이 감지 됐을 때 inner HTML 게시판 상호작용 실행 */
-        let list_freeboard = main[0].querySelectorAll('.list_freeboard');
 
-        for(let i = 0 ; i < list_freeboard.length ; i++){
-            list_freeboard[i].addEventListener('click', (event) => {
-                let turn = event.target,
-                data = turn.innerText;
-    
-                let index = freeboardAR.findIndex(item => item.subject === data);
-            
-    
-                insert_alticle(index);       // 기존 HTML 삭제 / alticle 양식 추가
-                alticle_js(index);      // alticle 내용 추가
-            })
+        function contentEnter(event){
+            let turn = event.target,
+            data = turn.innerText;
+
+            let index = freeboardAR.findIndex(item => item.subject === data);
+        
+
+            insert_alticle(index);       // 기존 HTML 삭제 / alticle 양식 추가
+            alticle_js(index);      // alticle 내용 추가
         }
     
-    }
 
     /* ====================================== */
-    /** 10개씩 보기, 20개씩 보기 ... // 10개씩 20개씩 .. 보기 적용 시 page nation container 변경  **/
+
+        /* 10개씩, 20개씩, 30개씩 보기 변경 감지, 현재 페이지에서 재 출력 */
+        let sort = document.getElementById('sort');
+        function sortArray(event){
+            let selcet_option = event.target.value;
+            let start = findpage() - 1;
+            let end = start + selcet_option;
+    
+            array(start, end)
+    
+    
+            let selectedOption = event.target.value;
+            update_page(selectedOption);
+        }
+        array(nextPageSt, nextPageEnd);            // 첫 화면 초기화
+
+
+
+    /** 페이지 바꾸기 박스 클릭시 색상 변경 관련 코드  **/
 
     let page = main[0].getElementsByClassName('page');
-    
+
+    function pageChanging(event){
+        let pageBoxes = document.querySelectorAll('.page span');
+        let turn = event.target.innerText;
+
+        for (let i = 0; i < pageBoxes.length; i++) {
+            if (pageBoxes[i].innerText == turn) {
+                // 클릭한 페이지 박스의 색상 변경
+                event.target.classList.add('default');
+            } else {
+                // 나머지 페이지 박스의 색상 초기화
+                pageBoxes[i].classList.remove('default');
+            }
+        }
+                nextPageSt = (turn - 1) * +(sort.value);
+                nextPageEnd = nextPageSt + +(sort.value);
+                array(nextPageSt, nextPageEnd);
+
+
+    }
+
+/* 페이지 네이션 생성 및 클릭 시 동적 모션 적용 */
     function update_page(selectedOption) {
         let page_num = Math.ceil(freeboardAR.length / selectedOption);
         page[0].innerHTML = "";
 
         
-        /* 10개 20개 30개 씩 나눠서 볼 경우 페이지 네이션 재 정리 */
+        /* 페이지 네이션 박스 생성 */
         for (let i = 0; i < page_num; i++) {
             if (i == 0) {
                 page[0].innerHTML += `
-                    <a href="#" class="default">${i + 1}</a>
+                    <span onclick="pageChanging(event)" class="default">${i + 1}</span>
                 `;
             } else {
                 page[0].innerHTML += `
-                    <a href="#" class="other">${i + 1}</a>
+                    <span onclick="pageChanging(event)" class="other">${i + 1}</span>
                 `;
             }
         }
-
-            let pageBoxes = document.querySelectorAll('.page a');
-        pageBoxes.forEach((pageBox, index) => {
-            pageBox.addEventListener('click', (event) => {
-                let turn = event.target;
-                event.preventDefault();
-
-                for (let i = 0; i < pageBoxes.length; i++) {
-                    if (pageBoxes[i] == turn) {
-                        // 클릭한 페이지 박스의 색상 변경
-                        turn.classList.add('default');
-                    } else {
-                        // 나머지 페이지 박스의 색상 초기화
-                        pageBoxes[i].classList.remove('default');
-                    }
-                }
-
-                /* 페이지 네이션 - 1 에 선택한 10, 20, 30 개씩 보기 하면 해당 네이션에서 해당 페이지가 보임 */
-                nextPageSt = (turn.innerText - 1) * selectedOption;
-                nextPageEnd = nextPageSt + +(selectedOption);
-
-                array(nextPageSt, nextPageEnd);
-            });
-        });
-    }   
+    }
     update_page(10);
 
 
 
-function findpage(){
-    let findPage = document.querySelectorAll('.page a');
+    function findpage(){
+    let findPage = document.querySelectorAll('.page span');
 
     for(let i = 0 ; i < findPage.length ; i++){
         if(findPage[i].className == 'default'){
             return i+1;
         }
     }
-}
+    }
 
 
 
