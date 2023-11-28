@@ -185,7 +185,6 @@ navBg.addEventListener('mouseout',()=>{
 });
 
 }
-
 // 인덱스 메인 슬라이드 이미지 버튼 작동 함수
 function eventslideBtn(event){
     let eventSlide = document.getElementsByClassName('event_slide');
@@ -201,7 +200,6 @@ function eventslideBtn(event){
     }
 })
 }
-
 // 인덱스 상품 슬라이드 이미지 버튼 작동 함수
 function mainShopSlideBtn(event){
     let shopSlideImg = document.getElementsByClassName('shop_slide_img');
@@ -300,6 +298,7 @@ function cookieType(cookieType) {
             return 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/9ea3ad41-1df7-4b8e-0e52-3c1f9ac48400/public'
     }
 }
+
 /*                    ▲▲▲▲  민지  ▲▲▲▲                    */ 
 /*                    ▼▼▼▼  창민  ▼▼▼▼                    */ 
 
@@ -650,12 +649,12 @@ function optionBoxListColor(event){
 function listWriter(productAR) {
     let mainItem = document.getElementsByClassName('main_item'),
          showScreen = document.getElementsByClassName('show_screen'),
-         itemBox = document.getElementsByClassName('item');
+         itemBox = document.getElementsByClassName('item_sm');
     mainItem[0].innerHTML = '';
     for (let i = 0 + (pageNum - 1) * imgPage; i < imgPage + (pageNum - 1) * imgPage; i++) {
         if (i == productAR.length) break;
         mainItem[0].innerHTML +=
-        `<div class="item">
+        `<div onclick="shopItemDetail(event)" class="item_sm">
         <img src="${productAR[i].img[0]}" alt="">
         <p class="item_price">${productAR[i].price.toLocaleString()} 원</p>
         <p class="item_title">${productAR[i].title}</p>
@@ -671,7 +670,7 @@ function listWriter(productAR) {
             itemBox[i % imgPage].innerHTML += `<div class="soldout">SOLD OUT</div>`;
         }
         if (productAR[i].sell >= 30) {
-            itemBox[i % imgPage].innerHTML += `<div class="best">BEST</div>`;
+            itemBox[i % imgPage].innerHTML += `<div class="best_sm">BEST</div>`;
         }
         //아이템개수 9개 이상 등록시, 자동으로 다음 순번 페이지버튼 생성
         let pageAmount = productAR.length / imgPage
@@ -828,8 +827,192 @@ function ProductARSellDown(event) {
 /*                    ▲▲▲▲  수미  ▲▲▲▲                    */ 
 /*                    ▼▼▼▼  지현  ▼▼▼▼                    */ 
 
+let productPrice;
 
+//게시글 작성
+function shopItemDetail(event){
+    let textpoint = 0, photopoint = 0;
+    let itemNum;
 
+    
+    fetch("http://localhost:3000/product")
+    .then(response=>response.json())
+    .then(productAR => {
+        for(let i=0; i<productAR[0].length;i++){
+            if (event.target.closest('.item_sm').children[2].innerText == productAR[0][i].title) {
+                itemNum = i;
+                break;
+            }
+        }
+    // 포인트 점수 구하기 식
+    if(productAR[0][itemNum].textreview == 1) {
+        textpoint= 50;
+    } 
+    if(productAR[0][itemNum].photoreview == 1) {
+        photopoint= 100;
+    }
 
+    main.innerHTML=`
+    <div class="item"><div class="item_leftbox">
+                <div class="item_img"></div>
+                <div class="item_imgBtn"></div>
+            </div>
+            <div class="item_rightbox">
+                <div class="item_rightbox_info">
+                    <div>${productAR[0][itemNum].title}</div>
+                    <div>${productAR[0][itemNum].price.toLocaleString()} 원</div>
+                </div>
+                <div class="item_rightbox_point">
+                    <div class="item_rightbox_point_title">
+                        <span>쿠키런 스토어 고객을 위한 혜택</span>
+                    </div>
+                    <div class="item_rightbox_point_max">
+                        <div>
+                            <span>최대 적립 포인트</span>
+                            <div>
+                                <span id="maxpoint">${(productAR[0][itemNum].price/100+textpoint+photopoint).toLocaleString()} 원</span>
+                                <i class="fa-regular fa-circle-question"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <span>└ 기본적립</span> 
+                            <div id="basic">${(productAR[0][itemNum].price/100).toLocaleString()} 원</div>
+                        </div>
+                    </div>
+                    <div class="item_rightbox_point_price_tip">
+                        <div>
+                            <div>TIP. 포인트 더 받는 방법</div>
+                            <div><a href="https://nid.naver.com">최대 5% 적립, 무료 시작</a></div>
+                            <div><a href="https://nid.naver.com">네이버 현대카드로 결제 시</a></div>
+                            <div><a href="https://nid.naver.com/">네이버페이 머니로 결제 시</a></div>
+                        </div>
+                        <div>
+                            <span>+최대 ${(productAR[0][itemNum].price*0.09).toLocaleString()}원</span>
+                            <span>${(productAR[0][itemNum].price*0.04).toLocaleString()}원</span>
+                            <span>${(productAR[0][itemNum].price*0.05).toLocaleString()}원</span>
+                            <span>${(productAR[0][itemNum].price*0.02).toLocaleString()}원</span>
+                        </div>
+                    </div>
+                    <div class="item_rightbox_ads"></div>
+                    <div class="item_rightbox_point_card">
+                        <span>무이자 할부</span>
+                        <span>| 카드 자세히보기</span>
+                        <i class="fa-regular fa-circle-question"></i>
+                    </div>
+                    <div id="pointDetails"></div>
+                    <div class="item_rightbox_point_transit">
+                        <p>택배배송 | 3,000원<span>&#40;주문시 결제&#41; &#183;</span> CJ 대한통운&#40;오네&#41;</p>
+                        <p>30,000원 이상 구매 시 무료&#47;제주, 도서 지역 추가 3,000원</p>
+                        <p><a href="#">배송비 절약상품 보기</a></p>
+                    </div>
+                    <div class="item_rightbox_point_quantity">
+                        <div onclick="amountBtnMinus()" style="border: none;">&#45;</div>
+                        <input type="text" id="quantity" name="toBuy" value=1 style="text-align: center; "/>
+                        <div onclick="amountBtnPlus()" style="border: none;">&#43;</div>
+                    </div>
+                    <div class="item_rightbox_point_decision">
+                        <div>
+                            <div>
+                                <span>총 상품 금액</span>
+                                <i class="fa-regular fa-circle-question"></i>
+                            </div>
+                            <div class="item_rightbox_point_decision_total">
+                                <span id="totalAmount"></span>
+                                <span id="totalPrice"></span>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="btn_1">
+                                <i class="fa-solid fa-circle-chevron-right"></i>
+                                <span>구매하기</span>
+                            </div>
+                            <div class="btn_2">
+                                <i class="fa-regular fa-comment-dots"></i>
+                                <span>톡톡문의</span>
+                            </div>
+                            <div class="btn_3">
+                                <i class="fa-solid fa-heart-circle-plus"></i>
+                                <span>찜하기</span>
+                            </div>
+                            <div class="btn_4">
+                                <i class="fa-solid fa-bag-shopping"></i>
+                                <span>장바구니</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                </div>
+                <div class='best'>
+                <p>베스트 상품</p>
+                <div class="best_items"></div></div>
+    `;
+    let itemImgBtn = document.getElementsByClassName('item_imgBtn');
+    let itemImg = document.getElementsByClassName('item_img');
+    let bestitem = document.getElementsByClassName('best_items');
+
+// 토탈 구하기
+let totalAmount = document.getElementById('totalAmount');
+let totalPrice = document.getElementById('totalPrice');
+let quantityBox = document.getElementsByClassName('item_rightbox_point_quantity');
+totalAmount.innerText =`${quantityBox[0].children[1].value}개`
+totalPrice.innerText= `${((quantityBox[0].children[1].value)*productAR[0][itemNum].price).toLocaleString()}원`
+// 제품 이미지 슬라이드
+itemImg[0].innerHTML = `<img src="${productAR[0][itemNum].img[0]}" alt="${productAR[0][itemNum].title}">`;
+itemImgBtn[0].innerHTML="";
+for (let i = 0 ; i < productAR[0][itemNum].img.length; i++){
+    itemImgBtn[0].innerHTML +=`<img onclick="shopItemImgChange(event)" src="${productAR[0][itemNum].img[i]}" alt="${productAR[0][itemNum].title}">`;
+}
+// 베스트 상품
+for (let i = 0, t; i < productAR[0].length - 1; i++) {
+    for (let j = i + 1; j < productAR[0].length; j++) {
+        if (productAR[0][i].sell < productAR[0][j].sell) {
+            t = productAR[0][i];
+            productAR[0][i] = productAR[0][j];
+            productAR[0][j] = t;
+        }
+    }
+}
+    for (let i =0 ; i < 4; i++){
+    bestitem[0].innerHTML += `<div onclick="itemChangeInPage(event)"><img src="${productAR[0][i].img[0]}" alt="${productAR[0][i].title}"><p>${productAR[0][i].title}</p><p>${productAR[0][i].price.toLocaleString()}</p></div>`;
+    }
+    itemImg[0].innerHTML = `<img src="${productAR[0][itemNum].img[0]}" alt="${productAR[0][itemNum].title}">`;
+})
+}
+// 제품 이미지 띄우기
+function shopItemImgChange(event){
+    let itemImg = document.getElementsByClassName('item_img');
+    itemImg[0].children[0].src=`${event.target.getAttribute('src')}`;
+}
+// 수량 버튼 올리기
+function amountBtnPlus(){
+    ++document.getElementById('totalAmount').innerText;
+    document.getElementById('totalPrice').innerText=`${document.getElementById('totalAmount').innerText*productPrice}`
+}
+// 수량 버튼 내리기
+function amountBtnMinus(){
+    if(document.getElementById('totalAmount').innerText>1){
+        --document.getElementById('totalAmount').innerText;
+        document.getElementById('totalPrice').innerText=`${document.getElementById('totalAmount').innerText*productPrice}`
+    }
+}
+// 베스트상품 상세페이지로 변경하기
+function itemChangeInPage(event) {
+    event.target.closest('div').children[1].innerText;
+    fetch("http://localhost:3000/product")
+    .then(response=>response.json())
+    .then(productAR => {
+
+    for(let i=0; i<productAR[0].length;i++){
+        if (event.target.children[1].innerText == productAR[0][i].title) {
+            itemNum = i;
+            break;
+        }
+    }
+    itemBox[0].innerHTML='';
+    writePage();
+    window.scrollTo(0,300);
+})
+}
 
 /*                    ▲▲▲▲  지현  ▲▲▲▲                    */ 
