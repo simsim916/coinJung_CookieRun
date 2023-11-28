@@ -737,14 +737,6 @@ let nextPageSt = 0, nextPageEnd = 9;                // 초기화
                 </div>
             `;
         }
-
-        // let preventLink = document.querySelectorAll('a');
-        //     preventLink.forEach(function (link) {                   // forEach: 지금은 위에서 preventLink를 선언해서 'a'태그를 다 찾아서 배열의 형태로 저장했고 
-        //     link.addEventListener('click', function (event) {
-        //     event.preventDefault();                         //  forEach 를 사용해서 link 기능을 클릭했을 시 작동되지 않도록 막음(preventDefault)
-        //     });
-        // });
-
         free_content.innerHTML = contentHTML;
         nextPageSt = start;
         nextPageEnd = end;
@@ -998,14 +990,10 @@ let nextPageSt = 0, nextPageEnd = 9;                // 초기화
         /* 10개씩, 20개씩, 30개씩 보기 변경 감지, 현재 페이지에서 재 출력 */
         function sortArray(event){
             let selcet_option = +(event.target.value);
-            let getFind = findpage() - 1;
 
-
-            let start = getFind - 1;
+            let start = findpage() - 1;
             let end = start + selcet_option;
-
-
-                        
+     
             array(start, end)
             
             update_page(selcet_option);
@@ -1054,7 +1042,7 @@ let nextPageSt = 0, nextPageEnd = 9;                // 초기화
                 `;
             } else {
                 page[0].innerHTML += `
-                    <span onclick="pageChanging(event)" class="">${i + 1}</span>
+                    <span onclick="pageChanging(event)" class="other">${i + 1}</span>
                 `;
             }
         }
