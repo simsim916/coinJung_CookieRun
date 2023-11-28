@@ -2,7 +2,7 @@
 let indexBox = document.getElementById('indexBox');
 let backBtn = document.getElementById('backBtn');
 let lastSlideBtn, lastSlideBtn2;
-
+let itemNum;
 
 indexWrite();
 
@@ -654,7 +654,7 @@ function listWriter(productAR) {
     for (let i = 0 + (pageNum - 1) * imgPage; i < imgPage + (pageNum - 1) * imgPage; i++) {
         if (i == productAR.length) break;
         mainItem[0].innerHTML +=
-        `<div onclick="shopItemDetail(event)" class="item_sm">
+        `<div onclick="shopDetail(event)" class="item_sm">
         <img src="${productAR[i].img[0]}" alt="">
         <p class="item_price">${productAR[i].price.toLocaleString()} 원</p>
         <p class="item_title">${productAR[i].title}</p>
@@ -827,23 +827,29 @@ function ProductARSellDown(event) {
 /*                    ▲▲▲▲  수미  ▲▲▲▲                    */ 
 /*                    ▼▼▼▼  지현  ▼▼▼▼                    */ 
 
-let productPrice;
+let productPrice; 
 
+
+function shopDetail(event){
+fetch("http://localhost:3000/product")
+.then(response=>response.json())
+.then(productAR => {
+    for(let i=0; i<productAR[0].length;i++){
+        if (event.target.closest('.item_sm').children[2].innerText == productAR[0][i].title) {
+            itemNum = i;
+            break;
+        }
+    }
+    shopItemDetail(itemNum);
+})
+}
 //게시글 작성
-function shopItemDetail(event){
+function shopItemDetail(itemNum){
     let textpoint = 0, photopoint = 0;
-    let itemNum;
-
-    
     fetch("http://localhost:3000/product")
     .then(response=>response.json())
     .then(productAR => {
-        for(let i=0; i<productAR[0].length;i++){
-            if (event.target.closest('.item_sm').children[2].innerText == productAR[0][i].title) {
-                itemNum = i;
-                break;
-            }
-        }
+    productPrice=productAR[0][itemNum].price;
     // 포인트 점수 구하기 식
     if(productAR[0][itemNum].textreview == 1) {
         textpoint= 50;
@@ -976,9 +982,7 @@ for (let i = 0, t; i < productAR[0].length - 1; i++) {
     for (let i =0 ; i < 4; i++){
     bestitem[0].innerHTML += `<div onclick="itemChangeInPage(event)"><img src="${productAR[0][i].img[0]}" alt="${productAR[0][i].title}"><p>${productAR[0][i].title}</p><p>${productAR[0][i].price.toLocaleString()}</p></div>`;
     }
-    itemImg[0].innerHTML = `<img src="${productAR[0][itemNum].img[0]}" alt="${productAR[0][itemNum].title}">`;
-})
-}
+})}
 // 제품 이미지 띄우기
 function shopItemImgChange(event){
     let itemImg = document.getElementsByClassName('item_img');
@@ -986,31 +990,33 @@ function shopItemImgChange(event){
 }
 // 수량 버튼 올리기
 function amountBtnPlus(){
-    ++document.getElementById('totalAmount').innerText;
-    document.getElementById('totalPrice').innerText=`${document.getElementById('totalAmount').innerText*productPrice}`
+    ++document.getElementById('quantity').value;
+    document.getElementById('totalPrice').innerText=`${(document.getElementById('quantity').value*productPrice).toLocaleString()} 원`
 }
 // 수량 버튼 내리기
 function amountBtnMinus(){
-    if(document.getElementById('totalAmount').innerText>1){
-        --document.getElementById('totalAmount').innerText;
-        document.getElementById('totalPrice').innerText=`${document.getElementById('totalAmount').innerText*productPrice}`
+    if(document.getElementById('quantity').value>1){
+        --document.getElementById('quantity').value;
+        document.getElementById('totalPrice').innerText=`${(document.getElementById('quantity').value*productPrice).toLocaleString()} 원`
     }
 }
 // 베스트상품 상세페이지로 변경하기
 function itemChangeInPage(event) {
     event.target.closest('div').children[1].innerText;
+    let itemBox = document.getElementsByClassName('item');
     fetch("http://localhost:3000/product")
     .then(response=>response.json())
     .then(productAR => {
 
     for(let i=0; i<productAR[0].length;i++){
-        if (event.target.children[1].innerText == productAR[0][i].title) {
+        if (event.target.closest('div').children[1].innerText == productAR[0][i].title) {
             itemNum = i;
             break;
         }
     }
+    productPrice=productAR[0][itemNum].price;
     itemBox[0].innerHTML='';
-    writePage();
+    shopItemDetail(itemNum);
     window.scrollTo(0,300);
 })
 }
