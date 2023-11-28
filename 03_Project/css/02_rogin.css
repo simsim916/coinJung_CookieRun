@@ -144,7 +144,6 @@ pre>div{
     display: flex;
     gap: 20px;
     position: relative;
-    right: 20px;
 }
 .login_list>li{
     display: flex;
