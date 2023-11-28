@@ -114,12 +114,24 @@ let freeboardAR = [
     },
 
     {
-        subject : '스토브 인증기 왜이럼?',
-        userInfo : '그래도이쁨',
-        heart : 10,
-        read : 57,
-        freeboard_date : '12시간 전',
-        commentNum : 65
+        subject : '롤하실분',
+        userInfo : ['금광동쏘스윗'],
+        heart : 32,
+        read : 5723,
+        commentNum : 5,
+        alticle : 
+`친구 ㄱ 나 미드유저
+`,
+        freeboard_date : '1시간 전',
+        comment_user_info : ['창민이형파이팅', '★문석짱★' ,'봉삼이','민쥐', '지현누나힘내요', '자바의신 수미'],
+        content : [
+            '오',
+            '오늘ㄱ',
+            '그님티?',
+            '나는 롤체 마스터',
+            '피방가자',
+            '하하 감삼다',
+        ]
     },
     {
         subject : '스토브 인증기 왜이럼?',
@@ -225,12 +237,20 @@ let freeboardAR = [
         commentNum : 65
     },
     {
-        subject : '스토브 인증기 왜이럼?',
-        userInfo : '그래도이쁨',
-        heart : 12,
-        read : 57,
-        freeboard_date : '12시간 전',
-        commentNum : 65
+        subject : '나는 사실 짱구다',
+        userInfo : ['민쥐'],
+        heart : 103,
+        read : 511,
+        commentNum : 1,
+        alticle : 
+`나는 사실 짱구다
+하하
+`,
+        freeboard_date : '10시간 전',
+        comment_user_info : ['지현누나힘내요'],
+        content : [
+            'ㅋㅋㅋㅋㅋㅋㅋ',
+        ]
     },
     {
         subject : '스토브 인증기 왜이럼?',
@@ -273,12 +293,19 @@ let freeboardAR = [
         commentNum : 65
     },
     {
-        subject : '스토브 인증기 왜이럼?',
-        userInfo : '그래도이쁨',
-        heart : 12,
-        read : 57,
-        freeboard_date : '12시간 전',
-        commentNum : 65
+        subject : '우리팀짱',
+        userInfo : ['그린실버타운'],
+        heart : 123,
+        read : 51,
+        commentNum : 1,
+        alticle : 
+`쿠키런 흥해라
+`,
+        freeboard_date : '10시간 전',
+        comment_user_info : ['★문석짱★'],
+        content : [
+            '그린실버타운만쉐',
+        ]
     },
     {
         subject : '스토브 인증기 왜이럼?',
@@ -385,12 +412,19 @@ let freeboardAR = [
         commentNum : 65
     },
     {
-        subject : '스토브 인증기 왜이럼?',
-        userInfo : '그래도이쁨',
-        heart : 12,
-        read : 57,
-        freeboard_date : '12시간 전',
-        commentNum : 65
+        subject : '자바개쉬움',
+        userInfo : ['자바의신 수미'],
+        heart : 123,
+        read : 51,
+        commentNum : 1,
+        alticle : 
+`인정~
+`,
+        freeboard_date : '10시간 전',
+        comment_user_info : ['봉삼이'],
+        content : [
+            '껌이지',
+        ]
     },
     {
         subject : '스토브 인증기 왜이럼?',
@@ -433,12 +467,19 @@ let freeboardAR = [
         commentNum : 65
     },
     {
-        subject : '스토브 인증기 왜이럼?',
-        userInfo : '그래도이쁨',
-        heart : 12,
-        read : 57,
-        freeboard_date : '12시간 전',
-        commentNum : 65
+        subject : '리액트의 신',
+        userInfo : ['봉삼이'],
+        heart : 103,
+        read : 523,
+        commentNum : 1,
+        alticle : 
+`은 누가 될까
+`,
+        freeboard_date : '10시간 전',
+        comment_user_info : ['창민이형힘내요'],
+        content : [
+            '반장님?',
+        ]
     },
     {
         subject : '스토브 인증기 왜이럼?',
@@ -545,20 +586,19 @@ let freeboardAR = [
         commentNum : 65
     },
     {
-        subject : '스토브 인증기 왜이럼?',
-        userInfo : '그래도이쁨',
-        heart : 12,
-        read : 57,
-        freeboard_date : '12시간 전',
-        commentNum : 65
-    },
-    {
-        subject : '스토브 인증기 왜이럼?',
-        userInfo : '그래도이쁨',
-        heart : 12,
-        read : 57,
-        freeboard_date : '12시간 전',
-        commentNum : 65
+        subject : '반장님 사랑합니다',
+        userInfo : ['창민이형힘내요'],
+        heart : 103,
+        read : 523,
+        commentNum : 1,
+        alticle : 
+`사랑합니다^_^
+`,
+        freeboard_date : '10시간 전',
+        comment_user_info : ['지현누나힘내요'],
+        content : [
+            '부장님만세~!',
+        ]
     },
 ];
 
