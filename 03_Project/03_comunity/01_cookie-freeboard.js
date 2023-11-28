@@ -997,21 +997,8 @@ let nextPageSt = 0, nextPageEnd = 9;                // 초기화
 
         /* 10개씩, 20개씩, 30개씩 보기 변경 감지, 현재 페이지에서 재 출력 */
         function sortArray(event){
-            console.log(event.target);
             let selcet_option = +(event.target.value);
-            let find = document.querySelectorAll('.page span');
-            let getFind;
-
-            console.log(find.length);
-
-
-
-            // 현재 페이지 네이션 찾기 
-            for(let i = 0 ; i < find.length ; i++){
-                if(find[i].className == 'default'){
-                    console.log(test);
-                }
-            }
+            let getFind = findpage() - 1;
 
 
             let start = getFind - 1;
@@ -1076,14 +1063,14 @@ let nextPageSt = 0, nextPageEnd = 9;                // 초기화
 
 
 
-    // function findpage(){
-    // let find = document.querySelectorAll('.page span');
+    function findpage(){
+    let find = document.querySelectorAll('.page span');
 
-    // for(let i = 0 ; i < find.length ; i++){
-    //     if(find[i].className == 'default'){
-    //         return (i+1);
-    //     }
-    // }
-    // }
+    for(let i = 0 ; i < find.length ; i++){
+        if(find[i].className == 'default'){
+            return (i+1);
+        }
+    }
+    }
 
 
