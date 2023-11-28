@@ -170,12 +170,19 @@ let freeboardAR = [
         commentNum : 65
     },
     {
-        subject : '스토브 인증기 왜이럼?',
-        userInfo : '그래도이쁨',
-        heart : 43,
-        read : 57,
-        freeboard_date : '12시간 전',
-        commentNum : 65
+        subject : '테스트용입니당',
+        userInfo : ['지현누나힘내요'],
+        heart : 74,
+        read : 231,
+        commentNum : 2,
+        alticle : 
+`머가이리힘든지`,
+        freeboard_date : '19시간 전',
+        comment_user_info : ['창민이형파이팅', '★문석짱★'],
+        content : [
+            '마를렌 누가함;;',
+            '쿠키런그만하자~~!',
+        ]
     },
     {
         subject : '스토브 인증기 왜이럼?',
@@ -553,86 +560,6 @@ let freeboardAR = [
         freeboard_date : '12시간 전',
         commentNum : 65
     },
-    {
-        subject : '스토브 인증기 왜이럼? 61번째',
-        userInfo : '그래도이쁨',
-        heart : 12,
-        read : 57,
-        freeboard_date : '12시간 전',
-        commentNum : 65
-    },
-    {
-        subject : '스토브 인증기 왜이럼?',
-        userInfo : '그래도이쁨',
-        heart : 12,
-        read : 57,
-        freeboard_date : '12시간 전',
-        commentNum : 65
-    },
-    {
-        subject : '스토브 인증기 왜이럼?',
-        userInfo : '그래도이쁨',
-        heart : 12,
-        read : 57,
-        freeboard_date : '12시간 전',
-        commentNum : 65
-    },
-    {
-        subject : '스토브 인증기 왜이럼?',
-        userInfo : '그래도이쁨',
-        heart : 12,
-        read : 57,
-        freeboard_date : '12시간 전',
-        commentNum : 65
-    },
-    {
-        subject : '스토브 인증기 왜이럼?',
-        userInfo : '그래도이쁨',
-        heart : 12,
-        read : 57,
-        freeboard_date : '12시간 전',
-        commentNum : 65
-    },
-    {
-        subject : '스토브 인증기 왜이럼?',
-        userInfo : '그래도이쁨',
-        heart : 12,
-        read : 57,
-        freeboard_date : '12시간 전',
-        commentNum : 65
-    },
-    {
-        subject : '스토브 인증기 왜이럼?',
-        userInfo : '그래도이쁨',
-        heart : 12,
-        read : 57,
-        freeboard_date : '12시간 전',
-        commentNum : 65
-    },
-    {
-        subject : '스토브 인증기 왜이럼?',
-        userInfo : '그래도이쁨',
-        heart : 12,
-        read : 57,
-        freeboard_date : '12시간 전',
-        commentNum : 65
-    },
-    {
-        subject : '스토브 인증기 왜이럼?',
-        userInfo : '그래도이쁨',
-        heart : 12,
-        read : 57,
-        freeboard_date : '12시간 전',
-        commentNum : 65
-    },
-    {
-        subject : '스토브 인증기 왜이럼?',
-        userInfo : '그래도이쁨',
-        heart : 12,
-        read : 57,
-        freeboard_date : '12시간 전',
-        commentNum : 65
-    },
 ];
 
 let user = [
@@ -738,8 +665,6 @@ let nextPageSt = 0, nextPageEnd = 9;                // 초기화
             `;
         }
         free_content.innerHTML = contentHTML;
-        nextPageSt = start;
-        nextPageEnd = end;
     }
     array(nextPageSt, nextPageEnd);            // 첫 화면 초기화
 
@@ -937,6 +862,7 @@ let nextPageSt = 0, nextPageEnd = 9;                // 초기화
             data = turn.innerText;
 
             let index = freeboardAR.findIndex(item => item.subject === data);
+
         
 
             insert_alticle(index);       // 기존 HTML 삭제 / alticle 양식 추가
@@ -946,13 +872,14 @@ let nextPageSt = 0, nextPageEnd = 9;                // 초기화
         /* 뒤로가기 */
         function comeback(){
             let main = document.getElementsByTagName('main');
+            let select = document.getElementsByTagName('select');
             
             main[0].innerHTML = "";
             main[0].innerHTML = main[0].innerHTML + `        
             <div class="notice_option">
             <h3>자유 게시판</h3>
             <div class="notice_option_right">
-                <select onchange="sortArray(event)" name="sort" id="sort">
+                <select onchange="sortArray()" name="sort" id="sort">
                     <option value="10">10개씩 보기</option>
                     <option value="20">20개씩 보기</option>
                     <option value="30">30개씩 보기</option>
@@ -978,9 +905,8 @@ let nextPageSt = 0, nextPageEnd = 9;                // 초기화
         </div>`
 
 
-
         noticontent(notistart, notiend);
-        array(nextPageSt, nextPageEnd);
+        array(0, 9);
         update_page(10);
         }
     
@@ -991,11 +917,10 @@ let nextPageSt = 0, nextPageEnd = 9;                // 초기화
         function sortArray(event){
             let selcet_option = +(event.target.value);
 
-            let start = findpage() - 1;
-            let end = start + selcet_option;
-     
-            array(start, end)
+            let start = 0;
+            let end = selcet_option;
             
+            array(start, end);           
             update_page(selcet_option);
         }
  
@@ -1031,9 +956,8 @@ let nextPageSt = 0, nextPageEnd = 9;                // 초기화
         let main = document.getElementsByTagName('main');
         let page = main[0].getElementsByClassName('page');
         let page_num = Math.ceil(freeboardAR.length / selectedOption);
-        page[0].innerHTML = "";
-
         
+        page[0].innerHTML = "";
         /* 페이지 네이션 박스 생성 */
         for (let i = 0; i < page_num; i++) {
             if (i == 0) {
@@ -1056,6 +980,7 @@ let nextPageSt = 0, nextPageEnd = 9;                // 초기화
 
     for(let i = 0 ; i < find.length ; i++){
         if(find[i].className == 'default'){
+            console.log(i+1);
             return (i+1);
         }
     }
