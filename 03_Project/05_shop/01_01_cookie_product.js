@@ -139,7 +139,6 @@ const productAR = [
             'https://phinf.pstatic.net/checkout.phinf/20231124_92/1700817650464iF3ai_JPEG/6D23B991-E45B-4420-BEC4-1A048EE3EFAD.jpeg?type=f300_300',
         ],
     },
-        
 ];
 let itemNum = 1;
 

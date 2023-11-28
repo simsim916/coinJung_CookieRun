@@ -168,7 +168,35 @@
         ],
         "views": 3,
         "sell": 3,
-        "stock": 3
+        "stock": 0
+      },
+      {
+        "update": "2022-07-28",
+        "title": "[쿠키런스토어] 브레이브 어드벤쳐 키트",
+        "intro": "다양한 쿠키들을 만나러 어썸브레드로 가자! 왕관을 훔쳐 달아나는 케이크 들개부터 잡아볼까요",
+        "price": 36900,
+        "img": [
+          "https://shop-phinf.pstatic.net/20220928_225/1664328534323fnUSs_PNG/65464432854508140_518643531.png?type=m510",
+          "https://shop-phinf.pstatic.net/20220928_74/1664328525676DnMrD_PNG/65464424364280268_598838589.png?type=m510",
+          "https://shop-phinf.pstatic.net/20220928_81/1664328568344c3qsO_PNG/65464467033923194_1200714962.png?type=m510"
+        ],
+        "views": 103,
+        "sell": 103,
+        "stock": 103
+      },
+      {
+        "update": "2022-07-03",
+        "title": "[쿠키런스토어] 마스코트 인형 키링 1탄",
+        "intro": "쿠키런 속 모든 쿠키와 캐릭터를 마스코트 인형 키링으로 만나보세요! 당신의 최애 캐릭터는 누구?",
+        "price": 12000,
+        "img": [
+          "https://shop-phinf.pstatic.net/20220819_288/1660896333215ft9En_PNG/62032221856975838_457480920.png?type=m510",
+          "https://shop-phinf.pstatic.net/20220819_96/1660896326451qatrU_PNG/62032215106791469_513009483.png?type=m510",
+          "https://shop-phinf.pstatic.net/20220819_280/1660896336347i2PcY_PNG/62032225002720712_1069566276.png?type=m510"
+        ],
+        "views": 7,
+        "sell": 7,
+        "stock": 0
       }
     ]
   ],
