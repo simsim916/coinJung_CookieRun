@@ -1,146 +1,203 @@
 'use strict';
-
-const productAR = [
+let productAR = [
     {
-        update:'2023-11-20',
+        update: '2023-11-20',
         title: '[쿠키런스토어]쿠키런 스키릇팩 피규어',
         intro: '** 1차 수량 품절로, 재입고 예정입니다. 재입고 예정일 : 11/17(금) ~ 20(월)',
-        price: '5,000',
+        price: 5000,
         img: [
             'https://shop-phinf.pstatic.net/20231114_202/1699953403443Iz8WI_JPEG/52025790832298130_1281338351.jpg?type=m510',
             'https://shop-phinf.pstatic.net/20231114_110/1699953409184PThGI_JPEG/10886639949869620_312616009.jpg?type=m510',
             'https://shop-phinf.pstatic.net/20231114_70/1699953413567rf7dx_JPEG/12503080342079771_653990839.jpg?type=m510'
         ],
-        views: 0,
-        sell : 0,
-        stock: 10,
-        textreview: 1,
-        photoreview: 0,
+        views: 100,
+        sell: 15,
+        stock: 10
     },
     {
-        update: '2023-11-20',
+        update: '2023-01-10',
         title: '[쿠키런스토어]쿠키런 랜덤 키체인',
         intro: '** 1차 수량 품절로, 재입고 예정입니다. 재입고 예정일 : 11/17(금) ~ 20(월)',
         price: 5000,
         img: [
             'https://shop-phinf.pstatic.net/20231114_258/1699952949584oLc3t_JPEG/12502616375115323_1205563992.jpg?type=o1000',
             'https://shop-phinf.pstatic.net/20231114_239/1699953157715MKUUp_PNG/12502824501346304_791880017.png?type=m510',
-            'https://shop-phinf.pstatic.net/20231114_124/1699952960161AhGyC_PNG/52025347519581164_186066631.png?type=m510',
+            'https://shop-phinf.pstatic.net/20231114_124/1699952960161AhGyC_PNG/52025347519581164_186066631.png?type=m510'
         ],
-        views: 0,
-        sell : 0,
-        stock: 10,
-        textreview: 1,
-        photoreview: 0,
-        contents: [
-            'https://shop-phinf.pstatic.net/20231114_251/1699953446820NRf3n_PNG/%EC%BF%A0%ED%82%A4%EB%9F%B0_%ED%94%BC%EA%B7%9C%EC%96%B4_%EC%8B%9C%ED%81%AC%EB%A6%BF%ED%8C%A9_%EC%83%81%EC%84%B8%ED%8E%98%EC%9D%B4%EC%A7%80.png?type=w860'
-        ],
-        userphoto: [
-            'https://phinf.pstatic.net/checkout.phinf/20231121_58/1700561778020X87SD_JPEG/IMG_1901.jpeg?type=f300_300',
-            'https://phinf.pstatic.net/checkout.phinf/20231124_188/1700790087691pA1W4_JPEG/1700790051451.jpg?type=f300_300',
-            'https://phinf.pstatic.net/checkout.phinf/20231124_92/1700817650464iF3ai_JPEG/6D23B991-E45B-4420-BEC4-1A048EE3EFAD.jpeg?type=f300_300',
-        ]
+        views: 10,
+        sell: 10,
+        stock: 10
     },
     {
-        update: '2023-11-20',
+        update: '2023-11-06',
         title: '[러블리 인형공방X메리베어 장난감가게]곰젤리 솜인형 분홍곰&노란곰 (예약구매)',
         intro: '※구매 전 주의사항💖 기존 러블리 인형공방 곰젤리 솜인형은 신규 출시된 곰젤리 솜인형 분홍곰과 동일한 사이즈입니다.',
         price: 33900,
         img: [
             'https://shop-phinf.pstatic.net/20231107_123/1699332251801gjxdW_JPEG/2889125558569288_1157254165.jpg?type=m510',
             'https://shop-phinf.pstatic.net/20231107_213/1699332318038Oxyfx_JPEG/21061882862541920_1286727552.jpg?type=m510',
-            'https://shop-phinf.pstatic.net/20231107_249/1699332283919gEG1R_JPEG/5049165717078541_2138465965.jpg?type=m510',
+            'https://shop-phinf.pstatic.net/20231107_249/1699332283919gEG1R_JPEG/5049165717078541_2138465965.jpg?type=m510'
         ],
-        views: 0,
-        sell : 0,
-        stock: 10,
-        textreview: 1,
-        photoreview: 0,
-        contents: [
-            'https://shop-phinf.pstatic.net/20231114_251/1699953446820NRf3n_PNG/%EC%BF%A0%ED%82%A4%EB%9F%B0_%ED%94%BC%EA%B7%9C%EC%96%B4_%EC%8B%9C%ED%81%AC%EB%A6%BF%ED%8C%A9_%EC%83%81%EC%84%B8%ED%8E%98%EC%9D%B4%EC%A7%80.png?type=w860'
-        ],
-        userphoto: [
-            'https://phinf.pstatic.net/checkout.phinf/20231121_58/1700561778020X87SD_JPEG/IMG_1901.jpeg?type=f300_300',
-            'https://phinf.pstatic.net/checkout.phinf/20231124_188/1700790087691pA1W4_JPEG/1700790051451.jpg?type=f300_300',
-            'https://phinf.pstatic.net/checkout.phinf/20231124_92/1700817650464iF3ai_JPEG/6D23B991-E45B-4420-BEC4-1A048EE3EFAD.jpeg?type=f300_300',
-        ],
+        views: 350,
+        sell: 52,
+        stock: 14
     },
     {
-        update: '2023-11-20',
+        update: '2023-10-20',
         title: '[쿠키런스토어]브레이브 어드벤쳐 용감한쿠키',
         intro: '모험을 떠나는 용감한 쿠키가 귀여운 인형 키링으로!',
-        price: 20000,
+        price: 2000,
         img: [
             'https://shop-phinf.pstatic.net/20230712_149/1689141723147orsKB_JPEG/3343809127994028_1734275766.jpg?type=m510',
             'https://shop-phinf.pstatic.net/20230712_127/1689141731171yd5hn_JPEG/2472532521839555_309567386.jpg?type=m510',
-            'https://shop-phinf.pstatic.net/20230712_86/1689141740472nE1ue_JPEG/2472541823698659_1014661318.jpg?type=m510',
-            'https://shop-phinf.pstatic.net/20230712_86/1689141740472nE1ue_JPEG/2472541823698659_1014661318.jpg?type=m510',
-            'https://shop-phinf.pstatic.net/20230712_86/1689141740472nE1ue_JPEG/2472541823698659_1014661318.jpg?type=m510',
+            'https://shop-phinf.pstatic.net/20230712_86/1689141740472nE1ue_JPEG/2472541823698659_1014661318.jpg?type=m510'
         ],
-        views: 0,
-        sell : 0,
-        stock: 10,
-        textreview: 1,
-        photoreview: 1,
-        contents: [
-            'https://shop-phinf.pstatic.net/20231114_251/1699953446820NRf3n_PNG/%EC%BF%A0%ED%82%A4%EB%9F%B0_%ED%94%BC%EA%B7%9C%EC%96%B4_%EC%8B%9C%ED%81%AC%EB%A6%BF%ED%8C%A9_%EC%83%81%EC%84%B8%ED%8E%98%EC%9D%B4%EC%A7%80.png?type=w860'
-        ],
-        userphoto: [
-            'https://phinf.pstatic.net/checkout.phinf/20231121_58/1700561778020X87SD_JPEG/IMG_1901.jpeg?type=f300_300',
-            'https://phinf.pstatic.net/checkout.phinf/20231124_188/1700790087691pA1W4_JPEG/1700790051451.jpg?type=f300_300',
-            'https://phinf.pstatic.net/checkout.phinf/20231124_92/1700817650464iF3ai_JPEG/6D23B991-E45B-4420-BEC4-1A048EE3EFAD.jpeg?type=f300_300',
-        ],
+        views: 51,
+        sell: 3,
+        stock: 10
     },
     {
-        update: '2023-11-20',
+        update: '2023-10-03',
         title: '[쿠키런스토어]용과 드래곤 솜인형',
         intro: '[ 용과 드래곤 솜인형 정식 출시! ] 예약구매 종료 후 많은 분들이 재입고 문의러블리 인형공방에서 생산된 귀여운 매력의 용과 드래곤 솜인형을 실물로 만나보세요 💖',
         price: 25500,
         img: [
             'https://shop-phinf.pstatic.net/20230517_44/1684285908800m8pmy_JPEG/37653453786116170_2131712759.jpg?type=m510',
             'https://shop-phinf.pstatic.net/20230517_253/1684285934380zHmLR_JPEG/1328414787855998_52302134.jpg?type=m10000_10000_no_rotate',
-            'https://shop-phinf.pstatic.net/20230517_177/16842859454345tSW5_JPEG/1957429866527695_2095394078.jpg?type=m510',
+            'https://shop-phinf.pstatic.net/20230517_177/16842859454345tSW5_JPEG/1957429866527695_2095394078.jpg?type=m510'
         ],
-        views: 0,
-        sell : 0,
-        stock: 10,
-        textreview: 1,
-        photoreview: 0,
-        contents: [
-            'https://shop-phinf.pstatic.net/20231114_251/1699953446820NRf3n_PNG/%EC%BF%A0%ED%82%A4%EB%9F%B0_%ED%94%BC%EA%B7%9C%EC%96%B4_%EC%8B%9C%ED%81%AC%EB%A6%BF%ED%8C%A9_%EC%83%81%EC%84%B8%ED%8E%98%EC%9D%B4%EC%A7%80.png?type=w860'
-        ],
-        userphoto: [
-            'https://phinf.pstatic.net/checkout.phinf/20231121_58/1700561778020X87SD_JPEG/IMG_1901.jpeg?type=f300_300',
-            'https://phinf.pstatic.net/checkout.phinf/20231124_188/1700790087691pA1W4_JPEG/1700790051451.jpg?type=f300_300',
-            'https://phinf.pstatic.net/checkout.phinf/20231124_92/1700817650464iF3ai_JPEG/6D23B991-E45B-4420-BEC4-1A048EE3EFAD.jpeg?type=f300_300',
-        ],
+        views: 60,
+        sell: 7,
+        stock: 10
     },
     {
-        update: '2023-11-20',
+        update: '2023-09-02',
         title: '[쿠키런스토어]생일케이크맛 쿠키 멜로디 인형',
         intro: '',
         price: 28900,
         img: [
             'https://shop-phinf.pstatic.net/20230530_41/168541639577879P8x_PNG/331284706142756_1175157606.png?type=m510',
             'https://shop-phinf.pstatic.net/20230530_202/1685416401019ni7bi_PNG/34294242827817026_188283953.png?type=m510',
-            'https://shop-phinf.pstatic.net/20230530_147/1685416406452XeL6u_PNG/932495258998725_283619380.png?type=m510',
+            'https://shop-phinf.pstatic.net/20230530_147/1685416406452XeL6u_PNG/932495258998725_283619380.png?type=m510'
         ],
-        views: 0,
-        sell : 0,
-        stock: 10,
-        textreview: 1,
-        photoreview: 0,
-        contents: [
-            'https://shop-phinf.pstatic.net/20231114_251/1699953446820NRf3n_PNG/%EC%BF%A0%ED%82%A4%EB%9F%B0_%ED%94%BC%EA%B7%9C%EC%96%B4_%EC%8B%9C%ED%81%AC%EB%A6%BF%ED%8C%A9_%EC%83%81%EC%84%B8%ED%8E%98%EC%9D%B4%EC%A7%80.png?type=w860'
-        ],
-        userphoto: [
-            'https://phinf.pstatic.net/checkout.phinf/20231121_58/1700561778020X87SD_JPEG/IMG_1901.jpeg?type=f300_300',
-            'https://phinf.pstatic.net/checkout.phinf/20231124_188/1700790087691pA1W4_JPEG/1700790051451.jpg?type=f300_300',
-            'https://phinf.pstatic.net/checkout.phinf/20231124_92/1700817650464iF3ai_JPEG/6D23B991-E45B-4420-BEC4-1A048EE3EFAD.jpeg?type=f300_300',
-        ],
+        views: 99,
+        sell: 70,
+        stock: 10
     },
+    {
+        update: '2023-07-22',
+        title: '[쿠키런스토어] 샤벳상어맛 쿠키 피규어 보조배터리',
+        intro: '0ㅇ0!!!샤벱상어맛 쿠키가 나타났다 ~~~',
+        price: 31900,
+        img: [
+            'https://shop-phinf.pstatic.net/20220823_62/1661233791836m8wqp_PNG/62369690490944342_876926460.png?type=m510',
+            'https://shop-phinf.pstatic.net/20220823_286/1661233798336X6Blq_PNG/62369697006803626_162329504.png?type=m510',
+            'https://shop-phinf.pstatic.net/20220823_31/1661233802750kyKu0_PNG/62369701407927074_1535011828.png?type=m510'
+        ],
+        views: 1,
+        sell: 1,
+        stock: 0
+    },
+    {
+        update: '2023-03-15',
+        title: '[쿠키런스토어] 소원캠프 담요',
+        intro: '캠핑을 즐기는 용쿠와 카놀리맛 쿠키, 스모어맛 쿠기가 그려진 담요',
+        price: 24500,
+        img: [
+            'https://shop-phinf.pstatic.net/20231026_67/1698307135475QB3CW_PNG/45272390259857309_1833212626.png?type=m510',
+            'https://shop-phinf.pstatic.net/20231026_30/1698307522671C5yD8_PNG/6731570879509740_1254135976.png?type=m10000_10000_no_rotate',
+            'https://shop-phinf.pstatic.net/20231026_41/16983075272592Sd87_PNG/15634458736097447_2139218969.png?type=m510'
+        ],
+        views: 26,
+        sell: 60,
+        stock: 22
+    },
+    {
+        update: '2023-06-19',
+        title: '[쿠키런스토어] 브릭시티 브릭 아카데미 카드홀더',
+        intro: '학생증이나 카드, 포토카드를 쏘옥 넣어 다닐 수 있는 귀여운 카드홀더',
+        price: 8000,
+        img: [
+            'https://shop-phinf.pstatic.net/20230913_273/16945972840111Yj0G_PNG/8486141803720366_870153347.png?type=m510',
+            'https://shop-phinf.pstatic.net/20230913_228/1694597301207gBESe_PNG/7804699658075337_110220462.png?type=m510',
+            'https://shop-phinf.pstatic.net/20230913_270/1694597296827isbAb_PNG/8486154589164739_1378573262.png?type=m510'
+        ],
+        views: 51,
+        sell: 59,
+        stock: 3
+    },
+    {
+        update: '2023-11-11',
+        title: ' [쿠키런스토어] 신발 주머니 2종',
+        intro: '귀여운 쿠키런 킹덤 캐릭터가 그려진 신발주머니 에코백! 내부 안감은 탈부착 가능합니다',
+        price: 18000,
+        img: [
+            'https://shop-phinf.pstatic.net/20230223_67/1677117527603W2Ckx_PNG/78253362385111924_1812615033.png?type=m510',
+            'https://shop-phinf.pstatic.net/20230223_234/1677117508708KS9Em_PNG/78253343483341702_1100125177.png?type=m510',
+            'https://shop-phinf.pstatic.net/20230223_219/1677117513824zFxn2_PNG/78253348589325963_1123206294.png?type=m510'
+        ],
+        views: 5,
+        sell: 11,
+        stock: 0
+    },
+    {
+        update: '2023-07-28',
+        title: '[쿠키런스토어] 쿠키런 보석십자수 2종',
+        intro: '귀여운 보석십자수로 슬기로운 집콕 취미를 가져보세요!!',
+        price: 7000,
+        img: [
+            'https://shop-phinf.pstatic.net/20230420_179/1681970401334FJo4w_PNG/3588464147749791_219870445.png?type=m510',
+            'https://shop-phinf.pstatic.net/20230420_154/1681970429235SSzKG_PNG/3588492031896648_422970713.png?type=m510',
+            'https://shop-phinf.pstatic.net/20230420_74/1681970418719gvXtf_PNG/6248937492319129_295722263.png?type=m510',
+            'https://shop-phinf.pstatic.net/20230420_192/1681970414357MOsuc_PNG/521298182616958_2034132921.png?type=m510'
+        ],
+        views: 4,
+        sell: 55,
+        stock: 4
+    },
+    {
+        update: '2022-09-30',
+        title: '[쿠키런스토어] 마스코트 인형 키링 거미저택',
+        intro: '쿠키런 속 모든 쿠키와 캐릭터를 마스코트 인형 키링으로 만나보세요!',
+        price: 12000,
+        img: [
+            'https://shop-phinf.pstatic.net/20221025_295/1666663529340vHblQ_PNG/67799308883748583_945922320.png?type=m510',
+            'https://shop-phinf.pstatic.net/20221025_140/1666663539034xutmD_PNG/67799318721067920_2142540269.png?type=m510',
+            'https://shop-phinf.pstatic.net/20221025_58/1666663532651b5StV_PNG/67799312333419887_488323151.png?type=m510'
+        ],
+        views: 3,
+        sell: 3,
+        stock: 0
+    },
+    {
+        update: '2022-07-28',
+        title: '[쿠키런스토어] 브레이브 어드벤쳐 키트',
+        intro: '다양한 쿠키들을 만나러 어썸브레드로 가자! 왕관을 훔쳐 달아나는 케이크 들개부터 잡아볼까요',
+        price: 36900,
+        img: [
+            'https://shop-phinf.pstatic.net/20220928_225/1664328534323fnUSs_PNG/65464432854508140_518643531.png?type=m510',
+            'https://shop-phinf.pstatic.net/20220928_74/1664328525676DnMrD_PNG/65464424364280268_598838589.png?type=m510',
+            'https://shop-phinf.pstatic.net/20220928_81/1664328568344c3qsO_PNG/65464467033923194_1200714962.png?type=m510'
+        ],
+        views: 103,
+        sell: 103,
+        stock: 103
+    },
+    {
+        update: '2022-07-03',
+        title: '[쿠키런스토어] 마스코트 인형 키링 1탄',
+        intro: '쿠키런 속 모든 쿠키와 캐릭터를 마스코트 인형 키링으로 만나보세요! 당신의 최애 캐릭터는 누구?',
+        price: 12000,
+        img: [
+            'https://shop-phinf.pstatic.net/20220819_288/1660896333215ft9En_PNG/62032221856975838_457480920.png?type=m510',
+            'https://shop-phinf.pstatic.net/20220819_96/1660896326451qatrU_PNG/62032215106791469_513009483.png?type=m510',
+            'https://shop-phinf.pstatic.net/20220819_280/1660896336347i2PcY_PNG/62032225002720712_1069566276.png?type=m510'
+        ],
+        views: 7,
+        sell: 7,
+        stock: 0
+    }
 ];
-let itemNum = 1;
 
 let itemRightBox = document.getElementsByClassName('item_rightbox_info')
 let itemImg = document.getElementsByClassName('item_img');
@@ -155,38 +212,33 @@ let quantityBox = document.getElementsByClassName('item_rightbox_point_quantity'
 let itemBox = document.getElementsByClassName('item');
             
 
-// 함수 종류 (스크롤, 판매높은순 정렬)
-function pageUp(){
-    window.scrollTo(0,300);
-}
-function productARSellDown() {
-    for (let i = 0 , t; i < productAR.length-1; i++){
-        for (let j = i+1 ; j < productAR.length ; j++) {
-            if ( productAR[i].sell < productAR[j].sell){
-                t = productAR[i];
-                productAR[i] = productAR[j];
-                productAR[j] = t;
-                
-            }
-        }
-    }
-}
- // 포인트 점수 구하기 식
-if(productAR[itemNum].textreview == 1) {
-    textpoint= 50;
-} else {
-    textpoint= 0;
-}
 
-if(productAR[itemNum].textreview == 1) {
-    photopoint= 100;
-} else {
-    photopoint= 0;
-}
 /* ==========================================================================*/
 writePage();
 //게시글 작성
-function writePage(){
+function writePage(event){
+    let textpoint = 0, photopoint = 0;
+    let itemNum;
+    let itemImgBtn = document.getElementsByClassName('item_imgBtn');
+
+    
+    fetch("http://localhost:3000/product")
+    .then(response=>response.json())
+    .then(productAR => {
+        for(let i=0; i<productAR[0].length;i++){
+            if (event.target.children[2].innerText == productAR[0][i].title) {
+                itemNum = i;
+                break;
+            }
+        }
+    // 포인트 점수 구하기 식
+    if(productAR[0][itemNum].textreview == 1) {
+        textpoint= 50;
+    } 
+    if(productAR[0][itemNum].photoreview == 1) {
+        photopoint= 100;
+    }
+
     itemBox[0].innerHTML=`
     <div class="item_leftbox">
                 <div class="item_img"></div>
@@ -194,8 +246,8 @@ function writePage(){
             </div>
             <div class="item_rightbox">
                 <div class="item_rightbox_info">
-                    <div>${productAR[itemNum].title}</div>
-                    <div>${productAR[itemNum].price.toLocaleString()} 원</div>
+                    <div>${productAR[0][itemNum].title}</div>
+                    <div>${productAR[0][itemNum].price.toLocaleString()} 원</div>
                 </div>
                 <div class="item_rightbox_point">
                     <div class="item_rightbox_point_title">
@@ -205,13 +257,13 @@ function writePage(){
                         <div>
                             <span>최대 적립 포인트</span>
                             <div>
-                                <span id="maxpoint">${(productAR[itemNum].price/100+textpoint+photopoint).toLocaleString()} 원</span>
+                                <span id="maxpoint">${(productAR[0][itemNum].price/100+textpoint+photopoint).toLocaleString()} 원</span>
                                 <i class="fa-regular fa-circle-question"></i>
                             </div>
                         </div>
                         <div>
                             <span>└ 기본적립</span> 
-                            <div id="basic">${(productAR[itemNum].price/100).toLocaleString()} 원</div>
+                            <div id="basic">${(productAR[0][itemNum].price/100).toLocaleString()} 원</div>
                         </div>
                     </div>
                     <div class="item_rightbox_point_price_tip">
@@ -222,10 +274,10 @@ function writePage(){
                             <div><a href="https://nid.naver.com/">네이버페이 머니로 결제 시</a></div>
                         </div>
                         <div>
-                            <span>+최대 ${(productAR[itemNum].price*0.09).toLocaleString()}원</span>
-                            <span>${(productAR[itemNum].price*0.04).toLocaleString()}원</span>
-                            <span>${(productAR[itemNum].price*0.05).toLocaleString()}원</span>
-                            <span>${(productAR[itemNum].price*0.02).toLocaleString()}원</span>
+                            <span>+최대 ${(productAR[0][itemNum].price*0.09).toLocaleString()}원</span>
+                            <span>${(productAR[0][itemNum].price*0.04).toLocaleString()}원</span>
+                            <span>${(productAR[0][itemNum].price*0.05).toLocaleString()}원</span>
+                            <span>${(productAR[0][itemNum].price*0.02).toLocaleString()}원</span>
                         </div>
                     </div>
                     <div class="item_rightbox_ads"></div>
@@ -241,9 +293,9 @@ function writePage(){
                         <p><a href="#">배송비 절약상품 보기</a></p>
                     </div>
                     <div class="item_rightbox_point_quantity">
-                        <div style="border: none;">&#45;</div>
+                        <div onclick="amountBtnMinus()" style="border: none;">&#45;</div>
                         <input type="text" id="quantity" name="toBuy" value=1 style="text-align: center; "/>
-                        <div style="border: none;">&#43;</div>
+                        <div onclick="amountBtnPlus()" style="border: none;">&#43;</div>
                     </div>
                     <div class="item_rightbox_point_decision">
                         <div>
@@ -280,135 +332,71 @@ function writePage(){
 // 토탈 구하기
 let totalAmount = document.getElementById('totalAmount');
 let totalPrice = document.getElementById('totalPrice');
-
+let quantityBox = document.getElementsByClassName('item_rightbox_point_quantity');
 totalAmount.innerText =`${quantityBox[0].children[1].value}개`
-totalPrice.innerText= `${((quantityBox[0].children[1].value)*productAR[itemNum].price).toLocaleString()}원`
-// 수량 박스
-quantityBox[0].addEventListener('click', (event)=> {
-
-    if(quantityBox[0].children[1].value>0 && event.target==quantityBox[0].children[0]){
-        quantityBox[0].children[1].value-=1;
-    }
-    if(event.target==quantityBox[0].children[2]){
-        quantityBox[0].children[1].value= +quantityBox[0].children[1].value + 1;
-    }
-
-    totalAmount.innerText =`${quantityBox[0].children[1].value}개`
-    totalPrice.innerText= `${((quantityBox[0].children[1].value)*productAR[itemNum].price).toLocaleString()}원`
-});
-
+totalPrice.innerText= `${((quantityBox[0].children[1].value)*productAR[0][itemNum].price).toLocaleString()}원`
 
 // 제품 이미지 슬라이드
-{
-    itemImg[0].innerHTML = `<img src="${productAR[itemNum].img[0]}" alt="${productAR[itemNum].title}">`;
-    itemImgBtn[0].addEventListener('click',(event)=>{
-        if (event.target.tagName=='IMG'){
-            itemImg[0].children[0].src=`${event.target.getAttribute('src')}`;
-        }
-    })
+itemImg[0].innerHTML = `<img src="${productAR[0][itemNum].img[0]}" alt="${productAR[0][itemNum].title}">`;
+for (let i = 0 ; i < productAR[0][itemNum].img.length; i++){
+    itemImgBtn[0].innerHTML +=`<img onclick="shopItemImgChange(event)" src="${productAR[0][itemNum].img[i]}" alt="${productAR[0][itemNum].title}">`;
+}
 
-    for (let i = 0 ; i < productAR[itemNum].img.length; i++){
-        itemImgBtn[0].innerHTML +=`<img src="${productAR[itemNum].img[i]}" alt="${productAR[itemNum].title}">`;
-    }
-}
-}
 // 베스트 상품
-{
-    productARSellDown(); 
-    for (let i =0 ; i < 4; i++){
-    bestitem[0].innerHTML += `<div><img src="${productAR[i].img[0]}" alt="${productAR[i].title}"><p>${productAR[i].title}</p><p>${productAR[i].price.toLocaleString()}</p></div>`;
-    }
-}
-// 제품 이미지 슬라이드
-{
-    itemImg[0].innerHTML = `<img src="${productAR[itemNum].img[0]}" alt="${productAR[itemNum].title}">`;
-    itemImgBtn[0].addEventListener('click',(event)=>{
-        if (event.target.tagName=='IMG'){
-            itemImg[0].children[0].src=`${event.target.getAttribute('src')}`;
-        }
-    })
 
-    for (let i = 0 ; i < productAR[itemNum].img.length; i++){
-        itemImgBtn[0].innerHTML +=`<img src="${productAR[itemNum].img[i]}" alt="${productAR[itemNum].title}">`;
-    }
-} 
-// 베스트상품 상세페이지로 변경하기
-{
-    bestitem[0].addEventListener('click', (event) => {
-        let eventOj = event.target.closest('div').children[1].innerText;
-        console.log(eventOj);
-        for(let i=0; i<productAR.length;i++){
-            if (eventOj == productAR[i].title) {
-                itemNum = i;
-                console.log(itemNum)
-                break;
-            }
+for (let i = 0, t; i < productAR[0].length - 1; i++) {
+    for (let j = i + 1; j < productAR[0].length; j++) {
+        if (productAR[0][i].sell < productAR[0][j].sell) {
+            t = productAR[0][i];
+            productAR[0][i] = productAR[0][j];
+            productAR[0][j] = t;
         }
-        itemBox[0].innerHTML='';
-        writePage();
-        pageUp();
     }
-    )
-}
-// 포인트 추가 창
-{
-    //  
-    //     {
-    //     pointDetails.innerHTML =`<div>
-    //     <p>구매적립</p>
-    //     <div>
-    //     <p>└ 기본적립</p>
-    //     <p></p>
-        
-    //     </div>
-    //     </div>
-    //     <div>
-    //         <p>리뷰적립</p>
-    //         <div>
-    //             <p>텍스트 리뷰 작성시</p>
-    //             <p></p>
-    //         </div>
-    //         <div>
-    //             <p>포토/동영상 리뷰 작성시</p>
-    //             <p></p>
-    //         </div>
-    //     </div>
-    //     <div>
-    //         <div>
-    //             <div>TIP. 포인트 더 받는 방법</div>
-    //             <div><a href="https://nid.naver.com">최대 5% 적립, 무료 시작</a></div>
-    //             <div><a href="https://nid.naver.com">네이버 현대카드로 결제 시</a></div>
-    //             <div><a href="https://nid.naver.com/">네이버페이 머니로 결제 시</a></div>
-    //         </div>
-    //         <div>
-    //             <span>최대 2,205원</span>
-    //             <span>980원</span>
-    //             <span>1,225원</span>
-    //             <span>490원</span>
-    //         </div>
-    //     </div>
-    //     <hr>
-    //     <ul>
-    //         <li>네이버 페이 포인트는 <span id="a">구매확정 시 적립</span> 됩니다.</li>
-    //         <li>적립 포인트는 할인 쿠폰 적용 및 옵션 가격을 기준으로 적립되므로, 최종 적립 포인트는 <span id="a">쿠폰 사용 여부</span> 및 <span id="a">옵션 가격</span>에 따라 달라질 수 있습니다.</li>
-    //         <li><span id="a">1회 주문시 구매적립은 최대 100,000원까지 적립</span> 가능합니다. (단, 무통장입금은 최대2만원까지 적립)
-    //             <p color: "gray">(네이버플러스 멤버십 적립 혜택은 예외)</p></li>
-    //         <li>단, <span id="a">추가적립(추가구매적립 및 재구매/등급 적립)은 일반 구매 적립 한도(최대 100,000원)와 별개로 1회 주문 기준 최대 200,000원까지 적립</span> 가능합니다. (무통장입금 또한 별개로 최대 2만원까지 적립)</li>
-    //         <li>구매확정 이후 90일까지 리뷰를 최대 2번 작성할 수 있습니다. 구매확정 이후 30일까지 리뷰를 작성할 수 있고, 구매확정 이후 31일부터는 한달사용 리뷰를 작성할 수 있습니다.</li>
-    //         <li>알림받기 동의 고객 리뷰 포인트는 주문 시 알림받기 동의중인 고객님께만 지급되며 리뷰 혹은 한달사용 리뷰 작성 시 1회만 지급됩니다.</li>
-    //         <li>상품결제금액 기준 구매금액 3,000원 미만인 경우 작성에 대한 포인트가 <span id="a">최대 150원 적립 제외됩니다.</span></li>
-    //         <li>상품주문결제 금액에서 구매혜택과 리뷰작성 적립포인트를 차감한 금액이 0원 미만일 경우 구매혜택 및 리뷰작성에 대한 포인트 적립이 제외됩니다.</li>
-    //         <li>구매확정 후 30일 이내 상품 리뷰를 작성하지 않고 한달사용리뷰만 작성했을 경우, 한달사용리뷰 포인트 대신 구매확정 30일 이내 리뷰 작성 시 지급되는 포인트로 대체 지급됩니다.</li>
-    //         <li>네이버플러스 멤버십 적립 혜택은 200,000원까지는 4% 적립, 200,000원 초과 3,000,000원까지는 1%로 적립되며, <span id="a">주문 상품당 최대 20,000원까지 적립</span>됩니다.</li>
-    //         <li>네이버플러스 멤버십 이벤트 진행 중에는 추가 적립 혜택이 제공될 수 있으며, 자세한 적립 정책은 멤버십 이벤트 페이지와 <a link="#" alt="custumerCenter">고객센터</a>에서 확인 가능합니다.</li>
-    //     </ul>
-    //     `
-    // }
-    // }
+    
+    for (let i =0 ; i < 4; i++){
+    bestitem[0].innerHTML += `<div><img src="${productAR[0][i].img[0]}" alt="${productAR[0][i].title}"><p>${productAR[0][i].title}</p><p>${productAR[0][i].price.toLocaleString()}</p></div>`;
+    }
+    itemImg[0].innerHTML = `<img src="${productAR[0][itemNum].img[0]}" alt="${productAR[0][itemNum].title}">`;
+    for (let i = 0 ; i < productAR[0][itemNum].img.length; i++){
+        itemImgBtn[0].innerHTML +=`<img src="${productAR[0][itemNum].img[i]}" alt="${productAR[0][itemNum].title}">`;
+    }
+}})
+
 
     
 }
+// 제품 이미지 띄우기
+function shopItemImgChange(event){
+    let itemImg = document.getElementsByClassName('item_img');
+    itemImg[0].children[0].src=`${event.target.getAttribute('src')}`;
+}
+// 수량 버튼 올리기
+function amountBtnPlus(){
+    ++document.getElementById('totalAmount').innerText;
+    document.getElementById('totalPrice').innerText=`${document.getElementById('totalAmount').innerText*productPrice}`
+}
+// 수량 버튼 내리기
+function amountBtnMinus(){
+    if(document.getElementById('totalAmount').innerText>1){
+        --document.getElementById('totalAmount').innerText;
+        document.getElementById('totalPrice').innerText=`${document.getElementById('totalAmount').innerText*productPrice}`
+    }
+}
+// 베스트상품 상세페이지로 변경하기
+function itemChangeInPage(event) {
+    event.target.children[1].innerText;
+    fetch("http://localhost:3000/product")
+    .then(response=>response.json())
+    .then(productAR => {
 
-// let warning = document.getElementsByClassName("warning");
-//     warning[0].innerHTML =
-//     ``
+    for(let i=0; i<productAR[0].length;i++){
+        if (event.target.children[1].innerText == productAR[0][i].title) {
+            itemNum = i;
+            break;
+        }
+    }
+    itemBox[0].innerHTML='';
+    writePage();
+    window.scrollTo(0,300);
+})
+}

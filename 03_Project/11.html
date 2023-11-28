@@ -10,7 +10,7 @@
         function getData(){
             fetch("http://localhost:3000/product")
             .then(response=>response.json())
-            .then(json => console.log(json))
+            .then(json => console.log(json[0]))
         }
         function postData(post){
             

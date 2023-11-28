@@ -2,7 +2,7 @@
 let indexBox = document.getElementById('indexBox');
 let backBtn = document.getElementById('backBtn');
 let lastSlideBtn, lastSlideBtn2;
-
+let itemNum;
 
 indexWrite();
 
@@ -19,8 +19,8 @@ function indexWrite (){
         </div>
         <img src="./img/index_logo.png" alt="">
         <div class="header_right">
-            <div onclick="loginWrite()" class="dev_login">Devsisters<br>로그인</div>
-            <div onclick="loginWrite()" class="kakao_login">Kakao <br>로그인</div>
+            <div onclick="loginWrite(event)" class="dev_login">Devsisters<br>로그인</div>
+            <div onclick="loginWrite(event)" class="kakao_login">Kakao <br>로그인</div>
         </div>
     </div>
     </div>
@@ -185,7 +185,6 @@ navBg.addEventListener('mouseout',()=>{
 });
 
 }
-
 // 인덱스 메인 슬라이드 이미지 버튼 작동 함수
 function eventslideBtn(event){
     let eventSlide = document.getElementsByClassName('event_slide');
@@ -201,7 +200,6 @@ function eventslideBtn(event){
     }
 })
 }
-
 // 인덱스 상품 슬라이드 이미지 버튼 작동 함수
 function mainShopSlideBtn(event){
     let shopSlideImg = document.getElementsByClassName('shop_slide_img');
@@ -221,12 +219,13 @@ function mainShopSlideBtn(event){
 /*                    ▼▼▼▼  민지  ▼▼▼▼                    */ 
 
 // 민지 쿠키소개 페이지 전환
-function cookieinfoWrite(){
+function cookieinfoWrite(event){
+    if(event.stopPropagation())event.stopPropagation();
     let headBottom = document.getElementById('headBottom')
     headBottom.classList.add("subPage")
     headBottom.innerHTML=`<div>
         <ul>
-            <li onclick="cookieinfoWrite()">쿠키 소개</li>
+            <li onclick="cookieinfoWrite(event)">쿠키 소개</li>
             <li>게임 소개</li>
             <li>게임 월드 소개</li>
         </ul>
@@ -246,66 +245,70 @@ function cookieinfoWrite(){
     .then(response=>response.json())
     .then(json => {
     for (let i = 0; i < json[0].length; i++) {
-        mainList[0].innerHTML += `<div class="main_list_box"><img src="${json[0][i].img}" alt="${json[0][i].name}"><div class="main_list_item_name">${json[0][i].name}</div><div class="main_list_item_type"><img src="${cookieType(json[0][i].type)}" alt="${json[0][i].type}"></div></div>`
+        mainList[0].innerHTML += `<div onclick="cookieDetail(event)" class="main_list_box"><img src="${json[0][i].img}" alt="${json[0][i].name}"><div class="main_list_item_name">${json[0][i].name}</div><div class="main_list_item_type"><img src="${cookieType(json[0][i].type)}" alt="${json[0][i].type}"></div></div>`
     }
-    mainList[0].addEventListener('click', detail);
-
-    function detail(event) {
-        let eventOJ = event.target.closest('.main_list_box')
-        let cookieName = eventOJ.children[1].innerText;
-        let compare;
-        for (let i = 0; i <  json[0].length; i++) {
-            if (cookieName ==  json[0][i].name) {
-                compare = i;
-            }
+})
+}
+function cookieDetail(event) {
+    if(event.stopPropagation())event.stopPropagation();
+    let eventOJ = event.target.closest('.main_list_box')
+    let cookieName = eventOJ.children[1].innerText;
+    let compare;
+    fetch("http://localhost:3000/cookieData")
+    .then(response=>response.json())
+    .then(json => {
+    for (let i = 0; i <  json[0].length; i++) {
+        if (cookieName ==  json[0][i].name) {
+            compare = i;
         }
-        main.innerHTML =
-            `<h3 class="back_button" onclick="cookieinfoWrite()">목록가기</h3>
-            <div class="main_info_container"><img src="${ json[0][compare].img}" alt="${ json[0][compare].name}">
-            <div class="main_info_pic"></div>
-            <div class="main_info_self">
-                <div class="grid_box1"><img src="${cookieType( json[0][compare].type)}" alt="${ json[0][compare].type}"></div>
-                <div class="grid_box2">${ json[0][compare].name}</div>
-                <p class="cookie_self">${ json[0][compare].info}</p>
-            </div>
+    }
+    main.innerHTML =
+        `<h3 class="back_button" onclick="cookieinfoWrite(event)">목록가기</h3>
+        <div class="main_info_container"><img src="${ json[0][compare].img}" alt="${ json[0][compare].name}">
+        <div class="main_info_pic"></div>
+        <div class="main_info_self">
+            <div class="grid_box1"><img src="${cookieType( json[0][compare].type)}" alt="${ json[0][compare].type}"></div>
+            <div class="grid_box2">${ json[0][compare].name}</div>
+            <p class="cookie_self">${ json[0][compare].info}</p>
         </div>
-        <div class="intro_box">
-            <div class="skill_box">
-                <p class="skill">스킬</p>
-                <img src="${ json[0][compare].skill.skillImg}" alt="${ json[0][compare].skill.skillName}">
-                <p class="skill_name">${ json[0][compare].skill.skillName}</p>
-                <p class="skill_intro">${ json[0][compare].skill.skillInfo}</p>
-            </div>
-        </div>`;
-    }
-    })
-    function cookieType(cookieType) {
-        switch (cookieType) {
-            case "에픽":
-                return 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/e6cc601e-19ee-421b-e936-9cdd20eaf100/public'
-            case "레전더리":
-                return 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/fb2bbed1-186c-4edf-1741-7edb8cdf7100/public'
-            case "슈퍼에픽":
-                return 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/ef97da70-b550-428a-c03c-ed4db59a9300/public'
-            case "스페셜":
-                return 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/dc7567c4-7d16-4017-52c2-4586e7112500/public'
-            case "에이션트":
-                return 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/b80b67b8-dc5c-49e3-07ca-f1673e459100/public'
-            case "드래곤":
-                return 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/9ea3ad41-1df7-4b8e-0e52-3c1f9ac48400/public'
-        }
+    </div>
+    <div class="intro_box">
+        <div class="skill_box">
+            <p class="skill">스킬</p>
+            <img src="${ json[0][compare].skill.skillImg}" alt="${ json[0][compare].skill.skillName}">
+            <p class="skill_name">${ json[0][compare].skill.skillName}</p>
+            <p class="skill_intro">${ json[0][compare].skill.skillInfo}</p>
+        </div>
+    </div>`;
+})
+}
+function cookieType(cookieType) {
+    switch (cookieType) {
+        case "에픽":
+            return 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/e6cc601e-19ee-421b-e936-9cdd20eaf100/public'
+        case "레전더리":
+            return 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/fb2bbed1-186c-4edf-1741-7edb8cdf7100/public'
+        case "슈퍼에픽":
+            return 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/ef97da70-b550-428a-c03c-ed4db59a9300/public'
+        case "스페셜":
+            return 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/dc7567c4-7d16-4017-52c2-4586e7112500/public'
+        case "에이션트":
+            return 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/b80b67b8-dc5c-49e3-07ca-f1673e459100/public'
+        case "드래곤":
+            return 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/9ea3ad41-1df7-4b8e-0e52-3c1f9ac48400/public'
     }
 }
 
 /*                    ▲▲▲▲  민지  ▲▲▲▲                    */ 
 /*                    ▼▼▼▼  창민  ▼▼▼▼                    */ 
 
-function noticeWrite(){
+function noticeWrite(event){
+    if(event.stopPropagation())event.stopPropagation();
     let headBottom = document.getElementById('headBottom')
     headBottom.classList.add("subPage")
     headBottom.innerHTML=`        <div>
     <ul>
-        <li onclick="noticeWrite()">공지사항</li>
+        <li onclick="noticeWrite(event)">공지사항</li>
         <li>업데이트</li>
         <li>이벤트</li>
     </ul>
@@ -333,9 +336,9 @@ function noticeWrite(){
 
     <div class="notice_post">
 
-        <a onclick="noticeDetailWrite()">
+        <a onclick="noticeDetailWrite(event)">
             <div class><span class="notice_icon">공지</span></div>
-            <div onclick="noticeDetailWrite()" class="notice_subject"><a onclick="noticeDetailWrite()">알려진 이슈를 안내해 드립니다.</a></div>
+            <div onclick="noticeDetailWrite(event)" class="notice_subject"><a onclick="noticeDetailWrite(event)">알려진 이슈를 안내해 드립니다.</a></div>
             <div></div>
             <div class="notice_date">2023.11.15</div>
         </a>
@@ -398,16 +401,8 @@ function noticeWrite(){
     </div>`;
 }
 
-function noticeDetailWrite(){
-    let headBottom = document.getElementById('headBottom')
-    headBottom.classList.add("subPage")
-    headBottom.innerHTML=`        <div>
-    <ul>
-        <li onclick="noticeWrite()">공지사항</li>
-        <li>업데이트</li>
-        <li>이벤트</li>
-    </ul>
-</div>`;
+function noticeDetailWrite(event){
+    if(event.stopPropagation())event.stopPropagation();
         main.innerHTML = `    <div class="notice_option2">
         <h3>공지사항</h3>
         <div class="notice_header">공지 알려진 이슈를 안내해드립니다. (11/22 수정)
@@ -460,7 +455,8 @@ Ex) 퀘스트명, NPC 이름, 지역 이름, 아이템 이름 등
 <div class="notice_side"></div>`;
 }
 
-function loginWrite(){
+function loginWrite(event){
+    if(event.stopPropagation())event.stopPropagation();
     if (!indexBox.contains(document.getElementById('loginBG'))){
     indexBox.innerHTML += `<div id="loginBG" onclick="closelogin(event)"><div class="login-wrapper">
     <h2 id="titleCookie">COOKIERUN</h2>
@@ -530,8 +526,8 @@ function changeCookie(event){
     var ImgKakao = document.getElementById("imgKakao");
     let eventOJ = event.target.closest("li");
     let loginList = document.getElementsByClassName('login_list');
-    loginList[0].children[0].style.border="2px solid rgb(160, 159, 159)";
-    loginList[0].children[0].style.color= "rgb(160, 159, 159)";
+    loginList[0].children[1].style.border="2px solid rgb(160, 159, 159)";
+    loginList[0].children[1].style.color= "rgb(160, 159, 159)";
     //쿠키런 보이게
     TitleCookie.style.display="";
     ImgCookie.style.display="";
@@ -554,11 +550,12 @@ let lastBtn,
      pageNum = 1,
      imgPage = 9;
 
-function shopWrite(){
+function shopWrite(event){
+    event.stopPropagation();
     headBottom.classList.add("subPage")
     headBottom.innerHTML=`<div>
         <ul>
-            <li onclick="shopWrite()">온라인 쇼핑몰</li>
+            <li onclick="shopWrite(event)">온라인 쇼핑몰</li>
         </ul>
     </div>`;
         main.innerHTML = `
@@ -629,204 +626,399 @@ function shopWrite(){
     .then(productAR => {
     listWriter(productAR[0]);
     })
-    }     
-    // 옵션 박스 열기
-    function optionBoxOpen(event){
+}     
+// 옵션 박스 열기
+function optionBoxOpen(event){
         let optionBox = document.getElementsByClassName('option_box');
         optionBox[0].style.visibility = "initial";
-    }
-    // 옵션 박스 닫기
-    function optionBoxClose(event){
+}
+// 옵션 박스 닫기
+function optionBoxClose(event){
         let optionBox = document.getElementsByClassName('option_box');
             optionBox[0].style.visibility = "hidden";
-    }
-    // 옵션 박스 안에 옵션 선택 시 색상 변경
-    function optionBoxListColor(event){
-            if (event.target.style.backgroundColor == "orange") {
-                event.target.style.backgroundColor = "rgb(250, 248, 248)"
-            } else {
-                event.target.style.backgroundColor = "orange"
-            }
-    }
-    
-    // 아이템 개수(배열) 9개씩 나타내기, 금액단위 설정 
-    function listWriter(productAR) {
-        let mainItem = document.getElementsByClassName('main_item'),
-             showScreen = document.getElementsByClassName('show_screen'),
-             itemBox = document.getElementsByClassName('item');
-
-        mainItem[0].innerHTML = '';
-        for (let i = 0 + (pageNum - 1) * imgPage; i < imgPage + (pageNum - 1) * imgPage; i++) {
-            if (i == productAR.length) break;
-            mainItem[0].innerHTML +=
-            `<div class="item">
-            <img src="${productAR[i].img[0]}" alt="">
-            <p class="item_price">${productAR[i].price.toLocaleString()} 원</p>
-            <p class="item_title">${productAR[i].title}</p>
-            <p class="item_intro">${productAR[i].intro}</p>
-            <div class="icon"><i class="fa-solid fa-neuter"></i></div>
-            <div class="icon"><i class="fa-solid fa-plus"></i></div>
-            </div>`;
-            // 재고 없을 때 이미지 투명도, BEST/SOLDOUT 박스 넣기    
-            if (productAR[i].stock == 0) {
-                for (let j = 0; j < itemBox[i % imgPage].children.length - 2; j++) {
-                    itemBox[i % imgPage].children[j].style.opacity = '0.3';
-                }
-                itemBox[i % imgPage].innerHTML += `<div class="soldout">SOLD OUT</div>`;
-            }
-            if (productAR[i].sell >= 30) {
-                itemBox[i % imgPage].innerHTML += `<div class="best">BEST</div>`;
-            }
-            //아이템개수 9개 이상 등록시, 자동으로 다음 순번 페이지버튼 생성
-            let pageAmount = productAR.length / imgPage
-            showScreen[0].innerHTML = ``;
-            for (let i = 0; i < pageAmount; i++) {
-                showScreen[0].innerHTML += `<div onclick="screenPage(event)">${i + 1}</div>`;
-            }
-        // 상품 총 갯수 표시
-        let total = document.getElementById('total');
-        total.children[0].innerText = ` ${productAR.length} `;
-        }
-    }
-    //페이지 넘어갈 때 보이는 화면 기준점 잡기    
-    function screenPage(event){
-            pageNum = event.target.innerText;
-            window.scrollTo(0, 300);
-            fetch("http://localhost:3000/product")
-            .then(response=>response.json())
-            .then(productAR => {
-            listWriter(productAR[0]);
-            })
-    }
-    //아이템목록 누르면 검정 테두리 표시, 첫 화면 9개 배열로 고정표시
-    function gridBoxBtn(event){
-        let gridBoxLi = document.querySelectorAll('.grid_box>li')
-        let mainItem = document.getElementsByClassName('main_item');
-        if (event.target == gridBoxLi[0]) {
-            imgPage = 9;
-            mainItem[0].style.gridTemplate = "repeat(3, 500px) / repeat(3, 1fr)";
-            gridBoxLi[0].style.border = "4px solid #000"
-            gridBoxLi[1].style.border = "4px solid #fff"
+}
+// 옵션 박스 안에 옵션 선택 시 색상 변경
+function optionBoxListColor(event){
+        if (event.target.style.backgroundColor == "orange") {
+            event.target.style.backgroundColor = "rgb(250, 248, 248)"
         } else {
-            imgPage = 6;
-            mainItem[0].style.gridTemplate = "repeat(3, 700px) / repeat(2, 1fr)";
-            gridBoxLi[0].style.border = "4px solid #fff"
-            gridBoxLi[1].style.border = "4px solid #000"
+            event.target.style.backgroundColor = "orange"
         }
+}
+// 아이템 개수(배열) 9개씩 나타내기, 금액단위 설정 
+function listWriter(productAR) {
+    let mainItem = document.getElementsByClassName('main_item'),
+         showScreen = document.getElementsByClassName('show_screen'),
+         itemBox = document.getElementsByClassName('item_sm');
+    mainItem[0].innerHTML = '';
+    for (let i = 0 + (pageNum - 1) * imgPage; i < imgPage + (pageNum - 1) * imgPage; i++) {
+        if (i == productAR.length) break;
+        mainItem[0].innerHTML +=
+        `<div onclick="shopDetail(event)" class="item_sm">
+        <img src="${productAR[i].img[0]}" alt="">
+        <p class="item_price">${productAR[i].price.toLocaleString()} 원</p>
+        <p class="item_title">${productAR[i].title}</p>
+        <p class="item_intro">${productAR[i].intro}</p>
+        <div class="icon"><i class="fa-solid fa-neuter"></i></div>
+        <div class="icon"><i class="fa-solid fa-plus"></i></div>
+        </div>`;
+        // 재고 없을 때 이미지 투명도, BEST/SOLDOUT 박스 넣기    
+        if (productAR[i].stock == 0) {
+            for (let j = 0; j < itemBox[i % imgPage].children.length - 2; j++) {
+                itemBox[i % imgPage].children[j].style.opacity = '0.3';
+            }
+            itemBox[i % imgPage].innerHTML += `<div class="soldout">SOLD OUT</div>`;
+        }
+        if (productAR[i].sell >= 30) {
+            itemBox[i % imgPage].innerHTML += `<div class="best_sm">BEST</div>`;
+        }
+        //아이템개수 9개 이상 등록시, 자동으로 다음 순번 페이지버튼 생성
+        let pageAmount = productAR.length / imgPage
+        showScreen[0].innerHTML = ``;
+        for (let i = 0; i < pageAmount; i++) {
+            showScreen[0].innerHTML += `<div onclick="screenPage(event)">${i + 1}</div>`;
+        }
+    // 상품 총 갯수 표시
+    let total = document.getElementById('total');
+    total.children[0].innerText = ` ${productAR.length} `;
+    }
+}
+//페이지 넘어갈 때 보이는 화면 기준점 잡기    
+function screenPage(event){
+        pageNum = event.target.innerText;
+        window.scrollTo(0, 300);
         fetch("http://localhost:3000/product")
         .then(response=>response.json())
         .then(productAR => {
         listWriter(productAR[0]);
         })
+}
+//아이템목록 누르면 검정 테두리 표시, 첫 화면 9개 배열로 고정표시
+function gridBoxBtn(event){
+    let gridBoxLi = document.querySelectorAll('.grid_box>li')
+    let mainItem = document.getElementsByClassName('main_item');
+    if (event.target == gridBoxLi[0]) {
+        imgPage = 9;
+        mainItem[0].style.gridTemplate = "repeat(3, 500px) / repeat(3, 1fr)";
+        gridBoxLi[0].style.border = "4px solid #000"
+        gridBoxLi[1].style.border = "4px solid #fff"
+    } else {
+        imgPage = 6;
+        mainItem[0].style.gridTemplate = "repeat(3, 700px) / repeat(2, 1fr)";
+        gridBoxLi[0].style.border = "4px solid #fff"
+        gridBoxLi[1].style.border = "4px solid #000"
     }
-    // 인기도순 작성
-    function ProductARViewDown(event) {
-        fetch("http://localhost:3000/product")
-        .then(response=>response.json())
-        .then(productAR => {
-        for (let i = 0, t; i < productAR[0].length - 1; i++) {
-            for (let j = i + 1; j < productAR[0].length; j++) {
-                if (productAR[0][i].views < productAR[0][j].views) {
-                    t = productAR[0][i];
-                    productAR[0][i] = productAR[0][j];
-                    productAR[0][j] = t;
-                }
-            }
-        }
-        lastBtn.style.fontWeight = 'lighter';
-        lastBtn.style.opacity = "0.7";
-        event.target.style.fontWeight = "bold";
-        event.target.style.opacity = "initial";
-        lastBtn=event.target;
+    fetch("http://localhost:3000/product")
+    .then(response=>response.json())
+    .then(productAR => {
+    listWriter(productAR[0]);
     })
-    }
-    //최신등록순 작성
-    function ProductARDateDown(event) {
-        fetch("http://localhost:3000/product")
-        .then(response=>response.json())
-        .then(productAR => {
-        for (let i = 0, t; i < productAR[0].length - 1; i++) {
-            for (let j = i + 1; j < productAR[0].length; j++) {
-                if (productAR[0][i].update > productAR[0][j].update) {
-                    t = productAR[0][i];
-                    productAR[0][i] = productAR[0][j];
-                    productAR[0][j] = t;
-                }
+}
+// 인기도순 작성
+function ProductARViewDown(event) {
+    fetch("http://localhost:3000/product")
+    .then(response=>response.json())
+    .then(productAR => {
+    for (let i = 0, t; i < productAR[0].length - 1; i++) {
+        for (let j = i + 1; j < productAR[0].length; j++) {
+            if (productAR[0][i].views < productAR[0][j].views) {
+                t = productAR[0][i];
+                productAR[0][i] = productAR[0][j];
+                productAR[0][j] = t;
             }
         }
-        listWriter(productAR[0]);
-        lastBtn.style.fontWeight = 'lighter';
-        lastBtn.style.opacity = "0.7";
-        event.target.style.fontWeight = "bold";
-        event.target.style.opacity = "initial";
-        lastBtn=event.target;
+    }
+    lastBtn.style.fontWeight = 'lighter';
+    lastBtn.style.opacity = "0.7";
+    event.target.style.fontWeight = "bold";
+    event.target.style.opacity = "initial";
+    lastBtn=event.target;
 })
-    }
-    // 가격 낮은순 작성
-    function ProductARPriceRise(event) {
-        fetch("http://localhost:3000/product")
-        .then(response=>response.json())
-        .then(productAR => {
-        for (let i = 0, t; i < productAR[0].length - 1; i++) {
-            for (let j = i + 1; j < productAR[0].length; j++) {
-                if (productAR[0][i].price > productAR[0][j].price) {
-                    t = productAR[0][i];
-                    productAR[0][i] = productAR[0][j];
-                    productAR[0][j] = t;
-                }
+}
+//최신등록순 작성
+function ProductARDateDown(event) {
+    fetch("http://localhost:3000/product")
+    .then(response=>response.json())
+    .then(productAR => {
+    for (let i = 0, t; i < productAR[0].length - 1; i++) {
+        for (let j = i + 1; j < productAR[0].length; j++) {
+            if (productAR[0][i].update > productAR[0][j].update) {
+                t = productAR[0][i];
+                productAR[0][i] = productAR[0][j];
+                productAR[0][j] = t;
             }
         }
-        listWriter(productAR[0]);
-        lastBtn.style.fontWeight = 'lighter';
-        lastBtn.style.opacity = "0.7";
-        event.target.style.fontWeight = "bold";
-        event.target.style.opacity = "initial";
-        lastBtn=event.target;
-        })
     }
-    // 높은 가격순 작성
-    function ProductARPriceDown(event) {
-        fetch("http://localhost:3000/product")
-        .then(response=>response.json())
-        .then(productAR => {
-        for (let i = 0, t; i < productAR[0].length - 1; i++) {
-            for (let j = i + 1; j < productAR[0].length; j++) {
-                if (productAR[0][i].price < productAR[0][j].price) {
-                    t = productAR[0][i];
-                    productAR[0][i] = productAR[0][j];
-                    productAR[0][j] = t;
-                }
+    listWriter(productAR[0]);
+    lastBtn.style.fontWeight = 'lighter';
+    lastBtn.style.opacity = "0.7";
+    event.target.style.fontWeight = "bold";
+    event.target.style.opacity = "initial";
+    lastBtn=event.target;
+})
+}
+// 가격 낮은순 작성
+function ProductARPriceRise(event) {
+    fetch("http://localhost:3000/product")
+    .then(response=>response.json())
+    .then(productAR => {
+    for (let i = 0, t; i < productAR[0].length - 1; i++) {
+        for (let j = i + 1; j < productAR[0].length; j++) {
+            if (productAR[0][i].price > productAR[0][j].price) {
+                t = productAR[0][i];
+                productAR[0][i] = productAR[0][j];
+                productAR[0][j] = t;
             }
         }
-        listWriter(productAR[0]);
-        lastBtn.style.fontWeight = 'lighter';
-        lastBtn.style.opacity = "0.7";
-        event.target.style.fontWeight = "bold";
-        event.target.style.opacity = "initial";
-        lastBtn=event.target;
-        })
     }
-    //판매 높은순 작성
-    function ProductARSellDown(event) {
-        fetch("http://localhost:3000/product")
-        .then(response=>response.json())
-        .then(productAR => {
-        for (let i = 0, t; i < productAR[0].length - 1; i++) {
-            for (let j = i + 1; j < productAR[0].length; j++) {
-                if (productAR[0][i].sell < productAR[0][j].sell) {
-                    t = productAR[0][i];
-                    productAR[0][i] = productAR[0][j];
-                    productAR[0][j] = t;
-                }
+    listWriter(productAR[0]);
+    lastBtn.style.fontWeight = 'lighter';
+    lastBtn.style.opacity = "0.7";
+    event.target.style.fontWeight = "bold";
+    event.target.style.opacity = "initial";
+    lastBtn=event.target;
+    })
+}
+// 높은 가격순 작성
+function ProductARPriceDown(event) {
+    fetch("http://localhost:3000/product")
+    .then(response=>response.json())
+    .then(productAR => {
+    for (let i = 0, t; i < productAR[0].length - 1; i++) {
+        for (let j = i + 1; j < productAR[0].length; j++) {
+            if (productAR[0][i].price < productAR[0][j].price) {
+                t = productAR[0][i];
+                productAR[0][i] = productAR[0][j];
+                productAR[0][j] = t;
             }
         }
-        listWriter(productAR[0]);
-        lastBtn.style.fontWeight = 'lighter';
-        lastBtn.style.opacity = "0.7";
-        event.target.style.fontWeight = "bold";
-        event.target.style.opacity = "initial";
-        lastBtn=event.target;
-        })
     }
+    listWriter(productAR[0]);
+    lastBtn.style.fontWeight = 'lighter';
+    lastBtn.style.opacity = "0.7";
+    event.target.style.fontWeight = "bold";
+    event.target.style.opacity = "initial";
+    lastBtn=event.target;
+    })
+}
+//판매 높은순 작성
+function ProductARSellDown(event) {
+    fetch("http://localhost:3000/product")
+    .then(response=>response.json())
+    .then(productAR => {
+    for (let i = 0, t; i < productAR[0].length - 1; i++) {
+        for (let j = i + 1; j < productAR[0].length; j++) {
+            if (productAR[0][i].sell < productAR[0][j].sell) {
+                t = productAR[0][i];
+                productAR[0][i] = productAR[0][j];
+                productAR[0][j] = t;
+            }
+        }
+    }
+    listWriter(productAR[0]);
+    lastBtn.style.fontWeight = 'lighter';
+    lastBtn.style.opacity = "0.7";
+    event.target.style.fontWeight = "bold";
+    event.target.style.opacity = "initial";
+    lastBtn=event.target;
+    })
+}
 
 /*                    ▲▲▲▲  수미  ▲▲▲▲                    */ 
+/*                    ▼▼▼▼  지현  ▼▼▼▼                    */ 
+
+let productPrice; 
+
+
+function shopDetail(event){
+fetch("http://localhost:3000/product")
+.then(response=>response.json())
+.then(productAR => {
+    for(let i=0; i<productAR[0].length;i++){
+        if (event.target.closest('.item_sm').children[2].innerText == productAR[0][i].title) {
+            itemNum = i;
+            break;
+        }
+    }
+    shopItemDetail(itemNum);
+})
+}
+//게시글 작성
+function shopItemDetail(itemNum){
+    let textpoint = 0, photopoint = 0;
+    fetch("http://localhost:3000/product")
+    .then(response=>response.json())
+    .then(productAR => {
+    productPrice=productAR[0][itemNum].price;
+    // 포인트 점수 구하기 식
+    if(productAR[0][itemNum].textreview == 1) {
+        textpoint= 50;
+    } 
+    if(productAR[0][itemNum].photoreview == 1) {
+        photopoint= 100;
+    }
+
+    main.innerHTML=`
+    <div class="item"><div class="item_leftbox">
+                <div class="item_img"></div>
+                <div class="item_imgBtn"></div>
+            </div>
+            <div class="item_rightbox">
+                <div class="item_rightbox_info">
+                    <div>${productAR[0][itemNum].title}</div>
+                    <div>${productAR[0][itemNum].price.toLocaleString()} 원</div>
+                </div>
+                <div class="item_rightbox_point">
+                    <div class="item_rightbox_point_title">
+                        <span>쿠키런 스토어 고객을 위한 혜택</span>
+                    </div>
+                    <div class="item_rightbox_point_max">
+                        <div>
+                            <span>최대 적립 포인트</span>
+                            <div>
+                                <span id="maxpoint">${(productAR[0][itemNum].price/100+textpoint+photopoint).toLocaleString()} 원</span>
+                                <i class="fa-regular fa-circle-question"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <span>└ 기본적립</span> 
+                            <div id="basic">${(productAR[0][itemNum].price/100).toLocaleString()} 원</div>
+                        </div>
+                    </div>
+                    <div class="item_rightbox_point_price_tip">
+                        <div>
+                            <div>TIP. 포인트 더 받는 방법</div>
+                            <div><a href="https://nid.naver.com">최대 5% 적립, 무료 시작</a></div>
+                            <div><a href="https://nid.naver.com">네이버 현대카드로 결제 시</a></div>
+                            <div><a href="https://nid.naver.com/">네이버페이 머니로 결제 시</a></div>
+                        </div>
+                        <div>
+                            <span>+최대 ${(productAR[0][itemNum].price*0.09).toLocaleString()}원</span>
+                            <span>${(productAR[0][itemNum].price*0.04).toLocaleString()}원</span>
+                            <span>${(productAR[0][itemNum].price*0.05).toLocaleString()}원</span>
+                            <span>${(productAR[0][itemNum].price*0.02).toLocaleString()}원</span>
+                        </div>
+                    </div>
+                    <div class="item_rightbox_ads"></div>
+                    <div class="item_rightbox_point_card">
+                        <span>무이자 할부</span>
+                        <span>| 카드 자세히보기</span>
+                        <i class="fa-regular fa-circle-question"></i>
+                    </div>
+                    <div id="pointDetails"></div>
+                    <div class="item_rightbox_point_transit">
+                        <p>택배배송 | 3,000원<span>&#40;주문시 결제&#41; &#183;</span> CJ 대한통운&#40;오네&#41;</p>
+                        <p>30,000원 이상 구매 시 무료&#47;제주, 도서 지역 추가 3,000원</p>
+                        <p><a href="#">배송비 절약상품 보기</a></p>
+                    </div>
+                    <div class="item_rightbox_point_quantity">
+                        <div onclick="amountBtnMinus()" style="border: none;">&#45;</div>
+                        <input type="text" id="quantity" name="toBuy" value=1 style="text-align: center; "/>
+                        <div onclick="amountBtnPlus()" style="border: none;">&#43;</div>
+                    </div>
+                    <div class="item_rightbox_point_decision">
+                        <div>
+                            <div>
+                                <span>총 상품 금액</span>
+                                <i class="fa-regular fa-circle-question"></i>
+                            </div>
+                            <div class="item_rightbox_point_decision_total">
+                                <span id="totalAmount"></span>
+                                <span id="totalPrice"></span>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="btn_1">
+                                <i class="fa-solid fa-circle-chevron-right"></i>
+                                <span>구매하기</span>
+                            </div>
+                            <div class="btn_2">
+                                <i class="fa-regular fa-comment-dots"></i>
+                                <span>톡톡문의</span>
+                            </div>
+                            <div class="btn_3">
+                                <i class="fa-solid fa-heart-circle-plus"></i>
+                                <span>찜하기</span>
+                            </div>
+                            <div class="btn_4">
+                                <i class="fa-solid fa-bag-shopping"></i>
+                                <span>장바구니</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                </div>
+                <div class='best'>
+                <p>베스트 상품</p>
+                <div class="best_items"></div></div>
+    `;
+    let itemImgBtn = document.getElementsByClassName('item_imgBtn');
+    let itemImg = document.getElementsByClassName('item_img');
+    let bestitem = document.getElementsByClassName('best_items');
+
+// 토탈 구하기
+let totalAmount = document.getElementById('totalAmount');
+let totalPrice = document.getElementById('totalPrice');
+let quantityBox = document.getElementsByClassName('item_rightbox_point_quantity');
+totalAmount.innerText =`${quantityBox[0].children[1].value}개`
+totalPrice.innerText= `${((quantityBox[0].children[1].value)*productAR[0][itemNum].price).toLocaleString()}원`
+// 제품 이미지 슬라이드
+itemImg[0].innerHTML = `<img src="${productAR[0][itemNum].img[0]}" alt="${productAR[0][itemNum].title}">`;
+itemImgBtn[0].innerHTML="";
+for (let i = 0 ; i < productAR[0][itemNum].img.length; i++){
+    itemImgBtn[0].innerHTML +=`<img onclick="shopItemImgChange(event)" src="${productAR[0][itemNum].img[i]}" alt="${productAR[0][itemNum].title}">`;
+}
+// 베스트 상품
+for (let i = 0, t; i < productAR[0].length - 1; i++) {
+    for (let j = i + 1; j < productAR[0].length; j++) {
+        if (productAR[0][i].sell < productAR[0][j].sell) {
+            t = productAR[0][i];
+            productAR[0][i] = productAR[0][j];
+            productAR[0][j] = t;
+        }
+    }
+}
+    for (let i =0 ; i < 4; i++){
+    bestitem[0].innerHTML += `<div onclick="itemChangeInPage(event)"><img src="${productAR[0][i].img[0]}" alt="${productAR[0][i].title}"><p>${productAR[0][i].title}</p><p>${productAR[0][i].price.toLocaleString()}</p></div>`;
+    }
+})}
+// 제품 이미지 띄우기
+function shopItemImgChange(event){
+    let itemImg = document.getElementsByClassName('item_img');
+    itemImg[0].children[0].src=`${event.target.getAttribute('src')}`;
+}
+// 수량 버튼 올리기
+function amountBtnPlus(){
+    ++document.getElementById('quantity').value;
+    document.getElementById('totalPrice').innerText=`${(document.getElementById('quantity').value*productPrice).toLocaleString()} 원`
+}
+// 수량 버튼 내리기
+function amountBtnMinus(){
+    if(document.getElementById('quantity').value>1){
+        --document.getElementById('quantity').value;
+        document.getElementById('totalPrice').innerText=`${(document.getElementById('quantity').value*productPrice).toLocaleString()} 원`
+    }
+}
+// 베스트상품 상세페이지로 변경하기
+function itemChangeInPage(event) {
+    event.target.closest('div').children[1].innerText;
+    let itemBox = document.getElementsByClassName('item');
+    fetch("http://localhost:3000/product")
+    .then(response=>response.json())
+    .then(productAR => {
+
+    for(let i=0; i<productAR[0].length;i++){
+        if (event.target.closest('div').children[1].innerText == productAR[0][i].title) {
+            itemNum = i;
+            break;
+        }
+    }
+    productPrice=productAR[0][itemNum].price;
+    itemBox[0].innerHTML='';
+    shopItemDetail(itemNum);
+    window.scrollTo(0,300);
+})
+}
+
+/*                    ▲▲▲▲  지현  ▲▲▲▲                    */ 
