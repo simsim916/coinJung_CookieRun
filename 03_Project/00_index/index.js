@@ -662,7 +662,7 @@ function listWriter(productAR) {
         <div class="icon"><i class="fa-solid fa-neuter"></i></div>
         <div class="icon"><i class="fa-solid fa-plus"></i></div>
         </div>`;
-        // 재고 없을 때 이미지 투명도, BEST/SOLDOUT 박스 넣기    
+        // 재고 없을 때 이미지 투명도, BEST/SOLDOUT 박스 넣기
         if (productAR[i].stock == 0) {
             for (let j = 0; j < itemBox[i % imgPage].children.length - 2; j++) {
                 itemBox[i % imgPage].children[j].style.opacity = '0.3';
@@ -674,13 +674,14 @@ function listWriter(productAR) {
         }
         //아이템개수 9개 이상 등록시, 자동으로 다음 순번 페이지버튼 생성
         let pageAmount = productAR.length / imgPage
-        showScreen[0].innerHTML = ``;z
+        showScreen[0].innerHTML = ``;
         for (let i = 0; i < pageAmount; i++) {
             showScreen[0].innerHTML += `<div onclick="screenPage(event)">${i + 1}</div>`;
         }
     // 상품 총 갯수 표시
     let total = document.getElementById('total');
-    total.children[0].innerText = ` ${productAR.length} `;
+        total.children[0].innerText = ` ${productAR.length} `;
+        total.children[0].style.color = 'red';
     }
 }
 //페이지 넘어갈 때 보이는 화면 기준점 잡기    
