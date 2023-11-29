@@ -271,7 +271,7 @@ function detail(event) {
     }
     let lastPage = main[0].innerHTML;
     main[0].innerHTML =
-        `<h3 class="back_button">뒤로가기</h3>
+        `<h3 class="back_button">목록보기</h3>
         <div class="main_info_container"><img src="${cookieAR[compare].img}" alt="${cookieAR[compare].name}">
         <div class="main_info_pic"></div>
         <div class="main_info_self">
@@ -299,16 +299,12 @@ function detail(event) {
 }
 let mainOpt = document.getElementsByClassName('main_option');
 {
-    // let mainOpt = document.getElementsByClassName('main_option');
-
     mainOpt[0].addEventListener('click', (event) => {
         if (event.target.tagName == 'IMG') {
             if (event.target.getAttribute('class') === 'selected') {
                 event.target.classList.remove('selected');
             } else {
                 event.target.classList.add('selected');
-                // console.log(event.target.getAttribute('class'))
-                // console.log(event.target.classList)
             }
         }
     }

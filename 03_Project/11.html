@@ -8,13 +8,13 @@
 <body>
     <script>
         function getData(){
-            fetch("http://localhost:3000/freeboad")
+            fetch("http://localhost:3000/product")
             .then(response=>response.json())
-            .then(json => console.log(json))
+            .then(json => console.log(json[0]))
         }
         function postData(post){
             
-            fetch("http://localhost:3000/freeboad", {
+            fetch("http://localhost:3000/product", {
                 method: "POST",
                 body: JSON.stringify(post),
                 headers: {
