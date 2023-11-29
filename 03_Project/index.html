@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="./css/02_rogin.css">
     <link rel="stylesheet" href="./css/03_cookie_item.css">
     <link rel="stylesheet" href="./css/04_cookie_product.css">
+    <link rel="stylesheet" href="./css/05_cookie_freeboard.css">
+    <link rel="stylesheet" href="./css/06_cookie_freeboard_content.css">
     <script  defer src="./00_index/index.js"></script>
     <script defer>
 
@@ -43,9 +45,10 @@
                             <li class="game_3">쿠키 월드 소개</li>
                         </ul>
                     </li>
-                    <li class="comunity_1">커뮤니티
+                    <li onclick="comunityWrite(notistart, notiend)" class="comunity_1">커뮤니티
                         <ul class="sub_li">
-                            <li  class="comunity_1">자유 게시판</li>
+                            <li onclick="(event)=>{ if(event.stopPropagation())event.stopPropagation();
+                                comunityWrite(notistart, notiend) }"  class="comunity_1">자유 게시판</li>
                         </ul>
                     </li>
                     <li class="media_1">미디어
