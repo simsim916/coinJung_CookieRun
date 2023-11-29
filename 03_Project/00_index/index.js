@@ -674,7 +674,7 @@ function listWriter(productAR) {
         }
         //아이템개수 9개 이상 등록시, 자동으로 다음 순번 페이지버튼 생성
         let pageAmount = productAR.length / imgPage
-        showScreen[0].innerHTML = ``;
+        showScreen[0].innerHTML = ``;z
         for (let i = 0; i < pageAmount; i++) {
             showScreen[0].innerHTML += `<div onclick="screenPage(event)">${i + 1}</div>`;
         }
