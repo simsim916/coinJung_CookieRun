@@ -327,8 +327,6 @@ mainOpt[0].addEventListener('click', (event) => {
         } else {
             selectedAR = selectedAR.filter((a) => a != typeAlt);
         }
-
-    
         mainList[0].innerHTML = "";
         if (typeAlt == "올") {
             for (let i = 0; i < cookieAR.length; i++) {
