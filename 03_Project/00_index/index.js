@@ -991,13 +991,15 @@ function shopItemImgChange(event){
 // 수량 버튼 올리기
 function amountBtnPlus(){
     ++document.getElementById('quantity').value;
-    document.getElementById('totalPrice').innerText=`${(document.getElementById('quantity').value*productPrice).toLocaleString()} 원`
+    document.getElementById('totalAmount').innerText=`${(document.getElementById('quantity').value).toLocaleString()}개`;
+    document.getElementById('totalPrice').innerText=`${(document.getElementById('quantity').value*productPrice).toLocaleString()} 원`;
 }
 // 수량 버튼 내리기
 function amountBtnMinus(){
     if(document.getElementById('quantity').value>1){
         --document.getElementById('quantity').value;
-        document.getElementById('totalPrice').innerText=`${(document.getElementById('quantity').value*productPrice).toLocaleString()} 원`
+        document.getElementById('totalAmount').innerText=`${document.getElementById('quantity').value}개`;
+        document.getElementById('totalPrice').innerText=`${(document.getElementById('quantity').value*productPrice).toLocaleString()} 원`;
     }
 }
 // 베스트상품 상세페이지로 변경하기
