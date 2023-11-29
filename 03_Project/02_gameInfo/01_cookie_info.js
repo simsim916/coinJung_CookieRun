@@ -1,4 +1,5 @@
 'use strict';
+import Event1 from './../../../html project/react/myapp/src/subModule/Event1';
 let cookieAR = [
     {
         name: '올리브맛 쿠키',
@@ -313,38 +314,38 @@ let mainOpt = document.getElementsByClassName('main_option');
     );
 
 }
-let typeAlt;
 let selectedAR = [];
 
-mainOpt[0].addEventListener('click', (event) => {
+function cookieTag(event) {
     let OptTypeImg = event.target;
-    let flag = false;
+    let mainList = document.getElementsByClassName('main_list')
     //선택한 태그에 따라 쿠키 나열하기
     if (OptTypeImg.tagName == "IMG") {
-        typeAlt = OptTypeImg.getAttribute('alt');
+        let typeAlt = OptTypeImg.getAttribute('alt');
         if (selectedAR.indexOf(typeAlt) == -1) {
             selectedAR.push(typeAlt);
         } else {
             selectedAR = selectedAR.filter((a) => a != typeAlt);
         }
         mainList[0].innerHTML = "";
+        fetch("http://localhost:3000/cookieData")
+        .then(response=>response.json())
+        .then(cookieAR => {
         if (typeAlt == "올") {
-            for (let i = 0; i < cookieAR.length; i++) {
-                mainList[0].innerHTML += `<div class="main_list_box"><img src="${cookieAR[i].img}" alt="${cookieAR[i].name}"><div class="main_list_item_name">${cookieAR[i].name}</div><div class="main_list_item_type"><img src="${cookieType(cookieAR[i].type)}" alt="${cookieAR[i].type}"></div></div>`;
+            for (let i = 0; i < cookieAR[0].length; i++) {
+                mainList[0].innerHTML += `<div class="main_list_box"><img src="${cookieAR[0][i].img}" alt="${cookieAR[0][i].name}"><div class="main_list_item_name">${cookieAR[0][i].name}</div><div class="main_list_item_type"><img src="${cookieType(cookieAR[0][i].type)}" alt="${cookieAR[0][i].type}"></div></div>`;
             }
         } else {
             for (let j = 0; j < selectedAR.length; j++) {
-                for (let i = 0; i < cookieAR.length; i++) {
-                    if (selectedAR[j] == cookieAR[i].type) {
-                        mainList[0].innerHTML += `<div class="main_list_box"><img src="${cookieAR[i].img}" alt="${cookieAR[i].name}"><div class="main_list_item_name">${cookieAR[i].name}</div><div class="main_list_item_type"><img src="${cookieType(cookieAR[i].type)}" alt="${cookieAR[i].type}"></div></div>`;
+                for (let i = 0; i < cookieAR[0].length; i++) {
+                    if (selectedAR[j] == cookieAR[0][i].type) {
+                        mainList[0].innerHTML += `<div class="main_list_box"><img src="${cookieAR[0][i].img}" alt="${cookieAR[0][i].name}"><div class="main_list_item_name">${cookieAR[0][i].name}</div><div class="main_list_item_type"><img src="${cookieType(cookieAR[0][i].type)}" alt="${cookieAR[0][i].type}"></div></div>`;
                     }
                 }
             }
-        }
-
-
+        }})
     }
-});
+}
 
 
 

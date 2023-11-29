@@ -219,6 +219,8 @@ function mainShopSlideBtn(event){
 /*                    ▼▼▼▼  민지  ▼▼▼▼                    */ 
 
 // 민지 쿠키소개 페이지 전환
+let selectedAR = [];
+
 function cookieinfoWrite(event){
     if(event.stopPropagation())event.stopPropagation();
     let headBottom = document.getElementById('headBottom')
@@ -298,7 +300,36 @@ function cookieType(cookieType) {
             return 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/9ea3ad41-1df7-4b8e-0e52-3c1f9ac48400/public'
     }
 }
-
+function cookieTag(event) {
+    let OptTypeImg = event.target;
+    let mainList = document.getElementsByClassName('main_list')
+    //선택한 태그에 따라 쿠키 나열하기
+    if (OptTypeImg.tagName == "IMG") {
+        let typeAlt = OptTypeImg.getAttribute('alt');
+        if (selectedAR.indexOf(typeAlt) == -1) {
+            selectedAR.push(typeAlt);
+        } else {
+            selectedAR = selectedAR.filter((a) => a != typeAlt);
+        }
+        mainList[0].innerHTML = "";
+        fetch("http://localhost:3000/cookieData")
+        .then(response=>response.json())
+        .then(cookieAR => {
+        if (typeAlt == "올") {
+            for (let i = 0; i < cookieAR[0].length; i++) {
+                mainList[0].innerHTML += `<div class="main_list_box"><img src="${cookieAR[0][i].img}" alt="${cookieAR[0][i].name}"><div class="main_list_item_name">${cookieAR[0][i].name}</div><div class="main_list_item_type"><img src="${cookieType(cookieAR[0][i].type)}" alt="${cookieAR[0][i].type}"></div></div>`;
+            }
+        } else {
+            for (let j = 0; j < selectedAR.length; j++) {
+                for (let i = 0; i < cookieAR[0].length; i++) {
+                    if (selectedAR[j] == cookieAR[0][i].type) {
+                        mainList[0].innerHTML += `<div class="main_list_box"><img src="${cookieAR[0][i].img}" alt="${cookieAR[0][i].name}"><div class="main_list_item_name">${cookieAR[0][i].name}</div><div class="main_list_item_type"><img src="${cookieType(cookieAR[0][i].type)}" alt="${cookieAR[0][i].type}"></div></div>`;
+                    }
+                }
+            }
+        }})
+    }
+}
 /*                    ▲▲▲▲  민지  ▲▲▲▲                    */ 
 /*                    ▼▼▼▼  창민  ▼▼▼▼                    */ 
 
