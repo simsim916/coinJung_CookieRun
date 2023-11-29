@@ -126,11 +126,15 @@
 .inspection_date, .inspection_read, .notice_date{
     text-align: center;
     line-height: 70px;
+
+
+
 }
 .notice_subject, .inspection_subject{
     line-height: 70px;
     padding: 3px 10px 7px 30px;
 }
+
 .notice_post>a{
     display: inline-block;
 }
@@ -143,6 +147,5 @@
     text-decoration: underline;
     cursor: pointer;
     background-color: rgb(245, 245, 231);
-} 
-
-
+    background-color: rgb(245, 245, 231);
+}
