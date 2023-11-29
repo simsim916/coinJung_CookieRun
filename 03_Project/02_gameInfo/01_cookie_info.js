@@ -236,7 +236,7 @@ function writeCookieList() {
     }
 }
 
-// 쿠키 타입 검색해서 이미지 선택하는 함수
+
 function cookieType(cookieType) {
     switch (cookieType) {
         case "에픽":
@@ -253,9 +253,9 @@ function cookieType(cookieType) {
             return 'https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/9ea3ad41-1df7-4b8e-0e52-3c1f9ac48400/public'
     }
 }
-
 writeCookieList();
 
+//상세페이지
 mainList[0].addEventListener('click', detail)
 
 function detail(event) {
@@ -297,6 +297,8 @@ function detail(event) {
 
     })
 }
+
+// 쿠키타입 클릭 시 opacity 설정
 let mainOpt = document.getElementsByClassName('main_option');
 {
     mainOpt[0].addEventListener('click', (event) => {
