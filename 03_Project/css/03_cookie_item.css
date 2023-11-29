@@ -5,7 +5,6 @@
     position: absolute;
     right: 0;
     bottom: 0;
-    line-height: 50px;
 }
 .main_head #total{
     font-size: 15px;
@@ -26,7 +25,7 @@
     text-align: center;
     background-image: url(../img/shop_button.png);
     background-size: cover;
-    border: 4px solid #000;
+    border: 3px solid gray;
 }
 .grid_box_sm li:nth-of-type(2){
     border: 4px solid #fff;
