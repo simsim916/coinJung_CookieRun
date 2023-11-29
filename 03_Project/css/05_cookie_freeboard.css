@@ -121,7 +121,7 @@
 
 
 /*==============================*/
-.notice{
+.notice_ss{
     display: flex;
     width: 70px;
     height: 35px;
@@ -129,10 +129,10 @@
     justify-content: center;
     align-items: center;
 
-
+    font-size: small;
 }
 
-.notice::after{
+.notice_ss::after{
     content: '공지';
 
     display: inline-block;
@@ -141,7 +141,7 @@
     text-align: center;
 
     line-height: 35px;
-    border: 1px solid;
+    border: 1px solid gray;
     border-radius: 20px;
 }
 
@@ -155,7 +155,7 @@
     border-top: 1px solid #e0d4d4;
 }
 
-.notice_subject{
+.notice_subject_ss{
     display: flex;
     justify-content: left;
     align-items: center;
@@ -165,7 +165,7 @@
     border-top: 1px solid #e0d4d4;
 }
 
-.notice_date{
+.notice_date_ss{
     display: flex;
     justify-content: center;
     align-items: center;

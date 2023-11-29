@@ -1075,10 +1075,10 @@ function comunityWrite(notistart, notiend){
             content.children[0].innerHTML += `
                 <a href="#" class="list_notice">
                     <div class="notice_header">
-                        <span class="notice"></span>
+                        <span class="notice_ss"></span>
                     </div>
-                    <div class="notice_subject">${notiboardAR[0][i].notice_subject}</div>
-                    <div class="notice_date">${notiboardAR[0][i].notice_date}</div>
+                    <div class="notice_subject_ss">${notiboardAR[0][i].notice_subject}</div>
+                    <div class="notice_date_ss">${notiboardAR[0][i].notice_date}</div>
                 </a>
             `;
         }})
@@ -1109,7 +1109,7 @@ function articleWrite(freeboardAR,start, end){
 
 // read 순 freeboardAR 재 배열 함수
 function changeArray(judgement){
-    fetch("http://localhost:3000/noticeboard")
+    fetch("http://localhost:3000/freeboard")
         .then(response=>response.json())
         .then(freeboardAR => {
     if(judgement == 1/*조회수 수 높은 순*/){
@@ -1122,7 +1122,7 @@ function changeArray(judgement){
                 }
             }
         }
-        articleWrite(freeboardAR[0],start, end);
+        articleWrite(freeboardAR[0],nextPageSt, nextPageEnd);
     }
     else{
         for(let i=0, temp; i<freeboardAR[0].length-1 ; i++){
@@ -1134,7 +1134,7 @@ function changeArray(judgement){
                 }
             }
         }
-        articleWrite(freeboardAR[0],start, end)
+        articleWrite(freeboardAR[0],nextPageSt, nextPageEnd)
     }})        
 }
 
@@ -1180,7 +1180,7 @@ function insert_alticle(index){
             <p>로그인 후 댓글을 남길 수 있습니다.</p>
             <button>로그인</button>
         </div>
-        <ul class="comment_list">                      
+        <ul class="comment_list_ss">                      
         </ul>
     </div>
 </section>
@@ -1216,7 +1216,7 @@ function insert_alticle(index){
     let alticle_like = document.getElementsByClassName('alticle_like');
     let info = document.getElementsByClassName('info');
     let user_icon = document.getElementsByClassName('user_icon');
-    let comment_list = document.getElementsByClassName('comment_list');
+    let comment_list_ss = document.getElementsByClassName('comment_list_ss');
     fetch("http://localhost:3000/freeboard")
     .then(response=>response.json())
     .then(freeboardAR => {
@@ -1229,25 +1229,28 @@ function insert_alticle(index){
         info[0].children[2].children[1].innerText = `${freeboardAR[0][index].heart}`;
         info[0].children[3].children[1].innerText = `${freeboardAR[0][index].read}`;
     for(let i = 0 ; i < freeboardAR[0][index].content.length ; i++){
-        comment_list[0].innerHTML += `                        
-    <li>
-        <img src="" alt="">
-        <button type="button">${freeboardAR[0][index].comment_user_info[i]}</button>
-        <p>${freeboardAR[0][index].content}</p> 
+        comment_list_ss[0].innerHTML += `                        
+    <li class="imglist">
+        <img class="commentUserImg" src="" alt="">
+        <button type="button" class="commentUser">${freeboardAR[0][index].comment_user_info[i]}</button>
+        <p>${freeboardAR[0][index].content[i]}</p> 
     </li>`
     }})
-    fetch("http://localhost:3000/noticeboard")
+    fetch("http://localhost:3000/user")
     .then(response=>response.json())
     .then(user => { 
-        for(let i = 0 ; i < user.length ; i++){
+        for(let i = 0 ; i < user[0].length ; i++){
             /* 글쓴이 이미지 삽입 */
             if(title[0].children[1].innerText == user[0][i].userInfo){
                 user_icon[0].children[0].children[0].children[0].src = user[0][i].userImage;
             }
-            /* 댓글 유저 이미지 삽입 */
-            for(let j = 0 ; j < comment_list[0].length ; j++){
-                if(user[0][i].userInfo == comment_list[0].childNodes[1].childNodes[j * 2 + 1].children[1].innerText){
-                    comment_list[0].childNodes[1].childNodes[j * 2 + 1].children[0].src = user[0][i].userImage;
+        }
+        /* 댓글 유저 이미지 삽입 */
+        for(let i = 0 ; i < comment_list_ss.length ; i++){
+            for(let j = 0 ; j < user[0].length ; j++){
+                console.log(user[0][j].length)
+                if(comment_list_ss[0].children[j].children[1].innerText == user[0][i].userInfo){
+                    comment_list_ss[0].children[j].children[0].src = user[0][j].userImage;
                 }
             }
         }
@@ -1280,7 +1283,9 @@ function sortArray(event){
     fetch("http://localhost:3000/freeboard")
     .then(response=>response.json())
     .then(freeboardAR => {
-    articleWrite(freeboardAR[0],start, selcet_option);           
+    articleWrite(freeboardAR[0],start, selcet_option);    
+    update_page(freeboardAR[0],selcet_option);   
+    update_page(freeboardAR[0],selcet_option);    
     })
 }
 
@@ -1304,6 +1309,7 @@ function pageChanging(event){
     .then(response=>response.json())
     .then(freeboardAR => {
     articleWrite(freeboardAR[0],nextPageSt, nextPageEnd);
+
     })
 }
 
