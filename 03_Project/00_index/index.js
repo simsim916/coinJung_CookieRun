@@ -1026,6 +1026,7 @@ function itemChangeInPage(event) {
 
 let notistart = 0, notiend = 2;    // 초기화
 let nextPageSt = 0, nextPageEnd = 9;                // 초기화
+let selcet_option = 10;
 
 function add(event) {
     if(event.stopPropagation())event.stopPropagation();
@@ -1103,7 +1104,7 @@ function articleWrite(freeboardAR,start, end){
             </div>
         `;
     }
-    update_page(freeboardAR)
+    update_page(freeboardAR,selcet_option);
 }
 
 // read 순 freeboardAR 재 배열 함수
@@ -1219,16 +1220,14 @@ function insert_alticle(index){
     fetch("http://localhost:3000/freeboard")
     .then(response=>response.json())
     .then(freeboardAR => {
-        console.log(index)
-        console.log(freeboardAR[0][1])
         title[0].children[0].innerText = `${freeboardAR[0][index].subject}`;
         title[0].children[1].innerText = `${freeboardAR[0][index].userInfo}`;
         title[0].children[2].innerText = `${freeboardAR[0][index].freeboard_date}`;
         alticle[0].children[0].innerText = `${freeboardAR[0][index].alticle}`;
         alticle_like[0].children[0].innerText = `${freeboardAR[0][index].heart}`;
-        info[0].children[1].children[1].innerText = `${freeboardAR[index].commentNum}`;
-        info[0].children[2].children[1].innerText = `${freeboardAR[index].heart}`;
-        info[0].children[3].children[1].innerText = `${freeboardAR[index].read}`;
+        info[0].children[1].children[1].innerText = `${freeboardAR[0][index].commentNum}`;
+        info[0].children[2].children[1].innerText = `${freeboardAR[0][index].heart}`;
+        info[0].children[3].children[1].innerText = `${freeboardAR[0][index].read}`;
     for(let i = 0 ; i < freeboardAR[0][index].content.length ; i++){
         comment_list[0].innerHTML += `                        
     <li>
@@ -1276,11 +1275,13 @@ function contentEnter(event){
 
 /* 10개씩, 20개씩, 30개씩 보기 변경 감지, 현재 페이지에서 재 출력 */
 function sortArray(event){
-    let selcet_option = +(event.target.value);
+    let selcet_option = event.target.value
     let start = 0;
-    let end = selcet_option;
-    articleWrite(start, end);           
-    update_page(freeboardAR,selcet_option);
+    fetch("http://localhost:3000/freeboard")
+    .then(response=>response.json())
+    .then(freeboardAR => {
+    articleWrite(freeboardAR[0],start, selcet_option);           
+    })
 }
 
 /** 페이지 바꾸기 박스 클릭시 색상 변경 관련 코드  **/
@@ -1309,6 +1310,7 @@ function pageChanging(event){
 /* 페이지 네이션 생성 및 클릭 시 동적 모션 적용 */
 function update_page(freeboardAR,selectedOption) {
     let page = document.getElementsByClassName('page');
+
     page[0].innerHTML = "";
     /* 페이지 네이션 박스 생성 */
     for (let i = 0; i < freeboardAR.length / selectedOption; i++) {
