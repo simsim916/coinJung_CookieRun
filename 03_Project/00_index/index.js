@@ -564,7 +564,7 @@ function shopWrite(event){
             <h3>쿠키런 상품</h3>
             <div>
                 <p id="total">상품 (총 <span></span>개)</p>
-                <ul class="grid_box">
+                <ul class="grid_box_sm">
                     <li onclick="gridBoxBtn(event)"></li>
                     <li onclick="gridBoxBtn(event)"></li>
                 </ul>
@@ -695,7 +695,7 @@ function screenPage(event){
 }
 //아이템목록 누르면 검정 테두리 표시, 첫 화면 9개 배열로 고정표시
 function gridBoxBtn(event){
-    let gridBoxLi = document.querySelectorAll('.grid_box>li')
+    let gridBoxLi = document.querySelectorAll('.grid_box_sm>li')
     let mainItem = document.getElementsByClassName('main_item');
     if (event.target == gridBoxLi[0]) {
         imgPage = 9;

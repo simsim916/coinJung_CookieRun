@@ -22,6 +22,38 @@ main{
 
 }
 
+.backList{
+    position: absolute;
+    right: 0;
+
+    font-size: large;
+
+    width: 100px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    border: 1px solid rgb(207, 199, 199);
+    border-radius: 10px;
+
+    margin-bottom: 10px;
+}
+
+.backList:hover{
+    background-color: rgb(207, 199, 199);;
+}
+
+.backList::before{
+    content: '\f03a';
+    font: var(--fa-font-solid);
+
+    margin-right: 5px;
+}
+
 .notice_option_right{
     display: flex;
     position: absolute;
@@ -37,14 +69,23 @@ main{
 
     text-decoration: none;
 
-    /* opacity: 1; */
+    
 }
 
-.list_sort>a{
+.list_sort>span{
     display: inline-block;
-
+    
     width: 70px;
     height: 30px;
+    
+    text-align: center;
+    line-height: 30px;
+    
+    cursor: pointer;
+}
+
+.list_sort>span:hover{
+    background-color: antiquewhite;
 }
 
 .list_sort>:first-child::before{
@@ -147,6 +188,8 @@ main{
 
 /*==============================*/
 
+
+
 .freeboard_subject{
     display: flex;
     justify-content: left;
@@ -233,6 +276,11 @@ main{
 .list_notice:hover{
     background-color: #F9F9F9;
 }
+
+.list_freeboard{
+    cursor: pointer;
+}
+
 .list_freeboard:hover{
     background-color: #F9F9F9;
 }
@@ -269,7 +317,7 @@ main{
 
 }
 
-.page>a{
+.other, .page>span{
     display: inline-block;
     width: 40px;
     height: 40px;
@@ -277,16 +325,19 @@ main{
     text-align: center;
     margin: 1px;
     border: 1px solid gray;
+    /* background-color: white; */
 
     padding: 10px;
+
+    cursor: pointer;
 }
 
-.a{
+.default{
     background-color: black;
     color: white;
 }
 
-.page>a:hover{
+.page>span:hover{
     background-color: black;
     color: white;
 }

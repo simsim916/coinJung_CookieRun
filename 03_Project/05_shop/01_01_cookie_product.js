@@ -304,8 +304,8 @@ function writePage(event){
                                 <i class="fa-regular fa-circle-question"></i>
                             </div>
                             <div class="item_rightbox_point_decision_total">
-                                <span id="totalAmount"></span>
-                                <span id="totalPrice"></span>
+                                <span id="totalAmount">개</span>
+                                <span id="totalPrice">원</span>
                             </div>
                         </div>
                         <div>
@@ -329,10 +329,14 @@ function writePage(event){
                     </div>
                 </div>
     `
+<<<<<<< HEAD
+
+=======
 // 토탈 구하기
 let totalAmount = document.getElementById('totalAmount');
 let totalPrice = document.getElementById('totalPrice');
 let quantityBox = document.getElementsByClassName('item_rightbox_point_quantity');
+>>>>>>> origin/main
 totalAmount.innerText =`${quantityBox[0].children[1].value}개`
 totalPrice.innerText= `${((quantityBox[0].children[1].value)*productAR[0][itemNum].price).toLocaleString()}원`
 
