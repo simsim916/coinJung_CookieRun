@@ -603,3 +603,6 @@ main{
     padding: 20px;
     background-color: rgb(255, 255, 255);
 }
+.main_option_mj>.selected{
+    opacity: 1;
+}
