@@ -299,26 +299,14 @@ function detail(event) {
     })
 }
 
-// 쿠키타입 클릭 시 opacity 설정
-let mainOpt = document.getElementsByClassName('main_option');
-{
-    mainOpt[0].addEventListener('click', (event) => {
-        if (event.target.tagName == 'IMG') {
-            if (event.target.getAttribute('class') === 'selected') {
-                event.target.classList.remove('selected');
-            } else {
-                event.target.classList.add('selected');
-            }
-        }
-    }
-    );
 
-}
-let selectedAR = [];
+
+let selectedAR = ['에픽', '스페셜', '레전더리', '슈퍼에픽', '에이션트', '드래곤'];
 
 function cookieTag(event) {
     let OptTypeImg = event.target;
     let mainList = document.getElementsByClassName('main_list')
+    if (selectedAR.length==6) 
     //선택한 태그에 따라 쿠키 나열하기
     if (OptTypeImg.tagName == "IMG") {
         let typeAlt = OptTypeImg.getAttribute('alt');
@@ -328,6 +316,12 @@ function cookieTag(event) {
             selectedAR = selectedAR.filter((a) => a != typeAlt);
         }
         mainList[0].innerHTML = "";
+        // 쿠키타입 클릭 시 opacity 설정
+        if (event.target.getAttribute('class') === 'selected') {
+            event.target.classList.remove('selected');
+        } else {
+            event.target.classList.add('selected');
+        }
         fetch("http://localhost:3000/cookieData")
         .then(response=>response.json())
         .then(cookieAR => {
