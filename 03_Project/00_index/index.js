@@ -577,7 +577,7 @@ function shopWrite(event){
                 <li onclick="optionBoxOpen(event)">상품유형</li>
                 <li onclick="optionBoxOpen(event)">가격대</li>
             </ul>
-            <div class="option_box">
+            <div class="option_box_sm">
                 <div class="option_title">혜택정보
                     <ul>
                         <li onclick="optionBoxListColor(event)">할인상품</li>
@@ -629,12 +629,12 @@ function shopWrite(event){
 }     
 // 옵션 박스 열기
 function optionBoxOpen(event){
-        let optionBox = document.getElementsByClassName('option_box');
+        let optionBox = document.getElementsByClassName('option_box_sm');
         optionBox[0].style.visibility = "initial";
 }
 // 옵션 박스 닫기
 function optionBoxClose(event){
-        let optionBox = document.getElementsByClassName('option_box');
+        let optionBox = document.getElementsByClassName('option_box_sm');
             optionBox[0].style.visibility = "hidden";
 }
 // 옵션 박스 안에 옵션 선택 시 색상 변경

@@ -29,7 +29,7 @@
 }
 .grid_box_sm li:nth-of-type(2){
     border: 4px solid #fff;
-    background-position-x: -30px;
+    background-position-x: -29px;
 }
 .main_option>ul{
     display: flex;
@@ -54,7 +54,7 @@
     border-color: gray;
     position: relative;
 }
-.option_box{
+.option_box_sm{
     position: absolute;
     background-color: white;
     border: 1.5px solid rgb(184, 182, 182);
@@ -62,8 +62,8 @@
     z-index: 2;
     width: 450px;
     height: 500px;
-    top: 155px;
-    left: 0px;
+    /* top: 155px; */
+    left: 325px;
     visibility: hidden;
 }
 .option_close{
@@ -72,7 +72,7 @@
     border: 1px solid black; border-radius: 5px;
     position: absolute; top: 5px; right: 5px;
 }
-.option_box ul{
+.option_box_sm ul{
     list-style: none;
     font-size: 14px;
     font-weight: lighter;
