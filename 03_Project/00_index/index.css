@@ -606,3 +606,17 @@ main{
 .main_option_mj>.selected{
     opacity: 1;
 }
+.back_button{
+    color: rgb(255, 255, 255);
+    font-weight: 300;
+    cursor: pointer;
+    border: solid 4px rgb(255, 244, 244);
+    -webkit-box-shadow: 0 3px 3px rgba(0,0,0,0.3);
+    text-shadow: 0 1px 1px rgba(0,0,0,.3);
+    background: -webkit-gradient(linear, left top, left bottom, from(rgb(255, 216, 216)), to(#f77797));
+    width: 130px;
+    margin-bottom: 40px;
+    padding: 8px;
+    text-align: center;
+    border-radius: 17px;
+}
