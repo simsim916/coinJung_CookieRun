@@ -312,7 +312,7 @@ function allTagSelect(event){
         selectedAR=[];
         event.target.classList.add('selected');
         for( let i = 1 ; i < mainOptionMj[0].children.length ; i++) {
-            mainOptionMj[0].children[i].classList.add('selected');
+            mainOptionMj[0].children[i].classList.remove('selected');
             selectedAR.push(mainOptionMj[0].children[i].alt);
         }
     }
