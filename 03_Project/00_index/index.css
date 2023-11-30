@@ -280,15 +280,16 @@ nav ul li ul li{
 }
 .shop_slide_img>div{
     height: 285px; overflow: hidden;
-    border-radius: 20px;
     width: 25%;
     margin-bottom: 15px;
 }
 .shop_slide_img>div>img{
     width: 100%;
+    border-radius: 20px;
 }
 .shop_slide p{
     padding: 0  10px;
+    margin: 0;
 }
 .shop_slide>p{
     font-size: 1.5rem; color: #5f3b11;
