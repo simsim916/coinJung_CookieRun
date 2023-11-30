@@ -234,7 +234,7 @@ function cookieinfoWrite(event){
     </div>`;
         main.innerHTML = `
     </div><h3>쿠키소개</h3><div class="main_option_mj">
-        <img onclick="allTagSelect(event)" id="allTag" src="./img/tag_all.png" alt="올">
+        <img class="selected" onclick="allTagSelect(event)" id="allTag" src="./img/tag_all.png" alt="올">
         <img class="selected" onclick="cookieTag(event)" src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/e6cc601e-19ee-421b-e936-9cdd20eaf100/public" alt="에픽">
         <img class="selected" onclick="cookieTag(event)" src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/dc7567c4-7d16-4017-52c2-4586e7112500/public" alt="스페셜">
         <img class="selected" onclick="cookieTag(event)" src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/fb2bbed1-186c-4edf-1741-7edb8cdf7100/public" alt="레전더리">
@@ -304,21 +304,16 @@ function allTagSelect(event){
     let mainOptionMj = document.getElementsByClassName('main_option_mj')
     let mainList = document.getElementsByClassName('main_list')
     if(event.target.getAttribute('class')=='selected'){
+        selectedAR=[];
         for( let i = 0 ; i < mainOptionMj[0].children.length ; i++) {
-            selectedAR=[];
             mainOptionMj[0].children[i].classList.remove('selected');
         }
     } else {
         selectedAR=[];
         for( let i = 0 ; i < mainOptionMj[0].children.length ; i++) {
             mainOptionMj[0].children[i].classList.add('selected');
-            console.log(mainOptionMj[0].children[i].alt);
             selectedAR.push(mainOptionMj[0].children[i].alt);
-            console.log(selectedAR);
         }
-    }
-    if (selectedAR.length==6) {
-        allTag.style.opacity="1";
     }
     mainList[0].innerHTML='';
     fetch("http://localhost:3000/cookieData")
@@ -332,7 +327,6 @@ function allTagSelect(event){
             }
     }})
 }
-
 function cookieTag(event) {
     let OptTypeImg = event.target;
     let mainList = document.getElementsByClassName('main_list')
@@ -345,6 +339,7 @@ function cookieTag(event) {
         } else {
             selectedAR = selectedAR.filter((a) => a != typeAlt);
         }
+        console.log(selectedAR)
         if (selectedAR.length==6) {
             allTag.style.opacity="1";
         } else {
@@ -380,6 +375,7 @@ function cookieTag(event) {
         }})
     }
 }
+
 /*                    ▲▲▲▲  민지  ▲▲▲▲                    */ 
 /*                    ▼▼▼▼  창민  ▼▼▼▼                    */ 
 
@@ -481,7 +477,6 @@ function noticeWrite(event){
 
     </div>`;
 }
-
 function noticeDetailWrite(event){
     if(event.stopPropagation())event.stopPropagation();
         main.innerHTML = `    <div class="notice_option2">
@@ -535,7 +530,6 @@ Ex) 퀘스트명, NPC 이름, 지역 이름, 아이템 이름 등
 </div>
 <div class="notice_side"></div>`;
 }
-
 function loginWrite(event){
     if(event.stopPropagation())event.stopPropagation();
     if (!indexBox.contains(document.getElementById('loginBG'))){
@@ -577,7 +571,6 @@ function loginWrite(event){
     }
     document.getElementById('loginBG').style.visibility="initial";
 }
-
 function changeKakao(event){
     var TitleCookie= document.getElementById("titleCookie");
     var TitleKakao= document.getElementById("titleKakao");
@@ -599,7 +592,6 @@ function changeKakao(event){
     eventOJ.style.color= "orange";
     lastBtn = eventOJ;
 }   
-
 function changeCookie(event){
     var TitleCookie= document.getElementById("titleCookie");
     var TitleKakao= document.getElementById("titleKakao");
@@ -620,7 +612,6 @@ function changeCookie(event){
     eventOJ.style.color= "orange";
     lastBtn = eventOJ;
 }
-
 function closelogin(event){
     if(event.target==document.getElementById('loginBG')) document.getElementById('loginBG').style.visibility="hidden";
 }
@@ -910,7 +901,6 @@ function ProductARSellDown(event) {
 
 let productPrice; 
 
-
 function shopDetail(event){
 fetch("http://localhost:3000/product")
 .then(response=>response.json())
@@ -1113,7 +1103,6 @@ function add(event) {
     if(event.stopPropagation())event.stopPropagation();
     comunityWrite(notistart, notiend)
 }
-
 /** 공지부분 태그, 내용 채우기 반복문  **/
 function comunityWrite(notistart, notiend){
         let headBottom = document.getElementById('headBottom')
@@ -1169,7 +1158,6 @@ function comunityWrite(notistart, notiend){
             articleWrite(freeboardAR[0],nextPageSt, nextPageEnd)
         })
 }
-
 // content 부분 태그, 내용 채우기 반복문 
 function articleWrite(freeboardAR,start, end){
     let free_content = main.querySelector('.free_content');
@@ -1187,7 +1175,21 @@ function articleWrite(freeboardAR,start, end){
     }
     update_page(freeboardAR,selcet_option);
 }
-
+function articleWrite2(freeboardAR,start, end){
+    let free_content = main.querySelector('.free_content');
+    free_content.innerHTML = '';
+    for(let i = start ; i < end ; i++){
+        free_content.innerHTML += `
+            <div onclick="contentEnter(event)" class="list_freeboard">
+                <div class="freeboard_subject">${freeboardAR[i].subject}</div>
+                <div class="userInfo">${freeboardAR[i].userInfo}</div>
+                <div class="heart">${freeboardAR[i].heart}</div>
+                <div class="read">${freeboardAR[i].read}</div>
+                <div class="freeboard_date">${freeboardAR[i].commentNum}</div> 
+            </div>
+        `;
+    }
+}
 // read 순 freeboardAR 재 배열 함수
 function changeArray(judgement){
     fetch("http://localhost:3000/freeboard")
@@ -1218,7 +1220,6 @@ function changeArray(judgement){
         articleWrite(freeboardAR[0],nextPageSt, nextPageEnd)
     }})        
 }
-
 // 리뷰순, 좋아요순 감지 후 opacity 변경 및 freeboardAR 재 배열 함수 호출
 function listWrite(event){
     let list_sort = document.querySelectorAll('.list_sort');
@@ -1234,7 +1235,6 @@ function listWrite(event){
         changeArray(2);
     }
 }
-
 /* HTML 삭제 후 alticle 삽입 */
 function insert_alticle(index){
     main.innerHTML = `
@@ -1337,13 +1337,11 @@ function insert_alticle(index){
         }
     })
 }
-
 function addHeart(event){
     let likeNum = document.getElementsByClassName('like_num');
     ++event.target.innerText;
     likeNum[0].innerText = `${event.target.innerText}`;
 }
-    
 /* 게시판 진입 "클릭"이 감지 됐을 때 inner HTML 게시판 상호작용 실행 */
 function contentEnter(event){
     let turn = event.target,
@@ -1356,7 +1354,6 @@ function contentEnter(event){
             insert_alticle(index);       // 기존 HTML 삭제 / alticle 양식 추가
          })
 }
-
 /* 10개씩, 20개씩, 30개씩 보기 변경 감지, 현재 페이지에서 재 출력 */
 function sortArray(event){
     let selcet_option = event.target.value
@@ -1369,7 +1366,6 @@ function sortArray(event){
     update_page(freeboardAR[0],selcet_option);    
     })
 }
-
 /** 페이지 바꾸기 박스 클릭시 색상 변경 관련 코드  **/
 function pageChanging(event){
     let sort = document.getElementById('sort');
@@ -1389,11 +1385,10 @@ function pageChanging(event){
     fetch("http://localhost:3000/freeboard")
     .then(response=>response.json())
     .then(freeboardAR => {
-    articleWrite(freeboardAR[0],nextPageSt, nextPageEnd);
+    articleWrite2(freeboardAR[0],nextPageSt, nextPageEnd);
 
     })
 }
-
 /* 페이지 네이션 생성 및 클릭 시 동적 모션 적용 */
 function update_page(freeboardAR,selectedOption) {
     let page = document.getElementsByClassName('page');
