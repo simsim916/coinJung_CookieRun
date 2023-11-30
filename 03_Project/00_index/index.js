@@ -1071,9 +1071,10 @@ function shopItemImgChange(event){
 }
 // 수량 버튼 올리기
 function amountBtnPlus(){
-    ++document.getElementById('quantity').value;
-    document.getElementById('totalAmount').innerText=`${(document.getElementById('quantity').value).toLocaleString()}개`;
-    document.getElementById('totalPrice').innerText=`${(document.getElementById('quantity').value*productPrice).toLocaleString()} 원`;
+
+    let revisedQunatity = ++document.getElementById('quantity').value;
+    document.getElementById('totalAmount').innerText=`${revisedQunatity.toLocaleString()}개`;
+    document.getElementById('totalPrice').innerText=`${(revisedQunatity*productPrice).toLocaleString()} 원`;
 }
 // 수량 버튼 내리기
 function amountBtnMinus(){
