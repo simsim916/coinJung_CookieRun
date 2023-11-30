@@ -219,7 +219,7 @@ function mainShopSlideBtn(event){
 /*                    ▼▼▼▼  민지  ▼▼▼▼                    */ 
 
 // 민지 쿠키소개 페이지 전환
-let selectedAR = ['에픽', '스페셜', '레전더리', '슈퍼에픽', '에이션트', '드래곤'];
+let selectedAR = [ ];
 
 function cookieinfoWrite(event){
     if(event.stopPropagation())event.stopPropagation();
@@ -235,12 +235,12 @@ function cookieinfoWrite(event){
         main.innerHTML = `
     </div><h3>쿠키소개</h3><div class="main_option_mj">
         <img class="selected" onclick="allTagSelect(event)" id="allTag" src="./img/tag_all.png" alt="올">
-        <img class="selected" onclick="cookieTag(event)" src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/e6cc601e-19ee-421b-e936-9cdd20eaf100/public" alt="에픽">
-        <img class="selected" onclick="cookieTag(event)" src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/dc7567c4-7d16-4017-52c2-4586e7112500/public" alt="스페셜">
-        <img class="selected" onclick="cookieTag(event)" src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/fb2bbed1-186c-4edf-1741-7edb8cdf7100/public" alt="레전더리">
-        <img class="selected" onclick="cookieTag(event)" src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/ef97da70-b550-428a-c03c-ed4db59a9300/public" alt="슈퍼에픽">
-        <img class="selected" onclick="cookieTag(event)" src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/b80b67b8-dc5c-49e3-07ca-f1673e459100/public" alt="에이션트">
-        <img class="selected" onclick="cookieTag(event)" src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/9ea3ad41-1df7-4b8e-0e52-3c1f9ac48400/public" alt="드래곤">
+        <img onclick="cookieTag(event)" src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/e6cc601e-19ee-421b-e936-9cdd20eaf100/public" alt="에픽">
+        <img onclick="cookieTag(event)" src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/dc7567c4-7d16-4017-52c2-4586e7112500/public" alt="스페셜">
+        <img onclick="cookieTag(event)" src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/fb2bbed1-186c-4edf-1741-7edb8cdf7100/public" alt="레전더리">
+        <img onclick="cookieTag(event)" src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/ef97da70-b550-428a-c03c-ed4db59a9300/public" alt="슈퍼에픽">
+        <img onclick="cookieTag(event)" src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/b80b67b8-dc5c-49e3-07ca-f1673e459100/public" alt="에이션트">
+        <img onclick="cookieTag(event)" src="https://imagedelivery.net/57rIj2o4cJ62boUSs_DLpA/9ea3ad41-1df7-4b8e-0e52-3c1f9ac48400/public" alt="드래곤">
     </div> <div class="main_list"></div>`;
     let mainList = document.getElementsByClassName('main_list');
     fetch("http://localhost:3000/cookieData")
@@ -310,7 +310,8 @@ function allTagSelect(event){
         }
     } else {
         selectedAR=[];
-        for( let i = 0 ; i < mainOptionMj[0].children.length ; i++) {
+        event.target.classList.add('selected');
+        for( let i = 1 ; i < mainOptionMj[0].children.length ; i++) {
             mainOptionMj[0].children[i].classList.add('selected');
             selectedAR.push(mainOptionMj[0].children[i].alt);
         }
@@ -330,7 +331,14 @@ function allTagSelect(event){
 function cookieTag(event) {
     let OptTypeImg = event.target;
     let mainList = document.getElementsByClassName('main_list')
+    let mainOptionMj = document.getElementsByClassName('main_option_mj')
     let allTag = document.getElementById('allTag');
+    if (selectedAR.length==6) {
+        selectedAR=[];
+        for( let i = 0 ; i < mainOptionMj[0].children.length ; i++) {
+            mainOptionMj[0].children[i].classList.remove('selected');
+        }
+    }
     //선택한 태그에 따라 쿠키 나열하기
     if (OptTypeImg.tagName == "IMG") {
         let typeAlt = OptTypeImg.getAttribute('alt');
@@ -339,11 +347,10 @@ function cookieTag(event) {
         } else {
             selectedAR = selectedAR.filter((a) => a != typeAlt);
         }
-        console.log(selectedAR)
         if (selectedAR.length==6) {
-            allTag.style.opacity="1";
+            allTag.classList.add('selected');
         } else {
-            allTag.style.opacity="0.3"
+            allTag.classList.remove('selected');
         }
         mainList[0].innerHTML = "";
         // 쿠키타입 클릭 시 opacity 설정
@@ -351,11 +358,6 @@ function cookieTag(event) {
             event.target.classList.remove('selected');
         } else {
             event.target.classList.add('selected');
-        }
-        if (selectedAR.length==6) {
-            allTag.style.opacity="1";
-        } else {
-            allTag.style.opacity="0.3"
         }
         fetch("http://localhost:3000/cookieData")
         .then(response=>response.json())
