@@ -215,10 +215,12 @@ function insert_alticle(index){
                 user_icon[0].children[0].children[0].children[0].src = user[0][i].userImage;
             }
             /* 댓글 유저 이미지 삽입 */
-            for(let j = 0 ; j < comment_list[0].length ; j++){
-                if(user[0][i].userInfo == comment_list[0].childNodes[1].childNodes[j * 2 + 1].children[1].innerText){
-
-                    comment_list[0].childNodes[1].childNodes[j * 2 + 1].children[0].src = user[0][i].userImage;
+            for(let i = 0 ; i < comment_list[0].length ; i++){
+                for(let j = 0 ; j < user.length ; j++){
+                    console.log(user[0])
+                    if(user[0][i].userInfo == comment_list[0].childNodes[1].childNodes[j * 2 + 1].children[1].innerText){
+                        comment_list[0].childNodes[1].childNodes[j * 2 + 1].children[0].src = user[0][i].userImage;
+                    }
                 }
             }
         }

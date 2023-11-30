@@ -1106,6 +1106,23 @@ function articleWrite(freeboardAR,start, end){
     }
     update_page(freeboardAR,selcet_option);
 }
+function articleWrite2(freeboardAR,start, end){
+    let free_content = main.querySelector('.free_content');
+    free_content.innerHTML = '';
+    for(let i = start ; i < end ; i++){
+        free_content.innerHTML += `
+            <div onclick="contentEnter(event)" class="list_freeboard">
+                <div class="freeboard_subject">${freeboardAR[i].subject}</div>
+                <div class="userInfo">${freeboardAR[i].userInfo}</div>
+                <div class="heart">${freeboardAR[i].heart}</div>
+                <div class="read">${freeboardAR[i].read}</div>
+                <div class="freeboard_date">${freeboardAR[i].commentNum}</div> 
+            </div>
+        `;
+    }
+}
+
+
 
 // read 순 freeboardAR 재 배열 함수
 function changeArray(judgement){
@@ -1246,11 +1263,10 @@ function insert_alticle(index){
             }
         }
         /* 댓글 유저 이미지 삽입 */
-        for(let i = 0 ; i < comment_list_ss.length ; i++){
+        for(let i = 0 ; i < comment_list_ss[0].children.length ; i++){
             for(let j = 0 ; j < user[0].length ; j++){
-                console.log(user[0][j].length)
-                if(comment_list_ss[0].children[j].children[1].innerText == user[0][i].userInfo){
-                    comment_list_ss[0].children[j].children[0].src = user[0][j].userImage;
+                if(comment_list_ss[0].children[i].children[1].innerText == user[0][j].userInfo){
+                    comment_list_ss[0].children[i].children[0].src = user[0][j].userImage;
                 }
             }
         }
@@ -1258,9 +1274,27 @@ function insert_alticle(index){
 }
 
 function addHeart(event){
-    let likeNum = document.getElementsByClassName('like_num');
-    ++event.target.innerText;
-    likeNum[0].innerText = `${event.target.innerText}`;
+    let title = document.getElementsByClassName('title');
+    // ++event.target.innerText;
+    // likeNum[0].innerText = `${event.target.innerText}`;
+    fetch("http://localhost:3000/freeboard")
+    .then(response=>response.json())
+    .then(freeboardAR => {
+        //title[0].children[1].innerText;
+
+
+        // console.log(title[0].children[1].innerText);
+        
+        for(let i = 0 ; i < freeboardAR[0].length ; i++){
+            // console.log(freeboardAR[0][i].userInfo);
+            if(title[0].children[1].innerText == freeboardAR[0][i].userInfo){
+                console.log(freeboardAR[0][i].heart);
+                freeboardAR[0][i].heart += 1;
+                console.log(freeboardAR[0][i].heart);
+            }
+        }
+    })
+
 }
     
 /* 게시판 진입 "클릭"이 감지 됐을 때 inner HTML 게시판 상호작용 실행 */
@@ -1285,7 +1319,6 @@ function sortArray(event){
     .then(freeboardAR => {
     articleWrite(freeboardAR[0],start, selcet_option);    
     update_page(freeboardAR[0],selcet_option);   
-    update_page(freeboardAR[0],selcet_option);    
     })
 }
 
@@ -1308,7 +1341,7 @@ function pageChanging(event){
     fetch("http://localhost:3000/freeboard")
     .then(response=>response.json())
     .then(freeboardAR => {
-    articleWrite(freeboardAR[0],nextPageSt, nextPageEnd);
+    articleWrite2(freeboardAR[0],nextPageSt, nextPageEnd);
 
     })
 }
