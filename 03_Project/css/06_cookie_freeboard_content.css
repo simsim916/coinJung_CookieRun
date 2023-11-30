@@ -22,7 +22,6 @@ h2{
 }
 
 /*=========================================================================*/
-
 .data{
     float: left;
     width: calc((1024px / 10) * 7);
@@ -30,7 +29,7 @@ h2{
 }
 .info{
     position: absolute;
-    right: 0;
+    right: 23%;
     width: calc((1024px / 10) * 3);
     height: 100%;
 }
@@ -94,24 +93,29 @@ h2{
     position: absolute;
     top: 60%;
 }
-
-.comment_list>ul>li{
+.imglist{
     height: 80px;
     padding: 20px 0px 0px 55px;
     list-style: none;
     border-bottom: 1px solid rgb(190, 185, 185);
 }
-.comment_list>ul{
+.comment_list_ss>ul>li{
+    height: 80px;
+    padding: 20px 0px 0px 55px;
+    list-style: none;
+    border-bottom: 1px solid rgb(190, 185, 185);
+}
+.comment_list_ss{
     padding :0;
     position: relative;
 }
-.comment_list>ul>li>button{
+.commentUser{
     background-color: white;
     border-style: none;
     font-weight: bold;
     height: 24px;
 }
-.comment_list>ul>li>img{
+.commentUserImg{
     width: 38px;
     height: 38px;
     position: absolute;
