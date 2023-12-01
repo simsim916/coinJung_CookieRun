@@ -323,7 +323,7 @@ function allTagSelect(event){
         for (let j = 0; j < selectedAR.length; j++) {
             for (let i = 0; i < cookieAR[0].length; i++) {
                 if (selectedAR[j] == cookieAR[0][i].type) {
-                    mainList[0].innerHTML += `<div class="main_list_box"><img src="${cookieAR[0][i].img}" alt="${cookieAR[0][i].name}"><div class="main_list_item_name">${cookieAR[0][i].name}</div><div class="main_list_item_type"><img src="${cookieType(cookieAR[0][i].type)}" alt="${cookieAR[0][i].type}"></div></div>`;
+                    mainList[0].innerHTML += `<div onclick="cookieDetail(event)" class="main_list_box"><img src="${cookieAR[0][i].img}" alt="${cookieAR[0][i].name}"><div class="main_list_item_name">${cookieAR[0][i].name}</div><div class="main_list_item_type"><img src="${cookieType(cookieAR[0][i].type)}" alt="${cookieAR[0][i].type}"></div></div>`;
                 }
             }
     }})
