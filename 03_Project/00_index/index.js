@@ -1337,11 +1337,10 @@ function insert_alticle(index){
             }
         }
         /* 댓글 유저 이미지 삽입 */
-        for(let i = 0 ; i < comment_list_ss.length ; i++){
+        for(let i = 0 ; i < comment_list_ss[0].children.length ; i++){
             for(let j = 0 ; j < user[0].length ; j++){
-                console.log(user[0][j].length)
-                if(comment_list_ss[0].children[j].children[1].innerText == user[0][i].userInfo){
-                    comment_list_ss[0].children[j].children[0].src = user[0][j].userImage;
+                if(comment_list_ss[0].children[i].children[1].innerText == user[0][j].userInfo){
+                    comment_list_ss[0].children[i].children[0].src = user[0][j].userImage;
                 }
             }
         }
