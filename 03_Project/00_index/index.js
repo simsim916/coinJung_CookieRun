@@ -742,7 +742,7 @@ function listWriter(productAR) {
                 itemBox[i % imgPage].children[j].style.opacity = '0.3';
             }
             itemBox[i % imgPage].innerHTML += `<div class="soldout">SOLD OUT</div>`;
-        }sh
+        }
         if (productAR[i].sell >= 30) {
             itemBox[i % imgPage].innerHTML += `<div class="best_sm">BEST</div>`;
         }
@@ -1064,22 +1064,22 @@ function shopItemImgChange(event){
 // 수량 버튼 올리기
 function amountBtnPlus(){
     let revisedQunatity = ++document.getElementById('quantity').value;
-    document.getElementById('totalAmount').innerText=`${revisedQunatity.toLocaleString()}개`;
-    document.getElementById('totalPrice').innerText=`${(revisedQunatity*productPrice).toLocaleString()} 원`;
+    totalAmount.innerText=`${revisedQunatity.toLocaleString()}개`;
+    totalAmount.innerText=`${(revisedQunatity*productPrice).toLocaleString()} 원`;
 }
 // 수량 버튼 내리기
 function amountBtnMinus(){
     if(document.getElementById('quantity').value>1){
         let revisedQunatity = --document.getElementById('quantity').value;
-        document.getElementById('totalAmount').innerText=`${revisedQunatity}개`;
-        document.getElementById('totalPrice').innerText=`${(revisedQunatity*productPrice).toLocaleString()} 원`;
+        totalAmount.innerText=`${revisedQunatity}개`;
+        totalAmount.innerText=`${(revisedQunatity*productPrice).toLocaleString()} 원`;
     }
 }
 // 수량 input 박스 변경
 function amountCalc(event){
     let inputQuantity = event.target.value;
-    document.getElementById('totalAmount').innerText=`${inputQuantity}개`;
-    document.getElementById('totalPrice').innerText=`${(inputQuantity*productPrice).toLocaleString()} 원`;
+    totalAmount.innerText=`${inputQuantity}개`;
+    totalPrice.innerText=`${(inputQuantity*productPrice).toLocaleString()} 원`;
 }
 // 베스트상품 상세페이지로 변경하기
 function itemChangeInPage(event) {
