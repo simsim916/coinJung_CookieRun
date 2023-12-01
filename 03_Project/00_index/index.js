@@ -629,7 +629,7 @@ function shopWrite(event){
     headBottom.classList.add("subPage")
     headBottom.innerHTML=`<div>
         <ul>
-            <li onclick="shopWrite(event)">온라인 쇼핑몰</li>
+            <li onclick="shopWrite(event)">온라인 굿즈샵</li>
         </ul>
     </div>`;
         main.innerHTML = `
