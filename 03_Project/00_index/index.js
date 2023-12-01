@@ -742,7 +742,7 @@ function listWriter(productAR) {
                 itemBox[i % imgPage].children[j].style.opacity = '0.3';
             }
             itemBox[i % imgPage].innerHTML += `<div class="soldout">SOLD OUT</div>`;
-        }sh
+        }
         if (productAR[i].sell >= 30) {
             itemBox[i % imgPage].innerHTML += `<div class="best_sm">BEST</div>`;
         }

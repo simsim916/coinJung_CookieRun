@@ -1,3 +1,9 @@
+main{
+    position: relative;
+}
+.main_head{
+    position: relative;
+}
 .main_head>div{
     position: absolute;
     right: 0;
