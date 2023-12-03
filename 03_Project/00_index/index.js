@@ -1,6 +1,7 @@
 'use strict';
 let indexBox = document.getElementById('indexBox');
 let backBtn = document.getElementById('backBtn');
+let headBottom = document.getElementById('headBottom')
 let lastSlideBtn, lastSlideBtn2;
 let itemNum;
 

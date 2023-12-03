@@ -29,7 +29,7 @@
     border: solid 4px rgb(255, 244, 244);
     -webkit-box-shadow: 0 3px 3px rgba(0,0,0,0.3);
     text-shadow: 0 1px 1px rgba(0,0,0,.3);
-    background: -webkit-gradient(linear, left top, left bottom, from(rgb(255, 216, 216)), to(#f77797));
+    background: gradient(linear, left top, left bottom, from(rgb(255, 216, 216)), to(#f77797));
     width: 130px;
     margin-bottom: 40px;
     padding: 8px;
