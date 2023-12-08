@@ -323,7 +323,7 @@ function allTagSelect(event){
         for (let j = 0; j < selectedAR.length; j++) {
             for (let i = 0; i < cookieAR[0].length; i++) {
                 if (selectedAR[j] == cookieAR[0][i].type) {
-                    mainList[0].innerHTML += `<div class="main_list_box"><img src="${cookieAR[0][i].img}" alt="${cookieAR[0][i].name}"><div class="main_list_item_name">${cookieAR[0][i].name}</div><div class="main_list_item_type"><img src="${cookieType(cookieAR[0][i].type)}" alt="${cookieAR[0][i].type}"></div></div>`;
+                    mainList[0].innerHTML += `<div onclick="cookieDetail(event)" class="main_list_box"><img src="${cookieAR[0][i].img}" alt="${cookieAR[0][i].name}"><div class="main_list_item_name">${cookieAR[0][i].name}</div><div class="main_list_item_type"><img src="${cookieType(cookieAR[0][i].type)}" alt="${cookieAR[0][i].type}"></div></div>`;
                 }
             }
     }})
@@ -364,13 +364,13 @@ function cookieTag(event) {
         .then(cookieAR => {
         if (typeAlt == "올") {
             for (let i = 0; i < cookieAR[0].length; i++) {
-                mainList[0].innerHTML += `<div class="main_list_box"><img src="${cookieAR[0][i].img}" alt="${cookieAR[0][i].name}"><div class="main_list_item_name">${cookieAR[0][i].name}</div><div class="main_list_item_type"><img src="${cookieType(cookieAR[0][i].type)}" alt="${cookieAR[0][i].type}"></div></div>`;
+                mainList[0].innerHTML += `<div onclick="cookieDetail(event)" class="main_list_box"><img src="${cookieAR[0][i].img}" alt="${cookieAR[0][i].name}"><div class="main_list_item_name">${cookieAR[0][i].name}</div><div class="main_list_item_type"><img src="${cookieType(cookieAR[0][i].type)}" alt="${cookieAR[0][i].type}"></div></div>`;
             }
         } else {
             for (let j = 0; j < selectedAR.length; j++) {
                 for (let i = 0; i < cookieAR[0].length; i++) {
                     if (selectedAR[j] == cookieAR[0][i].type) {
-                        mainList[0].innerHTML += `<div class="main_list_box"><img src="${cookieAR[0][i].img}" alt="${cookieAR[0][i].name}"><div class="main_list_item_name">${cookieAR[0][i].name}</div><div class="main_list_item_type"><img src="${cookieType(cookieAR[0][i].type)}" alt="${cookieAR[0][i].type}"></div></div>`;
+                        mainList[0].innerHTML += `<div onclick="cookieDetail(event)" class="main_list_box"><img src="${cookieAR[0][i].img}" alt="${cookieAR[0][i].name}"><div class="main_list_item_name">${cookieAR[0][i].name}</div><div class="main_list_item_type"><img src="${cookieType(cookieAR[0][i].type)}" alt="${cookieAR[0][i].type}"></div></div>`;
                     }
                 }
             }
@@ -629,7 +629,7 @@ function shopWrite(event){
     headBottom.classList.add("subPage")
     headBottom.innerHTML=`<div>
         <ul>
-            <li onclick="shopWrite(event)">온라인 쇼핑몰</li>
+            <li onclick="shopWrite(event)">온라인 굿즈샵</li>
         </ul>
     </div>`;
         main.innerHTML = `
@@ -987,7 +987,7 @@ function shopItemDetail(itemNum){
                     </div>
                     <div class="item_rightbox_point_quantity">
                         <div onclick="amountBtnMinus()" style="border: none;">&#45;</div>
-                        <input type="text" id="quantity" name="toBuy" value=1 style="text-align: center; "/>
+                        <input onchange="amountCalc(event)" type="text" id="quantity" name="toBuy" value=1 style="text-align: center; "/>
                         <div onclick="amountBtnPlus()" style="border: none;">&#43;</div>
                     </div>
                     <div class="item_rightbox_point_decision">
@@ -1002,7 +1002,7 @@ function shopItemDetail(itemNum){
                             </div>
                         </div>
                         <div>
-                            <div class="btn_1">
+                            <div onclick="loginWrite(event)" class="btn_1">
                                 <i class="fa-solid fa-circle-chevron-right"></i>
                                 <span>구매하기</span>
                             </div>
@@ -1064,15 +1064,23 @@ function shopItemImgChange(event){
 }
 // 수량 버튼 올리기
 function amountBtnPlus(){
-    ++document.getElementById('quantity').value;
-    document.getElementById('totalPrice').innerText=`${(document.getElementById('quantity').value*productPrice).toLocaleString()} 원`
+    let revisedQunatity = ++document.getElementById('quantity').value;
+    document.getElementById('totalAmount').innerText=`${revisedQunatity.toLocaleString()}개`;
+    document.getElementById('totalPrice').innerText=`${(revisedQunatity*productPrice).toLocaleString()} 원`;
 }
 // 수량 버튼 내리기
 function amountBtnMinus(){
     if(document.getElementById('quantity').value>1){
-        --document.getElementById('quantity').value;
-        document.getElementById('totalPrice').innerText=`${(document.getElementById('quantity').value*productPrice).toLocaleString()} 원`
+        let revisedQunatity = --document.getElementById('quantity').value;
+        document.getElementById('totalAmount').innerText=`${revisedQunatity}개`;
+        document.getElementById('totalPrice').innerText=`${(revisedQunatity*productPrice).toLocaleString()} 원`;
     }
+}
+// 수량 input 박스 변경
+function amountCalc(event){
+    let inputQuantity = event.target.value;
+    document.getElementById('totalAmount').innerText=`${inputQuantity}개`;
+    document.getElementById('totalPrice').innerText=`${(inputQuantity*productPrice).toLocaleString()} 원`;
 }
 // 베스트상품 상세페이지로 변경하기
 function itemChangeInPage(event) {
@@ -1330,11 +1338,10 @@ function insert_alticle(index){
             }
         }
         /* 댓글 유저 이미지 삽입 */
-        for(let i = 0 ; i < comment_list_ss.length ; i++){
+        for(let i = 0 ; i < comment_list_ss[0].children.length ; i++){
             for(let j = 0 ; j < user[0].length ; j++){
-                console.log(user[0][j].length)
-                if(comment_list_ss[0].children[j].children[1].innerText == user[0][i].userInfo){
-                    comment_list_ss[0].children[j].children[0].src = user[0][j].userImage;
+                if(comment_list_ss[0].children[i].children[1].innerText == user[0][j].userInfo){
+                    comment_list_ss[0].children[i].children[0].src = user[0][j].userImage;
                 }
             }
         }
