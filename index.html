@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,22 +14,27 @@
     <link rel="stylesheet" href="./css/04_cookie_product.css">
     <link rel="stylesheet" href="./css/05_cookie_freeboard.css">
     <link rel="stylesheet" href="./css/06_cookie_freeboard_content.css">
-    <script  defer src="./js/index.js"></script>
+    <link rel="icon" href="/img/cookie1.gif" />
+    <script defer src="./js/index.js"></script>
     <script defer type="module" src="./00_index/test.js">
 
     </script>
     <title>쿠키런 | 쿠키런</title>
 </head>
+
 <body>
     <header>
         <div id="backBtn">뒤로<br>가기<ul>
-        </ul></div>
+            </ul>
+        </div>
         <div id="nav_bg"></div>
         <nav>
             <div class="header_top container">
                 <div class="header_logo">
                     <h1>쿠키런</h1>
-                    <img onclick="indexWrite(event)" src="https://www.devsisters.com/_next/image?url=%2Fimage%2Fhome%2Fourgames-kingdom-logo.png&w=640&q=75" alt="">
+                    <img onclick="indexWrite(event)"
+                        src="https://www.devsisters.com/_next/image?url=%2Fimage%2Fhome%2Fourgames-kingdom-logo.png&w=640&q=75"
+                        alt="">
                 </div>
                 <ul>
                     <li class="notice_1" onclick="noticeWrite(event)">새소식
@@ -48,7 +54,7 @@
                     <li onclick="comunityWrite(notistart, notiend)" class="comunity_1">커뮤니티
                         <ul class="sub_li">
                             <li onclick="(event)=>{ if(event.stopPropagation())event.stopPropagation();
-                                comunityWrite(notistart, notiend) }"  class="comunity_1">자유 게시판</li>
+                                comunityWrite(notistart, notiend) }" class="comunity_1">자유 게시판</li>
                         </ul>
                     </li>
                     <li class="media_1">미디어
@@ -71,7 +77,8 @@
             </div>
         </nav>
         <div class="header_cookie">
-                <img id="header_cookie" src="https://i.pinimg.com/originals/5e/a7/82/5ea782dee1243d13f4fcdedf96cb4c4d.gif" alt="">
+            <img id="header_cookie" src="https://i.pinimg.com/originals/5e/a7/82/5ea782dee1243d13f4fcdedf96cb4c4d.gif"
+                alt="">
         </div>
     </header>
     <div id="indexBox">
